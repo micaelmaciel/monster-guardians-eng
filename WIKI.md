@@ -8,8 +8,9 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: technical investigation COMPLETE. Awaiting user approval of the
-  strategy proposal before any ROM edits.**
+- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Second
+  (large-glyph) narration subsystem found; its encoding is being
+  reverse-engineered (see Findings).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -145,6 +146,48 @@ milestone.
 - One large free block: **`0x76765D..0x800000` = 625,059 bytes**, fill
   `0x00`. Ample for relocated dialogue.
 
+### Large-glyph narration subsystem (story text) — format SOLVED
+
+A **second, independent text subsystem** renders story/narration text as
+individual 16×16 OBJ sprites, one sprite per character:
+
+- **Glyph store: ROM `0xD3144`, 16×11 px glyphs, 22 bytes each**
+  (stride 0x16). Layout per glyph:
+  `[rows0-7 left half (8B)][rows0-7 right half (8B)][rows8-10 left
+  (3B)][rows8-10 right (3B)]`.
+- On screen each glyph is a 16×16 OBJ; its 4 tiles (TL,TR,BL,BR) = ROM
+  left/right half-data + 5 zero pad bytes. **Verified byte-exact** against
+  live VRAM dumps and the frame-0900 screenshot.
+- Advance is 12 px; sprites at frame 0900: 6 glyphs at y=124, x=17..77,
+  tiles 0,4,8,12,16,20. Frame 1800: 11 glyphs at y=124 + 15 at y=137,
+  tiles 0..100 stride 4. All sz=1 (16×16), shape=0, pal=0.
+- Confirmed glyph indices at 0xD3144: index14=だ `0xD3278`, 15=か
+  `0xD328E`, 16=ら `0xD32A4`, 17=私 `0xD32BA`, 18=が `0xD32D0`, 19=使
+  `0xD32E6`, 23=た `0xD333E`.
+- The narration line `だから私が使` does **not** exist in ROM as 8×8
+  direct codes (byte-search confirmed; `だから` hits at `0x0A86F6`,
+  `0x0A8A64`, `0x0A9D7C` are ordinary dialogue).
+- All on-screen text (dialogue included) is OBJ sprites, never BG text:
+  BG2/BG3 tilemaps contain only box-frame tiles (1, 288–296, 320–328)
+  across a 24,000-frame capture.
+- Candidate structures in the narration region:
+  - `0xD30F4..0xD3143`: entries of 2×16-bit codes terminated by `0x7FFF`
+    (6 bytes each); 32-bit pointer table at `0xC4DD0` → each entry.
+  - `0xD3000..0xD3143`: 16-bit blocks terminated by `0x7532`/`0x7540`
+    (values do not decode with the 8×8 charmap → data).
+  - `0xD6C24`: struct `{0x000B,0x000B,0x40000000,ptr=0x080D3144,
+    count=4,stride=0x16,0x7530,0x7541}`; similar struct `0xD6C40` with
+    self-pointer, count=4, stride=0x1E.
+  - 32-bit pointers into `0xD2000..0xD2F32` from `0xCA7AC..0xCBA30`;
+    `0xC79A8→0xD2F32`, `0xC7A34→0xD2FAC`, `0xC7AC0→0xD3050`.
+- Glyph source is ROM-direct (no glyph bytes in IWRAM; EWRAM `0x11A0` is
+  a per-frame render buffer, absent from ROM).
+- **Still open**: whether the glyph set is a code-indexed font (need a
+  code→glyph table, and a second font page for codes ≥0x200) or a
+  text-order bitmap strip (then the text stream is a list of glyph
+  indices); where the narration text stream lives; meaning of markers
+  `0x7530/0x7541/0x7532/0x7540` vs `0x7FFF`.
+
 ### Compression (T2)
 
 - Text is plain 16-bit codes, uncompressed. No verified compressed asset.
@@ -230,6 +273,7 @@ Open items to resolve: text-box line width; OCR'd kanji review; the
 - `tools/decode_strings.py` → `build/strings_decoded.tsv` — decoder.
 - `tools/render_font_candidates.py`, `tools/render_font_pages.py`,
   `tools/render_strings.py` — font/string renderers.
+- `tools/ocr_screen.py` — OCR of dumped screens (kanji reading aid).
 - `tools/scan_ptrs.py`, `tools/scan_compression.py`, `tools/scan_free.py`,
   `tools/scan_tiles.py`, `tools/render_tiles.py`, `tools/dump_table.py`,
   `tools/header.py` — analysis utilities.
