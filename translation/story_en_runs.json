@@ -53,14 +53,14 @@
     "was on the verge of collapse.",
     "At that moment, other than\n",
     "me",
-    ", there was no one",
-    "in this world who could\n",
-    "save this Beast Tamer."
+    ",",
+    "there was no one in this world\n",
+    "who could save him."
   ],
   "9": [
-    "In time, this Beast Tamer\nand his two beasts became",
-    "the Legendary Beast Tamer",
-    "in the people's tales.",
+    "In time, this Beast Tamer and\nhis two beasts became legend.",
+    "The Legendary Beast Tamer,",
+    "the name the people gave him.",
     "And the continent of Grandate",
     "came under mankind's rule."
   ],
@@ -68,7 +68,7 @@
     "1": "rev2: boxes 3+4 are one sentence in JP order; box 4 continues it lowercase (no restarted subject). Box-3 line break = the source 7530 between runs 4 and 5; the only added break is inside run 6.",
     "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1.",
     "5": "m2: one sentence spanning all 4 boxes (lowercase continuations). 753B red span on run 6 ('sorcerer', JP 魔術使い). 1 added break inside run 2 so box 2's wrap is clean.",
-    "8": "m2: 753B red span on run 5 ('me', JP 私). 2 added breaks, both trailing: run 4 (box-3 line break, engine would otherwise wrap mid-word) and run 7 (box-4 line break).",
-    "9": "m2: 753B red span on run 1 ('the Legendary Beast Tamer', JP 伝説の魔獣使い). 1 added break inside run 0 (box-1 line break)."
+    "8": "m2 rev2 (user feedback): box 3 ends 'me,' (red); box 4 = 'there was no one in this world / who could save him.' — no repeated 'this Beast Tamer'. 2 added breaks, both trailing: run 4 (box-3 line break) and run 7 (box-4 line break).",
+    "9": "m2 rev2 (user feedback): the title now names the tamer — '...became legend. / The Legendary Beast Tamer, / the name the people gave him.' JP literally groups tamer + two beasts under として, but the title belongs to the tamer; see milestone doc. 1 added break inside run 0 (box-1 line break)."
   }
 }

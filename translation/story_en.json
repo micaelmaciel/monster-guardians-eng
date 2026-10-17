@@ -585,7 +585,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": ", there was no one"
+     "en": ","
     },
     {
      "type": "ctl",
@@ -602,7 +602,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "in this world who could"
+     "en": "there was no one in this world"
     },
     {
      "type": "ctl",
@@ -620,7 +620,7 @@
     {
      "type": "text",
      "run": 8,
-     "en": "save this Beast Tamer."
+     "en": "who could save him."
     },
     {
      "type": "ctl",
@@ -637,7 +637,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "In time, this Beast Tamer"
+     "en": "In time, this Beast Tamer and"
     },
     {
      "type": "ctl",
@@ -648,7 +648,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "and his two beasts became"
+     "en": "his two beasts became legend."
     },
     {
      "type": "ctl",
@@ -665,7 +665,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "the Legendary Beast Tamer"
+     "en": "The Legendary Beast Tamer,"
     },
     {
      "type": "ctl",
@@ -687,7 +687,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "in the people's tales."
+     "en": "the name the people gave him."
     },
     {
      "type": "ctl",
