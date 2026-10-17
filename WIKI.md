@@ -22,13 +22,17 @@ milestone.
 - Confirmed by reading the actual game: 63 messages are the **whole game's
   story/event text** (intro attract = messages 0–9, then in-game event
   scenes). See "Story script readings" below.
-- **Translation milestone 1 delivered** (2026-10-17, awaiting user review):
-  story msgs 0–4 translated and QA'd, **rev 2** after user feedback
-  (box-seam fix, same day — see the milestone doc) — see
+- **Translation milestone 1 approved** (2026-10-17, rev 2 after user
+  feedback — box-seam fix): story msgs 0–4 translated and QA'd — see
   `translation/milestone-01-story-msgs-00-04.md`; machine-readable output
   `translation/story_en.json`. Reference sheet (glossary/characters/style):
   `.opencode/skills/translation/reference.md`. QA/re-export done by
   `tools/story_en_export.py`.
+- **Translation milestone 2 delivered** (2026-10-17, awaiting user
+  review): story msgs 5–9 (intro narration part 2: the sorcerer, the
+  long battle, the dragons' fate, the legend's birth) — see
+  `translation/milestone-02-story-msgs-05-09.md`. Red-text spans
+  (`753B`/`753C`) mapped to the same reveal concepts.
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -364,9 +368,9 @@ needed beyond pointer retargeting.
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
-  msgs 0–4) delivered 2026-10-17, rev 2 (box-seam fix) the same day —
-  awaiting user review**; outputs in `translation/`. Next: M2 =
-  story msgs 5–9.
+  msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
+  delivered 2026-10-17 — awaiting user review**; outputs in
+  `translation/`. Next: M3 = story msgs 10–16 (first dialogue).
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;

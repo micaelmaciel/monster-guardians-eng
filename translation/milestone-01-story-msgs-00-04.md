@@ -6,6 +6,7 @@ opening narration of the game, from the intro attract sequence.
 
 **Revision 2** (2026-10-17, same day): box-seam fix after user review —
 see *Revision 2* below. Text shown here is the revised version.
+**Approved** by the user on 2026-10-17.
 
 Machine-readable output: `translation/story_en.json` (structured, ready
 for the insertion tooling later). Translation input: `translation/story_en_runs.json`.

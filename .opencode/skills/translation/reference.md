@@ -46,7 +46,12 @@ every decided term and every piece of user feedback. Companion docs:
 | 魔獣 | magical beast / beast | Context-dependent; "beast" in prose. |
 | 魔獣使い | Beast Tamer | Role/class term; "beast tamer" in plain prose, capitalized as a title. |
 | 伝説の魔獣使い | the Legendary Beast Tamer | Red-highlighted title phrase (msgs 9, 12). |
-| 魔術使い | sorcerer | Distinct from 魔獣使い (msg 5). |
+| 魔術使い | sorcerer | Distinct from 魔獣使い (msg 5). Red-highlighted reveal (753B). |
+| 生命 | life | 全ての生命 = all life (msg 5). |
+| 繁栄 | prosperity | msgs 0 and 5. |
+| 戦い / 戦争 | battle / war | Keep distinct: 戦争 = war (msg 4), 戦い = battle (msgs 6+). |
+| 人類 | mankind | msg 9–. |
+| 支配者 | ruler | 人類が支配者となった → "came under mankind's rule" (msg 9). |
 | ファムファンタル火山 | Mount Famfantar | Volcano (msgs 7, 10). |
 | バルロア王国 | the Kingdom of Barroa | msgs 15+. |
 | 追っ手 | pursuer | msgs 14+; 追っ手１/２/３ = "Pursuer 1/2/3" (card style). |
@@ -67,10 +72,11 @@ every decided term and every piece of user feedback. Companion docs:
   (msg 8). Gender and identity are unmarked in msgs 0–16 — **do not add
   gendered pronouns in EN** until confirmed later in the script.
   Voice: calm, weighty, witness-like; full sentences; no contractions.
-- **Canon (カノン)**: sky hydra dragon; ruled the skies; defeated in the
-  war (msg 7).
-- **Ignis (イグニス)**: earth hydra dragon; ruled the land; wounded; hid
-  deep beneath Mount Famfantar (msg 7).
+- **Canon (カノン)**: sky hydra dragon; ruled the skies; fell in the war
+  (msg 7). No gendered pronouns used in EN yet.
+- **Ignis (イグニス)**: earth hydra dragon; ruled the land; wounded; went
+  into hiding deep beneath Mount Famfantar (msg 7). No gendered pronouns
+  used in EN yet.
 - **The man (男)** (msgs 10–13): unnamed; has the Takt; seeks revenge on
   the Legendary Beast Tamer and the world; exclamation-heavy, blunt,
   imperative. Voice: forceful, breathless menace.
@@ -105,6 +111,10 @@ every decided term and every piece of user feedback. Companion docs:
   next box with a pronoun for it ("…the two giant hydra dragons" /
   "They held dominion…" ✗ — reads as "the dragons, they…"). Land seams
   on clause boundaries where possible.
+- **Red text** (`753B`/`753C`): wraps a reveal word or phrase. Keep the
+  same emphasized concept inside the span (msg5 魔術使い → "sorcerer",
+  msg8 私 → "me", msg9 伝説の魔獣使い → "the Legendary Beast Tamer")
+  and keep the span on one line.
 
 ## Do-not-translate
 

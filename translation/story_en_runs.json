@@ -25,8 +25,50 @@
     "To conquer the continent,",
     "they waged a blood-soaked war."
   ],
+  "5": [
+    "At the end of a long war,",
+    "when all life and prosperity",
+    "of this continent was about\nto vanish",
+    "...",
+    "leading two unseen beasts,",
+    "a lone ",
+    "sorcerer",
+    " appeared, and",
+    "challenged the two to battle!"
+  ],
+  "6": [
+    "The fierce battle raged on",
+    "..."
+  ],
+  "7": [
+    "Canon of the Heavens fell,",
+    "Ignis of the Earth, wounded,",
+    "deep beneath Mount Famfantar,",
+    "went into hiding."
+  ],
+  "8": [
+    "That victory was bought",
+    "with the two beasts' lives.",
+    "And the Beast Tamer himself",
+    "was on the verge of collapse.",
+    "At that moment, other than\n",
+    "me",
+    ", there was no one",
+    "in this world who could\n",
+    "save this Beast Tamer."
+  ],
+  "9": [
+    "In time, this Beast Tamer\nand his two beasts became",
+    "the Legendary Beast Tamer",
+    "in the people's tales.",
+    "And the continent of Grandate",
+    "came under mankind's rule."
+  ],
   "_notes": {
     "1": "rev2: boxes 3+4 are one sentence in JP order; box 4 continues it lowercase (no restarted subject). Box-3 line break = the source 7530 between runs 4 and 5; the only added break is inside run 6.",
-    "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1."
+    "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1.",
+    "5": "m2: one sentence spanning all 4 boxes (lowercase continuations). 753B red span on run 6 ('sorcerer', JP 魔術使い). 1 added break inside run 2 so box 2's wrap is clean.",
+    "8": "m2: 753B red span on run 5 ('me', JP 私). 2 added breaks, both trailing: run 4 (box-3 line break, engine would otherwise wrap mid-word) and run 7 (box-4 line break).",
+    "9": "m2: 753B red span on run 1 ('the Legendary Beast Tamer', JP 伝説の魔獣使い). 1 added break inside run 0 (box-1 line break)."
   }
 }

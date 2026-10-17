@@ -222,7 +222,7 @@ These are the specific failure modes of AI translation on large texts. Treat the
 ## Principles to keep in mind
 
 - **Never guess silently.** Research it, ask, or flag it.
-- **The user is a human.** The user knows best what sounds natural and what doesn't, so take their input on anything ambiguous or that is not easily answerable with a web search.
+- **The user is a human.** The user knows best what sounds natural and what doesn't, so take their input on anything ambiguous or that is not easily answerable with a web search. Explain the original text in its language such that the user can think for themselves in cases where you need help.
 - **Translate meaning and function, not words.** But never change meaning in the name of fluency.
 - **Context first.** A line alone is rarely enough. Read what comes before and after.
 - **One decision, applied everywhere.** Record it, then follow it.
