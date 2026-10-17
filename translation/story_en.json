@@ -95,7 +95,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Said to have eternal life,"
+     "en": "The two giant hydra dragons"
     },
     {
      "type": "ctl",
@@ -105,7 +105,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "the two giant hydra dragons"
+     "en": "were said to live forever."
     },
     {
      "type": "ctl",
@@ -232,13 +232,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The two faced each other,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "en": "The two faced each other."
     },
     {
      "type": "ctl",
@@ -246,11 +240,6 @@
      "params": [
       "0x1"
      ]
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "out to conquer the continent,"
     },
     {
      "type": "ctl",
@@ -267,7 +256,18 @@
     {
      "type": "text",
      "run": 2,
-     "en": "They waged a blood-soaked war."
+     "en": "To conquer the continent,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "they waged a blood-soaked war."
     },
     {
      "type": "ctl",

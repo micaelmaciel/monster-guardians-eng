@@ -23,7 +23,8 @@ milestone.
   story/event text** (intro attract = messages 0–9, then in-game event
   scenes). See "Story script readings" below.
 - **Translation milestone 1 delivered** (2026-10-17, awaiting user review):
-  story msgs 0–4 translated and QA'd — see
+  story msgs 0–4 translated and QA'd, **rev 2** after user feedback
+  (box-completeness pass, same day — see the milestone doc) — see
   `translation/milestone-01-story-msgs-00-04.md`; machine-readable output
   `translation/story_en.json`. Reference sheet (glossary/characters/style):
   `.opencode/skills/translation/reference.md`. QA/re-export done by
@@ -363,8 +364,9 @@ needed beyond pointer retargeting.
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
-  msgs 0–4) delivered 2026-10-17 — awaiting user review**; outputs in
-  `translation/`. Next: M2 = story msgs 5–9.
+  msgs 0–4) delivered 2026-10-17, rev 2 (box-completeness) the same day —
+  awaiting user review**; outputs in `translation/`. Next: M2 =
+  story msgs 5–9.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;

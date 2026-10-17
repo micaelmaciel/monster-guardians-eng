@@ -4,6 +4,9 @@ Delivered 2026-10-17. Source: bigfont story script at `0xCFF84`, messages
 0–4 (10 text boxes total). This is the first translation milestone: the
 opening narration of the game, from the intro attract sequence.
 
+**Revision 2** (2026-10-17, same day): box-completeness pass after user
+review — see *Revision 2* below. Text shown here is the revised version.
+
 Machine-readable output: `translation/story_en.json` (structured, ready
 for the insertion tooling later). Translation input: `translation/story_en_runs.json`.
 Reference sheet (glossary / characters / style): `.opencode/skills/translation/reference.md`.
@@ -36,8 +39,8 @@ EN The continent of Grandate     ▸ (25)
    always knew mankind's crises. ▸ (29)
 
 JP 永遠の命を持つといわれた、 ▸ 巨大な２匹のハイドラゴンが [w10] [scr]
-EN Said to have eternal life,    ▸ (26)
-   the two giant hydra dragons   ▸ (27)
+EN The two giant hydra dragons  ▸ (27)
+   were said to live forever.      (26)
 
 JP 大陸の権力を、掌握していた [w20]
 EN They held dominion            ▸ (18)
@@ -64,11 +67,11 @@ EN The one who ruled the land, ▸ (27)
 
 ```
 JP ２匹は互いに対峙し、[w1] 大陸を征服しようと、[scr][w2]
-EN The two faced each other,   ▸ (25)
-   out to conquer the continent, ▸ (29)
+EN The two faced each other.        (25)
 
 JP 血塗られた戦争をくり広げていた。 [w20]
-EN They waged a blood-soaked war.   (30)
+EN To conquer the continent,    ▸ (25)
+   they waged a blood-soaked war.   (30)
 ```
 
 ## Workflow followed
@@ -81,8 +84,10 @@ automated QA (`tools/story_en_export.py`) → proofread.
 ### Automated QA results (all pass)
 
 - Run/box parity with source: 2 / 6 / 2 / 2 / 3 text runs — 1:1 ✓
+  (msg 4, run 2 is intentionally empty — see *Revision 2*)
 - Control codes identical to source, **except 5 added `7530` line breaks**
-  (one per message) where English would otherwise auto-wrap mid-word.
+  (one per message) where English would otherwise auto-wrap mid-word or
+  strand a leading space.
 - No CJK characters left in the English ✓
 - Layout: every line ≤ 30 chars, every box ≤ 2 lines (longest box 54
   chars). Wrap simulated with the game's character-exact wrapping.
@@ -100,12 +105,35 @@ automated QA (`tools/story_en_export.py`) → proofread.
    changing the box geometry budget instead.
 4. **Messages 2/3 have no sentence-end period** — mirroring the Japanese
    reveal cards (they end unpunctuated). Name placed last, as in JP.
-5. **Explicit "They" subjects** at the last box of messages 1 and 4: the
-   Japanese omits subjects; English boxes that begin mid-sentence read
-   better with a capitalized subject.
+5. **Box completeness (rev2)** — every box now ends on a complete
+   sentence; no box ends mid-clause with the next box restarting on a
+   bare pronoun. Done by re-allocating text between the JP runs inside a
+   box (messages 1 and 4); no control code moved.
 6. **Added line breaks** (list above) are the only structural liberty;
    defensible at insertion time and re-tunable when final glyph metrics
    are fixed.
+
+## Revision 2 — user feedback (2026-10-17)
+
+Review flagged box seams that read awkwardly: a box ending mid-sentence
+and the next box restarting with a pronoun, plus the comma after "each
+other". Changes made:
+
+- **Msg 1, boxes 3/4**: was "Said to have eternal life, / the two giant
+  hydra dragons" → "They held dominion…" (dangler). Now box 3 is a
+  complete sentence — "The two giant hydra dragons / were said to live
+  forever." — and box 4 reads as its own sentence ("They held dominion /
+  over the continent."). The two JP runs exchanged English content
+  (subject first); the source `7530` between them still makes the line
+  break, so no break was added.
+- **Msg 4**: "The two faced each other," → "The two faced each other."
+  (period, as you suggested). The conquest clause now opens box 2's
+  sentence instead of trailing box 1: "To conquer the continent, / they
+  waged a blood-soaked war." That JP run is left empty, so no control
+  code moved; box 2's added `7530` is the sentence's line break.
+- **Style guide** (`reference.md`): added the box-completeness rule.
+- QA re-run after revision: problems = 0, no wrap warnings, every line
+  ≤ 30 chars, every box ≤ 2 lines.
 
 ## Next milestone proposal
 
