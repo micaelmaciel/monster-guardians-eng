@@ -22,6 +22,12 @@ milestone.
 - Confirmed by reading the actual game: 63 messages are the **whole game's
   story/event text** (intro attract = messages 0–9, then in-game event
   scenes). See "Story script readings" below.
+- **Translation milestone 1 delivered** (2026-10-17, awaiting user review):
+  story msgs 0–4 translated and QA'd — see
+  `translation/milestone-01-story-msgs-00-04.md`; machine-readable output
+  `translation/story_en.json`. Reference sheet (glossary/characters/style):
+  `.opencode/skills/translation/reference.md`. QA/re-export done by
+  `tools/story_en_export.py`.
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -356,8 +362,9 @@ needed beyond pointer retargeting.
 - [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
-- [ ] Translation (translation skill, milestone workflow). **Milestone 1
-  (story msgs 0–4) in progress.**
+- [~] Translation (translation skill, milestone workflow). **M1 (story
+  msgs 0–4) delivered 2026-10-17 — awaiting user review**; outputs in
+  `translation/`. Next: M2 = story msgs 5–9.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
@@ -407,6 +414,9 @@ semantics of 7537/7538/7539/753E/753F params.
 - `tools/build_charmap_story.py` — verifies transcriptions against token
   streams and writes `data/bigfont_charmap.json` (`READINGS` dict is the
   verified-translation source).
+- `tools/story_en_export.py` — builds/QA-checks `translation/story_en.json`
+  from `translation/story_en_runs.json`: run parity, control-code diff,
+  char-exact wrap simulation, width/CJK checks.
 - `tools/story_render.py` (ASCII-art message render), `tools/small_art.py`
   (ASCII-art 8×8 glyph), `tools/dump_bigfont_used.py`,
   `tools/bigfont_groups.py`, `tools/bigfont_match.py`,

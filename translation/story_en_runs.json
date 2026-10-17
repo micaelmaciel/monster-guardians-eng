@@ -1,0 +1,28 @@
+{
+  "_comment": "English text per bigfont story message, split into runs that map 1:1 to the Japanese text runs between control codes in build/story_messages_raw.json. A \\n inside a run emits an extra 7530 line break at that point (allowed where English grammar/wrapping demands; reported by tools/story_en_export.py). Trailing \\n = break before the following control/item.",
+  "0": [
+    "In a world without gods,\nthere is no prosperity.",
+    "That is why I was sent."
+  ],
+  "1": [
+    "The Age of Darkness",
+    "The continent of Grandate",
+    "always knew mankind's crises.",
+    "Said to have eternal life,",
+    "the two giant hydra dragons",
+    "They held dominion\nover the continent."
+  ],
+  "2": [
+    "The one who ruled the sky,\n",
+    "Canon of the Heavens"
+  ],
+  "3": [
+    "The one who ruled the land,\n",
+    "Ignis of the Earth"
+  ],
+  "4": [
+    "The two faced each other,\n",
+    "out to conquer the continent,",
+    "They waged a blood-soaked war."
+  ]
+}

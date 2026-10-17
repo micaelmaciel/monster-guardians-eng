@@ -1,0 +1,282 @@
+{
+ "messages": [
+  {
+   "message": 0,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "In a world without gods,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "there is no prosperity."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x3c"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7531",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "That is why I was sent."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x3c"
+     ]
+    }
+   ]
+  },
+  {
+   "message": 1,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The Age of Darkness"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x3c"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7531",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "The continent of Grandate"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "always knew mankind's crises."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0xa"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Said to have eternal life,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "the two giant hydra dragons"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0xa"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "They held dominion"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "over the continent."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x14"
+     ]
+    }
+   ]
+  },
+  {
+   "message": 2,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The one who ruled the sky,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xffff"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Canon of the Heavens"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x32"
+     ]
+    }
+   ]
+  },
+  {
+   "message": 3,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The one who ruled the land,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xffff"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Ignis of the Earth"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x32"
+     ]
+    }
+   ]
+  },
+  {
+   "message": 4,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The two faced each other,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x1"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "out to conquer the continent,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "They waged a blood-soaked war."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x14"
+     ]
+    }
+   ]
+  }
+ ]
+}
