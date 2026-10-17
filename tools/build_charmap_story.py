@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""Build data/bigfont_charmap.json entries from verified message readings.
+
+Each expected string is the exact on-screen text of a story message with
+control codes removed (control codes are skipped by the same parser used
+by render_story.split_screens).  Glyph tokens and expected characters are
+zipped; any length mismatch is reported so the reading can be fixed.
+
+Usage: python tools/build_charmap_story.py
+"""
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+
+from render_story import split_screens, tokens  # noqa: E402
+
+RAW = os.path.join(ROOT, "build", "story_messages_raw.json")
+CHARMAP = os.path.join(ROOT, "data", "bigfont_charmap.json")
+
+# Full on-screen text per message (controls omitted).  Only verified
+# readings belong here.  Fullwidth digits are used where the store has
+# fullwidth glyphs (0x1E = ２).
+READINGS = {
+    0: "神のいない世界に、繁栄などは無いだから私が使わされた。",
+    1: "暗黒の時代グランデート大陸は常に人類の危機と共に存在していた。永遠の命を持つといわれた、巨大な２匹のハイドラゴンが大陸の権力を、掌握していた",
+    2: "空を支配していた、天空のカノン",
+    3: "地上を支配していた、大地のイグニス",
+    4: "２匹は互いに対峙し、大陸を征服しようと、血塗られた戦争をくり広げていた。",
+    5: "長き戦いの末、この大陸全ての生命と、繁栄が消え去ろうとしたとき・・・"
+       "見たことも無い二匹の魔獣を引き連れた、一人の魔術使いが現れ、"
+       "２匹に戦いを挑んだ！",
+    6: "長く壮絶な戦いが繰り広げられ・・・",
+    7: "天空のカノンは敗れ、傷を負った大地のイグニスは、"
+       "ファムファンタル火山の地下深く、姿を隠したのであった。",
+    8: "その勝利は、二匹の魔獣の命と、引き換えに勝ち取った。"
+       "そして魔獣使い自身もまた、力尽きようとしていた。"
+       "その時、この魔獣使いを救える技術を持つ者は私以外、"
+       "この世界には居なかった。",
+    9: "その後この魔獣使いと、二匹の魔獣は伝説の魔獣使いとして"
+       "人々に伝えられた。そしてグランデート大陸は、"
+       "人類が支配者となった。",
+    10: "～ファムファンタル火山～その男は、いまだ盛んに"
+        "噴煙を上げる、火口にいた。",
+    11: "火口にはイグニスを祭ったと思われる、廃墟が残っていた。"
+        "男「どうした！大地のイグニスよ！」",
+    12: "男「このタクトを見て思い出さないのか？」"
+        "男「おまえを世界から追いやった伝説の魔獣使いのタクトだ！」"
+        "男「今再びよみがえりヤツに、いやこの世界に共に、"
+        "復讐しようではないか！！」",
+    13: "男「・・・」男「これだけではまだ弱いか！"
+        "やはりヤツを・・・」そのとき男は足元の地中深くから、"
+        "何かがうごめくのを感じとっていた。",
+    14: "～廃墟～朝もやの中、人里離れた廃墟から、男達の声が"
+        "聞こえた！追っ手１「見つけ出すぞ！」追っ手２「逃がすな！！」",
+    15: "それは、バルロア王国配下の衛兵達であった。"
+        "追っ手３「もう逃がさんぞ！」追っ手２「えーと・・・"
+        "こいつの名前は？」",
+    16: "追っ手３「あ、そうだ！」追っ手１「だった！」"
+        "追っ手２「かくごしろ！！おまえを捕まえてベリンガム様に"
+        "渡せば謝礼がたんまりと・・・」そういって追っ手達がに"
+        "手をかけようとしたその時！",
+}
+
+
+def glyphs_of(msg):
+    out = []
+    for screen in split_screens(tokens(msg)):
+        for item in screen:
+            if item[0] == "g":
+                out.append(item[1])
+    return out
+
+
+def main():
+    msgs = json.load(open(RAW))["messages"]
+    cm = json.load(open(CHARMAP))
+    entries = cm["entries"]
+    mapping = {}
+    problems = 0
+    for idx, expected in READINGS.items():
+        glyphs = glyphs_of(msgs[idx])
+        if len(glyphs) != len(expected):
+            print(f"msg {idx}: LENGTH MISMATCH tokens={len(glyphs)} "
+                  f"expected={len(expected)}")
+            problems += 1
+            # show best-effort diff
+            for i, (g, ch) in enumerate(zip(glyphs, expected)):
+                pass
+            print("  glyphs:", " ".join(f"{g:03X}" for g in glyphs))
+            print("  text  :", expected)
+            continue
+        for g, ch in zip(glyphs, expected):
+            if g in mapping and mapping[g] != ch:
+                print(f"msg {idx}: CONFLICT {g:03X} = {mapping[g]} vs {ch}")
+                problems += 1
+            mapping[g] = ch
+    print(f"mapped glyphs: {len(mapping)}; problems: {problems}")
+    if problems:
+        print("Fix readings before writing charmap.")
+        return 1
+    for g, ch in sorted(mapping.items()):
+        key = f"{g}"
+        if key not in entries:
+            entries[key] = {"char": "", "notes": ""}
+        entries[key]["char"] = ch
+        entries[key]["notes"] = "story bigfont; verified against render"
+    cm["verified_through_msg"] = max(READINGS)
+    with open(CHARMAP, "w") as f:
+        json.dump(cm, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"wrote {CHARMAP} ({len(mapping)} glyphs confirmed)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -58,7 +58,7 @@ user's own ROM, not a modified ROM.
 
 ## Translation
 
-- Use the translation-agent skill whenever translating Japanese to English.
+- Use the translation skill whenever translating Japanese to English.
   Do not use it for the technical steps (extraction, hacking, tooling).
 - Follow its milestone workflow: translate one chunk, run QA and proofreading,
   then stop and report to the user. Do not continue to the next milestone

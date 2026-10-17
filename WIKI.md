@@ -11,8 +11,17 @@ milestone.
 - **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Both text
   subsystems are now structurally understood: (1) 8×8 direct-code text
   (2,223 strings, ready for translation), (2) 16×11 large-glyph story
-  script at `0xCFF84` with a 685-glyph store at `0xD3144` (encoding
-  cracked; charmap for the 685 glyphs still to be built).
+  script at `0xCFF84` with a 685-glyph store at `0xD3144`.
+- **Story script is READABLE.** The 63 messages are fully decodeable;
+  `tools/render_story.py` renders any message as a PNG (game-like layout,
+  optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
+  Charmap for the bigfont now has **222 glyphs verified** (messages 0–16
+  fully transcribed, each zipped token-by-token against its stream with
+  zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
+  `data/bigfont_charmap.json`.
+- Confirmed by reading the actual game: 63 messages are the **whole game's
+  story/event text** (intro attract = messages 0–9, then in-game event
+  scenes). See "Story script readings" below.
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -42,8 +51,9 @@ milestone.
 - [x] T6 — **Prior art**: none found.
 - [x] T7 — **Tooling**: chosen and recorded.
 - [ ] T8 — **Story/narration charmap**: build a character map for the
-  685-glyph store at `0xD3144` (via user transcription + OCR), then
-  decode all 63 script messages at `0xCFF84..0xD1F96`.
+  685-glyph store at `0xD3144`, then decode all 63 script messages at
+  `0xCFF84..0xD1F96`. **In progress**: 222 glyphs verified (msgs 0–16
+  fully readable; remaining glyphs read via vision renders — no OCR);
 
 ## Prior art and tools
 
@@ -224,6 +234,70 @@ individual 16×16 OBJ sprites, one sprite per character:
   the same struct) rewritten. Stride is fixed at 22 bytes (16×11 px);
   an English letter must fit that box.
 
+### Story script control codes — CLASSIFIED (2026-10-17)
+
+Control words are `>= 0x1000` in the 16-bit token stream. Confirmed
+against in-game frames where noted:
+
+| code | params | meaning |
+|------|--------|---------|
+| `0x7530` | 0 | line break inside the current box (2 lines max visible) |
+| `0x7531` | 0 | clear box / start next screen |
+| `0x7532` | 0 | screen break (new page; box cleared) |
+| `0x7533` | 0 | scene-caption separator (used after `～場所～` banners) |
+| `0x7534` | 1 | wait/pause; param = frames-ish (1,2,3,4,5,6,8,10,20,26,30,50,60 seen; 31×) |
+| `0x7535` | 2 | styled block open: `<style> <delay>`, closed by `0x7536`. Style 001 = white/default (19×; style is always 001 so far). Content between params and `0x7536` is displayed (e.g. カノン, イグニス, `・・・`). Delay param values: 1,2,4,5,8,10,`0xFFFE`,`0xFFFF`; never displays (verified in-game, msg 6). |
+| `0x753B` | 1 | styled block open, closed by `0x753C` (38×, paired 1:1). Param is **always `0x2`** = **red text** (verified in-game: 伝説の魔獣使い red in frame 8700). Highlights key nouns: 魔術使い(5) 私(8) 伝説の魔獣使い(9,12) 男(10) 火口(10) イグニス(11) 復讐(12) ベリンガム様(16) … |
+| `0x7537` | 1 | param command (12×; params 0,1,2,4,0x10,0x11,0x14,0x19–0x1C,0x1F,0x32 — semantics TBD; msg 13 starts with `7537 0000`) |
+| `0x7538` | 1 | param command (5×; params 7,0xE,0x12,0x1D,0x31 — semantics TBD) |
+| `0x7539` | 2 | rare (4×, msgs 32/46; params 0xB–0xE, 0x15–0x18 — semantics TBD) |
+| `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — likely variable/name print; semantics TBD) |
+| `0x753F` | 1 | rare (1×, msg 21, param 1) |
+| `0x7540` | 0 | player-name variable insert (30×). Occurs inside red blocks (msg 16: `「[753B][7540][753C]だった！」`) and mid-sentence (`追っ手達が[7540]に手をかけようとした`). Keep verbatim in translation. |
+| `0x7FFF` | 0 | end of message |
+| `0xFFFE`/`0xFFFF` | 0/1 | in-block sentinels/params (msg 2/3 use `7535 0001 FFFF`; 60/62 use `FFFE` + glyphs) |
+
+Display limits (measured in-game): glyph advance 12 px, line height
+13 px; the box fits **~17 glyphs per line, 2 lines**; text auto-wraps
+mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
+`0x7530` starts a new line; a third line is not possible in one box.
+
+### Story script readings (verified against renders + live frames)
+
+Messages 0–16 **fully verified** (2026-10-17): every glyph zips against
+its token stream in `tools/build_charmap_story.py` `READINGS` — 222
+glyphs mapped, zero length mismatches, zero char conflicts. Notation:
+`／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532 screen
+break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
+`[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert.
+
+- **0** — 神のいない世界に、繁栄などは無い [w60][CLR] だから私が使わされた。 [w60]
+- **1** — 暗黒の時代 [w60][CLR] グランデート大陸は常に／人類の危機と共に存在していた。 [w10][SCR] 永遠の命を持つといわれた、／巨大な２匹のハイドラゴンが [w10][SCR] 大陸の権力を、掌握していた [w20]
+- **2** — 空を支配していた、天空の[W]カノン[/W] [w50]
+- **3** — 地上を支配していた、大地の[W]イグニス[/W] [w50]
+- **4** — ２匹は互いに対峙し、[w1] 大陸を征服しようと、[SCR][w2] 血塗られた戦争をくり広げていた。 [w20]
+- **5** — 長き戦いの末、／この大陸全ての生命と、[SCR] 繁栄が消え去ろうとしたとき[W]・・・[/W][SCR] 見たことも無い二匹の魔獣を／引き連れた、一人の[RED]魔術使い[/RED]が現れ、[w20][SCR] ２匹に戦いを挑んだ！ [w30]
+- **6** — 長く壮絶な戦いが繰り広げられ[W]・・・[/W] [w30]
+- **7** — 天空のカノンは敗れ、／傷を負った大地のイグニスは、[w10][SCR] ファムファンタル火山の地下深く、／姿を隠したのであった。 [w20][SCR]
+- **8** — その勝利は、二匹の魔獣の命と、／引き換えに勝ち取った。 [w20][SCR] そして魔獣使い自身もまた、／力尽きようとしていた。 [w20][SCR] その時、この魔獣使いを救える技術を持つ者は[RED]私[/RED]以外、[w4][SCR] この世界には [w1] 居なかった。 [w30]
+- **9** — その後この魔獣使いと、二匹の魔獣は[SCR][RED]伝説の魔獣使い[/RED]／[w1]として人々に伝えられた。 [w20][SCR] そしてグランデート大陸は、／人類が支配者となった。 [w30]
+- **10** — ～ファムファンタル火山～[7533] その[RED]男[/RED]は、いまだ盛んに噴煙を上げる、[RED]火口[/RED]にいた。
+- **11** — 火口には[RED]イグニス[/RED]を祭ったと思われる、廃墟が残っていた。[SCR] 男「どうした！大地のイグニスよ！」
+- **12** — 男「このタクトを見て思い出さないのか？」[SCR] 男「おまえを世界から追いやった／[RED]伝説の魔獣使い[/RED]のタクトだ！」[SCR] 男「今再びよみがえりヤツに、／いやこの世界に[SCR] 共に、[RED]復讐[/RED]しようではないか！！」
+- **13** — 男「[W]・・・[/W]」[SCR] 男「これだけではまだ弱いか！[w8]／やはりヤツを[W]・・・[/W]」[SCR] そのとき男は足元の地中深くから、何かがうごめく／のを感じとっていた。
+- **14** — ～廃墟～[7533] 朝もやの中、人里離れた廃墟から、／男達の声が聞こえた！[SCR] 追っ手１「見つけ出すぞ！」[SCR] 追っ手２「逃がすな！！」
+- **15** — それは、バルロア王国配下の／衛兵達であった。／追っ手３「もう逃がさんぞ！」[SCR] 追っ手２／「えーと[W]・・・[/W][w26] こいつの名前は？」
+- **16** — 追っ手３「あ、そうだ！」[SCR] 追っ手１／「[RED][名][/RED]だった！」[SCR] 追っ手２「かくごしろ！／[名]！」[SCR] おまえを捕まえて[RED]ベリンガム様[/RED]に／渡せば謝礼がたんまりと[W]・・・[/W]」[SCR] そういって追っ手達が[名]に手をかけようとしたその時！
+
+Names/terms found so far: グランデート大陸 (Grandeート continent),
+カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
+ハイドラゴン (hydra dragon), クリムト (Kurimuto — old beast tamer),
+ベリンガム (Beringham — lord), バルロア王国 (Kingdom of Barroa),
+ファムファンタル火山 (Famfantar volcano), ザーゴ (Zargo — man-made
+beast), タクト (tact/baton — beast-tamer tool), 魔獣使い (beast tamer),
+追っ手 (pursuers), 廃墟 (ruins). The player character's name is inserted
+via `0x7540`.
+
 ### Compression (T2)
 
 - Text is plain 16-bit codes, uncompressed. No verified compressed asset.
@@ -272,18 +346,22 @@ needed beyond pointer retargeting.
 - [x] Charmap (`data/charmap.json`) + encode/decode tools
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
-- [x] Large-glyph story subsystem: format, glyph store, and script stream
-  located and decoded (see Findings). Next: build a 685-glyph charmap
-  (transcription/OCR), then decide English glyph strategy (needs new
-  glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
-- [ ] Text-box line width (awaiting user transcription of screens).
+- [x] Large-glyph story subsystem: format, glyph store, script stream,
+  control codes, and readings for msgs 0–16 (see Findings). 222/685
+  glyphs mapped. Next: read/translate remaining messages; then English
+  glyph strategy (new glyphs; store relocation to free space + pointer
+  rewrite at `0xD6C2C`).
+- [x] Text-box line width: **17 glyphs/line, 2 lines/box** (frame-verified;
+  auto-wrap mid-word; box ~240 px).
 - [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
-- [ ] Translation (translation-agent skill, milestone workflow).
+- [ ] Translation (translation skill, milestone workflow). **Milestone 1
+  (story msgs 0–4) in progress.**
 
-Open items to resolve: text-box line width; OCR'd kanji review; the
-`0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks.
+Open items to resolve: OCR'd kanji review (8×8 charmap); the
+`0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
+semantics of 7537/7538/7539/753E/753F params.
 
 ## Decisions
 
@@ -301,9 +379,8 @@ Open items to resolve: text-box line width; OCR'd kanji review; the
 - Which specific kanji OCR readings are wrong.
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.
-- Story/narration control codes: classify `0x7530/0x7531/0x7532/0x7534`
-  and `0x412` in runtime context; what do their parameters mean? Line
-  breaks/box control for the large-glyph text.
+- Story/narration control codes: classified (see Findings table). Remaining
+  unknowns: exact semantics of 7537/7538/7539/753E/753F params.
 - Story/narration glyph space: `0x7D10` trailer; possible second table
   referencing glyphs; and the English font requirement (need to add
   letters/digits to a relocated 22-byte store, or squeeze — 16×11 box
@@ -323,6 +400,17 @@ Open items to resolve: text-box line width; OCR'd kanji review; the
 - `tools/ocr_screen.py` — OCR of dumped screens (kanji reading aid).
 - `tools/probe_bigfont.py` — 16×11 glyph store prober: `count <off>`
   (ROM-wide occurrence count), `art <off> [n]` (ASCII-art render).
+- `tools/render_story.py` — render story messages as PNGs (subcommands:
+  `msg`, `sheet`, `glyph N`; `glyph` takes decimal index) — main
+  vision-reading tool; `tools/zoom_tokens.py` — boxed, labeled zooms of a
+  message's token range.
+- `tools/build_charmap_story.py` — verifies transcriptions against token
+  streams and writes `data/bigfont_charmap.json` (`READINGS` dict is the
+  verified-translation source).
+- `tools/story_render.py` (ASCII-art message render), `tools/small_art.py`
+  (ASCII-art 8×8 glyph), `tools/dump_bigfont_used.py`,
+  `tools/bigfont_groups.py`, `tools/bigfont_match.py`,
+  `tools/map_screen_glyphs.py` (frame VRAM→glyph mapping) — exploration.
 - `tools/scan_ptrs.py`, `tools/scan_compression.py`, `tools/scan_free.py`,
   `tools/scan_tiles.py`, `tools/render_tiles.py`, `tools/dump_table.py`,
   `tools/header.py` — analysis utilities.
