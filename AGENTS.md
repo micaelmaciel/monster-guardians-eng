@@ -14,6 +14,7 @@ user's own ROM, not a modified ROM.
 - This is ROM hacking, not full decompilation. Focus on locating and
   extracting text, pointer tables, fonts, graphics containing text, and any
   compression, then reinserting the translation.
+- If you have trouble with any capabilities you don't have, such as vision or anything else, ask me. We are working together, you do not need to decide everything for yourself.
 
 ## Project management
 

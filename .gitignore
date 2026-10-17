@@ -1,1 +1,9 @@
 rom/*
+.venv/
+build/
+fonts/
+__pycache__/
+*.pyc
+tools/mgba_dump
+tools/t
+tools/t[0-9]*
