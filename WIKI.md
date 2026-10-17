@@ -149,7 +149,23 @@ milestone.
 
 - Text is plain 16-bit codes, uncompressed. No verified compressed asset.
 
-## Strategy proposal (DRAFT — needs user approval)
+## Strategy — APPROVED (2026-10-17)
+
+User approved the hybrid strategy as proposed. Implementation has begun on a
+copy; output will be a BPS patch. **Never edit `rom/monster-guardians.gba`.**
+
+Round-trip validation (decode → re-encode → byte-compare, all 2,223 TEXT
+strings):
+
+- Prose (kana/latin/punctuation) round-trips exactly.
+- 309 strings reference glyph codes not yet in the charmap — all UI/graphics
+  (button icons `0x104–0x10F`, box-drawing `0x120–0x131`, placeholders
+  `0x140+`, "squeezed" tiles `0x1A0+`). Handled case by case.
+- 8 strings hit **duplicate glyphs** (the font draws some characters more
+  than once: small vs. normal digits, two dakuten marks, filled vs. hollow
+  arrows). `data/charmap.json` keeps the canonical code; the alias codes are
+  recorded in `data/glyph_aliases.json` and preserved when re-inserting
+  untouched strings.
 
 Default **hybrid** strategy, adapted to findings:
 
@@ -172,8 +188,19 @@ Default **hybrid** strategy, adapted to findings:
 Rationale: matches the default hybrid policy; low risk; no code changes
 needed beyond pointer retargeting.
 
-Pending before approval: text-box line width, review of OCR'd kanji,
-resolution of `0x1A0–0x1BF` tiles.
+## Implementation status
+
+- [x] Charmap (`data/charmap.json`) + encode/decode tools
+  (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
+- [x] Round-trip validation of all TEXT strings.
+- [ ] Text-box line width (awaiting user transcription of screens).
+- [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
+  UI) and locate the pointer(s) for each.
+- [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
+- [ ] Translation (translation-agent skill, milestone workflow).
+
+Open items to resolve: text-box line width; OCR'd kanji review; the
+`0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks.
 
 ## Decisions
 
