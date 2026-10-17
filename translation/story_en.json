@@ -95,7 +95,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "The two giant hydra dragons"
+     "en": "Said to have eternal life,"
     },
     {
      "type": "ctl",
@@ -105,7 +105,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "were said to live forever."
+     "en": "the two giant hydra dragons"
     },
     {
      "type": "ctl",
@@ -122,7 +122,7 @@
     {
      "type": "text",
      "run": 5,
-     "en": "They held dominion"
+     "en": "held dominion"
     },
     {
      "type": "ctl",
@@ -236,10 +236,21 @@
     },
     {
      "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
      "code": "0x7534",
      "params": [
       "0x1"
      ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "To conquer the continent,"
     },
     {
      "type": "ctl",
@@ -252,17 +263,6 @@
      "params": [
       "0x2"
      ]
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "To conquer the continent,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
     },
     {
      "type": "text",

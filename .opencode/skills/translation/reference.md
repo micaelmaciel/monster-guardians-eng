@@ -99,13 +99,12 @@ every decided term and every piece of user feedback. Companion docs:
 - **Onomatopoeia**: none encountered in story text so far.
 - **Line breaks**: EN breaks are chosen for clean word wrapping; never
   hyphenate EN.
-- **Box integrity** (user feedback, 2026-10-17): every box should read as
-  a complete sentence or complete thought. Never end a box mid-clause and
-  restart the next box with a bare pronoun aiming at a dangling noun
-  ("…the two giant hydra dragons" / "They held dominion…" ✗). Either
-  complete the sentence inside its box, or re-split the JP sentence
-  across boxes so each box is self-contained; the JP runs inside a box
-  may exchange content to achieve this (record it in the milestone doc).
+- **Box seams** (user feedback, 2026-10-17): a long sentence may span
+  boxes (text too big for one box) — continue it in the next box with a
+  lowercase start. Do not end a box on a noun phrase and restart the
+  next box with a pronoun for it ("…the two giant hydra dragons" /
+  "They held dominion…" ✗ — reads as "the dragons, they…"). Land seams
+  on clause boundaries where possible.
 
 ## Do-not-translate
 

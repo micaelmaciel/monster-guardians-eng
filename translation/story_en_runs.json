@@ -8,9 +8,9 @@
     "The Age of Darkness",
     "The continent of Grandate",
     "always knew mankind's crises.",
-    "The two giant hydra dragons",
-    "were said to live forever.",
-    "They held dominion\nover the continent."
+    "Said to have eternal life,",
+    "the two giant hydra dragons",
+    "held dominion\nover the continent."
   ],
   "2": [
     "The one who ruled the sky,\n",
@@ -21,12 +21,12 @@
     "Ignis of the Earth"
   ],
   "4": [
-    "The two faced each other.",
-    "",
-    "To conquer the continent,\nthey waged a blood-soaked war."
+    "The two faced each other.\n",
+    "To conquer the continent,",
+    "they waged a blood-soaked war."
   ],
   "_notes": {
-    "1": "rev2: 永遠/巨大 clause order flipped for English (subject first); the box-3 line break comes from the source 7530 between runs 4 and 5.",
-    "4": "rev2: JP run 2 (大陸を征服しようと、) folded into run 3's English sentence; run 2 intentionally empty so box 1 is a complete sentence. The 7530 inside run 3 is that sentence's line break."
+    "1": "rev2: boxes 3+4 are one sentence in JP order; box 4 continues it lowercase (no restarted subject). Box-3 line break = the source 7530 between runs 4 and 5; the only added break is inside run 6.",
+    "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1."
   }
 }

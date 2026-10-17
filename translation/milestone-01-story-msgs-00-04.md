@@ -4,8 +4,8 @@ Delivered 2026-10-17. Source: bigfont story script at `0xCFF84`, messages
 0–4 (10 text boxes total). This is the first translation milestone: the
 opening narration of the game, from the intro attract sequence.
 
-**Revision 2** (2026-10-17, same day): box-completeness pass after user
-review — see *Revision 2* below. Text shown here is the revised version.
+**Revision 2** (2026-10-17, same day): box-seam fix after user review —
+see *Revision 2* below. Text shown here is the revised version.
 
 Machine-readable output: `translation/story_en.json` (structured, ready
 for the insertion tooling later). Translation input: `translation/story_en_runs.json`.
@@ -39,12 +39,13 @@ EN The continent of Grandate     ▸ (25)
    always knew mankind's crises. ▸ (29)
 
 JP 永遠の命を持つといわれた、 ▸ 巨大な２匹のハイドラゴンが [w10] [scr]
-EN The two giant hydra dragons  ▸ (27)
-   were said to live forever.      (26)
+EN Said to have eternal life,   ▸ (26)
+   the two giant hydra dragons      (27)
 
 JP 大陸の権力を、掌握していた [w20]
-EN They held dominion            ▸ (18)
+EN held dominion                ▸ (13)
    over the continent.              (19)
+   (boxes 3–4 are one sentence: box 4 continues it lowercase)
 ```
 
 ### Message 2 — Canon of the Heavens
@@ -67,11 +68,12 @@ EN The one who ruled the land, ▸ (27)
 
 ```
 JP ２匹は互いに対峙し、[w1] 大陸を征服しようと、[scr][w2]
-EN The two faced each other.        (25)
+EN The two faced each other.    ▸ (25)
+   To conquer the continent,   ▸ (25)
 
 JP 血塗られた戦争をくり広げていた。 [w20]
-EN To conquer the continent,    ▸ (25)
-   they waged a blood-soaked war.   (30)
+EN they waged a blood-soaked war.  (30)
+   (the sentence runs across boxes 1–2: box 2 continues it lowercase)
 ```
 
 ## Workflow followed
@@ -84,7 +86,6 @@ automated QA (`tools/story_en_export.py`) → proofread.
 ### Automated QA results (all pass)
 
 - Run/box parity with source: 2 / 6 / 2 / 2 / 3 text runs — 1:1 ✓
-  (msg 4, run 2 is intentionally empty — see *Revision 2*)
 - Control codes identical to source, **except 5 added `7530` line breaks**
   (one per message) where English would otherwise auto-wrap mid-word or
   strand a leading space.
@@ -105,33 +106,34 @@ automated QA (`tools/story_en_export.py`) → proofread.
    changing the box geometry budget instead.
 4. **Messages 2/3 have no sentence-end period** — mirroring the Japanese
    reveal cards (they end unpunctuated). Name placed last, as in JP.
-5. **Box completeness (rev2)** — every box now ends on a complete
-   sentence; no box ends mid-clause with the next box restarting on a
-   bare pronoun. Done by re-allocating text between the JP runs inside a
-   box (messages 1 and 4); no control code moved.
+5. **Box seams (rev2)** — a long JP sentence may span boxes; the seam
+   must read naturally. Continuation boxes start lowercase; no box
+   restarts with a pronoun for a subject named just before the seam
+   ("…the two giant hydra dragons" / "They held dominion…" ✗). See
+   *Revision 2*.
 6. **Added line breaks** (list above) are the only structural liberty;
    defensible at insertion time and re-tunable when final glyph metrics
    are fixed.
 
 ## Revision 2 — user feedback (2026-10-17)
 
-Review flagged box seams that read awkwardly: a box ending mid-sentence
-and the next box restarting with a pronoun, plus the comma after "each
-other". Changes made:
+Review flagged box seams that read awkwardly: ending a box on a noun
+phrase and restarting the next box with a pronoun for that noun
+("…the two giant hydra dragons" / "They held dominion…" reads as "the
+two hydra dragons, they were…"). Long sentences spanning boxes are fine;
+the seam must just flow. Changes made:
 
-- **Msg 1, boxes 3/4**: was "Said to have eternal life, / the two giant
-  hydra dragons" → "They held dominion…" (dangler). Now box 3 is a
-  complete sentence — "The two giant hydra dragons / were said to live
-  forever." — and box 4 reads as its own sentence ("They held dominion /
-  over the continent."). The two JP runs exchanged English content
-  (subject first); the source `7530` between them still makes the line
-  break, so no break was added.
-- **Msg 4**: "The two faced each other," → "The two faced each other."
-  (period, as you suggested). The conquest clause now opens box 2's
-  sentence instead of trailing box 1: "To conquer the continent, / they
-  waged a blood-soaked war." That JP run is left empty, so no control
-  code moved; box 2's added `7530` is the sentence's line break.
-- **Style guide** (`reference.md`): added the box-completeness rule.
+- **Msg 1, boxes 3/4**: kept as one sentence in JP order — "Said to have
+  eternal life, / the two giant hydra dragons" → "held dominion / over
+  the continent." Box 4 continues the sentence lowercase; the subject is
+  not restated. Breaks as in rev 1 (source `7530` splits box 3, one
+  added `7530` splits box 4).
+- **Msg 4**: "The two faced each other." takes the period (as you
+  suggested). The conquest clause stays in box 1 ("To conquer the
+  continent,") and box 2 continues the sentence lowercase: "they waged a
+  blood-soaked war." One added `7530` (box-1 line break), as before.
+- **Style guide** (`reference.md`): box-seam rule recorded — continuation
+  boxes start lowercase; no pronoun restarts after a just-named subject.
 - QA re-run after revision: problems = 0, no wrap warnings, every line
   ≤ 30 chars, every box ≤ 2 lines.
 

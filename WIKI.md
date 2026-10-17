@@ -24,7 +24,7 @@ milestone.
   scenes). See "Story script readings" below.
 - **Translation milestone 1 delivered** (2026-10-17, awaiting user review):
   story msgs 0–4 translated and QA'd, **rev 2** after user feedback
-  (box-completeness pass, same day — see the milestone doc) — see
+  (box-seam fix, same day — see the milestone doc) — see
   `translation/milestone-01-story-msgs-00-04.md`; machine-readable output
   `translation/story_en.json`. Reference sheet (glossary/characters/style):
   `.opencode/skills/translation/reference.md`. QA/re-export done by
@@ -364,7 +364,7 @@ needed beyond pointer retargeting.
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
-  msgs 0–4) delivered 2026-10-17, rev 2 (box-completeness) the same day —
+  msgs 0–4) delivered 2026-10-17, rev 2 (box-seam fix) the same day —
   awaiting user review**; outputs in `translation/`. Next: M2 =
   story msgs 5–9.
 
