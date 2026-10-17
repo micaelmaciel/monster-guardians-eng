@@ -8,9 +8,11 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Second
-  (large-glyph) narration subsystem found; its encoding is being
-  reverse-engineered (see Findings).
+- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Both text
+  subsystems are now structurally understood: (1) 8×8 direct-code text
+  (2,223 strings, ready for translation), (2) 16×11 large-glyph story
+  script at `0xCFF84` with a 685-glyph store at `0xD3144` (encoding
+  cracked; charmap for the 685 glyphs still to be built).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -39,6 +41,9 @@ milestone.
   to be measured from a live screen.
 - [x] T6 — **Prior art**: none found.
 - [x] T7 — **Tooling**: chosen and recorded.
+- [ ] T8 — **Story/narration charmap**: build a character map for the
+  685-glyph store at `0xD3144` (via user transcription + OCR), then
+  decode all 63 script messages at `0xCFF84..0xD1F96`.
 
 ## Prior art and tools
 
@@ -182,11 +187,42 @@ individual 16×16 OBJ sprites, one sprite per character:
     `0xC79A8→0xD2F32`, `0xC7A34→0xD2FAC`, `0xC7AC0→0xD3050`.
 - Glyph source is ROM-direct (no glyph bytes in IWRAM; EWRAM `0x11A0` is
   a per-frame render buffer, absent from ROM).
-- **Still open**: whether the glyph set is a code-indexed font (need a
-  code→glyph table, and a second font page for codes ≥0x200) or a
-  text-order bitmap strip (then the text stream is a list of glyph
-  indices); where the narration text stream lives; meaning of markers
-  `0x7530/0x7541/0x7532/0x7540` vs `0x7FFF`.
+- **RESOLVED — code-indexed glyph store, not a strip.** Each of the 685
+  glyphs (indices 0x000–0x2AC) appears exactly once in ROM (verified by
+  byte-search for several glyphs). The store at `0xD3144` is
+  **685 glyphs × 22 bytes = 15,070 bytes, ending at `0xD6C22`**, exactly
+  where the descriptor struct begins. Glyph order is roughly
+  first-use order of the story text (index 14–19 = だか私らが, matching
+  the frame-0900 line), so it is not a standard kana ordering.
+- **Narration text stream: ROM `0xCFF84`..`0xD1F96`, 63 messages**,
+  delimited by `0x7FFF`. Each message is a stream of 16-bit glyph
+  indices interleaved with control words:
+  - `0x7534 <param>` — parameterized command (e.g. `0x7534 0x003C` =
+    60 = delay/speed; `0x7534 0x000A` also seen).
+  - `0x7530`, `0x7531`, `0x7532` — one-word commands (probably
+    position/clear/pause).
+  - `0x7FFF` — end of message.
+  - Live EWRAM buffer (frame 1800 @ `0xA568`) shows a runtime control
+    word `0x412` inside a glyph run — the interpreter may transform
+    commands; not fully classified yet.
+- Referenced from event-table field at ROM `0xC8E48` → `0x0CFF84`.
+- Confirmed glyph indices in the story script reference the store
+  directly (index == position in the store), e.g. first run
+  `0E 0F 10 11 12 13 14 15 16 17 18` = だか私らが使うた(い)… — matches
+  the frame-0900 line and its continuation (text types on progressively;
+  frame 0900 shows only first 6 of 11 glyphs).
+- Dictionary at `0xD30F4..0xD3143`: 32 entries of
+  `{c1, c2, 0x7FFF}` (two glyph codes + terminator), codes up to
+  `0x2AC`. Likely a kanji-compound ↔ kana reading pair table used by the
+  story renderer; trailer word `0x7D10` after `0xD3143` may be a
+  checksum or count (unresolved).
+- **No Latin letters or digits exist in the 685-glyph store** (spot-check
+  of indices 0–21, 480–495, 664–684 shows only kana/kanji/punctuation).
+  English story text will need **new glyphs**: the store is full (ends
+  exactly at the descriptor struct), so it must be relocated to free
+  space and the single pointer at `0xD6C2C` (+ count/stride fields in
+  the same struct) rewritten. Stride is fixed at 22 bytes (16×11 px);
+  an English letter must fit that box.
 
 ### Compression (T2)
 
@@ -236,6 +272,10 @@ needed beyond pointer retargeting.
 - [x] Charmap (`data/charmap.json`) + encode/decode tools
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
+- [x] Large-glyph story subsystem: format, glyph store, and script stream
+  located and decoded (see Findings). Next: build a 685-glyph charmap
+  (transcription/OCR), then decide English glyph strategy (needs new
+  glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
 - [ ] Text-box line width (awaiting user transcription of screens).
 - [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
   UI) and locate the pointer(s) for each.
@@ -261,6 +301,13 @@ Open items to resolve: text-box line width; OCR'd kanji review; the
 - Which specific kanji OCR readings are wrong.
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.
+- Story/narration control codes: classify `0x7530/0x7531/0x7532/0x7534`
+  and `0x412` in runtime context; what do their parameters mean? Line
+  breaks/box control for the large-glyph text.
+- Story/narration glyph space: `0x7D10` trailer; possible second table
+  referencing glyphs; and the English font requirement (need to add
+  letters/digits to a relocated 22-byte store, or squeeze — 16×11 box
+  may be tight for small capitals; will need user input).
 
 ## Tool list (with versions)
 
@@ -274,6 +321,8 @@ Open items to resolve: text-box line width; OCR'd kanji review; the
 - `tools/render_font_candidates.py`, `tools/render_font_pages.py`,
   `tools/render_strings.py` — font/string renderers.
 - `tools/ocr_screen.py` — OCR of dumped screens (kanji reading aid).
+- `tools/probe_bigfont.py` — 16×11 glyph store prober: `count <off>`
+  (ROM-wide occurrence count), `art <off> [n]` (ASCII-art render).
 - `tools/scan_ptrs.py`, `tools/scan_compression.py`, `tools/scan_free.py`,
   `tools/scan_tiles.py`, `tools/render_tiles.py`, `tools/dump_table.py`,
   `tools/header.py` — analysis utilities.
