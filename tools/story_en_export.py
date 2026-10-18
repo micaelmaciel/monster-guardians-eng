@@ -79,6 +79,14 @@ def en_screens(items, en_runs):
                 stream.append(("scr",))
             elif code == 0x7531:
                 stream.append(("clr",))
+            elif code == 0x7533:
+                # Caption separator. In-game the caption shows alone in the
+                # box, then the box clears and the narration types (verified:
+                # story_run frames 10400-10700 for msg 10). Sim boundary.
+                stream.append(("scr",))
+            elif code == 0x7540:
+                # Player-name insert: reserve placeholder width in the sim.
+                stream.append(("t", "######"))
             else:
                 stream.append(("ctl", code, it[2]))
     screens = [[]]
@@ -125,7 +133,11 @@ def main():
         print(f"msg {idx}: runs={n_runs} screens={len(screens)} "
               f"added7530={len(added)}")
 
-        # QA 2: per-screen lengths (manual breaks + char-based auto-wrap)
+        # QA 2: per-screen lengths (manual breaks + char-based auto-wrap).
+        # The box shows <=2 lines per page and clears when a further line
+        # arrives (verified in-game: msg 15 screen 1 pages 2+1 lines), so
+        # the only hard limit is the per-segment width (WRAP), and extra
+        # lines only add pages. A single segment >WRAP wraps mid-word.
         for si, scr in enumerate(screens):
             n_lines = 0
             for seg in scr:
@@ -136,14 +148,12 @@ def main():
                 n_lines += len(lines)
                 for ln in lines:
                     print(f"    s{si+1} |{ln}| ({len(ln)})")
-            total = sum(len(s) for s in scr)
             if n_lines > 2:
-                print(f"    s{si+1}: {n_lines} LINES > 2  <-- OVERFLOW")
-                problems += 1
-            if total > MAX_SCREEN:
-                print(f"    s{si+1}: {total} chars > {MAX_SCREEN}"
-                      f"{'  <-- OVERFLOW' if total > WRAP * 2 else ''}")
-                if total > WRAP * 2:
+                pages = (n_lines + 1) // 2
+                print(f"    s{si+1}: {n_lines} lines -> {pages} box pages")
+                if n_lines > 4:
+                    print(f"    s{si+1}: TOO MUCH PAGING "
+                          f"({n_lines} lines)  <-- RESTRUCTURE")
                     problems += 1
 
         # QA 3: CJK leftovers / glossary

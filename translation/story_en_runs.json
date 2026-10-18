@@ -64,11 +64,85 @@
     "And the continent of Grandate",
     "came under mankind's rule."
   ],
+  "10": [
+    "~Mount Famfantar~",
+    "That ",
+    "man",
+    " stood at the ",
+    "crater",
+    ",\nwhich still belched smoke."
+  ],
+  "11": [
+    "At the crater, ruins that\nenshrine ",
+    "Ignis",
+    " still remain.",
+    "Man: \"What's wrong,\nIgnis of the Earth!\""
+  ],
+  "12": [
+    "Man: \"Remember this Takt?\"",
+    "Man: \"It's the Takt of the",
+    "Legendary Beast Tamer",
+    "\nwho cast you from the world!\"",
+    "Man: \"Rise again now and take",
+    "on him... no, on this world.",
+    "Together, let's take ",
+    "revenge",
+    "!!"
+  ],
+  "13": [
+    "Man: \"",
+    "...",
+    "\"",
+    "Man: \"Is that all you've got!\"",
+    "As I thought, it's him",
+    "...",
+    "\"",
+    "Just then, the man sensed\nsomething moving deep below."
+  ],
+  "14": [
+    "~Ruins~",
+    "Through morning mist, from the",
+    "remote ruins, shouts rang out!",
+    "Pursuer 1: \"We'll find you!\"",
+    "Pursuer 2: \"Don't lose him!!\""
+  ],
+  "15": [
+    "They were royal guards of the",
+    "Kingdom of Barroa.",
+    "Pursuer 3: \"No more escapes!\"",
+    "Pursuer 2",
+    "\"Uh",
+    "...",
+    " what was the name?\""
+  ],
+  "16": [
+    "Pursuer 3: \"Oh, that's right!\"",
+    "Pursuer 1",
+    "\"It was ",
+    "!\"",
+    "Pursuer 2: \"Prepare yourself!",
+    "!",
+    "Catch you for ",
+    "Lord Beringham",
+    ",",
+    "and get a fat reward",
+    "...",
+    "\"",
+    "With that the pursuers moved\nto grab ",
+    "... just then!"
+  ],
   "_notes": {
     "1": "rev2: boxes 3+4 are one sentence in JP order; box 4 continues it lowercase (no restarted subject). Box-3 line break = the source 7530 between runs 4 and 5; the only added break is inside run 6.",
     "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1.",
     "5": "m2: one sentence spanning all 4 boxes (lowercase continuations). 753B red span on run 6 ('sorcerer', JP 魔術使い). 1 added break inside run 2 so box 2's wrap is clean.",
     "8": "m2 rev2 (user feedback): box 3 ends 'me,' (red); box 4 = 'there was no one in this world / who could save him.' — no repeated 'this Beast Tamer'. 2 added breaks, both trailing: run 4 (box-3 line break) and run 7 (box-4 line break).",
-    "9": "m2 rev3 (user wording): 'the Beast Tamer' (no 'this' before a person); closing line 'people took to calling him.' — title names the tamer, beasts share the legend but not the title. 1 added break inside run 0 (box-1 line break)."
+    "9": "m2 rev3 (user wording): 'the Beast Tamer' (no 'this' before a person); closing line 'people took to calling him.' — title names the tamer, beasts share the legend but not the title. 1 added break inside run 0 (box-1 line break).",
+    "10": "m3: caption ('~Mount Famfantar~', 7533) shows alone and then the box clears — verified in-game (story_run frames 10400-10700), sim splits there. Red spans kept on runs 2 (男/man) and 4 (火口/crater). 1 added break inside run 5 so line 2 reads 'which still belched smoke.' (no dangling-modifier seam).",
+    "11": "m3: red on run 1 (イグニス). Added breaks inside runs 0 and 3 to split the two 2-line boxes; screen 2 = one JP line but needs the break in EN (full address kept: 'Ignis of the Earth').",
+    "12": "m3: screens 3+4 are one sentence — screen 3 ends with the object ('take'), screen 4 lands the verb ('take revenge!!'; JP closes with ！！ and never closes the quote, so EN leaves it open too). 'on him... no, on this world.' mirrors the JP ヤツに、いやこの世界に pivot. Screen 2 keeps the full relative clause; EN needs 3 lines = 2 pages (JP: 2 lines).",
+    "13": "m3: 7537 0000 prefix and both styled-dot spans (runs 1 and 5) kept. 1 added break inside run 7 — JP auto-wraps the same single 33-glyph segment at 17.",
+    "14": "m3: caption (7533) like msg 10. No added breaks: the two source 7530s are the line breaks. Both pursuit lines mirror msg 15/16 card style.",
+    "15": "m3: screen 1 = 3 segments -> box pages 2+1 lines (verified in-game, story_run frames 13800-14000; box clears and continues). Screen 2 mirrors label-alone + styled dots + 7534 pause. 'the name' keeps it neutral (gender unrevealed; player enters the name right after).",
+    "16": "m3: three 7540 name inserts; red on the first name (runs 2-3 split) and on run 7 (ベリンガム様). Screen 3's quote stays open into screen 4 (JP closes only after たんまりと). 1 added break in run 12 ('... just then!' = JP cliffhanger その時！). 'Catch you for Lord Beringham' keeps 捕まえて on line 1."
   }
 }

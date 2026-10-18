@@ -83,6 +83,11 @@ int main(int argc, char** argv) {
     mCoreConfigSetDefaultIntValue(&core->config, "logLevel", 0);
     mInputMapInit(&core->inputMap, &GBAInputInfo);
     if (!mCoreLoadFile(core, rom)) { fprintf(stderr, "loadROM failed\n"); return 1; }
+    const char* sav = getenv("MGBA_SAV");
+    if (sav && *sav) {
+        if (mCoreLoadSaveFile(core, sav, false)) fprintf(stderr, "loaded save %s\n", sav);
+        else fprintf(stderr, "save load failed: %s\n", sav);
+    }
     core->reset(core);
 
     color_t* vbuf = calloc(240 * 160, sizeof(color_t));
@@ -91,25 +96,26 @@ int main(int argc, char** argv) {
     core->reloadConfigOption(core, "hwaccelVideo", &core->config);
 
     /* parse dump frames */
-    int frames[64]; int nframes = 0;
+    int frames[1024]; int nframes = 0;
     { char* tmp = strdup(frames_csv); char* tok = strtok(tmp, ",");
-      while (tok && nframes < 64) { frames[nframes++] = atoi(tok); tok = strtok(NULL, ","); } free(tmp); }
+      while (tok && nframes < 1024) { frames[nframes++] = atoi(tok); tok = strtok(NULL, ","); } free(tmp); }
     int maxframe = 0;
     for (int i = 0; i < nframes; i++) if (frames[i] > maxframe) maxframe = frames[i];
 
-    /* parse input windows */
-    struct { int a, b; uint32_t keys; } inputs[32]; int nin = 0;
-    { char* tmp = strdup(input_spec); char* tok = strtok(tmp, ",");
-      while (tok && nin < 32) {
+    /* parse input windows (strtok_r: inner/outer tokenizers must not share state) */
+    struct { int a, b; uint32_t keys; } inputs[256]; int nin = 0;
+    { char* tmp = strdup(input_spec); char* s1 = NULL; char* s2 = NULL; char* tok = strtok_r(tmp, ",", &s1);
+      while (tok && nin < 256) {
         char* colon = strchr(tok, ':');
         if (colon) { *colon = 0;
             int a = 0, b = 0;
             if (sscanf(tok, "%d-%d", &a, &b) < 2) { a = b = atoi(tok); }
-            uint32_t keys = 0; char* k = strtok(colon + 1, "+");
-            while (k) { keys |= keybit(k); k = strtok(NULL, "+"); }
+            uint32_t keys = 0; char* k = strtok_r(colon + 1, "+", &s2);
+            while (k) { keys |= keybit(k); k = strtok_r(NULL, "+", &s2); }
             inputs[nin].a = a; inputs[nin].b = b; inputs[nin].keys = keys; nin++;
         }
-        tok = strtok(NULL, ","); } free(tmp); }
+        tok = strtok_r(NULL, ",", &s1); } free(tmp); }
+    fprintf(stderr, "input windows parsed: %d\n", nin);
 
     for (int frame = 0; frame <= maxframe; frame++) {
         uint32_t keys = 0;

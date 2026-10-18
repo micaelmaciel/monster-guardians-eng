@@ -37,6 +37,15 @@ milestone.
   msg 9 boxes 1/2 (user wording: "In time, the Beast Tamer and his two
   beasts became legend. / The Legendary Beast Tamer, people took to
   calling him.").
+- **Translation milestone 3 delivered** (2026-10-18): story msgs 10–16
+  (the man with the Takt; the ruins pursuit — first dialogue cards,
+  captions, three `7540` name inserts) — see
+  `translation/milestone-03-story-msgs-10-16.md`. Box behavior verified
+  in a live headless playthrough (see "Display limits"): the `7533`
+  caption clears the box for the narration; a full 2-line box **pages**
+  (clears and continues) when more lines arrive. The player-name entry
+  UI sits between msgs 15 and 16 (8×8-font screens; separate later
+  milestone).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -151,6 +160,17 @@ milestone.
   without it screenshots are blank). Do NOT pass a zeroed `mCoreOptions`.
 - `color_t` is `uint32_t` (not COLOR_16_BIT) — framebuffer is BGR8.
 - Buttons set via `core->setKeys(core, 1<<GBA_KEY_*)`.
+- Scheduled input windows: `"start-end:KEY+KEY,..."`, up to 256 windows;
+  dump-frame list up to 1024 entries.
+- **Input bug fixed 2026-10-18**: the original parser used `strtok` for
+  both the window list and the key list — shared tokenizer state meant
+  only the FIRST window was ever applied (the long "title menu is
+  unresponsive" mystery). Now uses `strtok_r` for both. Verified: a
+  scheduled A press shows in `io_*.bin` at `0x130` (KEYINPUT,
+  active-low) as `0x03FE`, and the full menu → NEW GAME → story
+  playthrough works under this harness.
+- Save loading: set `MGBA_SAV=<path>` to load a `.sav` via
+  `mCoreLoadSaveFile(core, sav, false)` after `mCoreLoadFile` (optional).
 
 ### Graphics / screen structure
 
@@ -275,7 +295,22 @@ against in-game frames where noted:
 Display limits (measured in-game): glyph advance 12 px, line height
 13 px; the box fits **~17 glyphs per line, 2 lines**; text auto-wraps
 mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
-`0x7530` starts a new line; a third line is not possible in one box.
+`0x7530` starts a new line. Verified in a live playthrough 2026-10-18
+(`/tmp/opencode/story_run`, frames cited):
+
+- A third line does **not** fit; when a further line arrives after a
+  full box, the box **clears and continues** (pages), each page ≤2 lines
+  (msg 15 screen 1 = 2+1 lines; frames 13800–14000). "A third line is
+  impossible" was wrong — it pages instead.
+- `0x7533` caption (`～…～`) shows alone in the box, then the box clears
+  for the narration (msg 10; frames 10400–10700).
+- `0x7540` renders the player name **inside** the red span in msg 16
+  screen 2 (frames 15600–16100).
+- The player's name is entered in a naming UI **between msgs 15 and 16**
+  (8×8-font screens: なまえ / monster-select list / はい・いいえ;
+  default captured: レオ). Those UI strings are a separate milestone.
+- Auto-wrap: msg 13 screen 3's single 33-glyph segment wraps at 17 in
+  game (そのとき男は足元の地中深くから、何／かがうごめく…).
 
 ### Story script readings (verified against renders + live frames)
 
@@ -366,16 +401,19 @@ needed beyond pointer retargeting.
   glyphs mapped. Next: read/translate remaining messages; then English
   glyph strategy (new glyphs; store relocation to free space + pointer
   rewrite at `0xD6C2C`).
-- [x] Text-box line width: **17 glyphs/line, 2 lines/box** (frame-verified;
-  auto-wrap mid-word; box ~240 px).
+- [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
+  **pages** (clears and continues) if more lines arrive; `7533` caption
+  clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
+  ~240 px).
 - [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
-  delivered 2026-10-17, revs 2–3 after user feedback**; outputs in
-  `translation/`. Per user decision 2026-10-18: continue without
-  per-milestone review. Next: M3 = story msgs 10–16 (first dialogue).
+  delivered 2026-10-17, revs 2–3 after user feedback**. **M3 (story
+  msgs 10–16) delivered 2026-10-18** — first dialogue, captions, name
+  inserts; outputs in `translation/`. Per user decision 2026-10-18:
+  continue without per-milestone review. Next: M4 = story msgs 17+.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
@@ -397,7 +435,6 @@ semantics of 7537/7538/7539/753E/753F params.
 
 ## Open questions
 
-- Exact text-box line width / line count (from a live text screen).
 - Which specific kanji OCR readings are wrong.
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.

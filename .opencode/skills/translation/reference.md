@@ -82,7 +82,7 @@ every decided term and every piece of user feedback. Companion docs:
   imperative. Voice: forceful, breathless menace.
 - **Pursuers 1/2/3 (追っ手１/２/３)** (msgs 14–16): guards of the Barroa
   Kingdom chasing the player character. Voice: loud, rough, bickering,
-  a bit dim ("Uh... what was this one's name again?"), greedy for reward.
+  a bit dim ("Uh... what was the name?"), greedy for reward.
 - **Player character**: name is variable (0x7540). Boy or girl (chosen at
   game start); do not assume gender in text that refers to the player.
 - **Legendary Beast Tamer**: the hero of the old war (msgs 5–13); the man
@@ -118,6 +118,18 @@ every decided term and every piece of user feedback. Companion docs:
   same emphasized concept inside the span (msg5 魔術使い → "sorcerer",
   msg8 私 → "me", msg9 伝説の魔獣使い → "the Legendary Beast Tamer")
   and keep the span on one line.
+- **Speaker cards**: `Man: "…"` / `Pursuer 1: "…"` — JP 男「…」 gets a
+  colon + straight quotes in EN. When the JP card stands alone on its
+  line, so does the EN (`Pursuer 2:` / `"Uh... what was the name?"`).
+  A quote that spans boxes stays open until the JP closes it (msg 12's
+  invitation never closes — EN mirrors; msg 16's quote closes in screen 4).
+- **Captions** (`7533`): `~Mount Famfantar~`, `~Ruins~` — ASCII `~`
+  pair. Verified in-game: the caption shows alone in the box and the
+  box then clears for the narration (sim splits there).
+- **Box paging** (verified in-game, msg 15): the box shows 2 lines and
+  clears automatically when a further line arrives (2 lines + 1 page
+  for the JP's 3-segment screen). Keep every segment ≤30 chars so page
+  breaks fall where the JP's do; a source screen may hold up to 3+ segs.
 
 ## Do-not-translate
 
@@ -131,5 +143,8 @@ every decided term and every piece of user feedback. Companion docs:
 3. Narrator identity/gender — confirmed male/female later in script?
 4. **Kurimuto** romanization (flag).
 5. Final English glyph metrics (8 px assumption) — wrap points may shift.
-6. Should 追っ手１/２/３ be "Pursuer 1/2/3" or "Thug 1/2/3"? (chose pursuer;
-   they are guards — watch for the game's later terminology.)
+6. Player-character gender: the naming screen (between msgs 15 and 16)
+   lets the player name the character (default name observed: レオ).
+   Keep pursuit lines gender-neutral until the story confirms.
+   The naming/monster-select UI screens are 8×8-font text — later
+   milestone.
