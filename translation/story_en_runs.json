@@ -216,7 +216,15 @@
     "45": "m7: これも運命か = 'Fate again, hm...' (old-man か -> hm); こうなったら行くしかない = 'we've no choice but to go.'; おぬしの全てが解る = \"you'll learn everything about yourself\". Added break in e3. S1 = 2 rows; S4 = 2 rows.",
     "46": "m7: second recipe. 7539 pairs + five 753E beast inserts + red spans pass through. 中型体 = 'medium form' (glossary); 完成させる = 'complete'; 次は...を合成する = 'Next, combine [BE3] and [BE4].'; さすれば = 'Then,'. Insert rows worded so the beast names read naturally; the sim is insert-blind, so e2 holds a manual break (base row 'the Legendary Beast's medium form' would otherwise mid-wrap).",
     "47": "m7: 道のり = 'the road to the volcano'; 至難を極める = 'will be the hardest yet!!'; 去って行った = 'departed'. そういい残し = 'With those words,' (cf. msg 41). S1/S2/S3 = 2 rows each (JP same).",
-    "48": "m7: 7 runs; 7540 leading twice (e0, e2); red span = イグニス, single comma run after it. 登り始めてから = 'began the climb up ... / since then'; 数え切れないほどの地震 = 'countless quakes'; この揺れは = 'This quake is'; 地底で暴れている = 'raging underground.' (JP omits final 。; EN adds period per EN convention). S4 keeps the JP row split ('This quake is Ignis,' / 'raging underground.')."
+    "48": "m7: 7 runs; 7540 leading twice (e0, e2); red span = イグニス, single comma run after it. 登り始めてから = 'began the climb up ... / since then'; 数え切れないほどの地震 = 'countless quakes'; この揺れは = 'This quake is'; 地底で暴れている = 'raging underground.' (JP omits final 。; EN adds period per EN convention). S4 keeps the JP row split ('This quake is Ignis,' / 'raging underground.').",
+    "49": "m8: と突然 links to msg 48 (…暴れている + と); EN \"Suddenly,\" bridges the pair. 7537 pauses pass through around the red name spans. P4: [7540] then RED 狂暴な力 = \"a violent power\" (leading space inside the red span). W-span ・・・ = \"...\".",
+    "50": "m8: 神殿跡 = \"crumbling temple\"; 例の folded as \"the\" (see 55). Wait 7534(0001) passes. S7 = 3 EN rows (2 pages) vs JP 2 rows; S9 届かなかった = \"did not reach\". Kurimuto cry ムッ = \"Mmph!\".",
+    "51": "m8: e0 manual break; 達 = \"and the others\"; [7540] then e1 with leading space; 崩れ出した = \"began to crumble\".",
+    "52": "m8: 地中深くより = \"from deep underground\"; 巨大なドラゴン = \"a giant dragon\".",
+    "53": "m8: マグマ = \"magma\"; 赤い体 = \"body was red as magma\"; クチ → \"maw\"; 息使い = \"breath\"; 嵐のような = \"like a storm\".",
+    "54": "m8: ハハッ = \"Hahah!!\"; added break at e2 end so RED name gets its own row; 完全復活 rephrased \"has fully revived!\" (flag).",
+    "55": "m8: 7538(001D,001E) passes; おまえ達 = \"You lot\"; 合獣機 = \"beast combining machine\"; 例の dropped in e0 (flag). List split \",\\nand\" to keep rows <=30; added break after \"create\". 君とのな = \". You and I, well...\" (flag: JP sentence trails off). 息をのんだ = \"held their breath\".",
+    "56": "m8: 我々 = \"we\"; 不可能 = \"impossible\"; ひとまず = \"for now\"; [7540] then e4 (leading comma); 目覚めていた = \"was awakening\"; W-span dots. ここは = \"For now\"."
   },
   "25": [
     "The Pope's ",
@@ -405,5 +413,73 @@
     "Ignis",
     ",",
     "raging underground."
+  ],
+  "49": [
+    "Suddenly, Beringham's beasts",
+    "Zargo",
+    " and ",
+    "Ramires",
+    " appeared!",
+    "Zargo: \"Fight... more!\"",
+    "Ramires: \"Fight... a lot,",
+    "and Ignis... gets angry!\"",
+    " felt, from deep within,\n",
+    " a violent power",
+    " surging up",
+    "..."
+  ],
+  "50": [
+    "At Mount Famfantar's crater,",
+    "there stood a crumbling temple",
+    "Beringham: \"This altar\nenshrines Ignis of the Earth.\"",
+    "I've been waiting.",
+    "Though Ignis must have awaited",
+    "you even more than I...",
+    "Now! ",
+    "Let us celebrate the",
+    "revival in grand style!!\"",
+    "Then, from behind Beringham,\nthe beasts appeared.",
+    "Kurimuto: \"Mmph! Too late, hm.",
+    "This is no place to fight!\"",
+    "But Kurimuto's voice, arriving\ntoo late, did not reach..."
+  ],
+  "51": [
+    "When Beringham's beasts fell,\nthe ground shook violently",
+    " and the others' footing\nbegan to crumble."
+  ],
+  "52": [
+    "And from deep underground,",
+    "a giant dragon appeared."
+  ],
+  "53": [
+    "The dragon's body was red as\nmagma, and from its giant",
+    "maw came breath like a storm."
+  ],
+  "54": [
+    "Beringham: \"Hahah!!",
+    "I've waited for this moment.",
+    "Ignis of the Earth\n",
+    "has fully revived!\""
+  ],
+  "55": [
+    "Beringham: \"You lot, prepare\nthe beast combining machine\nat the old castle ruins!",
+    "I'll leave once I've seen the\ntwo of them reunited.",
+    "Ignis, ",
+    "Canon of the Heavens",
+    ",\nand ",
+    "the Legendary Beast Tamer",
+    "",
+    "combined to create\n",
+    ". You and I, well...\"",
+    " held their breath."
+  ],
+  "56": [
+    "Kurimuto: \"We cannot beat",
+    "Ignis as we are now!\"",
+    "For now, we must flee!!\"",
+    "But just then,",
+    ", deep inside,",
+    "something was awakening",
+    "..."
   ]
 }

@@ -86,6 +86,23 @@ every decided term and every piece of user feedback. Companion docs:
 | 唸り声 / ヒザ | growl / knees | msg 42 (ヒザ is katakana in JP): 唸り声を上げ = "let out a growl"; ヒザをついて倒れこんだ = "crumpled to its knees". |
 | 道のり / 至難を極める | the road / be the hardest yet | msg 47: 火山までの道のり "the road to the volcano"; 至難を極める set phrase, "will be the hardest yet". |
 | 登る / 数え切れない / 地底 | climb / countless / underground | msg 48: 登り始めてから "began the climb ... since then"; 数え切れないほどの地震 "countless quakes"; 地底で暴れている "raging underground". |
+| 怒る | to get angry | msg 49: イグニス・・・怒る！ = "Ignis... gets angry!" (Ramires' taunt: the more you fight, the more Ignis stirs). |
+| 狂暴な力 / みなぎる | violent power / surge up | msg 49 P4: [name]の体の中から狂暴な力がみなぎる = "felt a violent power surging up from deep within". |
+| 朽ち果てた / 神殿跡 | crumbling / temple remains | msg 50: 朽ち果てた神殿跡 = "a crumbling temple" (msg 11 "enshrine" reused). |
+| 着く | to reach / arrive at | msg 50: 火口に着くと = "At ... crater," (arrival implied in EN). |
+| 待つ | to wait | msgs 50/54: 待っていたよ "I've been waiting."; 待っていたぞ、この瞬間を "I've waited for this moment." |
+| 祝う / 盛大に | celebrate / in grand style | msg 50: 復活を盛大に祝おうではないか = "Let us celebrate the revival in grand style!!" |
+| 届く | to reach (of a voice) | msg 50: 声は届かなかった = "voice did not reach". |
+| 崩れ出した | began to crumble | msg 51. |
+| クチ / 息使い / 嵐のような | maw / breath / like a storm | msg 53: クチ is katakana 口 → "maw"; 息使い = "breath". |
+| 瞬間 | moment | msg 54: この瞬間を = "this moment". |
+| 完全復活 | fully revived | msg 54: rephrased "has fully revived!" for row layout. |
+| 例の古城跡 | the old castle ruins | msg 55: 例の (aforementioned) folded as "the old". **FLAG** (see open questions 13). |
+| 合獣機 | beast combining machine | msg 55: new term; 合成 = "combine" (msg 46). Under review for the glossary. |
+| 準備 | preparation | msg 55: 合獣機の準備をしろ = "prepare the beast combining machine". |
+| 我々 / 不可能 | we / impossible | msg 56: 今の我々の力では…不可能じゃ = "We cannot beat Ignis as we are now!". |
+| ひとまず | for now | msg 56: ここはひとまず逃げるぞ = "For now, we must flee!!". |
+| 息をのむ | to hold one's breath | msg 55: {name}は息をのんだ = "{name} held their breath". |
 | 祭壇 | altar | msg 36: 祭壇のある部屋 = "the altar room". |
 | 地震 | earthquake | msgs 36–38; 地震に気をとられる = "distracted by the quake" (msg 37). |
 | 大男 | giant of a man | msg 37: 見たことも無い大男 = "a giant of a man unlike any ever seen". |
@@ -112,7 +129,9 @@ every decided term and every piece of user feedback. Companion docs:
   (msg 7). No gendered pronouns used in EN yet.
 - **Ignis (イグニス)**: earth hydra dragon; ruled the land; wounded; went
   into hiding deep beneath Mount Famfantar (msg 7). No gendered pronouns
-  used in EN yet.
+  used in EN yet. Revives fully at the crater as a giant, magma-red
+  dragon (msgs 52–54); Beringham's line ties the player's creation to it
+  (msg 55).
 - **The man (男)** (msgs 10–13): unnamed; has the Takt; seeks revenge on
   the Legendary Beast Tamer and the world; exclamation-heavy, blunt,
   imperative. Voice: forceful, breathless menace. Identity unresolved —
@@ -130,17 +149,26 @@ every decided term and every piece of user feedback. Companion docs:
   (msg 39) and his other beast Ramires, and mocks the player over the
   altar (msg 40). Grandiose, mocking (フフフ / ハハハ laughers); EN keeps
   the theatrical menace and the laugh beats ("Heh heh heh...", "Hahah!").
+  At the crater he speaks of the altar enshrining Ignis (msg 50), hails
+  the "fully revived" magma dragon as Ignis of the Earth (msg 54), orders
+  his men to prepare the 合獣機 at the old castle ruins (msg 55), and
+  reveals the player's origin: created by combining Ignis, Canon of the
+  Heavens, and the Legendary Beast Tamer (msg 55).
 - **Ramires (ラミレス)** (msgs 43–44): Beringham's other beast; appears
   when Zargo falls and tells the player to go to Mount Famfantar ("You
   wish... to know of yourself...?"). Speaks in halting fragments
   ("..." between phrases); carries Zargo away. No gendered pronouns in
-  EN — use "it".
+  EN — use "it". Returns with Zargo at the crater (msg 49), taunting:
+  "Fight... a lot, and Ignis... gets angry!".
 - **Pursuers 1/2/3 (追っ手１/２/３)** (msgs 14–16): guards of the Barroa
   Kingdom chasing the player character. Voice: loud, rough, bickering,
   a bit dim ("Uh... what was the name?"), greedy for reward. Routed by
   the beasts in msgs 17–19.
 - **Player character**: name is variable (0x7540). Boy or girl (chosen at
   game start); do not assume gender in text that refers to the player.
+  Msg 55 reveals the player was created by combining Ignis, Canon of the
+  Heavens, and the Legendary Beast Tamer — keep EN pronouns neutral
+  ("their" for the player in narration).
 - **Legendary Beast Tamer**: the hero of the old war (msgs 5–13); the man
   (msgs 10–13) seeks revenge related to this figure.
 
@@ -231,10 +259,17 @@ every decided term and every piece of user feedback. Companion docs:
    30 — the naming UI milestone should cap EN name length.
 10. **msg 33 その後** — その後の魔獣の作り方を調べる rendered "research
    how the next beasts are made" (the later-stage beasts; cf. 最初は in
-   msg 32 and 中型体 later). M7 read (msgs 41–48): msg 46 confirms the
-   young → medium form progression but adds no その後 evidence — revisit
-   if msgs 49+ clarify.
+   msg 32 and 中型体 later). M8 read (msgs 49–56): msg 55 names the
+   合獣機 (beast combining machine) as the device behind beast creation,
+   but その後 itself stays unconfirmed — revisit at M9.
 11. **Zargo** romanization (see glossary FLAG) — fix the spelling before
    the monster-names milestone so story and 8×8 text match.
 12. **Ramires** romanization (msg 43) — provisional, same class as Zargo;
    settle both together at the monster-names milestone.
+13. **msg 55 君とのな…」** — JP trails off mid-thought; EN ". You and I,
+   well..." (M8 flag 2). Alternative settled wording welcome.
+14. **msg 55 合獣機** — EN "beast combining machine" (glossary row added).
+   Confirm term before the monster-names milestone.
+15. **msg 55 例の古城跡** — 例の (aforementioned) folded as "the old" in
+   "at the old castle ruins". Revisit if a specific castle name is
+   preferred once later text clarifies the location.

@@ -15,7 +15,7 @@ milestone.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
-  Charmap for the bigfont now has **380 glyphs verified** (messages 0–48
+  Charmap for the bigfont now has **406 glyphs verified** (messages 0–56
   fully transcribed, each zipped token-by-token against its stream with
   zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
   `data/bigfont_charmap.json`. Control parsing corrected 2026-10-18:
@@ -92,6 +92,14 @@ milestone.
   No new captures needed; all static rows ≤30 chars (msg 41 s5 was
   rebalanced by one char). Page deviations: only msg 46 s2 (EN 3 rows vs
   JP 2) and msg 47 s1 (EN 4 rows vs JP 5; EN shorter).
+- **Translation milestone 8 delivered** (2026-10-18): story msgs 49–56
+  (the beasts' taunt, the ruined altar, Ignis's full revival; 52 runs,
+  QA `problems=0`, full-range export 57 messages clean) — see
+  `translation/milestone-08-story-msgs-49-56.md`. Glyph pass added 26
+  new bigfont glyphs (怒狂ぎ 着朽果殿跡待祝コ届 崩 マ赤チ嵐 瞬間 例準備 我能
+  ひ) — charmap now **406/685**. First read pass zip-verified clean.
+  No new captures needed; all static rows ≤30 chars. Page deviations:
+  msg 53 and msg 55 s1/s4 use 1 extra page (EN rows vs JP); rest match.
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -122,7 +130,7 @@ milestone.
 - [x] T7 — **Tooling**: chosen and recorded.
 - [ ] T8 — **Story/narration charmap**: build a character map for the
   685-glyph store at `0xD3144`, then decode all 63 script messages at
-  `0xCFF84..0xD1F96`. **In progress**: 380 glyphs verified (messages 0–48
+  `0xCFF84..0xD1F96`. **In progress**: 406 glyphs verified (messages 0–56
   fully transcribed; remaining glyphs read via vision renders — no OCR);
 
 ## Prior art and tools
@@ -376,9 +384,9 @@ frames cited):
 
 ### Story script readings (verified against renders + live frames)
 
-Messages 0–48 **fully verified** (2026-10-17/18): every glyph zips
+Messages 0–56 **fully verified** (2026-10-17/18): every glyph zips
 against its token stream in `tools/build_charmap_story.py` `READINGS` —
-380 glyphs mapped, zero length mismatches, zero char conflicts.
+406 glyphs mapped, zero length mismatches, zero char conflicts.
 Notation: `／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532
 screen break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
 `[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert,
@@ -434,6 +442,14 @@ beast-name insert (name from the beast table).
 - **46** — [7539 0015 0016][7539 0017 0018]クリムト「よいか、それまでに[SCR] 伝説の魔獣[RED][BE 08][/RED]の中型体を／完成させるのじゃ！[SCR] 次は[RED][BE 03][/RED]と[SCR] [RED][BE 04][/RED]を合成する。[SCR] さすれば、[RED][BE 08][/RED]の[SCR] 中型体[RED][BE 05][/RED]が／完成するはずじゃ！」
 - **47** — クリムト「ワシはまた、伝説の魔獣の事をしらべに旅に出る。／火山までの道のりは／至難を極めるぞ！！」[SCR] そういい残し、／クリムトは去って行った。
 - **48** — [名]がファムファンタル火山を登り始めてから[SCR] 数え切れないほどの地震が起きていた。[SCR] [名]は感じた。[SCR] この揺れは[RED]イグニス[/RED]が／地底で暴れている
+- **49** — と突然、ベリンガムの魔獣／[RED]ザーゴ[/RED][7537 001A]と[RED]ラミレス[/RED][7537 0019]が現れた。[SCR] ザーゴ「もっと・・・戦え！」[SCR] ラミレス「たくさん・・・戦えば、／イグニス・・・怒る！」[SCR] [名]は体の中から[RED]狂暴な力[/RED]がみなぎるのを感じていた[W]・・・[/W]
+- **50** — ファムファンタル火山の火口に着くと、[SCR] そこには朽ち果てた神殿跡があった。[SCR] [7537 001B] ベリンガム「ここは大地のイグニスを祭った祭壇だよ。[SCR] 待っていたよ。[SCR] もっともワシ以上にイグニスは／君を待っていたはず・・・[SCR] さあ！[w1] 復活を盛大に／祝おうではないか！！」[SCR] するとベリンガムの背後から魔獣達が現れた。／[7537 001C] クリムト「ムッ！遅かったか。[SCR] いかんココで戦っては！」[SCR] しかし、遅れてきたクリムトの声は届かなかった・・・
+- **51** — ベリンガムの魔獣を倒したその時、大きく大地がゆれ[SCR] [名]達の足元が崩れ出した。
+- **52** — そして地中深くより／巨大なドラゴンが現れた。
+- **53** — そのドラゴンは、まるでマグマのように赤い体をし、／巨大なクチからは、嵐のような息使いが聞こえていた。
+- **54** — ベリンガム「ハハッ！！[w8]／待っていたぞ、この瞬間を。[SCR] [RED]大地のイグニス[/RED]の完全復活だ！」
+- **55** — [7538 001D 001E] ベリンガム「おまえ達は例の古城跡で合獣機の準備をしろ！[SCR] ワシは二人の再会を見てから行く。[SCR] イグニスと[RED]天空のカノン[/RED]と[RED]伝説の魔獣使い[/RED]が[SCR] 合成して出来た[RED][名][/RED]君とのな・・・」／[名]は息をのんだ。
+- **56** — クリムト「今の我々の力では／イグニスを倒す事は不可能じゃ！[SCR] ここはひとまず逃げるぞ！！」[SCR] しかしその時、／[名]の中で[SCR] 何かが目覚めていた[W]・・・[/W]
 
 Names/terms found so far: グランデート大陸 (Grandeート continent),
 カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
@@ -460,7 +476,12 @@ msg 40), plus SFX ゴゴゴゴゴ (rumble) / フフフ (laugh). M7 addenda:
 復活 (revive — msg 41), 存在 (presence — msg 41), 告げる (tell —
 msg 44), 唸り声 (growl — msg 42), 道のり / 至難を極める (the road / be
 the hardest yet — msg 47), 登る / 数え切れない / 地底 (climb / countless /
-underground — msg 48).
+underground — msg 48). M8 addenda: 合獣機 (beast combining machine —
+msg 55), 例の古城跡 (the old castle ruins — msg 55), 我々 (we — msg 56),
+瞬間 (moment — msg 54), 祝う (celebrate — msg 50), 届く (reach, of a
+voice — msg 50), 崩れる (crumble — msg 51), マグマ (magma — msg 53),
+息をのむ (hold one's breath — msg 55), 狂暴な力 / みなぎる (violent power /
+surge — msg 49), 大地のイグニス (Ignis of the Earth — msg 54).
 
 ### Compression (T2)
 
@@ -511,8 +532,8 @@ needed beyond pointer retargeting.
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
 - [x] Large-glyph story subsystem: format, glyph store, script stream,
-  control codes, and readings for msgs 0–48 (see Findings). 380/685
-  glyphs mapped. Next: M8 = msgs 49+; then English glyph strategy (new
+  control codes, and readings for msgs 0–56 (see Findings). 406/685
+  glyphs mapped. Next: M9 = msgs 57–62; then English glyph strategy (new
   glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
   **pages** (clears and continues) if more lines arrive; `7533` caption
@@ -533,22 +554,28 @@ needed beyond pointer retargeting.
   Zargo, the altar room; 22 new glyphs; Zargo cross-checked against the
   8×8 scripts. **M7 (story msgs 41–48) delivered 2026-10-18** — Ramires
   appears, the second recipe, the climb; 30 new glyphs; ラミレス =
-  Ramires confirmed against the 8×8 list. Per user decision 2026-10-18:
-  continue without per-milestone review. Next: M8 = story msgs 49+.
+  Ramires confirmed against the 8×8 list. **M8 (story msgs 49–56)
+  delivered 2026-10-18** — the beasts' taunt, the ruined altar, Ignis's
+  full revival; 26 new glyphs; first-pass clean zip. Per user decision
+  2026-10-18: continue without per-milestone review. Next: M9 = story
+  msgs 57–62.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
 semantics of **7537** params only (7538 = 2 params, 7539 = 2-param
 pass-through pair, 753E = beast-name insert, 753F = word insert — **all
-resolved** 2026-10-18). M4–M7 translation flags awaiting user: msg 21
+resolved** 2026-10-18). M4–M8 translation flags awaiting user: msg 21
 line-1 story reading; Kurimuto vs Klimt romanization; ロー = Roe/Rowe;
 Zargo/Ramires spellings; M5 width-driven compressions and dynamic beast
 names; M6 flags (その後 wording, の目前に compression); M7 flags (msg 41
 red span drops 君, msg 44 passive "was told", terminal punctuation adds,
-by-then wording) — see `translation/milestone-04-story-msgs-17-24.md`,
+by-then wording); M8 flags (msg 49 "と突然" bridge, msg 55 君とのな
+trailing, 例の folding, 完全復活 rephrase, 合獣機 term) — see
+`translation/milestone-04-story-msgs-17-24.md`,
 `translation/milestone-05-story-msgs-25-32.md`,
-`translation/milestone-06-story-msgs-33-40.md` and
-`translation/milestone-07-story-msgs-41-48.md`.
+`translation/milestone-06-story-msgs-33-40.md`,
+`translation/milestone-07-story-msgs-41-48.md` and
+`translation/milestone-08-story-msgs-49-56.md`.
 
 ## Decisions
 
