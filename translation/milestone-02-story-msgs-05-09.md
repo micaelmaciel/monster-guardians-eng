@@ -5,9 +5,9 @@ Delivered 2026-10-17. Source: bigfont story script at `0xCFF84`, messages
 sorcerer's challenge, the long battle, the dragons' fate, and the birth
 of the Legendary Beast Tamer legend.
 
-**Revision 2** (2026-10-17, same day): msg 8 boxes 3/4 and msg 9 boxes
-1/2 reworked after user review — see *Revision 2* below. Text shown here
-is the revised version.
+**Revisions 2–3** (2026-10-17/18): msg 8 boxes 3/4 and msg 9 boxes 1/2
+reworked after user review — see *Revisions* below. Text shown here is
+the latest version.
 
 Machine-readable output: `translation/story_en.json`. Translation input:
 `translation/story_en_runs.json`. Reference sheet (glossary / characters /
@@ -81,12 +81,12 @@ EN there was no one in this world  ▸ (30)
 
 ```
 JP その後この魔獣使いと、二匹の魔獣は [scr]
-EN In time, this Beast Tamer and   ▸ (29)
+EN In time, the Beast Tamer and    ▸ (28)
    his two beasts became legend.      (29)
 
 JP [RED]伝説の魔獣使い[/RED] ▸ として人々に伝えられた。 [w] [scr]
 EN [RED]The Legendary Beast Tamer,[/RED]  (26)
-   the name the people gave him.      (29)
+   people took to calling him.        (27)
 
 JP そしてグランデート大陸は、 ▸ 人類が支配者となった。 [w]
 EN And the continent of Grandate    ▸ (29)
@@ -112,7 +112,7 @@ naturality pass → intent check → automated QA (`tools/story_en_export.py`)
   魔術使い → "sorcerer", 私 → "me", 伝説の魔獣使い → "the Legendary
   Beast Tamer".
 - No CJK characters left in the English ✓
-- Layout: every line ≤ 30 chars, every box ≤ 2 lines (longest box 58
+- Layout: every line ≤ 30 chars, every box ≤ 2 lines (longest box 57
   chars — msg 9 box 1).
 
 ## Decisions for review (flag)
@@ -131,37 +131,44 @@ naturality pass → intent check → automated QA (`tools/story_en_export.py`)
 5. **"That victory was bought / with the two beasts' lives."** for
    その勝利は、二匹の魔獣の命と、引き換えに勝ち取った — "bought with
    lives" idiom for the exchange construction.
-6. **Message 9 title sentence** — rewritten in rev 2 (your call): the
-   trio *became legend*, and the title explicitly names the tamer —
-   *The Legendary Beast Tamer, / the name the people gave him.* The JP
+6. **Message 9 title sentence** — rewritten in revs 2–3 (your call):
+   the trio *became legend*, and the title explicitly names the tamer —
+   *The Legendary Beast Tamer, / people took to calling him.* The JP
    does literally group them ("this Beast Tamer and the two beasts …
    as the Legendary Beast Tamer"), but title-on-the-tamer is the
-   natural reading. See *Revision 2*.
+   natural reading. See *Revisions*.
 7. **"The fierce battle raged on..."** (msg 6) — "long" is folded into
    *raged on* to stay one line (the JP is 長く壮絶な = long and fierce).
 8. **Red spans**: msg 8's 私 → "me" is the narrator's first-person
    self-reveal; kept RED, as in the JP.
 
-## Revision 2 — user feedback (2026-10-17)
+## Revisions — user feedback (2026-10-17/18)
 
-Two review points, both adopted:
+**Rev 2 (10-17):**
 
 - **Msg 8, boxes 3/4** — "this Beast Tamer" read childishly and the
   sentence was chopped mid-clause. Now: "At that moment, other than /
   me," → "there was no one in this world / who could save him." The
-  noun appears once (box 2); the closing clause flows in one piece
-  with your phrasing. Gender: "him" — the man refers to the tamer as
-  ヤツ in msg 13, so masculine is safe.
+  noun appears once (box 2); the closing clause flows in one piece.
+  Gender: "him" — the man refers to the tamer as ヤツ in msg 13, so
+  masculine is safe.
 - **Msg 9, boxes 1/2** — the JP literally hands down "this Beast Tamer
   and the two beasts … as the Legendary Beast Tamer" (として covers
   the group), which reads as if the beasts share the title. EN now
-  gives the trio *became legend* and the title explicitly to him:
-  "became legend. / *The Legendary Beast Tamer,* / the name the people
-  gave him." Red span still on the title.
+  gives the trio *became legend* and the title explicitly to him. Red
+  span still on the title.
+
+**Rev 3 (10-18):**
+
+- **Msg 9 wording** — "this Beast Tamer" → "the Beast Tamer" (no
+  "this" before a person; rule added to the style guide). Closing line
+  is now the user's suggestion: *The Legendary Beast Tamer, / people
+  took to calling him.* — warmer, folktale cadence; the title is his,
+  the two beasts stay in the legend sentence.
 - Breaks: msg 8 keeps 2 added `7530`s (box-3 line break in run 4,
   box-4 line break in run 7); msg 9 keeps 1 (inside run 0).
-- QA re-run after revision: problems = 0, no wrap warnings, every line
-  ≤ 30 chars, every box ≤ 2 lines.
+- QA re-run after revisions: problems = 0, no wrap warnings, every
+  line ≤ 30 chars, every box ≤ 2 lines.
 
 ## Next milestone proposal
 

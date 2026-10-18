@@ -31,14 +31,14 @@ When this applies. Any project too large to translate, check, and proofread care
 3. Propose the plan to the user before starting: the milestone list, the order, and a rough size for each. Start with a milestone that is representative and low-risk, such as an opening area or a short self-contained scene, because it sets the voice and exposes problems early.
 4. Wait for the user's agreement on the plan, unless they already told you how to split it.
 
-**How to run each milestone.** Run Steps 3 to 8 on that milestone only, then stop and report (Step 9). Do not start the next milestone until the user responds. Each milestone report should say:
+**How to run each milestone.** Run Steps 3 to 8 on that milestone only, then report (Step 9). By default, stop there: do not start the next milestone until the user responds. If the user has told you to keep going without per-milestone review, write the report, then start the next milestone. In that mode, interrupt only for cases that are truly ambiguous or where you are genuinely unsure. Each milestone report should say:
 
 - what was completed (range or section, line count)
 - decisions made and new glossary or character entries
 - flagged lines and open questions
 - what the next milestone would be, and a proposal for how to proceed
 
-**Why stop and report.** The user may disagree with a tone, a name, or a localized joke, and it is far cheaper to change that after one milestone than after the whole project. Their feedback becomes part of the reference sheet.
+**Why the report matters.** The user may disagree with a tone, a name, or a localized joke, and it is far cheaper to change that after one milestone than after the whole project. Their feedback becomes part of the reference sheet.
 
 **Carrying feedback forward.**
 

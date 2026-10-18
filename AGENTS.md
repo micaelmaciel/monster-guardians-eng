@@ -61,8 +61,9 @@ user's own ROM, not a modified ROM.
 - Use the translation skill whenever translating Japanese to English.
   Do not use it for the technical steps (extraction, hacking, tooling).
 - Follow its milestone workflow: translate one chunk, run QA and proofreading,
-  then stop and report to the user. Do not continue to the next milestone
-  until the user responds.
+  then report. Per user decision (2026-10-18): continue to the next milestone
+  without waiting for review; contact the user only for truly ambiguous cases
+  or when genuinely unsure.
 - Keep the glossary, character sheet, and style guide in the repo and update
   them with user feedback.
 - Text limits discovered during the technical investigation (line width, box

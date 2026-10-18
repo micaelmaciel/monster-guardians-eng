@@ -111,6 +111,9 @@ every decided term and every piece of user feedback. Companion docs:
   next box with a pronoun for it ("…the two giant hydra dragons" /
   "They held dominion…" ✗ — reads as "the dragons, they…"). Land seams
   on clause boundaries where possible.
+- **"this" + person** (user feedback, 2026-10-18): この + person → "the",
+  never "this" ("this Beast Tamer" reads like casual "this guy"). "this"
+  stays for places/ideas in narration ("this world", "this continent").
 - **Red text** (`753B`/`753C`): wraps a reveal word or phrase. Keep the
   same emphasized concept inside the span (msg5 魔術使い → "sorcerer",
   msg8 私 → "me", msg9 伝説の魔獣使い → "the Legendary Beast Tamer")

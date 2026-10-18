@@ -28,14 +28,15 @@ milestone.
   `translation/story_en.json`. Reference sheet (glossary/characters/style):
   `.opencode/skills/translation/reference.md`. QA/re-export done by
   `tools/story_en_export.py`.
-- **Translation milestone 2 delivered** (2026-10-17, rev 2 after user
-  feedback, awaiting final review): story msgs 5–9 (intro narration part
-  2: the sorcerer, the long battle, the dragons' fate, the legend's
-  birth) — see `translation/milestone-02-story-msgs-05-09.md`. Red-text
-  spans (`753B`/`753C`) mapped to the same reveal concepts. Rev 2
-  reworked msg 8 boxes 3/4 ("…no one in this world who could save him.")
-  and msg 9 boxes 1/2 (title names the tamer: "became legend. / The
-  Legendary Beast Tamer, / the name the people gave him.").
+- **Translation milestone 2 delivered** (2026-10-17; rev 2–3 after user
+  feedback): story msgs 5–9 (intro narration part 2: the sorcerer, the
+  long battle, the dragons' fate, the legend's birth) — see
+  `translation/milestone-02-story-msgs-05-09.md`. Red-text spans
+  (`753B`/`753C`) mapped to the same reveal concepts. Rev 2–3 reworked
+  msg 8 boxes 3/4 ("…no one in this world who could save him.") and
+  msg 9 boxes 1/2 (user wording: "In time, the Beast Tamer and his two
+  beasts became legend. / The Legendary Beast Tamer, people took to
+  calling him.").
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -372,9 +373,9 @@ needed beyond pointer retargeting.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
-  delivered 2026-10-17, rev 2 after user feedback — awaiting user
-  review**; outputs in `translation/`. Next: M3 = story msgs 10–16
-  (first dialogue).
+  delivered 2026-10-17, revs 2–3 after user feedback**; outputs in
+  `translation/`. Per user decision 2026-10-18: continue without
+  per-milestone review. Next: M3 = story msgs 10–16 (first dialogue).
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
@@ -389,6 +390,10 @@ semantics of 7537/7538/7539/753E/753F params.
 - Font identification combined runtime VRAM dumps with the user eyeballing
   rendered sheets and transcribing the charmap (OCR used for kanji).
 - Automated shape-matching against Noto CJK abandoned (unreliable).
+- Translation workflow (user, 2026-10-18): no per-milestone review pause;
+  continue through milestones, contacting the user only for truly
+  ambiguous or genuinely unsure cases. Recorded in `AGENTS.md` and the
+  translation skill.
 
 ## Open questions
 
