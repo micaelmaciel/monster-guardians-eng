@@ -1733,6 +1733,770 @@
      "en": "drizzly morning."
     }
    ]
+  },
+  {
+   "message": 25,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The Pope's "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Beast Knight Order"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "stormed the castle! It fell."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "The mastermind: the Pope's"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "military advisor,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x4"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Duke Beringham Roe"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "He is also the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "Beast Knight Order"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "'s"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "supreme commander."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "He gave his reason for the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "seizure: aiding a faction"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "hostile to the kingdom!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "That was his claim, but it"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "was a complete frame-up."
+    }
+   ]
+  },
+  {
+   "message": 26,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Those who hindered the search"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "were captured without mercy."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Amid the chaos, "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": " saw:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "their father Winslow, already"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "dead before their own eyes."
+    }
+   ]
+  },
+  {
+   "message": 27,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "There he was, an unfamiliar"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beast Tamer's Takt in hand."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "It was Beringham."
+    }
+   ]
+  },
+  {
+   "message": 28,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7538",
+     "params": [
+      "0x7",
+      "0x8"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x10"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"So your aim is the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Legendary Beast Tamer's Takt?"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "No... never mind."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "More to the point, will you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "avenge your father and kin?"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "You needn't say a word."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "Those eyes say it all!\""
+    }
+   ]
+  },
+  {
+   "message": 29,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "So saying, Kurimuto held"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "out his own Takt to "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "."
+    }
+   ]
+  },
+  {
+   "message": 30,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"I leave my beasts"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "in your care."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Roost in these ruins a while,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "and train all you like!\""
+    }
+   ]
+  },
+  {
+   "message": 31,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"Listen: to fight"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham and his men,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "these beasts are too weak!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "So, you'll make the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Legendary Beast Tamer"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "'s"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Legendary Beasts"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "!\""
+    }
+   ]
+  },
+  {
+   "message": 32,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"I've studied that."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "But only part of it, you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "see...\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7539",
+     "params": [
+      "0xb",
+      "0xc"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7539",
+     "params": [
+      "0xd",
+      "0xd"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"First, combining"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x0"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": " and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x1"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "'s young form,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": ", should be created!\""
+    }
+   ]
   }
  ]
 }

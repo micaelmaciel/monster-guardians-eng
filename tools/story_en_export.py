@@ -138,6 +138,10 @@ def main():
         # arrives (verified in-game: msg 15 screen 1 pages 2+1 lines), so
         # the only hard limit is the per-segment width (WRAP), and extra
         # lines only add pages. A single segment >WRAP wraps mid-word.
+        # Page-count budget: JP packs ~17 glyphs per line, EN fits 30
+        # chars, so information-dense narration screens legitimately run
+        # one page longer than JP (e.g. msg 25 s1: JP 2 pages, EN 3).
+        # Up to 6 lines (3 pages) is accepted; beyond that = restructure.
         for si, scr in enumerate(screens):
             n_lines = 0
             for seg in scr:
@@ -151,7 +155,7 @@ def main():
             if n_lines > 2:
                 pages = (n_lines + 1) // 2
                 print(f"    s{si+1}: {n_lines} lines -> {pages} box pages")
-                if n_lines > 4:
+                if n_lines > 6:
                     print(f"    s{si+1}: TOO MUCH PAGING "
                           f"({n_lines} lines)  <-- RESTRUCTURE")
                     problems += 1

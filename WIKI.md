@@ -15,12 +15,13 @@ milestone.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
-  Charmap for the bigfont now has **260 glyphs verified** (messages 0–24
+  Charmap for the bigfont now has **328 glyphs verified** (messages 0–32
   fully transcribed, each zipped token-by-token against its stream with
   zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
   `data/bigfont_charmap.json`. Control parsing corrected 2026-10-18:
   `7538` takes **2 params** (was 1 — msg 22 desync fix), `753F` added as
-  a 1-param insert (ご子息, msg 21).
+  a 1-param insert (ご子息, msg 21), `7539` consumes **2 params** (was 1 —
+  msgs 32/46 desync fix, confirmed pass-through).
 - Confirmed by reading the actual game: 63 messages are the **whole game's
   story/event text** (intro attract = messages 0–9, then in-game event
   scenes). See "Story script readings" below.
@@ -58,6 +59,18 @@ milestone.
   carries the word), and msg 24's JP box **clears between its two lines**
   (2 display pages, frames 19900–20100). One story-reading flag raised
   for the user (msg 21 line 1, milestone-04 flag 1).
+- **Translation milestone 5 delivered** (2026-10-18): story msgs 25–32
+  (the coup, Winslow's death, the training arc; 49 runs, QA
+  `problems=0`, msgs 0–24 output byte-identical) — see
+  `translation/milestone-05-story-msgs-25-32.md`. New in-game facts: the
+  JP story box was measured directly from OAM this milestone —
+  **17-glyph rows, 2 rows per page (row pitch 13 px), 12 px advance**;
+  msg 25 shows as 5 JP display pages (S1 2, S2 2, S3 1; the 31-glyph
+  segment wraps 17+14 mid-word — frames 20300–21300). EN rows hold
+  ~30 chars vs JP's 17 glyphs, so information-dense narration runs one
+  box page longer than JP; the exporter QA budget was relaxed to
+  **≤6 rows (3 pages) per screen** (was 4). 7 review flags recorded in
+  the milestone doc (width-driven compressions; dynamic beast names).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -88,8 +101,8 @@ milestone.
 - [x] T7 — **Tooling**: chosen and recorded.
 - [ ] T8 — **Story/narration charmap**: build a character map for the
   685-glyph store at `0xD3144`, then decode all 63 script messages at
-  `0xCFF84..0xD1F96`. **In progress**: 222 glyphs verified (msgs 0–16
-  fully readable; remaining glyphs read via vision renders — no OCR);
+  `0xCFF84..0xD1F96`. **In progress**: 328 glyphs verified (messages 0–32
+  fully transcribed; remaining glyphs read via vision renders — no OCR);
 
 ## Prior art and tools
 
@@ -298,17 +311,22 @@ against in-game frames where noted:
 | `0x7537` | 1 | param command (12×; params 0,1,2,4,0x10,0x11,0x14,0x19–0x1C,0x1F,0x32 — semantics TBD; never displays) |
 | `0x7538` | **2** | param command (5×). **Fixed 2026-10-18**: 2 params, not 1 — msg 22 desync fix, display-verified in-game (both consumed, prints nothing, frame 19400). Params are consecutive ID pairs: `0031 0030`, `0007 0008`, `000E 000F`, `0012 0013`, `001D 001E` (msgs 22, 28, 35, 44, 55) — likely two related page/event IDs. |
 | `0x7539` | 2 | rare (4×, msgs 32/46; params are consecutive pairs 0xB–0xE, 0x15–0x18 — semantics TBD, pass-through) |
-| `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — beast-name inserts inside red spans; EN plan: drop + spell the word) |
+| `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — **beast-name inserts** inside red spans; the name comes from the beast table. EN **keeps the control** (names stay dynamic); sentences are worded so the slot reads naturally.) |
 | `0x753F` | 1 | word insert (1×, msg 21): prints the canned word ご子息 "son" mid-line — verified in-game, frame 19200. EN drops the control and carries the word as plain text. |
 | `0x7540` | 0 | player-name variable insert (30×). Occurs inside red blocks (msg 16: `「[753B][7540][753C]だった！」`) and mid-sentence (`追っ手達が[7540]に手をかけようとした`). Keep verbatim in translation. |
 | `0x7FFF` | 0 | end of message |
 | `0xFFFE`/`0xFFFF` | 0/1 | in-block sentinels/params (msg 2/3 use `7535 0001 FFFF`; 60/62 use `FFFE` + glyphs) |
 
 Display limits (measured in-game): glyph advance 12 px, line height
-13 px; the box fits **~17 glyphs per line, 2 lines**; text auto-wraps
+13 px; the box fits **17 glyphs per line, 2 lines**; text auto-wraps
 mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
-`0x7530` starts a new line. Verified in a live playthrough 2026-10-18
-(`/tmp/opencode/story_run`, frames cited):
+`0x7530` starts a new line. **M5 OAM measurement (frames 20300–21300)**:
+rows are 16×16 OBJ sprites at 12 px advance, y=124/137 (row pitch 13 px),
+one page = 2 rows, and a ▼ cursor sprite sits at x=209 on the last row;
+msg 25 JP = 5 display pages (S1 16+7 then 31→17+14; S2 8+12 then
+27→17+10; S3 19→17+2) — the 17-glyph wrap holds in the box itself.
+Verified in a live playthrough 2026-10-18 (`/tmp/opencode/story_run`,
+frames cited):
 
 - A third line does **not** fit; when a further line arrives after a
   full box, the box **clears and continues** (pages), each page ≤2 lines
@@ -328,16 +346,23 @@ mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
   default captured: レオ). Those UI strings are a separate milestone.
 - Auto-wrap: msg 13 screen 3's single 33-glyph segment wraps at 17 in
   game (そのとき男は足元の地中深くから、何／かがうごめく…).
+- **EN box budget (M5)**: EN rows are limited to 30 chars (29 working
+  limit); the exporter's page budget is **≤6 rows (3 pages) per screen**
+  (was 4) — EN at 30 chars/row carries ~1.75× a JP row (17 glyphs), so
+  information-dense narration legitimately takes one page more than JP
+  (msgs 25 s1/s2, 31 s3). More than 3 pages is still flagged for
+  restructuring.
 
 ### Story script readings (verified against renders + live frames)
 
-Messages 0–24 **fully verified** (2026-10-17/18): every glyph zips
+Messages 0–32 **fully verified** (2026-10-17/18): every glyph zips
 against its token stream in `tools/build_charmap_story.py` `READINGS` —
-260 glyphs mapped, zero length mismatches, zero char conflicts.
+328 glyphs mapped, zero length mismatches, zero char conflicts.
 Notation: `／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532
 screen break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
 `[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert,
-`[753F n]` = word insert (prints a canned word).
+`[753F n]` = word insert (prints a canned word), `[BE nn]` = 0x753E
+beast-name insert (name from the beast table).
 
 - **0** — 神のいない世界に、繁栄などは無い [w60][CLR] だから私が使わされた。 [w60]
 - **1** — 暗黒の時代 [w60][CLR] グランデート大陸は常に／人類の危機と共に存在していた。 [w10][SCR] 永遠の命を持つといわれた、／巨大な２匹のハイドラゴンが [w10][SCR] 大陸の権力を、掌握していた [w20]
@@ -364,6 +389,14 @@ screen break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
 - **22** — [7538 0031 0030][名]は昨日に起こった／[RED]事件[/RED]をクリムトに語り始めた。
 - **23** — ～バルロア王国、ヴァンダム城～[7531]
 - **24** — [7537 0032]城主は、貴族の一人ウィンスロー二世／事件は小雨の降る朝に、突然起こった。
+- **25** — 法王直属の[RED]魔獣騎士団[/RED]が城に乱入！／城を占拠した。／首謀者は、法王の軍事顧問として仕えてきた[7537 0004][RED]ベリンガム・ロー公爵[/RED]。[SCR] 彼は[RED]魔獣騎士団[/RED]の／最高司令官でもある男だ。／彼は城占拠の理由を、王国に対立する組織へ協力した疑い！[SCR] と、示したがまったくの濡れ衣であった。
+- **26** — 捜索の邪魔をするものは、容赦なく捕らえられ、[SCR] その混乱の中[名]が見たものは、[SCR] 自分の目前ですでに息絶えている、／父ウィンスローの姿であった。
+- **27** — そこには、見覚えの無い魔獣使いのタクトを手にしている[SCR] ベリンガムの姿があった。
+- **28** — [7538 0007 0008]クリムト「[W]・・・[/W]」[SCR] クリムト「伝説の魔獣使いのタクトが目的か？／いや・・・なんでもない。[SCR] それよりおぬし・・・／父や家族の仇をとるつもりか？[SCR] 何も言わんでも／その目が語っとるわい！」
+- **29** — そう言うと、クリムトは自分のタクトを[名]に手渡した。
+- **30** — クリムト「わしの魔獣達をおぬしにあずけよう。[SCR] しばらくこの廃墟をねぐらにして／訓練するがよいぞ！」
+- **31** — クリムト「よいか、ベリンガム達と戦うには、[SCR] この魔獣達では力不足じゃ！[SCR] そこで[RED]伝説の魔獣使い[/RED]がつれていた[RED]伝説の魔獣[/RED][SCR] [RED][BE 08][/RED]を作るんじゃ！」
+- **32** — クリムト「ワシはその研究しておった。[SCR] まだ一部しか／解っておらんがの・・・」[SCR] [7539 000B 000C][7539 000D 000D]クリムト「ワシの調べでは、最初は[SCR] [RED][BE 00][/RED]と／[RED][BE 01][/RED]を合成すると、[SCR] [RED][BE 08][/RED]の幼体[RED][BE 02][/RED]が出来るはずじゃ！」
 
 Names/terms found so far: グランデート大陸 (Grandeート continent),
 カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
@@ -374,10 +407,13 @@ beast), タクト (tact/baton — beast-tamer tool), 魔獣使い (beast tamer),
 追っ手 (pursuers), 廃墟 (ruins), ウィンスロー (Winslow — lord of
 Vandam Castle; 二世 = "II"), ヴァンダム城 (Vandam Castle — msg 23
 caption), 事件 (the incident — msg 22, red span). The player character's
-name is inserted via `0x7540`. Partial decode pass over msgs 25–62
-(glyphs pending) adds: 魔獣騎士団 (the Pope's Beast Knight Order),
-法王 (the Pope), Beringham's second beast ラ□□ス, and Beringham's full
-name ベリンガム・ロー□□ — **2 surname glyphs still unread (M5)**.
+name is inserted via `0x7540`. Partial decode pass over msgs 25–62 adds:
+魔獣騎士団 (the Pope's Beast Knight Order), 法王 (the Pope), and
+Beringham's full name ベリンガム・ロー公爵 = "Duke Beringham Roe"
+(msgs 25+; ロー = Roe provisional — **FLAG**). Also 軍事顧問 (military
+advisor), 最高司令官 (supreme commander), 首謀者 (mastermind), 濡れ衣
+(frame-up), 幼体 (young form — see msg 32), 合成 (combine). Beringham's
+second beast ラ□□ス (later messages) still has 2 unread glyphs.
 
 ### Compression (T2)
 
@@ -428,14 +464,13 @@ needed beyond pointer retargeting.
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
 - [x] Large-glyph story subsystem: format, glyph store, script stream,
-  control codes, and readings for msgs 0–24 (see Findings). 260/685
-  glyphs mapped. Next: read/translate remaining messages (M5 = msgs
-  25+); then English glyph strategy (new glyphs; store relocation to
-  free space + pointer rewrite at `0xD6C2C`).
+  control codes, and readings for msgs 0–32 (see Findings). 328/685
+  glyphs mapped. Next: M6 = msgs 33+; then English glyph strategy (new
+  glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
   **pages** (clears and continues) if more lines arrive; `7533` caption
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
-  ~240 px).
+  ~240 px). EN budget: 30 chars/row, ≤3 pages/screen (M5).
 - [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
   UI) and locate the pointer(s) for each.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
@@ -445,16 +480,20 @@ needed beyond pointer retargeting.
   msgs 10–16) delivered 2026-10-18** — first dialogue, captions, name
   inserts; outputs in `translation/`. **M4 (story msgs 17–24) delivered
   2026-10-18** — Kurimuto intro, 753F insert handling, incident setup.
-  Per user decision 2026-10-18: continue without per-milestone review.
-  Next: M5 = story msgs 25+.
+  **M5 (story msgs 25–32) delivered 2026-10-18** — the coup, Winslow's
+  death, the training arc; OAM-verified page model; exporter budget
+  ≤3 pages. Per user decision 2026-10-18: continue without per-milestone
+  review. Next: M6 = story msgs 33+.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
-semantics of 7537/7539/753E params (7538 = 2 params and 753F = word
-insert **resolved** 2026-10-18). M4 translation flags awaiting user:
-msg 21 line-1 story reading; Kurimuto vs Klimt romanization;
-Beringham's surname glyphs (2 unread) — see
-`translation/milestone-04-story-msgs-17-24.md`.
+semantics of **7537** params only (7538 = 2 params, 7539 = 2-param
+pass-through pair, 753E = beast-name insert, 753F = word insert — **all
+resolved** 2026-10-18). M4/M5 translation flags awaiting user: msg 21
+line-1 story reading; Kurimuto vs Klimt romanization; ロー = Roe/Rowe;
+M5 width-driven compressions and dynamic beast names — see
+`translation/milestone-04-story-msgs-17-24.md` and
+`translation/milestone-05-story-msgs-25-32.md`.
 
 ## Decisions
 
@@ -469,6 +508,11 @@ Beringham's surname glyphs (2 unread) — see
   continue through milestones, contacting the user only for truly
   ambiguous or genuinely unsure cases. Recorded in `AGENTS.md` and the
   translation skill.
+- Story EN page budget (2026-10-18, M5): accept up to 3 box pages per
+  dense narration screen instead of compressing content (exporter flags
+  >6 rows). EN rows hold 30 chars vs JP's 17 glyphs, so JP-aligned page
+  counts are not always achievable; compressions are kept to a minimum
+  and recorded per message.
 
 ## Open questions
 
@@ -476,8 +520,9 @@ Beringham's surname glyphs (2 unread) — see
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.
 - Story/narration control codes: classified (see Findings table). Remaining
-  unknowns: exact semantics of 7537/7539/753E params (7538 = 2 params,
-  753F = canned-word insert — resolved 2026-10-18).
+  unknowns: exact semantics of 7537 params (7538 = 2 params, 7539 = 2-param
+  pass-through pair, 753E = beast-name insert, 753F = canned-word insert —
+  resolved 2026-10-18).
 - Story/narration glyph space: `0x7D10` trailer; possible second table
   referencing glyphs; and the English font requirement (need to add
   letters/digits to a relocated 22-byte store, or squeeze — 16×11 box
@@ -506,7 +551,8 @@ Beringham's surname glyphs (2 unread) — see
   verified-translation source).
 - `tools/story_en_export.py` — builds/QA-checks `translation/story_en.json`
   from `translation/story_en_runs.json`: run parity, control-code diff,
-  char-exact wrap simulation, width/CJK checks.
+  char-exact wrap simulation, width/CJK checks, and a per-screen page
+  budget (≤6 rows = 3 pages; more = restructure flag).
 - `tools/story_render.py` (ASCII-art message render), `tools/small_art.py`
   (ASCII-art 8×8 glyph), `tools/dump_bigfont_used.py`,
   `tools/bigfont_groups.py`, `tools/bigfont_match.py`,

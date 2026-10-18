@@ -192,6 +192,79 @@
     "21": "m4: caption (7533) shows alone and clears. Added 1 break inside the quote run (JP auto-wraps mid-word). 753F(0001) prints the canned word ご子息 — DROP the control at insertion; EN carries \"son\" just before that position. Interpretation flag: line 1 read as \"[reason] I heard the name Beringham\" (milestone-04 flag 1).",
     "22": "m4: 7538(0031,0030) + 7540 pass through; the source 7530 is the row break. Red span = \"yesterday's incident\" (JP red = 事件 only; width compromise — milestone-04 flag 5). Runs carry a leading space in run 1 (after the name insert).",
     "23": "m4: 7531 clears the caption after the player's input (▼ verified, frame 19700). \"Barroa's Vandam Castle\" compresses バルロア王国、ヴァンダム城 to fit the 30-char row (milestone-04 flag 3).",
-    "24": "m4: 7537(0032) passes through. JP clears the box between its two lines (2 display pages, frames 19900-20100); EN is also 2 pages but splits mid-sentence (milestone-04 flag 4). Added 1 break in run 2; 二世 = \"II\"."
-  }
+    "24": "m4: 7537(0032) passes through. JP clears the box between its two lines (2 display pages, frames 19900-20100); EN is also 2 pages but splits mid-sentence (milestone-04 flag 4). Added 1 break in run 2; 二世 = \"II\".",
+    "25": "m5: red spans 753B/753C pass through (Beast Knight Order, Duke Beringham Roe). 7537(0004) invisible, ignored. EN pages: s1 5 rows (3 pages) vs JP 2 (17-glyph vs 30-char rows); s2 6 rows (3 pages) vs JP 2; s3 2 rows = JP 1. 直属 compressed into \"The Pope's\" (29-char row budget); \"It fell.\" = 城を占拠した。; \"supreme commander\" = 最高司令官; 濡れ衣 = \"complete frame-up\". Flag: 公爵 inside red span rendered \"Duke Beringham Roe\" (title first, EN order).",
+    "26": "m5: 7540 name insert mid-sentence; run 1 ends with a space before it, run 2 continues \" saw:\". 7530 source breaks kept; added none. \"captured without mercy\" = 容赦なく捕らえられ. \"their father Winslow, already / dead before their own eyes\" = 自分の目前ですでに息絶えている、父ウィンスローの姿.",
+    "27": "m5: single screen split by source 7532 before ベリンガム. \"There he was, an unfamiliar / Beast Tamer's Takt in hand.\" keeps the JP's late name reveal; 見覚えの無い = \"unfamiliar\".",
+    "28": "m5: 7538(0007,0008) lead-in + 7535/7536 style span around ・・・ pass through. \"avenge your father and kin?\" is 27 chars; \"family\" would make it exactly 30, over the 29 working limit. \"So your aim is the / Legendary Beast Tamer's Takt?\"; おぬし = plain \"you\"; 語っとるわい = \"say it all\".",
+    "29": "m5: 7540 insert between the runs; run 0 keeps a trailing \"to \". そう言うと = \"So saying,\"; 自分のタクト = \"his own Takt\".",
+    "30": "m5: \"Roost in these ruins a while, / and train all you like!\" = しばらくこの廃墟をねぐらにして / 訓練するがよいぞ. あずけよう = \"I leave ... in your care\". 2 rows = JP 2 rows.",
+    "31": "m5: 2 red spans pass through; 753E(0008) beast-name insert stays in stream (red span 3 = the name). EN moves the 作る verb into run 2 (\"So, you'll make the\"); run 6 = \"!\" only (a verb there would break the span row). s3 = 3 rows (2 pages) vs JP 1 page (21 glyphs). Flag: beast-name table still JP until the monster-names milestone.",
+    "32": "m5: 7539 pairs ignored (pass-through). e3/e4/e5: 'First, combining [b0] and [b1],' across s3/s4; e5 = \",\" only. s5 = \"[b8]'s young form, / [b2], should be created!\" (2 rows = JP 2 rows). Readings: e1/e2 \"But only part of it, you / see...\" = まだ一部しか解っておらんがの. 合成すると = \"combining\"; 幼体 = \"young form\". Need [b0/b1/b2/b8] names from the beast table (monster-names milestone)."
+  },
+  "25": [
+    "The Pope's ",
+    "Beast Knight Order",
+    "\nstormed the castle! It fell.",
+    "The mastermind: the Pope's",
+    "military advisor,\n",
+    "Duke Beringham Roe",
+    ".",
+    "He is also the\n",
+    "Beast Knight Order",
+    "'s",
+    "supreme commander.",
+    "He gave his reason for the\nseizure: aiding a faction\nhostile to the kingdom!",
+    "That was his claim, but it\nwas a complete frame-up."
+  ],
+  "26": [
+    "Those who hindered the search\nwere captured without mercy.",
+    "Amid the chaos, ",
+    " saw:",
+    "their father Winslow, already",
+    "dead before their own eyes."
+  ],
+  "27": [
+    "There he was, an unfamiliar\nBeast Tamer's Takt in hand.",
+    "It was Beringham."
+  ],
+  "28": [
+    "Kurimuto: \"",
+    "...",
+    "\"",
+    "Kurimuto: \"So your aim is the\nLegendary Beast Tamer's Takt?",
+    "No... never mind.",
+    "More to the point, will you",
+    "avenge your father and kin?",
+    "You needn't say a word.",
+    "Those eyes say it all!\""
+  ],
+  "29": [
+    "So saying, Kurimuto held\nout his own Takt to ",
+    "."
+  ],
+  "30": [
+    "Kurimuto: \"I leave my beasts\nin your care.",
+    "Roost in these ruins a while,",
+    "and train all you like!\""
+  ],
+  "31": [
+    "Kurimuto: \"Listen: to fight\nBeringham and his men,",
+    "these beasts are too weak!",
+    "So, you'll make the\n",
+    "Legendary Beast Tamer",
+    "'s\n",
+    "Legendary Beasts",
+    "!\""
+  ],
+  "32": [
+    "Kurimuto: \"I've studied that.",
+    "But only part of it, you",
+    "see...\"",
+    "Kurimuto: \"First, combining",
+    " and",
+    ",",
+    "'s young form,\n",
+    ", should be created!\""
+  ]
 }

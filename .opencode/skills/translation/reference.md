@@ -59,7 +59,7 @@ every decided term and every piece of user feedback. Companion docs:
 | 追っ手 | pursuer | msgs 14+; 追っ手１/２/３ = "Pursuer 1/2/3" (card style). |
 | 衛兵 | guard | msgs 15+. |
 | ベリンガム様 | Lord Beringham | 様 → "Lord". msg 16. |
-| ベリンガム | Beringham | Invader of Vandam Castle; Beast Knight Order (msgs 25+). Full name ベリンガム・ロー□□ — surname glyphs pending (M5). |
+| ベリンガム | Beringham | Invader of Vandam Castle; Beast Knight Order (msgs 25+). Full name ベリンガム・ロー公爵 = "Duke Beringham Roe" (msgs 25+; 公爵 = Duke). **FLAG**: ロー → Roe/Rowe pending. |
 | 廃墟 | ruins | Place caption (msg 14). |
 | タクト | the Takt | Beast Tamer's baton (item; msg 12+). **FLAG**: keep as "Takt" unless user prefers "baton". |
 | クリムト | Kurimuto | Old Beast Tamer (msgs 21+); gives the player his Takt (msg 29). **FLAG**: romanization TBD — クリムト is also the JP katakana for painter *Klimt*; alternatives Kurimuto / Klimt. |
@@ -67,11 +67,21 @@ every decided term and every piece of user feedback. Companion docs:
 | 事件 | the incident | msg 22 (red span). The Vandam Castle attack, retold msgs 25+. |
 | 城主 | lord of the castle | msg 24. |
 | 魔獣騎士団 | the Beast Knight Order | Pope's order that seized Vandam Castle (msg 25; red span verified in-game). |
-| 法王 | the Pope | 法王直属 = "directly under the Pope" (msg 25). |
+| 法王 | the Pope | 法王直属 = "directly under the Pope" (msg 25); EN compresses to "The Pope's" for row width (M5 flag 2). |
+| 公爵 | Duke | Title, placed before the name in EN ("Duke Beringham Roe"), inside the same red span (msg 25). |
+| 首謀者 | mastermind | msg 25. EN "The mastermind: …". |
+| 軍事顧問 | military advisor | msg 25; として仕えてきた = "who had served as". |
+| 最高司令官 | supreme commander | msg 25; でもある = "is also". |
+| 占拠 | seizure / occupation | 城を占拠した (msg 25) → "It fell." / "the seizure" (row width). |
+| 濡れ衣 | frame-up | msg 25: まったくの濡れ衣 = "a complete frame-up". |
+| 容赦なく捕らえられ | captured without mercy | msg 26. |
+| 幼体 / 中型体 | young form / medium form | msg 32; 中型体 appears later (msg 46) — **FLAG**: form terminology provisional until then. |
+| 合成 | combine | msg 32: 合成すると = "combining …". |
 | ザーゴ | Zargo | Beringham's beast; later story. |
 | ヴァンダム城 | Vandam Castle | msg 23 caption, msgs 24+. |
 | ウィンスロー | Winslow | ウィンスローのご子息 = "son of Winslow" (msg 21 via 753F); ウィンスロー二世 = "Winslow II" (msg 24). |
-| 0x753F insert | [canned word] | One occurrence: ご子息 "son" (msg 21). **Drop the control; carry the word as plain EN text.** Same default planned for 753E (beast-name inserts, msgs 31+). |
+| 0x753F insert | [canned word] | One occurrence: ご子息 "son" (msg 21). **Drop the control; carry the word as plain EN text.** |
+| 0x753E insert | [beast name] | Beast-name inserts (msgs 31/32): **keep the control in the stream** — the name is dynamic (beast table, still JP until the monster-names milestone). EN is worded so the name slot reads naturally. |
 | 0x7540 insert | [player name] | Keep as variable `{NAME}`; never translate. QA sim width = 6 chars. |
 
 ## Character sheet (story mode)
