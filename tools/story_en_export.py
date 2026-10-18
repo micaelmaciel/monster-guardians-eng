@@ -25,7 +25,7 @@ RAW = os.path.join(ROOT, "build", "story_messages_raw.json")
 RUNS = os.path.join(ROOT, "translation", "story_en_runs.json")
 OUT = os.path.join(ROOT, "translation", "story_en.json")
 
-PARAMS = {0x7534: 1, 0x7535: 2, 0x7537: 1, 0x7538: 1,
+PARAMS = {0x7534: 1, 0x7535: 2, 0x7537: 1, 0x7538: 2,
           0x753B: 1, 0x753E: 1, 0x753F: 1, 0x7539: 2}
 
 WRAP = 30            # assumed EN glyph advance fits 30 chars in the box

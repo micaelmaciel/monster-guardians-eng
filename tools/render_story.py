@@ -87,10 +87,20 @@ def split_screens(toks):
             screens[-1].append(("ctl", t, None))
         elif t == CTL_END:
             break
-        elif t in (CTL_WAIT, 0x7537, 0x7538, CTL_OPEN2, 0x753E):
+        elif t in (CTL_WAIT, 0x7537, CTL_OPEN2, 0x753E, 0x753F):
+            # 753F <word id>: word insert. Verified in-game (frame 19200):
+            # 753F 0001 renders as ご子息 (msg 21).
             param = toks[i + 1] if i + 1 < len(toks) else None
             screens[-1].append(("ctl", t, param))
             i += 1
+        elif t == 0x7538:
+            # Two params. Verified against in-game msg 22 (frame 19400):
+            # "7538 0031 0030 [name]は昨..." displays from the name, so both
+            # 0031 and 0030 are consumed and neither shows as text.
+            p1 = toks[i + 1] if i + 1 < len(toks) else None
+            p2 = toks[i + 2] if i + 2 < len(toks) else None
+            screens[-1].append(("ctl", t, p1))
+            i += 2
         elif t == CTL_OPEN:
             # 7535 <style> <delay> <content...> 7536 -- two params.
             # In-game the delay param is not displayed (e.g. msg6:
