@@ -15,10 +15,12 @@ milestone.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
-  Charmap for the bigfont now has **222 glyphs verified** (messages 0–16
+  Charmap for the bigfont now has **260 glyphs verified** (messages 0–24
   fully transcribed, each zipped token-by-token against its stream with
   zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
-  `data/bigfont_charmap.json`.
+  `data/bigfont_charmap.json`. Control parsing corrected 2026-10-18:
+  `7538` takes **2 params** (was 1 — msg 22 desync fix), `753F` added as
+  a 1-param insert (ご子息, msg 21).
 - Confirmed by reading the actual game: 63 messages are the **whole game's
   story/event text** (intro attract = messages 0–9, then in-game event
   scenes). See "Story script readings" below.
@@ -46,6 +48,16 @@ milestone.
   (clears and continues) when more lines arrive. The player-name entry
   UI sits between msgs 15 and 16 (8×8-font screens; separate later
   milestone).
+- **Translation milestone 4 delivered** (2026-10-18): story msgs 17–24
+  (the rescue in the ruins; Kurimuto's introduction; the incident
+  retelling setup; the Vandam Castle location card and lord Winslow II)
+  — see `translation/milestone-04-story-msgs-17-24.md`. 25 runs,
+  QA `problems=0`, msgs 0–16 output byte-identical. New in-game facts:
+  `7538` consumed as 2 params (msg 22 frame 19400), `753F 0001` prints
+  canned ご子息 mid-line (msg 21 frame 19200; EN drops the control and
+  carries the word), and msg 24's JP box **clears between its two lines**
+  (2 display pages, frames 19900–20100). One story-reading flag raised
+  for the user (msg 21 line 1, milestone-04 flag 1).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -283,11 +295,11 @@ against in-game frames where noted:
 | `0x7534` | 1 | wait/pause; param = frames-ish (1,2,3,4,5,6,8,10,20,26,30,50,60 seen; 31×) |
 | `0x7535` | 2 | styled block open: `<style> <delay>`, closed by `0x7536`. Style 001 = white/default (19×; style is always 001 so far). Content between params and `0x7536` is displayed (e.g. カノン, イグニス, `・・・`). Delay param values: 1,2,4,5,8,10,`0xFFFE`,`0xFFFF`; never displays (verified in-game, msg 6). |
 | `0x753B` | 1 | styled block open, closed by `0x753C` (38×, paired 1:1). Param is **always `0x2`** = **red text** (verified in-game: 伝説の魔獣使い red in frame 8700). Highlights key nouns: 魔術使い(5) 私(8) 伝説の魔獣使い(9,12) 男(10) 火口(10) イグニス(11) 復讐(12) ベリンガム様(16) … |
-| `0x7537` | 1 | param command (12×; params 0,1,2,4,0x10,0x11,0x14,0x19–0x1C,0x1F,0x32 — semantics TBD; msg 13 starts with `7537 0000`) |
-| `0x7538` | 1 | param command (5×; params 7,0xE,0x12,0x1D,0x31 — semantics TBD) |
-| `0x7539` | 2 | rare (4×, msgs 32/46; params 0xB–0xE, 0x15–0x18 — semantics TBD) |
-| `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — likely variable/name print; semantics TBD) |
-| `0x753F` | 1 | rare (1×, msg 21, param 1) |
+| `0x7537` | 1 | param command (12×; params 0,1,2,4,0x10,0x11,0x14,0x19–0x1C,0x1F,0x32 — semantics TBD; never displays) |
+| `0x7538` | **2** | param command (5×). **Fixed 2026-10-18**: 2 params, not 1 — msg 22 desync fix, display-verified in-game (both consumed, prints nothing, frame 19400). Params are consecutive ID pairs: `0031 0030`, `0007 0008`, `000E 000F`, `0012 0013`, `001D 001E` (msgs 22, 28, 35, 44, 55) — likely two related page/event IDs. |
+| `0x7539` | 2 | rare (4×, msgs 32/46; params are consecutive pairs 0xB–0xE, 0x15–0x18 — semantics TBD, pass-through) |
+| `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — beast-name inserts inside red spans; EN plan: drop + spell the word) |
+| `0x753F` | 1 | word insert (1×, msg 21): prints the canned word ご子息 "son" mid-line — verified in-game, frame 19200. EN drops the control and carries the word as plain text. |
 | `0x7540` | 0 | player-name variable insert (30×). Occurs inside red blocks (msg 16: `「[753B][7540][753C]だった！」`) and mid-sentence (`追っ手達が[7540]に手をかけようとした`). Keep verbatim in translation. |
 | `0x7FFF` | 0 | end of message |
 | `0xFFFE`/`0xFFFF` | 0/1 | in-block sentinels/params (msg 2/3 use `7535 0001 FFFF`; 60/62 use `FFFE` + glyphs) |
@@ -306,6 +318,11 @@ mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
   for the narration (msg 10; frames 10400–10700).
 - `0x7540` renders the player name **inside** the red span in msg 16
   screen 2 (frames 15600–16100).
+- **msg 24 clears between its two lines** (frames 19900–20100): the
+  17-glyph first line (`城主は、貴族の一人ウィンスロー二世`) overflowed
+  the box (JP glyph widths vary), the box cleared, and line 2
+  (`事件は…`) typed from the top row — that message is **2 JP display
+  pages**, not one 2-line box. Do not assume a 7530 pair always fits.
 - The player's name is entered in a naming UI **between msgs 15 and 16**
   (8×8-font screens: なまえ / monster-select list / はい・いいえ;
   default captured: レオ). Those UI strings are a separate milestone.
@@ -314,12 +331,13 @@ mid-word (msg 4 line 1 = 17 glyphs exactly, "…征服しよ" then "うと、").
 
 ### Story script readings (verified against renders + live frames)
 
-Messages 0–16 **fully verified** (2026-10-17): every glyph zips against
-its token stream in `tools/build_charmap_story.py` `READINGS` — 222
-glyphs mapped, zero length mismatches, zero char conflicts. Notation:
-`／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532 screen
-break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
-`[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert.
+Messages 0–24 **fully verified** (2026-10-17/18): every glyph zips
+against its token stream in `tools/build_charmap_story.py` `READINGS` —
+260 glyphs mapped, zero length mismatches, zero char conflicts.
+Notation: `／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532
+screen break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
+`[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert,
+`[753F n]` = word insert (prints a canned word).
 
 - **0** — 神のいない世界に、繁栄などは無い [w60][CLR] だから私が使わされた。 [w60]
 - **1** — 暗黒の時代 [w60][CLR] グランデート大陸は常に／人類の危機と共に存在していた。 [w10][SCR] 永遠の命を持つといわれた、／巨大な２匹のハイドラゴンが [w10][SCR] 大陸の権力を、掌握していた [w20]
@@ -338,6 +356,14 @@ break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
 - **14** — ～廃墟～[7533] 朝もやの中、人里離れた廃墟から、／男達の声が聞こえた！[SCR] 追っ手１「見つけ出すぞ！」[SCR] 追っ手２「逃がすな！！」
 - **15** — それは、バルロア王国配下の／衛兵達であった。／追っ手３「もう逃がさんぞ！」[SCR] 追っ手２／「えーと[W]・・・[/W][w26] こいつの名前は？」
 - **16** — 追っ手３「あ、そうだ！」[SCR] 追っ手１／「[RED][名][/RED]だった！」[SCR] 追っ手２「かくごしろ！／[名]！」[SCR] おまえを捕まえて[RED]ベリンガム様[/RED]に／渡せば謝礼がたんまりと[W]・・・[/W]」[SCR] そういって追っ手達が[名]に手をかけようとしたその時！
+- **17** — 背後から魔獣達が／突然、追っ手達におそいかかった！
+- **18** — 追っ手達「うわあ！！」[SCR] [名]は唖然として、／事の成り行きを見ていた。
+- **19** — 追っ手達はあっというまに倒された [SCR] [W]すると、となりの部屋から／一人の老人が現れた。[/W]
+- **20** — 老人「やかましいのう！[w6]わしゃ／寝起きは機嫌がわるいんじゃ！」 (7537 0002 before the card; 7534 0006 = [w6])
+- **21** — その老人はクリムトと名乗った。[7533] クリムト「いや、助けたのはベリンガムと言う名を聞いてな。／やつとは少々ワケありでの[W]・・・[/W][SCR] うーん、そなたはヴァンダム城の／ウィンスローの[753F 0001]とみたが・・[SCR] 城でなにかあったかの？」
+- **22** — [7538 0031 0030][名]は昨日に起こった／[RED]事件[/RED]をクリムトに語り始めた。
+- **23** — ～バルロア王国、ヴァンダム城～[7531]
+- **24** — [7537 0032]城主は、貴族の一人ウィンスロー二世／事件は小雨の降る朝に、突然起こった。
 
 Names/terms found so far: グランデート大陸 (Grandeート continent),
 カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
@@ -345,8 +371,13 @@ Names/terms found so far: グランデート大陸 (Grandeート continent),
 ベリンガム (Beringham — lord), バルロア王国 (Kingdom of Barroa),
 ファムファンタル火山 (Famfantar volcano), ザーゴ (Zargo — man-made
 beast), タクト (tact/baton — beast-tamer tool), 魔獣使い (beast tamer),
-追っ手 (pursuers), 廃墟 (ruins). The player character's name is inserted
-via `0x7540`.
+追っ手 (pursuers), 廃墟 (ruins), ウィンスロー (Winslow — lord of
+Vandam Castle; 二世 = "II"), ヴァンダム城 (Vandam Castle — msg 23
+caption), 事件 (the incident — msg 22, red span). The player character's
+name is inserted via `0x7540`. Partial decode pass over msgs 25–62
+(glyphs pending) adds: 魔獣騎士団 (the Pope's Beast Knight Order),
+法王 (the Pope), Beringham's second beast ラ□□ス, and Beringham's full
+name ベリンガム・ロー□□ — **2 surname glyphs still unread (M5)**.
 
 ### Compression (T2)
 
@@ -397,10 +428,10 @@ needed beyond pointer retargeting.
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
 - [x] Large-glyph story subsystem: format, glyph store, script stream,
-  control codes, and readings for msgs 0–16 (see Findings). 222/685
-  glyphs mapped. Next: read/translate remaining messages; then English
-  glyph strategy (new glyphs; store relocation to free space + pointer
-  rewrite at `0xD6C2C`).
+  control codes, and readings for msgs 0–24 (see Findings). 260/685
+  glyphs mapped. Next: read/translate remaining messages (M5 = msgs
+  25+); then English glyph strategy (new glyphs; store relocation to
+  free space + pointer rewrite at `0xD6C2C`).
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
   **pages** (clears and continues) if more lines arrive; `7533` caption
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
@@ -412,12 +443,18 @@ needed beyond pointer retargeting.
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
   delivered 2026-10-17, revs 2–3 after user feedback**. **M3 (story
   msgs 10–16) delivered 2026-10-18** — first dialogue, captions, name
-  inserts; outputs in `translation/`. Per user decision 2026-10-18:
-  continue without per-milestone review. Next: M4 = story msgs 17+.
+  inserts; outputs in `translation/`. **M4 (story msgs 17–24) delivered
+  2026-10-18** — Kurimuto intro, 753F insert handling, incident setup.
+  Per user decision 2026-10-18: continue without per-milestone review.
+  Next: M5 = story msgs 25+.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
-semantics of 7537/7538/7539/753E/753F params.
+semantics of 7537/7539/753E params (7538 = 2 params and 753F = word
+insert **resolved** 2026-10-18). M4 translation flags awaiting user:
+msg 21 line-1 story reading; Kurimuto vs Klimt romanization;
+Beringham's surname glyphs (2 unread) — see
+`translation/milestone-04-story-msgs-17-24.md`.
 
 ## Decisions
 
@@ -439,7 +476,8 @@ semantics of 7537/7538/7539/753E/753F params.
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.
 - Story/narration control codes: classified (see Findings table). Remaining
-  unknowns: exact semantics of 7537/7538/7539/753E/753F params.
+  unknowns: exact semantics of 7537/7539/753E params (7538 = 2 params,
+  753F = canned-word insert — resolved 2026-10-18).
 - Story/narration glyph space: `0x7D10` trailer; possible second table
   referencing glyphs; and the English font requirement (need to add
   letters/digits to a relocated 22-byte store, or squeeze — 16×11 box

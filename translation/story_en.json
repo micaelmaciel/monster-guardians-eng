@@ -1382,6 +1382,357 @@
      "en": "... just then!"
     }
    ]
+  },
+  {
+   "message": 17,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "From behind, the beasts"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "suddenly attacked the guards!"
+    }
+   ]
+  },
+  {
+   "message": 18,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Pursuers: \"Uwaaah!!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " stood there, in shock,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "watching how it all unfolded."
+    }
+   ]
+  },
+  {
+   "message": 19,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The pursuers fell in no time!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xfffe"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Then, from the next room,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "an old man appeared."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 20,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Old man: \"Noisy!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x6"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " I'm in a"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "bad mood when I wake up!\""
+    }
+   ]
+  },
+  {
+   "message": 21,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The old man said his name:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7533",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Kurimuto: \"No. I heard the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "name Beringham. I stepped in."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "That one and I have a past"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xa"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Hmm. I peg you for the son of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Winslow of Vandam Castle"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x1"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "What happened at the castle?"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 22,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7538",
+     "params": [
+      "0x31",
+      "0x30"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": " began telling him of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "yesterday's incident"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "."
+    }
+   ]
+  },
+  {
+   "message": 23,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "~Barroa's Vandam Castle~"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7531",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 24,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x32"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "The lord: noble Winslow II."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "The incident struck one"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "drizzly morning."
+    }
+   ]
   }
  ]
 }

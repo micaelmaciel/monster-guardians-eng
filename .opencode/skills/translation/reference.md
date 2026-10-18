@@ -23,7 +23,9 @@ every decided term and every piece of user feedback. Companion docs:
 
 - One story screen = one text box; max 2 lines per box; box ≈ 240 px.
 - Japanese glyph advance ≈ 14 px → 17 JP glyphs/line (the game
-  auto-wraps JP mid-word; manual break = control `7530`).
+  auto-wraps JP mid-word; manual break = control `7530`). Widths vary
+  (small kana and 、 are narrower): a 17-glyph line can still overflow
+  and clear the box — msg 24, frames 19900–20100.
 - English will use new **halfwidth Latin glyphs** added to the relocated
   bigfont store (planned 8 px advance) → up to 30 chars per line, 60 per
   screen. **Working limits: ≤ 29 chars/line, ≤ 58 chars/screen** (flag
@@ -57,13 +59,20 @@ every decided term and every piece of user feedback. Companion docs:
 | 追っ手 | pursuer | msgs 14+; 追っ手１/２/３ = "Pursuer 1/2/3" (card style). |
 | 衛兵 | guard | msgs 15+. |
 | ベリンガム様 | Lord Beringham | 様 → "Lord". msg 16. |
+| ベリンガム | Beringham | Invader of Vandam Castle; Beast Knight Order (msgs 25+). Full name ベリンガム・ロー□□ — surname glyphs pending (M5). |
 | 廃墟 | ruins | Place caption (msg 14). |
 | タクト | the Takt | Beast Tamer's baton (item; msg 12+). **FLAG**: keep as "Takt" unless user prefers "baton". |
-| クリムト | Kurimuto | Old Beast Tamer (msgs 21+). **FLAG**: romanization TBD (Kurimt / Kurimuto). |
-| ザーゴ | Zargo | Later story. |
-| ヴァンダム城 | Vandam Castle | Later story. |
-| ウィンスロー | Winslow | Later story. |
-| 0x7540 insert | [player name] | Keep as variable `{NAME}`; never translate. |
+| クリムト | Kurimuto | Old Beast Tamer (msgs 21+); gives the player his Takt (msg 29). **FLAG**: romanization TBD — クリムト is also the JP katakana for painter *Klimt*; alternatives Kurimuto / Klimt. |
+| 老人 | Old man | Speaker card (msg 20) until the self-introduction caption (msg 21) switches to "Kurimuto:". |
+| 事件 | the incident | msg 22 (red span). The Vandam Castle attack, retold msgs 25+. |
+| 城主 | lord of the castle | msg 24. |
+| 魔獣騎士団 | the Beast Knight Order | Pope's order that seized Vandam Castle (msg 25; red span verified in-game). |
+| 法王 | the Pope | 法王直属 = "directly under the Pope" (msg 25). |
+| ザーゴ | Zargo | Beringham's beast; later story. |
+| ヴァンダム城 | Vandam Castle | msg 23 caption, msgs 24+. |
+| ウィンスロー | Winslow | ウィンスローのご子息 = "son of Winslow" (msg 21 via 753F); ウィンスロー二世 = "Winslow II" (msg 24). |
+| 0x753F insert | [canned word] | One occurrence: ご子息 "son" (msg 21). **Drop the control; carry the word as plain EN text.** Same default planned for 753E (beast-name inserts, msgs 31+). |
+| 0x7540 insert | [player name] | Keep as variable `{NAME}`; never translate. QA sim width = 6 chars. |
 
 ## Character sheet (story mode)
 
@@ -79,10 +88,21 @@ every decided term and every piece of user feedback. Companion docs:
   used in EN yet.
 - **The man (男)** (msgs 10–13): unnamed; has the Takt; seeks revenge on
   the Legendary Beast Tamer and the world; exclamation-heavy, blunt,
-  imperative. Voice: forceful, breathless menace.
+  imperative. Voice: forceful, breathless menace. Identity unresolved —
+  do not imply a link to later characters in EN yet.
+- **Kurimuto (クリムト)** (msgs 20+): old Beast Tamer asleep in the
+  ruins; saves the player, name-drops Beringham ("some history" with
+  him), recognizes the player as Winslow's son, and later hands over
+  his own Takt (msg 29) and beasts (msg 30). Grumpy-soft old-man voice:
+  casual contractions, gruff asides, no modern slang.
+- **Beringham (ベリンガム)** (msg 16 mention; msgs 25+ seen): leader
+  figure of the Pope's Beast Knight Order, invader of Vandam Castle.
+  Grandiose, mocking (フフフ / ハハハ laughers); EN keeps the theatrical
+  menace and the laugh beats ("Heh...", "Hahah!").
 - **Pursuers 1/2/3 (追っ手１/２/３)** (msgs 14–16): guards of the Barroa
   Kingdom chasing the player character. Voice: loud, rough, bickering,
-  a bit dim ("Uh... what was the name?"), greedy for reward.
+  a bit dim ("Uh... what was the name?"), greedy for reward. Routed by
+  the beasts in msgs 17–19.
 - **Player character**: name is variable (0x7540). Boy or girl (chosen at
   game start); do not assume gender in text that refers to the player.
 - **Legendary Beast Tamer**: the hero of the old war (msgs 5–13); the man
@@ -99,7 +119,11 @@ every decided term and every piece of user feedback. Companion docs:
   keeps a distinct voice per the character sheet.
 - **Names**: per glossary; no Japanese honorifics (-san/-chan); 様 → Lord.
 - **Numbers**: spell out small numbers in prose ("two"); digits only in
-  UI/system contexts (none in story milestones so far).
+  UI/system contexts (none in story milestones so far); regnal suffixes
+  use capital Roman numerals — ウィンスロー二世 = "Winslow II" (msg 24).
+- **Word inserts**: `753F`/`753E` print a canned JP word (ご子息 "son",
+  msg 21; beast names, msgs 31+). The EN patch **drops the control** and
+  spells the word as plain text in the surrounding runs.
 - **Cries/emphasis**: keep exclamation marks as in source; do not upgrade
   single `！` to `!!`.
 - **Onomatopoeia**: none encountered in story text so far.
@@ -118,18 +142,25 @@ every decided term and every piece of user feedback. Companion docs:
   same emphasized concept inside the span (msg5 魔術使い → "sorcerer",
   msg8 私 → "me", msg9 伝説の魔獣使い → "the Legendary Beast Tamer")
   and keep the span on one line.
-- **Speaker cards**: `Man: "…"` / `Pursuer 1: "…"` — JP 男「…」 gets a
-  colon + straight quotes in EN. When the JP card stands alone on its
-  line, so does the EN (`Pursuer 2:` / `"Uh... what was the name?"`).
-  A quote that spans boxes stays open until the JP closes it (msg 12's
-  invitation never closes — EN mirrors; msg 16's quote closes in screen 4).
+- **Speaker cards**: `Man: "…"` / `Pursuer 1: "…"` / `Old man: "…"` — JP
+  男/追っ手/老人「…」 gets a colon + straight quotes in EN. When the JP
+  card stands alone on its line, so does the EN (`Pursuer 2:` /
+  `"Uh... what was the name?"`). After the self-introduction caption
+  (msg 21) the old man's card reads `Kurimuto: "…"` — matching the JP's
+  老人 → クリムト shift. A quote that spans boxes stays open until the
+  JP closes it (msg 12's invitation never closes — EN mirrors; msg 16's
+  quote closes in screen 4).
 - **Captions** (`7533`): `~Mount Famfantar~`, `~Ruins~` — ASCII `~`
   pair. Verified in-game: the caption shows alone in the box and the
   box then clears for the narration (sim splits there).
 - **Box paging** (verified in-game, msg 15): the box shows 2 lines and
   clears automatically when a further line arrives (2 lines + 1 page
-  for the JP's 3-segment screen). Keep every segment ≤30 chars so page
-  breaks fall where the JP's do; a source screen may hold up to 3+ segs.
+  for the JP's 3-segment screen). msg 21: quote + tail = 2 pages ✓.
+  msg 24: **JP itself clears between line 1 and line 2** (2 display
+  pages — frames 19900–20100); EN mirrors the page count, but the split
+  point may differ when width demands (flag in the milestone doc).
+  Keep every segment ≤30 chars so page breaks fall where the JP's do;
+  a source screen may hold up to 3+ segs.
 
 ## Do-not-translate
 
@@ -141,10 +172,20 @@ every decided term and every piece of user feedback. Companion docs:
 1. **Grandate** romanization (FLAG above).
 2. **hydra dragon** vs. *Hydragon* (FLAG above).
 3. Narrator identity/gender — confirmed male/female later in script?
-4. **Kurimuto** romanization (flag).
+4. **Kurimuto** romanization — Kurimuto / Klimt (クリムト = JP
+   katakana for the painter Klimt; fantasy-cast name) / Kurimt.
 5. Final English glyph metrics (8 px assumption) — wrap points may shift.
 6. Player-character gender: the naming screen (between msgs 15 and 16)
    lets the player name the character (default name observed: レオ).
    Keep pursuit lines gender-neutral until the story confirms.
    The naming/monster-select UI screens are 8×8-font text — later
    milestone.
+7. **msg 21 story line** — 「いや、助けたのはベリンガムと言う名を聞いてな。」
+   taken as "the reason I stepped in: I heard the name Beringham"
+   (te-form reason). Alternative: "the one I saved is named Beringham."
+   User confirmation welcome (one-run edit).
+8. **Beringham's surname** — ベリンガム・ロー□□ (msg 25): 2 glyph codes
+   pending M5 reads.
+9. **7540 length** — QA sim reserves 6 chars for the player name
+   (={`######`}); names longer than 6 could push msg 21/22 rows past
+   30 — the naming UI milestone should cap EN name length.

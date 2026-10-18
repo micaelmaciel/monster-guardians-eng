@@ -131,6 +131,47 @@
     "With that the pursuers moved\nto grab ",
     "... just then!"
   ],
+  "17": [
+    "From behind, the beasts",
+    "suddenly attacked the guards!"
+  ],
+  "18": [
+    "Pursuers: \"Uwaaah!!\"",
+    " stood there, in shock,",
+    "watching how it all unfolded."
+  ],
+  "19": [
+    "The pursuers fell in no time!",
+    "Then, from the next room,",
+    "an old man appeared."
+  ],
+  "20": [
+    "Old man: \"Noisy!\"",
+    " I'm in a",
+    "bad mood when I wake up!\""
+  ],
+  "21": [
+    "The old man said his name:",
+    "Kurimuto: \"No. I heard the\nname Beringham. I stepped in.",
+    "That one and I have a past",
+    "...",
+    "Hmm. I peg you for the son of",
+    "Winslow of Vandam Castle",
+    "...",
+    "What happened at the castle?"
+  ],
+  "22": [
+    " began telling him of",
+    "yesterday's incident",
+    "."
+  ],
+  "23": [
+    "~Barroa's Vandam Castle~"
+  ],
+  "24": [
+    "The lord: noble Winslow II.",
+    "The incident struck one\ndrizzly morning."
+  ],
   "_notes": {
     "1": "rev2: boxes 3+4 are one sentence in JP order; box 4 continues it lowercase (no restarted subject). Box-3 line break = the source 7530 between runs 4 and 5; the only added break is inside run 6.",
     "4": "rev2: 'each other' takes a period; the sentence continues across the 7532 — run 2 is box-1 line 2 and box 2 resumes lowercase with run 3. The only added break is the one after run 1.",
@@ -143,6 +184,14 @@
     "13": "m3: 7537 0000 prefix and both styled-dot spans (runs 1 and 5) kept. 1 added break inside run 7 — JP auto-wraps the same single 33-glyph segment at 17.",
     "14": "m3: caption (7533) like msg 10. No added breaks: the two source 7530s are the line breaks. Both pursuit lines mirror msg 15/16 card style.",
     "15": "m3: screen 1 = 3 segments -> box pages 2+1 lines (verified in-game, story_run frames 13800-14000; box clears and continues). Screen 2 mirrors label-alone + styled dots + 7534 pause. 'the name' keeps it neutral (gender unrevealed; player enters the name right after).",
-    "16": "m3: three 7540 name inserts; red on the first name (runs 2-3 split) and on run 7 (ベリンガム様). Screen 3's quote stays open into screen 4 (JP closes only after たんまりと). 1 added break in run 12 ('... just then!' = JP cliffhanger その時！). 'Catch you for Lord Beringham' keeps 捕まえて on line 1."
+    "16": "m3: three 7540 name inserts; red on the first name (runs 2-3 split) and on run 7 (ベリンガム様). Screen 3's quote stays open into screen 4 (JP closes only after たんまりと). 1 added break in run 12 ('... just then!' = JP cliffhanger その時！). 'Catch you for Lord Beringham' keeps 捕まえて on line 1.",
+    "17": "m4: both breaks are the source 7530s. \"the guards\" = 追っ手達 (established msg 15: royal guards of Barroa).",
+    "18": "m4: 7540 name insert (before run 1) + 7532 screen split; no added breaks. \"in shock\" = 唖然.",
+    "19": "m4: 7535/7536 style span passes through; screen 2 breaks at the source 7530. あっというまに = \"in no time\".",
+    "20": "m4: 7537(0002) and 7534(0006) pass through (invisible in-game, frames 18000). Speaker card \"Old man:\" — name arrives next message. やかましい → \"Noisy!\" (18 chars keeps row <=26).",
+    "21": "m4: caption (7533) shows alone and clears. Added 1 break inside the quote run (JP auto-wraps mid-word). 753F(0001) prints the canned word ご子息 — DROP the control at insertion; EN carries \"son\" just before that position. Interpretation flag: line 1 read as \"[reason] I heard the name Beringham\" (milestone-04 flag 1).",
+    "22": "m4: 7538(0031,0030) + 7540 pass through; the source 7530 is the row break. Red span = \"yesterday's incident\" (JP red = 事件 only; width compromise — milestone-04 flag 5). Runs carry a leading space in run 1 (after the name insert).",
+    "23": "m4: 7531 clears the caption after the player's input (▼ verified, frame 19700). \"Barroa's Vandam Castle\" compresses バルロア王国、ヴァンダム城 to fit the 30-char row (milestone-04 flag 3).",
+    "24": "m4: 7537(0032) passes through. JP clears the box between its two lines (2 display pages, frames 19900-20100); EN is also 2 pages but splits mid-sentence (milestone-04 flag 4). Added 1 break in run 2; 二世 = \"II\"."
   }
 }
