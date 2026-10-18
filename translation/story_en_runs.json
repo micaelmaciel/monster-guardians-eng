@@ -224,7 +224,13 @@
     "53": "m8: マグマ = \"magma\"; 赤い体 = \"body was red as magma\"; クチ → \"maw\"; 息使い = \"breath\"; 嵐のような = \"like a storm\".",
     "54": "m8: ハハッ = \"Hahah!!\"; added break at e2 end so RED name gets its own row; 完全復活 rephrased \"has fully revived!\" (flag).",
     "55": "m8: 7538(001D,001E) passes; おまえ達 = \"You lot\"; 合獣機 = \"beast combining machine\"; 例の dropped in e0 (flag). List split \",\\nand\" to keep rows <=30; added break after \"create\". 君とのな = \". You and I, well...\" (flag: JP sentence trails off). 息をのんだ = \"held their breath\".",
-    "56": "m8: 我々 = \"we\"; 不可能 = \"impossible\"; ひとまず = \"for now\"; [7540] then e4 (leading comma); 目覚めていた = \"was awakening\"; W-span dots. ここは = \"For now\"."
+    "56": "m8: 我々 = \"we\"; 不可能 = \"impossible\"; ひとまず = \"for now\"; [7540] then e4 (leading comma); 目覚めていた = \"was awakening\"; W-span dots. ここは = \"For now\".",
+    "57": "m9: the awakened entity speaks through [name]. フフフッ = \"Heh heh!\" (msg 40 laugh family). 久しぶりだな = \"It's been a while...\" (ぶ shared with やぶれる, msg 59). 表情 = \"expression\", 人格 = \"personality\", 変貌 = \"transformed into\". Name gets its own row before the quote (JP 7530).",
+    "58": "m9: 数百年 = \"centuries\"; 決着をつける = \"settle\"; 写る = \"reflected\" (Canon's image behind [name]); added \"Behind\" so [name] lands right after it. カノン = \"Canon\" (established).",
+    "59": "m9: 大地のイグニス kept as the full term \"Ignis of the Earth\". おたけび = \"roar\"; 横たえた = \"laid ... on the ground\"; やぶれる = \"defeated\". S1 = 3 rows -> 2 pages vs JP 2 rows -> 1 (flag); 2 rows impossible (67 chars).",
+    "60": "m9: いかん、このままでは = \"Not good! This won't do!!\" (comma dropped for width). 発せられた = \"released\"; 不思議な光の帯 = \"mysterious band of light\"; 包み込む = \"wrapped around\"; 宙に浮かんだ = \"floated up\". Name row kept (JP br after ベリンガム).",
+    "61": "m9: 光に包まれた = \"wrapped in light\"; 空の彼方へ = \"beyond the sky\". Single-run message.",
+    "62": "m9: なんということだ → \"What's happening!\"; 合成 = \"combining\" (msg 55/46 term); trailing 強さを・・・ = \"had such strength...\" (JP trails off; final story message). [name] insert kept between runs (JP br before it)."
   },
   "25": [
     "The Pope's ",
@@ -480,6 +486,48 @@
     "But just then,",
     ", deep inside,",
     "something was awakening",
+    "..."
+  ],
+  "57": [
+    "Kurimuto: \"What's wrong!?\"",
+    ": \"Heh heh!\"",
+    "\"It's been a while",
+    "...",
+    "\"",
+    "'s expression",
+    "had clearly transformed into\na different personality."
+  ],
+  "58": [
+    "\"I'll settle this battle of",
+    "centuries, here and now!\"",
+    "Behind ",
+    ", Kurimuto saw\nthe reflected figure of Canon."
+  ],
+  "59": [
+    "Ignis of the Earth let out",
+    "a roar, and laid its body\non the ground.",
+    "Beringham: \"What on earth!",
+    "Ignis is being defeated!!\""
+  ],
+  "60": [
+    "Beringham",
+    "\"",
+    "Not good! This won't do!!",
+    "\"",
+    "A mysterious band of light\nfrom Beringham's hand,",
+    "wrapped around Ignis's body,",
+    "its giant body floated up."
+  ],
+  "61": [
+    "Wrapped in light, Ignis and\nBeringham flew beyond the sky."
+  ],
+  "62": [
+    "Beringham: \"",
+    "What's happening!",
+    "\"",
+    "Canon and the Beast Tamer",
+    ", made by combining,",
+    "had such strength",
     "..."
   ]
 }

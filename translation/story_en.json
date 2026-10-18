@@ -4601,6 +4601,420 @@
      "params": []
     }
    ]
+  },
+  {
+   "message": 57,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"What's wrong!?\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": ": \"Heh heh!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "\"It's been a while"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x4"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "'s expression"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "had clearly transformed into"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "a different personality."
+    }
+   ]
+  },
+  {
+   "message": 58,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "\"I'll settle this battle of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "centuries, here and now!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Behind "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": ", Kurimuto saw"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "the reflected figure of Canon."
+    }
+   ]
+  },
+  {
+   "message": 59,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Ignis of the Earth let out"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "a roar, and laid its body"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "on the ground."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Beringham: \"What on earth!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Ignis is being defeated!!\""
+    }
+   ]
+  },
+  {
+   "message": 60,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xfffe"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Not good! This won't do!!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "A mysterious band of light"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "from Beringham's hand,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "wrapped around Ignis's body,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "its giant body floated up."
+    }
+   ]
+  },
+  {
+   "message": 61,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Wrapped in light, Ignis and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham flew beyond the sky."
+    }
+   ]
+  },
+  {
+   "message": 62,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x1f"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham: \""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xfffe"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "What's happening!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Canon and the Beast Tamer"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": ", made by combining,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "had such strength"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    }
+   ]
   }
  ]
 }

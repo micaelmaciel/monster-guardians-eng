@@ -103,6 +103,17 @@ every decided term and every piece of user feedback. Companion docs:
 | 我々 / 不可能 | we / impossible | msg 56: 今の我々の力では…不可能じゃ = "We cannot beat Ignis as we are now!". |
 | ひとまず | for now | msg 56: ここはひとまず逃げるぞ = "For now, we must flee!!". |
 | 息をのむ | to hold one's breath | msg 55: {name}は息をのんだ = "{name} held their breath". |
+| 久しぶり | long time no see | msg 57: 久しぶりだな = "It's been a while..." (the entity through [name]). |
+| 表情 / 人格 / 変貌 | expression / personality / transform | msg 57: 表情 = "expression"; 人格 = "personality"; 〜へと変貌していた = "had transformed into". |
+| 数百年 | centuries | msg 58: 数百年にもわたる戦い = "battle spanning centuries". |
+| 決着をつける | to settle | msg 58: 決着を今ここでつけてやる = "I'll settle this ... here and now!". |
+| 写る | to be reflected | msg 58: 背後に写るカノンの姿 = "Canon's reflected figure". |
+| おたけび / 横たえる | roar / to lay down | msg 59: おたけびを上げ = "let out a roar"; 地面に体を横たえた = "laid its body on the ground". |
+| やぶれる | to be defeated | msg 59: イグニスがやぶれるとは = "Ignis is being defeated!". |
+| 発する / 光の帯 | emit / band of light | msg 60: 発せられた folded as "from ... hand"; 光の帯 = "band of light". |
+| 包む / 宙に浮かぶ | wrap / float in the air | msg 60: 包み込む = "wrapped around"; 宙に浮かんだ = "floated up". |
+| 彼方 | far beyond | msg 61: 空の彼方へ = "beyond the sky". |
+| 強さ | strength | msg 62 final line: これほどの強さを = "had such strength..." (trails off). |
 | 祭壇 | altar | msg 36: 祭壇のある部屋 = "the altar room". |
 | 地震 | earthquake | msgs 36–38; 地震に気をとられる = "distracted by the quake" (msg 37). |
 | 大男 | giant of a man | msg 37: 見たことも無い大男 = "a giant of a man unlike any ever seen". |
@@ -126,12 +137,15 @@ every decided term and every piece of user feedback. Companion docs:
   gendered pronouns in EN** until confirmed later in the script.
   Voice: calm, weighty, witness-like; full sentences; no contractions.
 - **Canon (カノン)**: sky hydra dragon; ruled the skies; fell in the war
-  (msg 7). No gendered pronouns used in EN yet.
+  (msg 7). No gendered pronouns used in EN yet. Its reflected figure
+  appears behind [name] when the entity awakens (msg 58); Beringham ties
+  [name]'s creation to Canon and the Legendary Beast Tamer (msgs 55/62).
 - **Ignis (イグニス)**: earth hydra dragon; ruled the land; wounded; went
   into hiding deep beneath Mount Famfantar (msg 7). No gendered pronouns
   used in EN yet. Revives fully at the crater as a giant, magma-red
   dragon (msgs 52–54); Beringham's line ties the player's creation to it
-  (msg 55).
+  (msg 55). Felled by the awoken [name] (msg 59): roars, lies down;
+  Beringham's light band lifts it away past the sky (msgs 60–61).
 - **The man (男)** (msgs 10–13): unnamed; has the Takt; seeks revenge on
   the Legendary Beast Tamer and the world; exclamation-heavy, blunt,
   imperative. Voice: forceful, breathless menace. Identity unresolved —
@@ -142,7 +156,8 @@ every decided term and every piece of user feedback. Companion docs:
   (msg 29) and beasts (msg 30), and departs to research the next beasts
   (msg 33). Returns to save the player from Zargo at the altar (msg 39)
   — old-man particle のう → "hm?". Voice: grumpy-soft, casual
-  contractions, no modern slang.
+  contractions, no modern slang. Witnesses the awakening (msg 57) and
+  sees Canon's reflected figure behind [name] (msg 58).
 - **Beringham (ベリンガム)** (msg 16 mention; msgs 25+ seen): leader
   figure of the Pope's Beast Knight Order, invader of Vandam Castle,
   mastermind of the coup (msg 25). Commands the man-made beast Zargo
@@ -153,7 +168,9 @@ every decided term and every piece of user feedback. Companion docs:
   the "fully revived" magma dragon as Ignis of the Earth (msg 54), orders
   his men to prepare the 合獣機 at the old castle ruins (msg 55), and
   reveals the player's origin: created by combining Ignis, Canon of the
-  Heavens, and the Legendary Beast Tamer (msg 55).
+  Heavens, and the Legendary Beast Tamer (msg 55). Aghast at Ignis's
+  defeat (msg 59); his hand releases the light band that carries him and
+  Ignis past the sky (msgs 60–62).
 - **Ramires (ラミレス)** (msgs 43–44): Beringham's other beast; appears
   when Zargo falls and tells the player to go to Mount Famfantar ("You
   wish... to know of yourself...?"). Speaks in halting fragments
@@ -169,6 +186,11 @@ every decided term and every piece of user feedback. Companion docs:
   Msg 55 reveals the player was created by combining Ignis, Canon of the
   Heavens, and the Legendary Beast Tamer — keep EN pronouns neutral
   ("their" for the player in narration).
+- **The entity inside [name] (msgs 56–62)**: awakens within the player
+  ("something was awakening"), speaks in first person through [name]
+  ("It's been a while...", "I'll settle this battle of centuries"), and
+  Canon's reflected figure appears behind [name]. Never named or
+  gendered on screen — keep EN ambiguous; add no epithets.
 - **Legendary Beast Tamer**: the hero of the old war (msgs 5–13); the man
   (msgs 10–13) seeks revenge related to this figure.
 
@@ -273,3 +295,11 @@ every decided term and every piece of user feedback. Companion docs:
 15. **msg 55 例の古城跡** — 例の (aforementioned) folded as "the old" in
    "at the old castle ruins". Revisit if a specific castle name is
    preferred once later text clarifies the location.
+16. **msgs 56–62 entity** — the awakened voice speaks through [name]
+   (`久しぶりだな`, msg 57); Canon's reflected figure appears behind
+   [name] (msg 58). The text never names the entity — EN keeps the
+   ambiguity (no added epithets). Confirm intent if the user knows the
+   full game story.
+17. **msg 59 s1 box page** — EN 3 rows → 2 box pages vs JP 2 rows → 1;
+   the 67-char sentence cannot fit two 30-char rows. Recorded, not a
+   defect.
