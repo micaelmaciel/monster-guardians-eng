@@ -3038,6 +3038,811 @@
      "en": "began to shake violently!"
     }
    ]
+  },
+  {
+   "message": 41,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham: \""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": ", Ignis has"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "sensed your presence."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "He's trying to revive again!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Zargo! "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x5"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "I'll leave the rest"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "to you!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "I'm off to Mount Famfantar."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": ", I'll meet an old"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "friend of yours there.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "With those words,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "Beringham left the room."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "And then, Zargo slowly drew"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "closer to "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x4"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 42,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Zargo: \"Guuuuuh!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Zargo let out a growl and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "crumpled to its knees!"
+    }
+   ]
+  },
+  {
+   "message": 43,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Just then, from the sky came"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "his other beast: "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Ramires"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "!"
+    }
+   ]
+  },
+  {
+   "message": 44,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Ramires stood before Zargo,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " was told:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x14"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Ramires: \"You wish... to know"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "of yourself...?\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7538",
+     "params": [
+      "0x12",
+      "0x13"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Then... go to"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Mount Famfantar...!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "With that, it wrapped its arms"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "around Zargo and flew away."
+    }
+   ]
+  },
+  {
+   "message": 45,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"Fate again, hm...\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "we've no choice but to go."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "To Mount Famfantar...!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "There, you'll learn everything"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "about yourself!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 46,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7539",
+     "params": [
+      "0x15",
+      "0x16"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7539",
+     "params": [
+      "0x17",
+      "0x18"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"Listen: by then,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "the Legendary Beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "'s medium"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "form,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "you must complete it!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Next, combine"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x3"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": " and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x4"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "Then,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "'s"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "medium form"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x5"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": " should be"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "complete!\""
+    }
+   ]
+  },
+  {
+   "message": 47,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"I set off again to"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "study the Legendary Beasts.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "the road to the volcano"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "will be the hardest yet!!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "With those words,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Kurimuto departed."
+    }
+   ]
+  },
+  {
+   "message": 48,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": " began the climb up"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Mount Famfantar,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "since then, countless quakes"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "had struck."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": " felt it."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "This quake is "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Ignis"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "raging underground."
+    }
+   ]
   }
  ]
 }

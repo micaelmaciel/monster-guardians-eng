@@ -208,7 +208,15 @@
     "37": "m6: 7540 twice. e0 carries an added break and a trailing space (row length is name-dependent); の目前に folded into \" looked up:\" (flag). 見たことも無い = \"unlike any ever seen\"; 近づいてきた = \"drew closer\". S1 and S3 are 2 EN rows = 1 page (JP 1 row each).",
     "38": "m6: red span = 君 rendered \"you\" (span keeps its bonding spaces; 29-char row). 気づきはじめて rendered \"senses\" before the span because EN needs the verb before the object; e2 = \",\" only; わかるかね dropped (flag). JP S1 = 2 pages, EN = 1.",
     "39": "m6: 7540 leading (name is the subject); 7537(0011,0010) pass through. 振りかざそう = \"swung up\"; ザーゴ = Zargo (beast name; cross-checked against the 8x8 ザーゴ strings). e0/e1 = \" faced / Beringham, and\" (row = 26 with the 6-char name sim). Added break in e3 so the insert Zargo starts row 2. S3 = 2 rows = 1 page (JP same).",
-    "40": "m6: 7535/7536 style span around フフフ・・・; 7534(0003) wait passes through. Added breaks: e1, e3. 裏に付いていた = \"sided with you\"; だがすでに遅い = \"But it's already too late!\"; 再び + 激しく = \"again / violently\". S1 = 4 rows (2 pages) vs JP 3 rows (2 pages)."
+    "40": "m6: 7535/7536 style span around フフフ・・・; 7534(0003) wait passes through. Added breaks: e1, e3. 裏に付いていた = \"sided with you\"; だがすでに遅い = \"But it's already too late!\"; 再び + 激しく = \"again / violently\". S1 = 4 rows (2 pages) vs JP 3 rows (2 pages).",
+    "41": "m7: 12 runs. 7540 leading (name is addressee: '######, Ignis has sensed your presence'); red 753B/753C wraps [7540]+君 -> EN puts the name alone in red, 君 carried by the vocative comma (e6 = empty). 7534(0005) wait passes through; 7535/7536 style span on ・・・ -> e11 '...'. e3 trailing space before 7534. Added breaks: e1, e4, e7 (rebalanced to keep rows <=30), e8, e9. Every screen <= 2 rows.",
+    "42": "m7: cry グウウウウッ = 'Guuuuuh!'; 唸り声 = growl; ヒザ (katakana) = knees. 7530 break kept as e1/e2 rows. S2 = 2 rows = 1 page (JP same).",
+    "43": "m7: one screen, no scr/br; red span = ラミレス (ミ/レ read from render; matches the 8x8 beast-name list). Added break in e0 so the red name starts row 2: 'his other beast: Ramires!' (24). もう一人の魔獣 = 'his other beast'; 現れた = 'came (from the sky)'.",
+    "44": "m7: 7537(0014)/7538(0012,0013) pass through; 7530 after e0. 告げた -> '###### was told:' (name renders first in the JP object-first clause). Ramires' halting 3-group '...' speech kept. そう言い残して = 'With that,'; 抱え込み = 'wrapped its arms around'; 飛び立っていった = 'flew away.' (JP omits final 。; EN adds period per EN convention). S3/S4 = 2 rows each.",
+    "45": "m7: これも運命か = 'Fate again, hm...' (old-man か -> hm); こうなったら行くしかない = 'we've no choice but to go.'; おぬしの全てが解る = \"you'll learn everything about yourself\". Added break in e3. S1 = 2 rows; S4 = 2 rows.",
+    "46": "m7: second recipe. 7539 pairs + five 753E beast inserts + red spans pass through. 中型体 = 'medium form' (glossary); 完成させる = 'complete'; 次は...を合成する = 'Next, combine [BE3] and [BE4].'; さすれば = 'Then,'. Insert rows worded so the beast names read naturally; the sim is insert-blind, so e2 holds a manual break (base row 'the Legendary Beast's medium form' would otherwise mid-wrap).",
+    "47": "m7: 道のり = 'the road to the volcano'; 至難を極める = 'will be the hardest yet!!'; 去って行った = 'departed'. そういい残し = 'With those words,' (cf. msg 41). S1/S2/S3 = 2 rows each (JP same).",
+    "48": "m7: 7 runs; 7540 leading twice (e0, e2); red span = イグニス, single comma run after it. 登り始めてから = 'began the climb up ... / since then'; 数え切れないほどの地震 = 'countless quakes'; この揺れは = 'This quake is'; 地底で暴れている = 'raging underground.' (JP omits final 。; EN adds period per EN convention). S4 keeps the JP row split ('This quake is Ignis,' / 'raging underground.')."
   },
   "25": [
     "The Pope's ",
@@ -329,5 +337,73 @@
     "But it's already too late!\"",
     "Just then, the ground again",
     "began to shake violently!"
+  ],
+  "41": [
+    "Beringham: \"",
+    ", Ignis has\nsensed your presence.",
+    "He's trying to revive again!",
+    "Zargo! ",
+    "I'll leave the rest\nto you!",
+    "I'm off to Mount Famfantar.",
+    "",
+    ", I'll meet an old\nfriend of yours there.\"",
+    "With those words,\nBeringham left the room.",
+    "And then, Zargo slowly drew\ncloser to ",
+    "",
+    "..."
+  ],
+  "42": [
+    "Zargo: \"Guuuuuh!\"",
+    "Zargo let out a growl and",
+    "crumpled to its knees!"
+  ],
+  "43": [
+    "Just then, from the sky came\nhis other beast: ",
+    "Ramires",
+    "!"
+  ],
+  "44": [
+    "Ramires stood before Zargo,",
+    " was told:",
+    "Ramires: \"You wish... to know\nof yourself...?\"",
+    "Then... go to\nMount Famfantar...!\"",
+    "With that, it wrapped its arms",
+    "around Zargo and flew away."
+  ],
+  "45": [
+    "Kurimuto: \"Fate again, hm...\"",
+    "we've no choice but to go.",
+    "To Mount Famfantar...!",
+    "There, you'll learn everything\nabout yourself!\""
+  ],
+  "46": [
+    "Kurimuto: \"Listen: by then,",
+    "the Legendary Beast",
+    "'s medium\nform,",
+    "you must complete it!",
+    "Next, combine",
+    " and",
+    ".",
+    "Then,",
+    "'s",
+    "medium form",
+    " should be",
+    "complete!\""
+  ],
+  "47": [
+    "Kurimuto: \"I set off again to\nstudy the Legendary Beasts.\"",
+    "the road to the volcano",
+    "will be the hardest yet!!\"",
+    "With those words,",
+    "Kurimuto departed."
+  ],
+  "48": [
+    " began the climb up\nMount Famfantar,",
+    "since then, countless quakes\nhad struck.",
+    " felt it.",
+    "This quake is ",
+    "Ignis",
+    ",",
+    "raging underground."
   ]
 }

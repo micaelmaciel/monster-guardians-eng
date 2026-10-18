@@ -76,9 +76,16 @@ every decided term and every piece of user feedback. Companion docs:
 | 占拠 | seizure / occupation | 城を占拠した (msg 25) → "It fell." / "the seizure" (row width). |
 | 濡れ衣 | frame-up | msg 25: まったくの濡れ衣 = "a complete frame-up". |
 | 容赦なく捕らえられ | captured without mercy | msg 26. |
-| 幼体 / 中型体 | young form / medium form | msg 32; 中型体 appears later (msg 46) — **FLAG**: form terminology provisional until then. |
+| 幼体 / 中型体 | young form / medium form | msgs 32 and 46 — "medium form" confirmed at msg 46; terminology no longer provisional. |
 | 合成 | combine | msg 32: 合成すると = "combining …". |
 | ザーゴ | Zargo | Beringham's man-made beast. Red span in msg 39; also in the 8×8 scripts (`ザーゴをたおせ！`) — keep one spelling across subsystems. **FLAG**: Zargo / Zaago provisional. |
+| ラミレス | Ramires | Beringham's other beast (msgs 43–44); glyphs fully read (ミ/レ), matches the 8×8 beast list. Speaks in halting fragments. **FLAG**: Ramires provisional (Zargo class). |
+| 復活 | revive | msg 41: 再び復活しようとしておる = "trying to revive again". |
+| 告げる | to tell | msg 44: {name}に告げた！ → object-first clause; EN passive "###### was told:". |
+| 抱え込む | wrap one's arms around | msg 44: ザーゴを抱え込み = "wrapped its arms around Zargo". |
+| 唸り声 / ヒザ | growl / knees | msg 42 (ヒザ is katakana in JP): 唸り声を上げ = "let out a growl"; ヒザをついて倒れこんだ = "crumpled to its knees". |
+| 道のり / 至難を極める | the road / be the hardest yet | msg 47: 火山までの道のり "the road to the volcano"; 至難を極める set phrase, "will be the hardest yet". |
+| 登る / 数え切れない / 地底 | climb / countless / underground | msg 48: 登り始めてから "began the climb ... since then"; 数え切れないほどの地震 "countless quakes"; 地底で暴れている "raging underground". |
 | 祭壇 | altar | msg 36: 祭壇のある部屋 = "the altar room". |
 | 地震 | earthquake | msgs 36–38; 地震に気をとられる = "distracted by the quake" (msg 37). |
 | 大男 | giant of a man | msg 37: 見たことも無い大男 = "a giant of a man unlike any ever seen". |
@@ -120,9 +127,14 @@ every decided term and every piece of user feedback. Companion docs:
 - **Beringham (ベリンガム)** (msg 16 mention; msgs 25+ seen): leader
   figure of the Pope's Beast Knight Order, invader of Vandam Castle,
   mastermind of the coup (msg 25). Commands the man-made beast Zargo
-  (msg 39) and mocks the player over the altar (msg 40). Grandiose,
-  mocking (フフフ / ハハハ laughers); EN keeps the theatrical menace and
-  the laugh beats ("Heh heh heh...", "Hahah!").
+  (msg 39) and his other beast Ramires, and mocks the player over the
+  altar (msg 40). Grandiose, mocking (フフフ / ハハハ laughers); EN keeps
+  the theatrical menace and the laugh beats ("Heh heh heh...", "Hahah!").
+- **Ramires (ラミレス)** (msgs 43–44): Beringham's other beast; appears
+  when Zargo falls and tells the player to go to Mount Famfantar ("You
+  wish... to know of yourself...?"). Speaks in halting fragments
+  ("..." between phrases); carries Zargo away. No gendered pronouns in
+  EN — use "it".
 - **Pursuers 1/2/3 (追っ手１/２/３)** (msgs 14–16): guards of the Barroa
   Kingdom chasing the player character. Voice: loud, rough, bickering,
   a bit dim ("Uh... what was the name?"), greedy for reward. Routed by
@@ -219,6 +231,10 @@ every decided term and every piece of user feedback. Companion docs:
    30 — the naming UI milestone should cap EN name length.
 10. **msg 33 その後** — その後の魔獣の作り方を調べる rendered "research
    how the next beasts are made" (the later-stage beasts; cf. 最初は in
-   msg 32 and 中型体 later). Revisit once msgs 41+ are read.
+   msg 32 and 中型体 later). M7 read (msgs 41–48): msg 46 confirms the
+   young → medium form progression but adds no その後 evidence — revisit
+   if msgs 49+ clarify.
 11. **Zargo** romanization (see glossary FLAG) — fix the spelling before
    the monster-names milestone so story and 8×8 text match.
+12. **Ramires** romanization (msg 43) — provisional, same class as Zargo;
+   settle both together at the monster-names milestone.
