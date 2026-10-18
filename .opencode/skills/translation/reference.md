@@ -22,10 +22,11 @@ every decided term and every piece of user feedback. Companion docs:
 ## Display constraints (bigfont story text)
 
 - One story screen = one text box; max 2 lines per box; box ≈ 240 px.
-- Japanese glyph advance ≈ 14 px → 17 JP glyphs/line (the game
-  auto-wraps JP mid-word; manual break = control `7530`). Widths vary
-  (small kana and 、 are narrower): a 17-glyph line can still overflow
-  and clear the box — msg 24, frames 19900–20100.
+- Japanese glyph advance = 12 px, row pitch 13 px, 2 rows per box page
+  (OAM-measured M5) → 17 JP glyphs/line (the game auto-wraps JP mid-word;
+  manual break = control `7530`). Widths vary (small kana and 、 are
+  narrower): a 17-glyph line can still overflow and clear the box —
+  msg 24, frames 19900–20100.
 - English will use new **halfwidth Latin glyphs** added to the relocated
   bigfont store (planned 8 px advance) → up to 30 chars per line, 60 per
   screen. **Working limits: ≤ 29 chars/line, ≤ 58 chars/screen** (flag
@@ -77,7 +78,16 @@ every decided term and every piece of user feedback. Companion docs:
 | 容赦なく捕らえられ | captured without mercy | msg 26. |
 | 幼体 / 中型体 | young form / medium form | msg 32; 中型体 appears later (msg 46) — **FLAG**: form terminology provisional until then. |
 | 合成 | combine | msg 32: 合成すると = "combining …". |
-| ザーゴ | Zargo | Beringham's beast; later story. |
+| ザーゴ | Zargo | Beringham's man-made beast. Red span in msg 39; also in the 8×8 scripts (`ザーゴをたおせ！`) — keep one spelling across subsystems. **FLAG**: Zargo / Zaago provisional. |
+| 祭壇 | altar | msg 36: 祭壇のある部屋 = "the altar room". |
+| 地震 | earthquake | msgs 36–38; 地震に気をとられる = "distracted by the quake" (msg 37). |
+| 大男 | giant of a man | msg 37: 見たことも無い大男 = "a giant of a man unlike any ever seen". |
+| 旅立つ / 何処かへ | set off / for parts unknown | msg 34: 何処かへ旅立って行った = "set off for parts unknown". |
+| 裏に付く | to side with | msg 40: クリムトが裏に付いていた = "Kurimuto has sided with you". |
+| 狙う | to target / be after | msg 39: 狙われておる = "is after you" (passive). |
+| 振りかざす | to brandish | msg 39: タクトを振りかざそうとした = "just as the Takt swung up" (compressed for row width). |
+| ゴゴゴゴゴ | RUMBLE! RUMBLE! RUMBLE! | msg 36 SFX line. |
+| フフフ | "Heh heh heh..." | Beringham's laugh; inside a `7535`/`7536` white-style span (msg 40). |
 | ヴァンダム城 | Vandam Castle | msg 23 caption, msgs 24+. |
 | ウィンスロー | Winslow | ウィンスローのご子息 = "son of Winslow" (msg 21 via 753F); ウィンスロー二世 = "Winslow II" (msg 24). |
 | 0x753F insert | [canned word] | One occurrence: ご子息 "son" (msg 21). **Drop the control; carry the word as plain EN text.** |
@@ -102,13 +112,17 @@ every decided term and every piece of user feedback. Companion docs:
   do not imply a link to later characters in EN yet.
 - **Kurimuto (クリムト)** (msgs 20+): old Beast Tamer asleep in the
   ruins; saves the player, name-drops Beringham ("some history" with
-  him), recognizes the player as Winslow's son, and later hands over
-  his own Takt (msg 29) and beasts (msg 30). Grumpy-soft old-man voice:
-  casual contractions, gruff asides, no modern slang.
+  him), recognizes the player as Winslow's son, hands over his own Takt
+  (msg 29) and beasts (msg 30), and departs to research the next beasts
+  (msg 33). Returns to save the player from Zargo at the altar (msg 39)
+  — old-man particle のう → "hm?". Voice: grumpy-soft, casual
+  contractions, no modern slang.
 - **Beringham (ベリンガム)** (msg 16 mention; msgs 25+ seen): leader
-  figure of the Pope's Beast Knight Order, invader of Vandam Castle.
-  Grandiose, mocking (フフフ / ハハハ laughers); EN keeps the theatrical
-  menace and the laugh beats ("Heh...", "Hahah!").
+  figure of the Pope's Beast Knight Order, invader of Vandam Castle,
+  mastermind of the coup (msg 25). Commands the man-made beast Zargo
+  (msg 39) and mocks the player over the altar (msg 40). Grandiose,
+  mocking (フフフ / ハハハ laughers); EN keeps the theatrical menace and
+  the laugh beats ("Heh heh heh...", "Hahah!").
 - **Pursuers 1/2/3 (追っ手１/２/３)** (msgs 14–16): guards of the Barroa
   Kingdom chasing the player character. Voice: loud, rough, bickering,
   a bit dim ("Uh... what was the name?"), greedy for reward. Routed by
@@ -136,7 +150,9 @@ every decided term and every piece of user feedback. Companion docs:
   spells the word as plain text in the surrounding runs.
 - **Cries/emphasis**: keep exclamation marks as in source; do not upgrade
   single `！` to `!!`.
-- **Onomatopoeia**: none encountered in story text so far.
+- **Onomatopoeia** (M6): the katakana rumble ゴゴゴゴゴ (msg 36) →
+  "RUMBLE! RUMBLE! RUMBLE!"; laughs フフフ → "Heh heh heh...". Keep SFX
+  loud but readable; do not invent extra SFX the JP lacks.
 - **Line breaks**: EN breaks are chosen for clean word wrapping; never
   hyphenate EN.
 - **Box seams** (user feedback, 2026-10-17): a long sentence may span
@@ -170,7 +186,9 @@ every decided term and every piece of user feedback. Companion docs:
   pages — frames 19900–20100); EN mirrors the page count, but the split
   point may differ when width demands (flag in the milestone doc).
   Keep every segment ≤30 chars so page breaks fall where the JP's do;
-  a source screen may hold up to 3+ segs.
+  a source screen may hold up to 3+ segs. M5+: up to 3 box pages per
+  screen accepted for information-dense EN (exporter flags >6 lines) —
+  e.g. msg 25 s1/s2, msg 31 s3, msg 40 s1.
 
 ## Do-not-translate
 
@@ -194,8 +212,13 @@ every decided term and every piece of user feedback. Companion docs:
    taken as "the reason I stepped in: I heard the name Beringham"
    (te-form reason). Alternative: "the one I saved is named Beringham."
    User confirmation welcome (one-run edit).
-8. **Beringham's surname** — ベリンガム・ロー□□ (msg 25): 2 glyph codes
-   pending M5 reads.
+8. **Beringham's surname** — RESOLVED M5: ベリンガム・ロー公爵 =
+   "Duke Beringham Roe"; ロー romanization (Roe / Rowe) still a **FLAG**.
 9. **7540 length** — QA sim reserves 6 chars for the player name
    (={`######`}); names longer than 6 could push msg 21/22 rows past
    30 — the naming UI milestone should cap EN name length.
+10. **msg 33 その後** — その後の魔獣の作り方を調べる rendered "research
+   how the next beasts are made" (the later-stage beasts; cf. 最初は in
+   msg 32 and 中型体 later). Revisit once msgs 41+ are read.
+11. **Zargo** romanization (see glossary FLAG) — fix the spelling before
+   the monster-names milestone so story and 8×8 text match.

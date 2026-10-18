@@ -15,7 +15,7 @@ milestone.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
-  Charmap for the bigfont now has **328 glyphs verified** (messages 0–32
+  Charmap for the bigfont now has **350 glyphs verified** (messages 0–40
   fully transcribed, each zipped token-by-token against its stream with
   zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
   `data/bigfont_charmap.json`. Control parsing corrected 2026-10-18:
@@ -71,6 +71,17 @@ milestone.
   box page longer than JP; the exporter QA budget was relaxed to
   **≤6 rows (3 pages) per screen** (was 4). 7 review flags recorded in
   the milestone doc (width-driven compressions; dynamic beast names).
+- **Translation milestone 6 delivered** (2026-10-18): story msgs 33–40
+  (Kurimuto departs, the tremor, Zargo at the altar; 39 runs, QA
+  `problems=0`, msgs 0–32 output byte-identical) — see
+  `translation/milestone-06-story-msgs-33-40.md`. Glyph pass added 22 new
+  bigfont glyphs (方処旅知壇震ゆ近づ気暴振ざザ狙裏付遅面激) — charmap now
+  **350/685**. `0x7F` read as ザ (not サ): the beast name ザーゴ =
+  "Zargo" in msg 39's red span matches the 8×8 scripts
+  (`ザーゴをたおせ！`), a useful cross-subsystem check. No new in-game
+  captures were needed (M5's OAM display model reused for page
+  accounting); every static row is ≤30 chars and the biggest EN/JP page
+  deviation is msg 38 s1 (EN 1 page vs JP 2).
 - **Text encoding is cracked.** Text = stream of 16-bit glyph indices;
   font = 512-glyph 8×8 tileset at ROM `0xBEDF0`; glyph index == text code.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
@@ -101,7 +112,7 @@ milestone.
 - [x] T7 — **Tooling**: chosen and recorded.
 - [ ] T8 — **Story/narration charmap**: build a character map for the
   685-glyph store at `0xD3144`, then decode all 63 script messages at
-  `0xCFF84..0xD1F96`. **In progress**: 328 glyphs verified (messages 0–32
+  `0xCFF84..0xD1F96`. **In progress**: 350 glyphs verified (messages 0–40
   fully transcribed; remaining glyphs read via vision renders — no OCR);
 
 ## Prior art and tools
@@ -355,9 +366,9 @@ frames cited):
 
 ### Story script readings (verified against renders + live frames)
 
-Messages 0–32 **fully verified** (2026-10-17/18): every glyph zips
+Messages 0–40 **fully verified** (2026-10-17/18): every glyph zips
 against its token stream in `tools/build_charmap_story.py` `READINGS` —
-328 glyphs mapped, zero length mismatches, zero char conflicts.
+350 glyphs mapped, zero length mismatches, zero char conflicts.
 Notation: `／` = box line break, `[wN]` = 0x7534 wait, `[SCR]` = 0x7532
 screen break, `[CLR]` = 0x7531 clear, `[W]…[/W]` = 7535/7536 white block,
 `[RED]…[/RED]` = 753B/753C red block, `[名]` = 0x7540 name insert,
@@ -397,6 +408,14 @@ beast-name insert (name from the beast table).
 - **30** — クリムト「わしの魔獣達をおぬしにあずけよう。[SCR] しばらくこの廃墟をねぐらにして／訓練するがよいぞ！」
 - **31** — クリムト「よいか、ベリンガム達と戦うには、[SCR] この魔獣達では力不足じゃ！[SCR] そこで[RED]伝説の魔獣使い[/RED]がつれていた[RED]伝説の魔獣[/RED][SCR] [RED][BE 08][/RED]を作るんじゃ！」
 - **32** — クリムト「ワシはその研究しておった。[SCR] まだ一部しか／解っておらんがの・・・」[SCR] [7539 000B 000C][7539 000D 000D]クリムト「ワシの調べでは、最初は[SCR] [RED][BE 00][/RED]と／[RED][BE 01][/RED]を合成すると、[SCR] [RED][BE 08][/RED]の幼体[RED][BE 02][/RED]が出来るはずじゃ！」
+- **33** — クリムト「わしは再びその後の魔獣の作り方を調べる！」／クリムト「後はまかせたぞ！」／
+- **34** — そう言い残してクリムトは／何処かへ旅立って行った。[SCR] その後ろ姿を見て／[名]は思った。[SCR]
+- **35** — [7538 000E 000F]クリムト老人は、こうなる事を知っていたのではないだろうかと・・・／
+- **36** — ゴゴゴゴゴ！[SCR] [名]が祭壇のある部屋に入った時、／大きく城がゆれはじめた。[SCR] [名]「地震？」
+- **37** — 地震に気をとられていた[名]の目前に、[SCR] 見たことも無い大男が立っていた。[SCR] 彼は[名]をにらみつけながら近づいてきた。
+- **38** — ベリンガム「わかるかね！この地震はイグニスが[RED]君[/RED]に気づきはじめて、／地下で暴れているのだよ！」[SCR] 声のする方向には／ベリンガムの姿があった。
+- **39** — [名]は[7537 0011]ベリンガムに向けて、[SCR] タクトを振りかざそうとしたその時[SCR] クリムト「気をつけろ！ヤツの作った魔獣[RED]ザーゴ[/RED]に狙われておるぞ！」[SCR] [7537 0010]いつのまにか／背後にクリムトの姿があった。[SCR] クリムト／「よくここまで来れたのう。」
+- **40** — ベリンガム「[W]フフフ・・・[/W]やはり[7534 0003]クリムトが裏に付いていたか！／だがすでに遅いな！」[SCR] その時、再び地面が／激しくゆれ始めた！
 
 Names/terms found so far: グランデート大陸 (Grandeート continent),
 カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
@@ -413,7 +432,12 @@ Beringham's full name ベリンガム・ロー公爵 = "Duke Beringham Roe"
 (msgs 25+; ロー = Roe provisional — **FLAG**). Also 軍事顧問 (military
 advisor), 最高司令官 (supreme commander), 首謀者 (mastermind), 濡れ衣
 (frame-up), 幼体 (young form — see msg 32), 合成 (combine). Beringham's
-second beast ラ□□ス (later messages) still has 2 unread glyphs.
+second beast ラ□□ス (later messages) still has 2 unread glyphs (likely
+ラミレス per the 8×8 name list). M6 addenda: ザーゴ = "Zargo"
+(msg 39 red span; same name in the 8×8 scripts — one spelling across
+subsystems; **FLAG** provisional), 祭壇 (altar — msg 36), 地震
+(earthquake — msgs 36–38), 大男 (giant — msg 37), 裏に付く (side with —
+msg 40), plus SFX ゴゴゴゴゴ (rumble) / フフフ (laugh).
 
 ### Compression (T2)
 
@@ -464,8 +488,8 @@ needed beyond pointer retargeting.
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
 - [x] Large-glyph story subsystem: format, glyph store, script stream,
-  control codes, and readings for msgs 0–32 (see Findings). 328/685
-  glyphs mapped. Next: M6 = msgs 33+; then English glyph strategy (new
+  control codes, and readings for msgs 0–40 (see Findings). 350/685
+  glyphs mapped. Next: M7 = msgs 41+; then English glyph strategy (new
   glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
   **pages** (clears and continues) if more lines arrive; `7533` caption
@@ -482,18 +506,22 @@ needed beyond pointer retargeting.
   2026-10-18** — Kurimuto intro, 753F insert handling, incident setup.
   **M5 (story msgs 25–32) delivered 2026-10-18** — the coup, Winslow's
   death, the training arc; OAM-verified page model; exporter budget
-  ≤3 pages. Per user decision 2026-10-18: continue without per-milestone
-  review. Next: M6 = story msgs 33+.
+  ≤3 pages. **M6 (story msgs 33–40) delivered 2026-10-18** — the tremor,
+  Zargo, the altar room; 22 new glyphs; Zargo cross-checked against the
+  8×8 scripts. Per user decision 2026-10-18: continue without per-milestone
+  review. Next: M7 = story msgs 41+.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
 semantics of **7537** params only (7538 = 2 params, 7539 = 2-param
 pass-through pair, 753E = beast-name insert, 753F = word insert — **all
-resolved** 2026-10-18). M4/M5 translation flags awaiting user: msg 21
+resolved** 2026-10-18). M4/M5/M6 translation flags awaiting user: msg 21
 line-1 story reading; Kurimuto vs Klimt romanization; ロー = Roe/Rowe;
-M5 width-driven compressions and dynamic beast names — see
-`translation/milestone-04-story-msgs-17-24.md` and
-`translation/milestone-05-story-msgs-25-32.md`.
+Zargo spelling; M5 width-driven compressions and dynamic beast names;
+M6 flags (その後 wording, の目前に compression, Zargo romanization) — see
+`translation/milestone-04-story-msgs-17-24.md`,
+`translation/milestone-05-story-msgs-25-32.md` and
+`translation/milestone-06-story-msgs-33-40.md`.
 
 ## Decisions
 

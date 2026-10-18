@@ -156,12 +156,12 @@
       "notes": "story bigfont; verified against render"
     },
     "38": {
-      "char": "",
-      "notes": ""
+      "char": "近",
+      "notes": "story bigfont; verified against render"
     },
     "39": {
-      "char": "",
-      "notes": ""
+      "char": "づ",
+      "notes": "story bigfont; verified against render"
     },
     "40": {
       "char": "て",
@@ -268,8 +268,8 @@
       "notes": "story bigfont; verified against render"
     },
     "66": {
-      "char": "",
-      "notes": ""
+      "char": "君",
+      "notes": "story bigfont; verified against render"
     },
     "67": {
       "char": "",
@@ -288,8 +288,8 @@
       "notes": "story bigfont; verified against render"
     },
     "71": {
-      "char": "",
-      "notes": ""
+      "char": "向",
+      "notes": "story bigfont; verified against render"
     },
     "72": {
       "char": "ベ",
@@ -512,8 +512,8 @@
       "notes": "story bigfont; verified against render"
     },
     "127": {
-      "char": "",
-      "notes": ""
+      "char": "ザ",
+      "notes": "story bigfont; verified against render"
     },
     "128": {
       "char": "ゴ",
@@ -936,8 +936,8 @@
       "notes": "story bigfont; verified against render"
     },
     "233": {
-      "char": "",
-      "notes": ""
+      "char": "ざ",
+      "notes": "story bigfont; verified against render"
     },
     "234": {
       "char": "",
@@ -1024,8 +1024,8 @@
       "notes": ""
     },
     "255": {
-      "char": "",
-      "notes": ""
+      "char": "ゆ",
+      "notes": "story bigfont; verified against render"
     },
     "256": {
       "char": "",
@@ -2144,64 +2144,64 @@
       "notes": "story bigfont; verified against render"
     },
     "535": {
-      "char": "",
-      "notes": ""
+      "char": "方",
+      "notes": "story bigfont; verified against render"
     },
     "536": {
-      "char": "",
-      "notes": ""
+      "char": "処",
+      "notes": "story bigfont; verified against render"
     },
     "537": {
-      "char": "",
-      "notes": ""
+      "char": "旅",
+      "notes": "story bigfont; verified against render"
     },
     "538": {
-      "char": "",
-      "notes": ""
+      "char": "知",
+      "notes": "story bigfont; verified against render"
     },
     "539": {
-      "char": "",
-      "notes": ""
+      "char": "壇",
+      "notes": "story bigfont; verified against render"
     },
     "540": {
-      "char": "",
-      "notes": ""
+      "char": "震",
+      "notes": "story bigfont; verified against render"
     },
     "541": {
-      "char": "",
-      "notes": ""
+      "char": "気",
+      "notes": "story bigfont; verified against render"
     },
     "542": {
-      "char": "",
-      "notes": ""
+      "char": "暴",
+      "notes": "story bigfont; verified against render"
     },
     "543": {
-      "char": "",
-      "notes": ""
+      "char": "振",
+      "notes": "story bigfont; verified against render"
     },
     "544": {
-      "char": "",
-      "notes": ""
+      "char": "狙",
+      "notes": "story bigfont; verified against render"
     },
     "545": {
-      "char": "",
-      "notes": ""
+      "char": "裏",
+      "notes": "story bigfont; verified against render"
     },
     "546": {
-      "char": "",
-      "notes": ""
+      "char": "付",
+      "notes": "story bigfont; verified against render"
     },
     "547": {
-      "char": "",
-      "notes": ""
+      "char": "遅",
+      "notes": "story bigfont; verified against render"
     },
     "548": {
-      "char": "",
-      "notes": ""
+      "char": "面",
+      "notes": "story bigfont; verified against render"
     },
     "549": {
-      "char": "",
-      "notes": ""
+      "char": "激",
+      "notes": "story bigfont; verified against render"
     },
     "550": {
       "char": "",
@@ -2744,5 +2744,5 @@
       "notes": ""
     }
   },
-  "verified_through_msg": 32
+  "verified_through_msg": 40
 }

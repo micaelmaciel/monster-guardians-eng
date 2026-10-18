@@ -200,7 +200,15 @@
     "29": "m5: 7540 insert between the runs; run 0 keeps a trailing \"to \". そう言うと = \"So saying,\"; 自分のタクト = \"his own Takt\".",
     "30": "m5: \"Roost in these ruins a while, / and train all you like!\" = しばらくこの廃墟をねぐらにして / 訓練するがよいぞ. あずけよう = \"I leave ... in your care\". 2 rows = JP 2 rows.",
     "31": "m5: 2 red spans pass through; 753E(0008) beast-name insert stays in stream (red span 3 = the name). EN moves the 作る verb into run 2 (\"So, you'll make the\"); run 6 = \"!\" only (a verb there would break the span row). s3 = 3 rows (2 pages) vs JP 1 page (21 glyphs). Flag: beast-name table still JP until the monster-names milestone.",
-    "32": "m5: 7539 pairs ignored (pass-through). e3/e4/e5: 'First, combining [b0] and [b1],' across s3/s4; e5 = \",\" only. s5 = \"[b8]'s young form, / [b2], should be created!\" (2 rows = JP 2 rows). Readings: e1/e2 \"But only part of it, you / see...\" = まだ一部しか解っておらんがの. 合成すると = \"combining\"; 幼体 = \"young form\". Need [b0/b1/b2/b8] names from the beast table (monster-names milestone)."
+    "32": "m5: 7539 pairs ignored (pass-through). e3/e4/e5: 'First, combining [b0] and [b1],' across s3/s4; e5 = \",\" only. s5 = \"[b8]'s young form, / [b2], should be created!\" (2 rows = JP 2 rows). Readings: e1/e2 \"But only part of it, you / see...\" = まだ一部しか解っておらんがの. 合成すると = \"combining\"; 幼体 = \"young form\". Need [b0/b1/b2/b8] names from the beast table (monster-names milestone).",
+    "33": "m6: single screen, 2 source breaks. その後の魔獣 rendered \"the next beasts\" (the later-stage beasts; flag) and 再び lost in e0. e1 = 後はまかせた (\"I leave the rest to you\"). EN 4 rows = 2 pages (JP 3 rows = 2 pages).",
+    "34": "m6: 7540 mid-sentence (その後ろ姿を見て / [name]は思った). そう言い残して = \"And with that,\"; 何処かへ = \"for parts unknown\". Added 1 break in e2 (name width).",
+    "35": "m6: 7538(000E,000F) lead-in passes through. Single segment, 2 rows (JP 32 glyphs = 2 rows). クリムト老人 = \"old Kurimuto\"; のではないだろうか = \"Perhaps ... would ...\".",
+    "36": "m6: ゴゴゴゴゴ = \"RUMBLE! RUMBLE! RUMBLE!\" (SFX line). 7530 source break kept; 7540 before が... and before the quote. 祭壇 = altar. e1 has no trailing comma to stay at 29 chars with the 6-char name sim; \"shake\" covers 大きく + ゆれはじめた.",
+    "37": "m6: 7540 twice. e0 carries an added break and a trailing space (row length is name-dependent); の目前に folded into \" looked up:\" (flag). 見たことも無い = \"unlike any ever seen\"; 近づいてきた = \"drew closer\". S1 and S3 are 2 EN rows = 1 page (JP 1 row each).",
+    "38": "m6: red span = 君 rendered \"you\" (span keeps its bonding spaces; 29-char row). 気づきはじめて rendered \"senses\" before the span because EN needs the verb before the object; e2 = \",\" only; わかるかね dropped (flag). JP S1 = 2 pages, EN = 1.",
+    "39": "m6: 7540 leading (name is the subject); 7537(0011,0010) pass through. 振りかざそう = \"swung up\"; ザーゴ = Zargo (beast name; cross-checked against the 8x8 ザーゴ strings). e0/e1 = \" faced / Beringham, and\" (row = 26 with the 6-char name sim). Added break in e3 so the insert Zargo starts row 2. S3 = 2 rows = 1 page (JP same).",
+    "40": "m6: 7535/7536 style span around フフフ・・・; 7534(0003) wait passes through. Added breaks: e1, e3. 裏に付いていた = \"sided with you\"; だがすでに遅い = \"But it's already too late!\"; 再び + 激しく = \"again / violently\". S1 = 4 rows (2 pages) vs JP 3 rows (2 pages)."
   },
   "25": [
     "The Pope's ",
@@ -266,5 +274,60 @@
     ",",
     "'s young form,\n",
     ", should be created!\""
+  ],
+  "33": [
+    "Kurimuto: \"I'll research how\nthe next beasts are made!\"",
+    "Kurimuto: \"I leave the rest\nto you!\""
+  ],
+  "34": [
+    "And with that, Kurimuto",
+    "set off for parts unknown.",
+    "Watching him walk away,\n",
+    " thought."
+  ],
+  "35": [
+    "Perhaps old Kurimuto had\nknown this would happen..."
+  ],
+  "36": [
+    "RUMBLE! RUMBLE! RUMBLE!",
+    " entered the altar room",
+    "the castle began to shake.",
+    ": \"An earthquake?\""
+  ],
+  "37": [
+    "Distracted by the\nquake, ",
+    " looked up:",
+    "A giant of a man unlike any\never seen stood there.",
+    "He glared at\n",
+    " and drew closer."
+  ],
+  "38": [
+    "Beringham: \"Ignis senses ",
+    "you",
+    ",",
+    "and he's raging underground!\"",
+    "Where the voice came from,",
+    "there stood Beringham."
+  ],
+  "39": [
+    " faced ",
+    "Beringham, and",
+    "just as the Takt swung up,",
+    "Kurimuto: \"Look out! A beast\n",
+    "Zargo",
+    " he built is after you!\"",
+    "Before they knew it,",
+    "Kurimuto stood at their back.",
+    "Kurimuto:",
+    "\"You made it this far, hm?\""
+  ],
+  "40": [
+    "Beringham: \"",
+    "Heh heh heh...\n",
+    "As expected, ",
+    "Kurimuto has\nsided with you!",
+    "But it's already too late!\"",
+    "Just then, the ground again",
+    "began to shake violently!"
   ]
 }

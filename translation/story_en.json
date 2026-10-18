@@ -2497,6 +2497,547 @@
      "en": ", should be created!\""
     }
    ]
+  },
+  {
+   "message": 33,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"I'll research how"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "the next beasts are made!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Kurimuto: \"I leave the rest"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "to you!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 34,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "And with that, Kurimuto"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "set off for parts unknown."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Watching him walk away,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": " thought."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 35,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7538",
+     "params": [
+      "0xe",
+      "0xf"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Perhaps old Kurimuto had"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "known this would happen..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 36,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "RUMBLE! RUMBLE! RUMBLE!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " entered the altar room"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "the castle began to shake."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": ": \"An earthquake?\""
+    }
+   ]
+  },
+  {
+   "message": 37,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Distracted by the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "quake, "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " looked up:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "A giant of a man unlike any"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "ever seen stood there."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "He glared at"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": " and drew closer."
+    }
+   ]
+  },
+  {
+   "message": 38,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham: \"Ignis senses "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "and he's raging underground!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Where the voice came from,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "there stood Beringham."
+    }
+   ]
+  },
+  {
+   "message": 39,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": " faced "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x11"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Beringham, and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "just as the Takt swung up,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"Look out! A beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Zargo"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": " he built is after you!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x10"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Before they knew it,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "Kurimuto stood at their back."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "Kurimuto:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "\"You made it this far, hm?\""
+    }
+   ]
+  },
+  {
+   "message": 40,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Beringham: \""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xa"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Heh heh heh..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "As expected, "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x3"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto has"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "sided with you!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "But it's already too late!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Just then, the ground again"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "began to shake violently!"
+    }
+   ]
   }
  ]
 }
