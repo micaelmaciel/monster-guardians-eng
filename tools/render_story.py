@@ -93,10 +93,13 @@ def split_screens(toks):
             param = toks[i + 1] if i + 1 < len(toks) else None
             screens[-1].append(("ctl", t, param))
             i += 1
-        elif t == 0x7538:
-            # Two params. Verified against in-game msg 22 (frame 19400):
+        elif t in (0x7538, 0x7539):
+            # Two params, no visible text.
+            # 7538 verified against in-game msg 22 (frame 19400):
             # "7538 0031 0030 [name]は昨..." displays from the name, so both
             # 0031 and 0030 are consumed and neither shows as text.
+            # 7539 same shape (msg 32: 7539 000B 000C / 7539 000D 000D feel
+            # like screen-side events; the params must not render as glyphs).
             p1 = toks[i + 1] if i + 1 < len(toks) else None
             p2 = toks[i + 2] if i + 2 < len(toks) else None
             screens[-1].append(("ctl", t, p1))
