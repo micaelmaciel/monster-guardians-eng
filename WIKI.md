@@ -11,20 +11,29 @@ milestone.
 - **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Both text
   subsystems are now structurally understood: (1) 8×8 direct-code text
   (2,223 strings, ready for translation), (2) 16×11 large-glyph story
-  script at `0xCFF84` with a 685-glyph store at `0xD3144`.
+  script at `0xCFF84` with a 685-glyph store at `0xD3144`. The
+  large-glyph region is now **fully enumerated**: 63 story messages +
+  33 late messages + 13 status words + the R1 support strings (insert
+  tables, fragments, scene variants, debug prompts) — see "Complete
+  text inventory & completeness audit" in Findings.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
-  Charmap for the bigfont now has **429 glyphs verified** (messages 0–62
-  fully transcribed, each zipped token-by-token against its stream with
-  zero mismatches/conflicts) via `tools/build_charmap_story.py`; see
+  Charmap for the bigfont now has **649 glyphs verified** (all 63 story
+  messages AND all 33 late messages zipped token-by-token against their
+  streams with zero mismatches/conflicts, plus hand-verified name-input
+  charset / status-word glyphs) via `tools/build_charmap_story.py`; see
   `data/bigfont_charmap.json`. Control parsing corrected 2026-10-18:
   `7538` takes **2 params** (was 1 — msg 22 desync fix), `753F` added as
   a 1-param insert (ご子息, msg 21), `7539` consumes **2 params** (was 1 —
   msgs 32/46 desync fix, confirmed pass-through).
-- Confirmed by reading the actual game: 63 messages are the **whole game's
-  story/event text** (intro attract = messages 0–9, then in-game event
-  scenes). See "Story script readings" below.
+- Confirmed by reading the actual game **and corrected by the M10 audit**:
+  the large-glyph story text is 63 messages (intro attract = 0–9, then
+  in-game event scenes) **plus 33 late messages** (the game's ending,
+  `0xD1F96..0xD30F4`). The earlier assumption that the story bank ended
+  at `0xD1F96` was the root cause of the miss; see "Complete text
+  inventory & completeness audit" below. Same for R1 (insert tables,
+  render fragments, scene variants) and the status word list.
 - **Translation milestone 1 approved** (2026-10-17, rev 2 after user
   feedback — box-seam fix): story msgs 0–4 translated and QA'd — see
   `translation/milestone-01-story-msgs-00-04.md`; machine-readable output
@@ -136,10 +145,13 @@ milestone.
   to be measured from a live screen.
 - [x] T6 — **Prior art**: none found.
 - [x] T7 — **Tooling**: chosen and recorded.
-- [ ] T8 — **Story/narration charmap**: build a character map for the
-  685-glyph store at `0xD3144`, then decode all 63 script messages at
-  `0xCFF84..0xD1F96`. **In progress**: 429 glyphs verified (messages 0–62
-  fully transcribed; remaining glyphs read via vision renders — no OCR);
+- [x] T8 — **Story/narration charmap**: character map for the 685-glyph
+  store at `0xD3144`; all large-glyph text decoded — 63 story messages at
+  `0xCFF84..0xD1F96`, 33 late messages at `0xD1F96..0xD30F4`, the status
+  word list at `0xD30F4..0xD3144` and the R1 support strings at
+  `0xCF52C..0xCFB82`. **649/685 glyphs verified** (readings via vision
+  renders — no OCR); the 36 unfilled entries are unread symbols/fragments
+  (see Open questions).
 
 ## Prior art and tools
 
@@ -318,11 +330,11 @@ individual 16×16 OBJ sprites, one sprite per character:
   `0E 0F 10 11 12 13 14 15 16 17 18` = だか私らが使うた(い)… — matches
   the frame-0900 line and its continuation (text types on progressively;
   frame 0900 shows only first 6 of 11 glyphs).
-- Dictionary at `0xD30F4..0xD3143`: 32 entries of
-  `{c1, c2, 0x7FFF}` (two glyph codes + terminator), codes up to
-  `0x2AC`. Likely a kanji-compound ↔ kana reading pair table used by the
-  story renderer; trailer word `0x7D10` after `0xD3143` may be a
-  checksum or count (unresolved).
+- `0xD30F4..0xD3143` is **not** a dictionary: it is the **monster status
+  word list** — 13 entries of `{c1[,c2,c3], 0x7FFF}` (生命, 耐久, 攻撃,
+  防御, 行動, 知識, 必殺技, 反撃, 索敵, 従順, 命中, 回避, 技能; codes
+  0x2A1–0x2AC identified from renders). See the M10 audit section.
+  (Superseded 2026-10-19.)
 - **No Latin letters or digits exist in the 685-glyph store** (spot-check
   of indices 0–21, 480–495, 664–684 shows only kana/kanji/punctuation).
   English story text will need **new glyphs**: the store is full (ends
@@ -465,6 +477,53 @@ beast-name insert (name from the beast table).
 - **61** — 光に包まれたイグニスとベリンガムは、空の彼方へ飛んでいった。
 - **62** — ベリンガム「[W]なんということだ！[/W]」[SCR] カノンと魔獣使いが合成した／[名]は、[SCR] これほどの強さを[W]・・・[/W]
 
+#### Late story bank L0–L32 (0xD1F96..0xD30F4) — the game's ending
+
+Found by the M10 completeness audit (see "Complete text inventory &
+completeness audit" below). Readings are glyph-only; insert positions
+(«P» player name, «Wn» word-table, «BEn» beast-name) are visible in
+the decoded text of `build/late_story_raw.json`. Zip-verified against
+`READINGS_LATE` in `tools/build_charmap_story.py`, zero mismatches.
+
+- **L0** — 「ハアハア！」イグニスが去った後、我に返ったはその場に倒れこんだ。クリムト「おぬし・・・そうか！何かをきっかけとして、カノンの魂が目覚めるのか！」クリムト「もう話さねばなるまい。全ての事を・・・」クリムト「ベリンガムが言っていた事は事実じゃ！ワシがカノンと魔獣使いを合成し、おぬしが生まれた。」
+- **L1** — クリムト「そもそもワシがこの世界に合獣機というものを作り出したんじゃ。」クリムト「二匹のドラゴンが支配し狂暴な魔獣達が、支配していたこの世界に、人間的な秩序を持った魔獣人間を作ろうとしたんじゃ」
+- **L2** — クリムト「ワシが初めて作った魔獣人間、それがベリンガムじゃ。」クリムト「合成した魔獣は、強い遺伝に影響される。複数の魔獣達と合成を繰り返したが、ヤツは暗黒系の遺伝子をより強く受け継いでしまった。姿は人間だが心は狂暴な魔獣達と変わらないヤツだ。」
+- **L3** — クリムト「結局、ワシの理想はムズカシイと感じ始めた時、が現れた。」クリムト「は２匹のドラゴンと壮絶な戦いをし、が勝利したが、もまた全身に瀕死の重傷をおい、もはや命を助けるには合獣機を使う方法しか残されていなかった。」
+- **L4** — クリムト「わしは生命力の強いカノンと、を合成したんじゃ！」
+- **L5** — クリムト「そして、の遺伝子を強く受け継いだ、魔獣人間のおぬしが産まれた。」しかし、いっさいの記憶を失ってな。その後、おぬしはバルロア国の貴族、ウィンスロー一世の子供だと判った。つまり死んだおぬしの父、ウィンスロー二世はそなたの弟だ！彼は事実を知り、記憶の無いおぬしを本当の子のように育ててくれたんじゃよ。」父では無く自分の弟だったウィンスロー二世・・・は動揺する自分を抑えることで精一杯であった。
+- **L6** — クリムト「ベリンガムはこの事実を知ってイグニスをおびき出すために、おぬしを利用したんじゃ」
+- **L7** — クリムト「ヤツは古城跡に向かっているはずじゃ。あそこには昔、おぬしを合成した合獣機がある。ヤツはおぬしになろうとしておる。」
+- **L8** — クリムト「おぬしとイグニスの因果関係は永遠。逃れることは出来ん！伝説の魔獣を復活し、ヤツらを倒すのじゃ！」
+- **L9** — クリムト「いいか！これで伝説の魔獣が完成する。中型体のとを合成するんじゃ！
+- **L10** — クリムト「さすれば伝説の魔獣の完成じゃ！この魔獣を使えるのは、そなただけだ。古城跡へ向かい、ベリンガムの野望を阻止するんじゃ！」
+- **L11** — が中庭まで来ると、突然目の前にザーゴとラミレスが現れた。ザーゴ「今度は・・・本気！」ラミレス「もう容赦・・・しない！」
+- **L12** — ベリンガムの所へザーゴとラミレスが、逃げ帰って来た。ベリンガム「情けないやつらだ。おまえ達、この中へ入れ！」
+- **L13** — ベリンガム「おのれ、所詮ザコ同士の合成では、この程度の強さかっ！」ベリンガム「ならばさらなる力をあたえるために、ワシ自身と・・・」そう言うと、ベリンガムみずから合獣機の中に入った。
+- **L14** — ベリンガム「お・・・おのれこれ・・・で、ワシが・・・
+- **L15** — 最強・・・」その先には、すでにイグニスが合獣機の中に入れられていた。ベリンガムは体を引きずりながら、合獣機の中に入った。
+- **L16** — 合獣機が火を噴き、その炎はまたたくまに古城全体を包んだ！
+- **L17** — 部屋中が炎に包まれてもは逃げ出さず、死んだベリンガムの姿をみつめていた。
+- **L18** — は思い出していた。ベリンガムが城に攻めて来た時の事を。
+- **L19** — ウィンスロー「これが目的だったのか！」ウィンスロー王が伝説の魔獣使いのタクトをベリンガムの前に差し出した時！タクトを見たの心がカノンの魂に支配され
+- **L20** — 伝説の魔獣使いに恨みを持つカノンが、弟であるウィンスロー王に何をしたのか・・・
+- **L21** — の手から魔獣使いのタクトが落ちた。
+- **L22** — 「が殺した・・・」炎が部屋中に広がり、の姿も炎に包まれた。
+- **L23** — 古城全体が煙に包まれ、外壁が崩れた。
+- **L24** — クリムト「古い合獣機をムリに動かした結果じゃ！」クリムト「は・・・？」
+- **L25** — その時、炎に包まれていた城が崩れ落ちた。
+- **L26** — クリムトはその崩れた残骸の中、を探し歩いた。そして、火に焼かれ黒くなったタクトを見つけ出した。クリムトはそのタクトを見て確信した。
+- **L27** — クリムト「そうか・・・全て知った上での、決断か・・・」クリムト「何処かで生き延びているじゃろ！」
+- **L28** — そう自分に言い聞かせるよう、黒くなったタクトを見つめていた。
+- **L29** — ～スタッフロール～❋The End❋
+- **L30** — は立ち止まり、考えた。クリムト老人が言った、伝説の魔獣無しで、戦えるだろうかと？そう考え、はその場を立ち去った。
+- **L31** — は立ち止まり、考えた。この先にはベリンガム達が、待ち構えている。伝説の魔獣の完成無しで、はたして勝てるのだろうか？魔獣を完成させるためはその場を離れた。
+- **L32** — は立ち止まり、考えた。この先にはベリンガム達が、待ち構えている。伝説の魔獣の完成無しではたして勝てるのだろうか？魔獣を完成させるため、はその場を離れた。
+
+Scene map: L0–L12 = the opening/back-story and fusion-tutorial scenes
+(incl. the God-less opening, the war back-story and the fusion recipes),
+L13–L32 = the finale (Vandam Castle attack, the volcano, the awakening,
+the ending and the staff roll).
+
 Names/terms found so far: グランデート大陸 (Grandeート continent),
 カノン (Canon — sky dragon), イグニス (Ignis — earth dragon),
 ハイドラゴン (hydra dragon), クリムト (Kurimuto — old beast tamer),
@@ -503,6 +562,123 @@ msg 58), 決着 (settle — msg 58), 写る (be reflected — msg 58), おたけ
 msg 59), 発する (emit — msg 60), 光の帯 (band of light — msg 60), 包む
 (wrap — msg 60), 宙に浮かぶ (float in the air — msg 60), 彼方 (far
 beyond — msg 61), 強さ (strength — msg 62).
+
+### Complete text inventory & completeness audit (M10, 2026-10-18/19)
+
+The user asked how the 32 late messages were missed and whether any other
+game text was missed. Findings:
+
+**The large-glyph text region is now fully enumerated.**
+
+| region | what | status |
+|--------|------|--------|
+| `0xCFF84..0xD1F96` | 63 story messages | read + translated (M1-M9) |
+| `0xD1F96..0xD30F4` | 33 late messages (the ending) | read; translation = M11 |
+| `0xD30F4..0xD3144` | monster status word list (13 entries) | read; translation = M11 |
+| `0xCF52C..0xCFB82` | R1 support region (37 segments) | extracted; see below |
+
+**Root causes of the missed messages**
+
+1. The first extraction stopped at `0xD1F96` — the 63-message bank read
+   exactly to there — but the token stream continues for another 4,446
+   bytes (`0xD1F96..0xD30F4`, exactly 33 messages, 33 `0x7FFF`
+   terminators).
+2. The ad-hoc re-extraction that found the continuation kept only 32 of 33
+   messages because it had no count/offset verification and silently
+   dropped `0xD2CCA` (44 tokens). That message IS referenced from the
+   scene table at `0xCB6FC`, so it displays in game.
+3. R1 was never inventoried: earlier work examined only
+   event-table-referenced message streams, not the story-system support
+   region.
+
+**Verification now built in** (all committed):
+
+- `tools/extract_late_bank.py` — segments `0xD1F96..0xD30F4`; asserts the
+  count (33), the expected-start list, and the region end.
+- `tools/build_charmap_story.py` — zips **both** banks glyph-by-glyph
+  against `READINGS` / `READINGS_LATE` plus the hand-verified `EXTRAS`;
+  649/685 glyphs mapped, zero mismatches/conflicts.
+- `tools/extract_r1.py` — R1 segments, the `753E`/`753F` tables, the
+  name-input charset, and a whole-ROM pointer census for the region.
+
+**Pointer census (whole ROM, 2-aligned u32)**
+
+- All 63 story-bank starts are referenced from scene/event tables
+  (`0xC8xxx`/`0xCAxxx`).
+- Late bank: all 33 starts are referenced (scene tables
+  `0xCA6F8..0xCBA30`, plus `0xC79A8`/`0xC7A34`/`0xC7AC0` for the last
+  three) except `0xD2F08`, which is a chained continuation the engine
+  advances into.
+- No real mid-message pointers exist in either bank: odd-offset hits are
+  byte-overlap artifacts, and the handful of even-offset hits inside the
+  bank window match chance for that window size.
+
+**R1 support region (`0xCF52C..0xCFB82`) — display status**
+
+DISPLAYED content (referenced):
+
+- the two insert tables (below), used inside story messages via `753E` /
+  `753F`;
+- renderer fragments `0xCF9A0` (`▼「」`), `0xCF9A8` (`、。`), `0xCF9AE`
+  (`、。」{089}！～`), `0xCF9BC` (`「{08A}～`) — referenced from data tables
+  at `0x80FD4`/`0x80FF0`/`0x8100C`/`0x8175C` (message renderer);
+- debug prompts `0xCF9C4` / `0xCF9EC` (「BGチェック用／フェイスチェック用
+  Aボタンで次へ進みます」) — referenced mid-string from `0x724324`,
+  `0x7465C4`, `0x757AA0` (debug screens only);
+- test scene `0xCF58C` (268 tokens, starts `テスト…`) — referenced from
+  the event table at `0xC8D08`; contains real fusion dialogue (variants of
+  msg 46 and the L9/L10 recipes) plus test lines
+  (`彼は１２３４５をにらみつけながら…`).
+
+NOT referenced (stale/leftover, not displayed):
+
+- `0xCF52C` — a copy of the opening message with damaged leading tokens;
+- `0xCF7A6` — digit strip + research-scene variant;
+- `0xCF8C0` — ヴァンダム城 scene variant using 「ティーナ」 as the
+  name placeholder;
+- `0xCFA18` — `AB` fragment.
+
+Correction: an earlier note listed `0x6EB2F4 -> 0xCF6F4` as a reference
+into the test scene. The pointer scan shows the bytes around
+`0x6EB2B2`/`0x6EB2F4` sit in a data region dense with pointer-shaped byte
+patterns (one candidate is the invalid odd address `0xCF8F5`), so both are
+coincidental artifacts, not references.
+
+**Insert tables**
+
+- `753E` beast-name table `0xC7410`: 18 strings = 9 slots x 2 genders
+  (index = slot*2 + variant; 0 = male, 1 = female): ゴーレムライト /
+  ゴブリンフライ, ホワイトドラゴン / ブラックドラゴン, リトルガウ /
+  チンビュアリー, リトルガウ / チンビュアリー (dup), こあくま / ハイエルフ,
+  メインガウ / リンビュアリー, メインガウ / リンビュアリー (dup),
+  LV１５以上のミノドラゴン / LV１５以上のドラグリフォン,
+  ヘビーガウ / **メインビュアリー** (earlier "ツインビュアリー" was a
+  misread of メイン).
+- `753F` word table `0xC73F0`: 8 strings = 4 slots x 2 (same indexing):
+  僕 / 私, ご子息 / ご息女, 伝説の魔獣使い x2, 彼 / 彼女.
+
+**Monster status word list (`0xD30F4..0xD3144`)** — 13 entries terminated
+by `0x7FFF`: 生命 (HP), 耐久 (durability), 攻撃 (attack), 防御 (defense),
+行動 (agility), 知識 (knowledge), 必殺技 (special technique), 反撃
+(counter), 索敵 (recon), 従順 (obedience), 命中 (accuracy), 回避
+(evasion), 技能 (skills). Codes `0x2A1-0x2AC` identified from renders.
+This is the monster status screen's bigfont label list; translation = M11.
+
+**Other regions re-checked and closed (no text)**
+
+- `0xCC874..0xCDED4` scenario/sequence id tables (`0x7FFF` separators,
+  ids only); `0xCDED4..0xCF52C` table data ending in a pointer to
+  `0xCDED4` at `0xCF528`.
+- All 8 single-term runs (`0x09C0BA`, `0x0A9C24`, `0x0A9F22`, `0x0F8FA2`,
+  `0x21B266`, `0x2C9D78`, `0x2CA376`, `0x56F5BA`) = graphics/palette/tile
+  data, not text.
+- `0xCFF82` holds the `0x7FFF` after the 512-entry name-input charset
+  (`0xCFB82..0xCFF82`); the story bank starts exactly at `0xCFF84`.
+
+**Still outside the story pipeline** (not missed, but not yet mined):
+8x8 direct-code text (menus/UI; candidate inventory in
+`build/strings.tsv`) and graphics containing text (title screen etc.) —
+future milestones.
 
 ### Compression (T2)
 
@@ -553,7 +729,8 @@ needed beyond pointer retargeting.
   (`tools/charmap.py`, `tools/encode_text.py`, `tools/decode_strings.py`).
 - [x] Round-trip validation of all TEXT strings.
 - [x] Large-glyph story subsystem: format, glyph store, script stream,
-  control codes, and readings for msgs 0–62 (see Findings). 429/685
+  control codes, readings for msgs 0–62 **and the 33 late messages**, the
+  R1 support strings and the status word list (see Findings). 649/685
   glyphs mapped. Next: English glyph strategy (new
   glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
@@ -581,9 +758,12 @@ needed beyond pointer retargeting.
   57–62) delivered 2026-10-18** — the awakening, Canon's power, the
   sky's far side; 23 new glyphs; all 63 story messages now read and
   translated. Per user decision 2026-10-18: continue without
-  per-milestone review. Next: 8×8 monster-names/UI milestone, then the
-  English glyph strategy (bigfont relocation) and the relocation
-  writer / BPS build.
+  per-milestone review. **M10 (completeness audit + late-bank/R1
+  integration) delivered 2026-10-19** — 33 late messages extracted and
+  verified, charmap 649/685, R1 + status word list extracted. **M11
+  (translation of the late bank, R1 strings and status words) is next**,
+  then the English glyph strategy (bigfont relocation), the relocation
+  writer / BPS build, and the 8×8 menu/UI milestones.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
@@ -627,6 +807,12 @@ msg 60 width-foldings) — see
 ## Open questions
 
 - Which specific kanji OCR readings are wrong.
+- Unread bigfont entries (36 of 685): symbol block 0x12D–0x157 partially
+  read; fragments 0x089/0x08A unknown; 0x0000-decoding quirk in the stale
+  `0xCF52C` copy.
+- M11 scope decision: the unreferenced R1 leftovers (`0xCF52C`, `0xCF7A6`,
+  `0xCF8C0`, `0xCFA18`) are not displayed; plan is to skip translating
+  them and note it in the milestone doc.
 - Meaning/purpose of the `0x1A0–0x1BF` "squeezed kana" tiles.
 - Indexing scheme for the pointer-unreferenced `0x39D000..0x48C000` banks.
 - Story/narration control codes: classified (see Findings table). Remaining
@@ -657,8 +843,14 @@ msg 60 width-foldings) — see
   vision-reading tool; `tools/zoom_tokens.py` — boxed, labeled zooms of a
   message's token range.
 - `tools/build_charmap_story.py` — verifies transcriptions against token
-  streams and writes `data/bigfont_charmap.json` (`READINGS` dict is the
-  verified-translation source).
+  streams and writes `data/bigfont_charmap.json` (`READINGS` + `READINGS_LATE`
+  dicts are the verified-translation source; `EXTRAS` adds hand-verified
+  non-message glyphs).
+- `tools/extract_late_bank.py` — extracts the 33 late messages
+  (`0xD1F96..0xD30F4`) with count/start/end verification → `build/late_story_raw.json`.
+- `tools/extract_r1.py` — extracts the R1 support region (`0xCF52C..0xCFB82`):
+  37 segments, the 753E/753F tables, the name-input charset, and a
+  pointer census → `build/r1_text_raw.json`.
 - `tools/story_en_export.py` — builds/QA-checks `translation/story_en.json`
   from `translation/story_en_runs.json`: run parity, control-code diff,
   char-exact wrap simulation, width/CJK checks, and a per-screen page

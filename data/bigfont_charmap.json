@@ -104,8 +104,8 @@
       "notes": "story bigfont; verified against render"
     },
     "25": {
-      "char": "",
-      "notes": ""
+      "char": "テ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "26": {
       "char": "ス",
@@ -132,12 +132,12 @@
       "notes": "story bigfont; verified against render"
     },
     "32": {
-      "char": "",
-      "notes": ""
+      "char": "４",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "33": {
-      "char": "",
-      "notes": ""
+      "char": "５",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "34": {
       "char": "を",
@@ -304,20 +304,20 @@
       "notes": "story bigfont; verified against render"
     },
     "75": {
-      "char": "",
-      "notes": ""
+      "char": "野",
+      "notes": "story bigfont; verified against render"
     },
     "76": {
-      "char": "",
-      "notes": ""
+      "char": "望",
+      "notes": "story bigfont; verified against render"
     },
     "77": {
-      "char": "",
-      "notes": ""
+      "char": "阻",
+      "notes": "story bigfont; verified against render"
     },
     "78": {
-      "char": "",
-      "notes": ""
+      "char": "止",
+      "notes": "story bigfont; verified against render"
     },
     "79": {
       "char": "」",
@@ -348,24 +348,24 @@
       "notes": "story bigfont; verified against render"
     },
     "86": {
-      "char": "",
-      "notes": ""
+      "char": "０",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "87": {
-      "char": "",
-      "notes": ""
+      "char": "６",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "88": {
-      "char": "",
-      "notes": ""
+      "char": "７",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "89": {
-      "char": "",
-      "notes": ""
+      "char": "８",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "90": {
-      "char": "",
-      "notes": ""
+      "char": "９",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "91": {
       "char": "ワ",
@@ -477,7 +477,7 @@
     },
     "118": {
       "char": "ダ",
-      "notes": "story bigfont; verified against render"
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "119": {
       "char": "ィ",
@@ -488,12 +488,12 @@
       "notes": "story bigfont; verified against render"
     },
     "121": {
-      "char": "",
-      "notes": ""
+      "char": "ナ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "122": {
-      "char": "",
-      "notes": ""
+      "char": "庭",
+      "notes": "story bigfont; verified against render"
     },
     "123": {
       "char": "突",
@@ -540,16 +540,16 @@
       "notes": "story bigfont; verified against render"
     },
     "134": {
-      "char": "",
-      "notes": ""
+      "char": "▼",
+      "notes": "digit block (fullwidth); confirmed on screen"
     },
     "135": {
-      "char": "",
-      "notes": ""
+      "char": "「",
+      "notes": "bracket variants: thick marker pair + thin tall pair (render-verified)"
     },
     "136": {
-      "char": "",
-      "notes": ""
+      "char": "」",
+      "notes": "bracket variants: thick marker pair + thin tall pair (render-verified)"
     },
     "137": {
       "char": "",
@@ -560,44 +560,44 @@
       "notes": ""
     },
     "139": {
-      "char": "",
-      "notes": ""
+      "char": "B",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
     },
     "140": {
-      "char": "",
-      "notes": ""
+      "char": "G",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
     },
     "141": {
       "char": "チ",
       "notes": "story bigfont; verified against render"
     },
     "142": {
-      "char": "",
-      "notes": ""
+      "char": "ェ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "143": {
       "char": "ッ",
       "notes": "story bigfont; verified against render"
     },
     "144": {
-      "char": "",
-      "notes": ""
+      "char": "用",
+      "notes": "story bigfont; verified against render"
     },
     "145": {
-      "char": "",
-      "notes": ""
+      "char": "A",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
     },
     "146": {
-      "char": "",
-      "notes": ""
+      "char": "ボ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "147": {
       "char": "タ",
       "notes": "story bigfont; verified against render"
     },
     "148": {
-      "char": "",
-      "notes": ""
+      "char": "進",
+      "notes": "kanji/UI; read from glyph sheet or render"
     },
     "149": {
       "char": "フ",
@@ -608,8 +608,8 @@
       "notes": "story bigfont; verified against render"
     },
     "151": {
-      "char": "",
-      "notes": ""
+      "char": "ホ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "152": {
       "char": "ド",
@@ -628,16 +628,16 @@
       "notes": "story bigfont; verified against render"
     },
     "156": {
-      "char": "",
-      "notes": ""
+      "char": "メ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "157": {
-      "char": "",
-      "notes": ""
+      "char": "L",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
     },
     "158": {
-      "char": "",
-      "notes": ""
+      "char": "V",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
     },
     "159": {
       "char": "以",
@@ -649,279 +649,279 @@
     },
     "161": {
       "char": "ノ",
-      "notes": "story bigfont; verified against render"
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "162": {
-      "char": "",
-      "notes": ""
+      "char": "ヘ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "163": {
-      "char": "",
-      "notes": ""
+      "char": "ビ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "164": {
-      "char": "",
-      "notes": ""
+      "char": "ブ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "165": {
-      "char": "",
-      "notes": ""
+      "char": "ュ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "166": {
       "char": "ハ",
-      "notes": "story bigfont; verified against render"
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "167": {
-      "char": "",
-      "notes": ""
+      "char": "エ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "168": {
       "char": "グ",
       "notes": "story bigfont; verified against render"
     },
     "169": {
-      "char": "",
-      "notes": ""
+      "char": "ォ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "170": {
-      "char": "",
-      "notes": ""
+      "char": "僕",
+      "notes": "word-table insert glyphs (male/female variants)"
     },
     "171": {
       "char": "ご",
       "notes": "story bigfont; verified against render"
     },
     "172": {
-      "char": "",
-      "notes": ""
+      "char": "子",
+      "notes": "story bigfont; verified against render"
     },
     "173": {
       "char": "息",
       "notes": "story bigfont; verified against render"
     },
     "174": {
-      "char": "",
-      "notes": ""
+      "char": "女",
+      "notes": "word-table insert glyphs (male/female variants)"
     },
     "175": {
-      "char": "",
-      "notes": ""
+      "char": "■",
+      "notes": "kanji/UI; read from glyph sheet or render"
     },
     "176": {
-      "char": "",
-      "notes": ""
-    },
-    "177": {
-      "char": "",
-      "notes": ""
-    },
-    "178": {
-      "char": "",
-      "notes": ""
-    },
-    "179": {
-      "char": "",
-      "notes": ""
-    },
-    "180": {
-      "char": "",
-      "notes": ""
-    },
-    "181": {
-      "char": "",
-      "notes": ""
-    },
-    "182": {
-      "char": "",
-      "notes": ""
-    },
-    "183": {
-      "char": "",
-      "notes": ""
-    },
-    "184": {
-      "char": "",
-      "notes": ""
-    },
-    "185": {
-      "char": "",
-      "notes": ""
-    },
-    "186": {
-      "char": "",
-      "notes": ""
-    },
-    "187": {
-      "char": "",
-      "notes": ""
-    },
-    "188": {
-      "char": "",
-      "notes": ""
-    },
-    "189": {
-      "char": "",
-      "notes": ""
-    },
-    "190": {
-      "char": "",
-      "notes": ""
-    },
-    "191": {
-      "char": "",
-      "notes": ""
-    },
-    "192": {
-      "char": "",
-      "notes": ""
-    },
-    "193": {
-      "char": "",
-      "notes": ""
-    },
-    "194": {
-      "char": "",
-      "notes": ""
-    },
-    "195": {
-      "char": "",
-      "notes": ""
-    },
-    "196": {
-      "char": "",
-      "notes": ""
-    },
-    "197": {
-      "char": "",
-      "notes": ""
-    },
-    "198": {
-      "char": "",
-      "notes": ""
-    },
-    "199": {
-      "char": "",
-      "notes": ""
-    },
-    "200": {
-      "char": "",
-      "notes": ""
-    },
-    "201": {
-      "char": "",
-      "notes": ""
-    },
-    "202": {
-      "char": "",
-      "notes": ""
-    },
-    "203": {
-      "char": "",
-      "notes": ""
-    },
-    "204": {
-      "char": "",
-      "notes": ""
-    },
-    "205": {
-      "char": "",
-      "notes": ""
-    },
-    "206": {
-      "char": "",
-      "notes": ""
-    },
-    "207": {
-      "char": "",
-      "notes": ""
-    },
-    "208": {
-      "char": "",
-      "notes": ""
-    },
-    "209": {
-      "char": "",
-      "notes": ""
-    },
-    "210": {
-      "char": "",
-      "notes": ""
-    },
-    "211": {
-      "char": "",
-      "notes": ""
-    },
-    "212": {
-      "char": "",
-      "notes": ""
-    },
-    "213": {
-      "char": "",
-      "notes": ""
-    },
-    "214": {
-      "char": "",
-      "notes": ""
-    },
-    "215": {
-      "char": "",
-      "notes": ""
-    },
-    "216": {
-      "char": "",
-      "notes": ""
-    },
-    "217": {
-      "char": "",
-      "notes": ""
-    },
-    "218": {
-      "char": "",
-      "notes": ""
-    },
-    "219": {
-      "char": "",
-      "notes": ""
-    },
-    "220": {
-      "char": "",
-      "notes": ""
-    },
-    "221": {
-      "char": "",
-      "notes": ""
-    },
-    "222": {
-      "char": "",
-      "notes": ""
-    },
-    "223": {
-      "char": "",
-      "notes": ""
-    },
-    "224": {
-      "char": "あ",
+      "char": " ",
       "notes": "story bigfont; verified against render"
     },
+    "177": {
+      "char": "C",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "178": {
+      "char": "D",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "179": {
+      "char": "E",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "180": {
+      "char": "F",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "181": {
+      "char": "H",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "182": {
+      "char": "I",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "183": {
+      "char": "J",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "184": {
+      "char": "K",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "185": {
+      "char": "M",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "186": {
+      "char": "N",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "187": {
+      "char": "O",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "188": {
+      "char": "P",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "189": {
+      "char": "Q",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "190": {
+      "char": "R",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "191": {
+      "char": "S",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "192": {
+      "char": "T",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "193": {
+      "char": "U",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "194": {
+      "char": "W",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "195": {
+      "char": "X",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "196": {
+      "char": "Y",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "197": {
+      "char": "Z",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "198": {
+      "char": "a",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "199": {
+      "char": "b",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "200": {
+      "char": "c",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "201": {
+      "char": "d",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "202": {
+      "char": "e",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "203": {
+      "char": "f",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "204": {
+      "char": "g",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "205": {
+      "char": "h",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "206": {
+      "char": "i",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "207": {
+      "char": "j",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "208": {
+      "char": "k",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "209": {
+      "char": "l",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "210": {
+      "char": "m",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "211": {
+      "char": "n",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "212": {
+      "char": "o",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "213": {
+      "char": "p",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "214": {
+      "char": "q",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "215": {
+      "char": "r",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "216": {
+      "char": "s",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "217": {
+      "char": "t",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "218": {
+      "char": "u",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "219": {
+      "char": "v",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "220": {
+      "char": "w",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "221": {
+      "char": "x",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "222": {
+      "char": "y",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "223": {
+      "char": "z",
+      "notes": "name-input latin; sample confirmed on screen (The End, BG, LV15)"
+    },
+    "224": {
+      "char": "ぁ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
+    },
     "225": {
-      "char": "",
-      "notes": ""
+      "char": "ぃ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "226": {
-      "char": "",
-      "notes": ""
+      "char": "ぅ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "227": {
       "char": "う",
       "notes": "story bigfont; verified against render"
     },
     "228": {
-      "char": "",
-      "notes": ""
+      "char": "ぇ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "229": {
-      "char": "",
-      "notes": ""
+      "char": "ぉ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "230": {
       "char": "ぎ",
@@ -940,16 +940,16 @@
       "notes": "story bigfont; verified against render"
     },
     "234": {
-      "char": "",
-      "notes": ""
+      "char": "ぜ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "235": {
       "char": "ち",
       "notes": "story bigfont; verified against render"
     },
     "236": {
-      "char": "",
-      "notes": ""
+      "char": "ぢ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "237": {
       "char": "ぬ",
@@ -960,8 +960,8 @@
       "notes": "story bigfont; verified against render"
     },
     "239": {
-      "char": "",
-      "notes": ""
+      "char": "ぱ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "240": {
       "char": "ひ",
@@ -972,36 +972,36 @@
       "notes": "story bigfont; verified against render"
     },
     "242": {
-      "char": "",
-      "notes": ""
+      "char": "ぴ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "243": {
-      "char": "",
-      "notes": ""
+      "char": "ふ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "244": {
       "char": "ぶ",
       "notes": "story bigfont; verified against render"
     },
     "245": {
-      "char": "",
-      "notes": ""
+      "char": "ぷ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "246": {
-      "char": "",
-      "notes": ""
+      "char": "ぺ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "247": {
       "char": "ほ",
       "notes": "story bigfont; verified against render"
     },
     "248": {
-      "char": "",
-      "notes": ""
+      "char": "ぼ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "249": {
-      "char": "",
-      "notes": ""
+      "char": "ぽ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "250": {
       "char": "む",
@@ -1020,16 +1020,16 @@
       "notes": "story bigfont; verified against render"
     },
     "254": {
-      "char": "",
-      "notes": ""
+      "char": "ゅ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "255": {
       "char": "ゆ",
       "notes": "story bigfont; verified against render"
     },
     "256": {
-      "char": "",
-      "notes": ""
+      "char": "ょ",
+      "notes": "name-input hiragana (small-variant codes); pair sizes verified by render"
     },
     "257": {
       "char": "り",
@@ -1040,76 +1040,76 @@
       "notes": "story bigfont; verified against render"
     },
     "259": {
-      "char": "ウ",
-      "notes": "story bigfont; verified against render"
+      "char": "ゥ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "260": {
-      "char": "",
-      "notes": ""
+      "char": "オ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "261": {
       "char": "カ",
       "notes": "story bigfont; verified against render"
     },
     "262": {
-      "char": "",
-      "notes": ""
+      "char": "キ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "263": {
-      "char": "",
-      "notes": ""
+      "char": "ギ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "264": {
       "char": "ケ",
       "notes": "story bigfont; verified against render"
     },
     "265": {
-      "char": "",
-      "notes": ""
+      "char": "ゲ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "266": {
       "char": "コ",
       "notes": "story bigfont; verified against render"
     },
     "267": {
-      "char": "",
-      "notes": ""
+      "char": "サ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "268": {
-      "char": "",
-      "notes": ""
+      "char": "ジ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "269": {
-      "char": "",
-      "notes": ""
+      "char": "ズ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "270": {
-      "char": "",
-      "notes": ""
+      "char": "セ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "271": {
-      "char": "",
-      "notes": ""
+      "char": "ゼ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "272": {
-      "char": "",
-      "notes": ""
+      "char": "ソ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "273": {
       "char": "ゾ",
       "notes": "story bigfont; verified against render"
     },
     "274": {
-      "char": "",
-      "notes": ""
+      "char": "ヂ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "275": {
       "char": "ツ",
       "notes": "story bigfont; verified against render"
     },
     "276": {
-      "char": "",
-      "notes": ""
+      "char": "ヅ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "277": {
       "char": "デ",
@@ -1120,92 +1120,92 @@
       "notes": "story bigfont; verified against render"
     },
     "279": {
-      "char": "",
-      "notes": ""
+      "char": "ヌ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "280": {
-      "char": "",
-      "notes": ""
+      "char": "ネ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "281": {
-      "char": "",
-      "notes": ""
+      "char": "パ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "282": {
       "char": "ヒ",
       "notes": "story bigfont; verified against render"
     },
     "283": {
-      "char": "",
-      "notes": ""
+      "char": "ピ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "284": {
-      "char": "",
-      "notes": ""
+      "char": "プ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "285": {
-      "char": "",
-      "notes": ""
+      "char": "ペ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "286": {
-      "char": "",
-      "notes": ""
+      "char": "ポ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "287": {
       "char": "マ",
       "notes": "story bigfont; verified against render"
     },
     "288": {
-      "char": "",
-      "notes": ""
+      "char": "モ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "289": {
-      "char": "",
-      "notes": ""
+      "char": "ャ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "290": {
       "char": "ヤ",
       "notes": "story bigfont; verified against render"
     },
     "291": {
-      "char": "",
-      "notes": ""
+      "char": "ユ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "292": {
-      "char": "",
-      "notes": ""
+      "char": "ョ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "293": {
-      "char": "",
-      "notes": ""
+      "char": "ヨ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "294": {
-      "char": "",
-      "notes": ""
+      "char": "ヲ",
+      "notes": "name-input katakana; charset order, samples confirmed on screen"
     },
     "295": {
-      "char": "",
-      "notes": ""
+      "char": "、",
+      "notes": "symbol block; shape tentative"
     },
     "296": {
-      "char": "",
-      "notes": ""
+      "char": "。",
+      "notes": "symbol block; shape tentative"
     },
     "297": {
-      "char": "",
-      "notes": ""
+      "char": "：",
+      "notes": "symbol block; verified by render"
     },
     "298": {
-      "char": "",
-      "notes": ""
+      "char": "；",
+      "notes": "symbol block; verified by render"
     },
     "299": {
       "char": "？",
       "notes": "story bigfont; verified against render"
     },
     "300": {
-      "char": "",
-      "notes": ""
+      "char": "／",
+      "notes": "symbol block; verified by render"
     },
     "301": {
       "char": "",
@@ -1224,16 +1224,16 @@
       "notes": ""
     },
     "305": {
-      "char": "",
-      "notes": ""
+      "char": "×",
+      "notes": "symbol block; verified by render"
     },
     "306": {
-      "char": "",
-      "notes": ""
+      "char": "÷",
+      "notes": "symbol block; verified by render"
     },
     "307": {
-      "char": "",
-      "notes": ""
+      "char": "＝",
+      "notes": "symbol block; verified by render"
     },
     "308": {
       "char": "",
@@ -1248,8 +1248,8 @@
       "notes": ""
     },
     "311": {
-      "char": "",
-      "notes": ""
+      "char": "￥",
+      "notes": "symbol block; verified by render"
     },
     "312": {
       "char": "",
@@ -1276,16 +1276,16 @@
       "notes": ""
     },
     "318": {
-      "char": "",
-      "notes": ""
+      "char": "（",
+      "notes": "symbol block; verified by render"
     },
     "319": {
-      "char": "",
-      "notes": ""
+      "char": "）",
+      "notes": "symbol block; verified by render"
     },
     "320": {
-      "char": "",
-      "notes": ""
+      "char": "→",
+      "notes": "symbol block; verified by render"
     },
     "321": {
       "char": "",
@@ -1308,12 +1308,12 @@
       "notes": ""
     },
     "326": {
-      "char": "",
-      "notes": ""
+      "char": "「",
+      "notes": "bracket variants: thick marker pair + thin tall pair (render-verified)"
     },
     "327": {
-      "char": "",
-      "notes": ""
+      "char": "」",
+      "notes": "bracket variants: thick marker pair + thin tall pair (render-verified)"
     },
     "328": {
       "char": "",
@@ -1428,12 +1428,12 @@
       "notes": "story bigfont; verified against render"
     },
     "356": {
-      "char": "",
-      "notes": ""
+      "char": "交",
+      "notes": "kanji/UI; read from glyph sheet or render"
     },
     "357": {
-      "char": "",
-      "notes": ""
+      "char": "化",
+      "notes": "kanji/UI; read from glyph sheet or render"
     },
     "358": {
       "char": "消",
@@ -2432,317 +2432,318 @@
       "notes": "story bigfont; verified against render"
     },
     "607": {
-      "char": "",
-      "notes": ""
+      "char": "返",
+      "notes": "story bigfont; verified against render"
     },
     "608": {
-      "char": "",
-      "notes": ""
+      "char": "場",
+      "notes": "story bigfont; verified against render"
     },
     "609": {
-      "char": "",
-      "notes": ""
+      "char": "魂",
+      "notes": "story bigfont; verified against render"
     },
     "610": {
-      "char": "",
-      "notes": ""
+      "char": "話",
+      "notes": "story bigfont; verified against render"
     },
     "611": {
-      "char": "",
-      "notes": ""
+      "char": "実",
+      "notes": "story bigfont; verified against render"
     },
     "612": {
-      "char": "",
-      "notes": ""
+      "char": "支",
+      "notes": "story bigfont; verified against render"
     },
     "613": {
-      "char": "",
-      "notes": ""
+      "char": "配",
+      "notes": "story bigfont; verified against render"
     },
     "614": {
-      "char": "",
-      "notes": ""
+      "char": "秩",
+      "notes": "story bigfont; verified against render"
     },
     "615": {
-      "char": "",
-      "notes": ""
+      "char": "序",
+      "notes": "story bigfont; verified against render"
     },
     "616": {
-      "char": "",
-      "notes": ""
+      "char": "遺",
+      "notes": "story bigfont; verified against render"
     },
     "617": {
-      "char": "",
-      "notes": ""
+      "char": "影",
+      "notes": "story bigfont; verified against render"
     },
     "618": {
-      "char": "",
-      "notes": ""
+      "char": "響",
+      "notes": "story bigfont; verified against render"
     },
     "619": {
-      "char": "",
-      "notes": ""
+      "char": "複",
+      "notes": "story bigfont; verified against render"
     },
     "620": {
-      "char": "",
-      "notes": ""
+      "char": "系",
+      "notes": "story bigfont; verified against render"
     },
     "621": {
-      "char": "",
-      "notes": ""
+      "char": "受",
+      "notes": "story bigfont; verified against render"
     },
     "622": {
-      "char": "",
-      "notes": ""
+      "char": "継",
+      "notes": "story bigfont; verified against render"
     },
     "623": {
-      "char": "",
-      "notes": ""
+      "char": "心",
+      "notes": "story bigfont; verified against render"
     },
     "624": {
-      "char": "",
-      "notes": ""
+      "char": "結",
+      "notes": "story bigfont; verified against render"
     },
     "625": {
-      "char": "",
-      "notes": ""
+      "char": "局",
+      "notes": "story bigfont; verified against render"
     },
     "626": {
-      "char": "",
-      "notes": ""
+      "char": "想",
+      "notes": "story bigfont; verified against render"
     },
     "627": {
-      "char": "",
-      "notes": ""
+      "char": "瀕",
+      "notes": "story bigfont; verified against render"
     },
     "628": {
-      "char": "",
-      "notes": ""
+      "char": "死",
+      "notes": "story bigfont; verified against render"
     },
     "629": {
-      "char": "",
-      "notes": ""
+      "char": "重",
+      "notes": "story bigfont; verified against render"
     },
     "630": {
-      "char": "",
-      "notes": ""
+      "char": "産",
+      "notes": "story bigfont; verified against render"
     },
     "631": {
-      "char": "",
-      "notes": ""
+      "char": "記",
+      "notes": "story bigfont; verified against render"
     },
     "632": {
-      "char": "",
-      "notes": ""
+      "char": "憶",
+      "notes": "story bigfont; verified against render"
     },
     "633": {
-      "char": "",
-      "notes": ""
+      "char": "失",
+      "notes": "story bigfont; verified against render"
     },
     "634": {
-      "char": "",
-      "notes": ""
+      "char": "供",
+      "notes": "story bigfont; verified against render"
     },
     "635": {
-      "char": "",
-      "notes": ""
+      "char": "判",
+      "notes": "story bigfont; verified against render"
     },
     "636": {
-      "char": "",
-      "notes": ""
+      "char": "弟",
+      "notes": "story bigfont; verified against render"
     },
     "637": {
-      "char": "",
-      "notes": ""
+      "char": "本",
+      "notes": "story bigfont; verified against render"
     },
     "638": {
-      "char": "",
-      "notes": ""
+      "char": "当",
+      "notes": "story bigfont; verified against render"
     },
     "639": {
-      "char": "",
-      "notes": ""
+      "char": "育",
+      "notes": "story bigfont; verified against render"
     },
     "640": {
-      "char": "",
-      "notes": ""
+      "char": "動",
+      "notes": "story bigfont; verified against render"
     },
     "641": {
-      "char": "",
-      "notes": ""
+      "char": "抑",
+      "notes": "story bigfont; verified against render"
     },
     "642": {
-      "char": "",
-      "notes": ""
+      "char": "精",
+      "notes": "story bigfont; verified against render"
     },
     "643": {
-      "char": "",
-      "notes": ""
+      "char": "杯",
+      "notes": "story bigfont; verified against render"
     },
     "644": {
-      "char": "",
-      "notes": ""
+      "char": "昔",
+      "notes": "story bigfont; verified against render"
     },
     "645": {
-      "char": "",
-      "notes": ""
+      "char": "因",
+      "notes": "story bigfont; verified against render"
     },
     "646": {
-      "char": "",
-      "notes": ""
+      "char": "関",
+      "notes": "story bigfont; verified against render"
     },
     "647": {
-      "char": "",
-      "notes": ""
+      "char": "係",
+      "notes": "story bigfont; verified against render"
     },
     "648": {
-      "char": "",
-      "notes": ""
+      "char": "度",
+      "notes": "story bigfont; verified against render"
     },
     "649": {
-      "char": "",
-      "notes": ""
+      "char": "所",
+      "notes": "story bigfont; verified against render"
     },
     "650": {
-      "char": "",
-      "notes": ""
+      "char": "帰",
+      "notes": "story bigfont; verified against render"
     },
     "651": {
-      "char": "",
-      "notes": ""
+      "char": "詮",
+      "notes": "story bigfont; verified against render"
     },
     "652": {
-      "char": "",
-      "notes": ""
+      "char": "同",
+      "notes": "story bigfont; verified against render"
     },
     "653": {
-      "char": "",
-      "notes": ""
+      "char": "程",
+      "notes": "story bigfont; verified against render"
     },
     "654": {
-      "char": "",
-      "notes": ""
+      "char": "先",
+      "notes": "story bigfont; verified against render"
     },
     "655": {
-      "char": "",
-      "notes": ""
+      "char": "炎",
+      "notes": "story bigfont; verified against render"
     },
     "656": {
-      "char": "",
-      "notes": ""
+      "char": "攻",
+      "notes": "story bigfont; verified against render"
     },
     "657": {
-      "char": "",
-      "notes": ""
+      "char": "差",
+      "notes": "story bigfont; verified against render"
     },
     "658": {
-      "char": "",
-      "notes": ""
+      "char": "恨",
+      "notes": "story bigfont; verified against render"
     },
     "659": {
-      "char": "",
-      "notes": ""
+      "char": "落",
+      "notes": "story bigfont; verified against render"
     },
     "660": {
-      "char": "",
-      "notes": ""
+      "char": "殺",
+      "notes": "story bigfont; verified against render"
     },
     "661": {
-      "char": "",
-      "notes": ""
+      "char": "壁",
+      "notes": "story bigfont; verified against render"
     },
     "662": {
-      "char": "",
-      "notes": ""
+      "char": "骸",
+      "notes": "story bigfont; verified against render"
     },
     "663": {
-      "char": "",
-      "notes": ""
+      "char": "探",
+      "notes": "story bigfont; verified against render"
     },
     "664": {
-      "char": "",
-      "notes": ""
+      "char": "歩",
+      "notes": "story bigfont; verified against render"
     },
     "665": {
-      "char": "",
-      "notes": ""
+      "char": "焼",
+      "notes": "story bigfont; verified against render"
     },
     "666": {
-      "char": "",
-      "notes": ""
+      "char": "確",
+      "notes": "story bigfont; verified against render"
     },
     "667": {
-      "char": "",
-      "notes": ""
+      "char": "信",
+      "notes": "story bigfont; verified against render"
     },
     "668": {
-      "char": "",
-      "notes": ""
+      "char": "断",
+      "notes": "story bigfont; verified against render"
     },
     "669": {
-      "char": "",
-      "notes": ""
+      "char": "延",
+      "notes": "story bigfont; verified against render"
     },
     "670": {
-      "char": "",
-      "notes": ""
+      "char": "❋",
+      "notes": "story bigfont; verified against render"
     },
     "671": {
-      "char": "",
-      "notes": ""
+      "char": "考",
+      "notes": "story bigfont; verified against render"
     },
     "672": {
-      "char": "",
-      "notes": ""
+      "char": "構",
+      "notes": "story bigfont; verified against render"
     },
     "673": {
-      "char": "",
-      "notes": ""
+      "char": "耐",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "674": {
-      "char": "",
-      "notes": ""
+      "char": "撃",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "675": {
-      "char": "",
-      "notes": ""
+      "char": "防",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "676": {
-      "char": "",
-      "notes": ""
+      "char": "御",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "677": {
-      "char": "",
-      "notes": ""
+      "char": "識",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "678": {
-      "char": "",
-      "notes": ""
+      "char": "必",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "679": {
-      "char": "",
-      "notes": ""
+      "char": "反",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "680": {
-      "char": "",
-      "notes": ""
+      "char": "敵",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "681": {
-      "char": "",
-      "notes": ""
+      "char": "従",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "682": {
-      "char": "",
-      "notes": ""
+      "char": "順",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "683": {
-      "char": "",
-      "notes": ""
+      "char": "回",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     },
     "684": {
-      "char": "",
-      "notes": ""
+      "char": "避",
+      "notes": "monster status word list (0xD30F4..0xD3144); read from render"
     }
   },
-  "verified_through_msg": 62
+  "verified_through_msg": 62,
+  "verified_late_through_msg": 32
 }
