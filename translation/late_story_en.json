@@ -38,7 +38,18 @@
     {
      "type": "text",
      "run": 2,
-     "en": "came to and collapsed."
+     "en": "came back to their senses"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "and collapsed."
     },
     {
      "type": "ctl",
@@ -78,7 +89,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": "Kurimuto: \"I must tell you"
+     "en": "Kurimuto: \"I must speak now."
     },
     {
      "type": "ctl",
@@ -88,7 +99,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "everything now,"
+     "en": "Everything"
     },
     {
      "type": "ctl",
@@ -192,7 +203,13 @@
     {
      "type": "text",
      "run": 15,
-     "en": ", and so"
+     "en": ", and so you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
     },
     {
      "type": "ctl",
@@ -202,7 +219,7 @@
     {
      "type": "text",
      "run": 16,
-     "en": "you were born.\""
+     "en": "were born.\""
     },
     {
      "type": "ctl",
@@ -217,7 +234,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"In the beginning,"
+     "en": "Kurimuto: \"To begin with, I"
     },
     {
      "type": "ctl",
@@ -227,7 +244,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "I created the beast combining"
+     "en": "created the beast combining"
     },
     {
      "type": "ctl",
@@ -247,7 +264,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Kurimuto: \"This world was"
+     "en": "Kurimuto: \"In this world"
     },
     {
      "type": "ctl",
@@ -261,19 +278,24 @@
     },
     {
      "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "savage beasts,"
+    },
+    {
+     "type": "ctl",
      "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
      "run": 5,
-     "en": "savage beasts. I sought"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "en": "I tried to make "
     },
     {
      "type": "ctl",
@@ -301,7 +323,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "bearing human order.\""
+     "en": "with human order.\""
     }
    ]
   },
@@ -349,7 +371,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "that was Beringham.\""
+     "en": "and that was Beringham.\""
     },
     {
      "type": "ctl",
@@ -359,7 +381,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "Kurimuto: \"Combined beasts"
+     "en": "Kurimuto: \"A combined beast"
     },
     {
      "type": "ctl",
@@ -369,7 +391,7 @@
     {
      "type": "text",
      "run": 5,
-     "en": "are shaped by strong genes."
+     "en": "is shaped by strong genes."
     },
     {
      "type": "ctl",
@@ -390,7 +412,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": "beasts. But he inherited"
+     "en": "beasts, again and again. But"
     },
     {
      "type": "ctl",
@@ -400,27 +422,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "the dark genes even stronger."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 8,
-     "en": "He has a human form, but his"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 9,
-     "en": "heart is no different from"
+     "en": "he inherited the dark genes"
     },
     {
      "type": "ctl",
@@ -430,8 +432,28 @@
     },
     {
      "type": "text",
+     "run": 7,
+     "en": "even more strongly."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "He looks human. But his heart"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
      "run": 9,
-     "en": "the savage beasts.\""
+     "en": "is a savage beast's.\""
     }
    ]
   },
@@ -452,18 +474,13 @@
     {
      "type": "text",
      "run": 0,
-     "en": "my ideal began to feel"
+     "en": "my ideal seemed too hard,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": [],
      "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "too hard,"
     },
     {
      "type": "ctl",
@@ -496,7 +513,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "Kurimuto: \""
+     "en": "Kurimuto: \"Then "
     },
     {
      "type": "ctl",
@@ -508,17 +525,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": " fought a"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 4,
-     "en": "desperate battle with"
+     "en": " fought"
     },
     {
      "type": "ctl",
@@ -528,8 +535,18 @@
     },
     {
      "type": "text",
+     "run": 3,
+     "en": "the two dragons"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
      "run": 4,
-     "en": "the two dragons,"
+     "en": "in a desperate battle,"
     },
     {
      "type": "ctl",
@@ -573,7 +590,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "Only the beast combining"
+     "en": "and only the beast combining"
     },
     {
      "type": "ctl",
@@ -584,7 +601,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "machine could save them."
+     "en": "machine could save a life.\""
     },
     {
      "type": "ctl",
@@ -636,7 +653,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "'s strong life with"
+     "en": ", full of life, with"
     },
     {
      "type": "ctl",
@@ -709,13 +726,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "And so"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "en": "so that "
     },
     {
      "type": "ctl",
@@ -737,7 +748,18 @@
     {
      "type": "text",
      "run": 4,
-     "en": " were born a beast-human.\""
+     "en": " were born a"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "beast-human.\""
     },
     {
      "type": "ctl",
@@ -747,7 +769,7 @@
     {
      "type": "text",
      "run": 5,
-     "en": "But you lost all your memory."
+     "en": "But you remembered nothing."
     },
     {
      "type": "ctl",
@@ -768,7 +790,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": "the child of a Barroa"
+     "en": "the child of Winslow I,"
     },
     {
      "type": "ctl",
@@ -779,7 +801,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": "noble, Winslow I."
+     "en": "a noble of Barroa."
     },
     {
      "type": "ctl",
@@ -828,7 +850,7 @@
     {
      "type": "text",
      "run": 9,
-     "en": "He learned the truth and"
+     "en": "He learned the truth, and"
     },
     {
      "type": "ctl",
@@ -839,7 +861,7 @@
     {
      "type": "text",
      "run": 9,
-     "en": "took you in; you had lost"
+     "en": "you, who had no memories,"
     },
     {
      "type": "ctl",
@@ -849,18 +871,7 @@
     {
      "type": "text",
      "run": 10,
-     "en": "all your memories. He raised"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 10,
-     "en": "you like his own child.\""
+     "en": "he raised as his own child.\""
     },
     {
      "type": "ctl",
@@ -870,7 +881,7 @@
     {
      "type": "text",
      "run": 11,
-     "en": "Winslow II: not a father,"
+     "en": "Winslow II, not a father but"
     },
     {
      "type": "ctl",
@@ -881,18 +892,7 @@
     {
      "type": "text",
      "run": 11,
-     "en": "but their own younger"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 11,
-     "en": "brother"
+     "en": "their own younger brother"
     },
     {
      "type": "ctl",
