@@ -649,7 +649,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "his two beasts became legend."
+     "en": "the two beasts became legend."
     },
     {
      "type": "ctl",
@@ -688,7 +688,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "people took to calling him."
+     "en": "people took to calling them."
     },
     {
      "type": "ctl",
@@ -3505,6 +3505,12 @@
     },
     {
      "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
      "code": "0x753B",
      "params": [
       "0x2"
@@ -3525,18 +3531,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "'s medium"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "form,"
+     "en": "'s medium form,"
     },
     {
      "type": "ctl",
@@ -3556,7 +3551,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "Next, combine"
+     "en": "Next, combine "
     },
     {
      "type": "ctl",
@@ -3619,7 +3614,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "Then,"
+     "en": "Then, "
     },
     {
      "type": "ctl",
@@ -3653,7 +3648,7 @@
     {
      "type": "text",
      "run": 9,
-     "en": "medium form"
+     "en": "medium form "
     },
     {
      "type": "ctl",

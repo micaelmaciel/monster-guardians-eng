@@ -54,9 +54,14 @@ milestone.
   rows after the monster-DB walk fix. **Story retranslation (M15–M20)
   COMPLETE** — the late bank L0–L32 was retranslated from scratch and
   the early bank re-verified: both export clean (`problems=0`; 63 + 33
-  messages; milestone docs 15–20). Next: early-bank deferred fixes
-  (msg 32/46, msg 9 pronoun), consolidated prose/run-join QA, then the
-  insertion pass.
+  messages; milestone docs 15–20). **Insert-row QA closed (M21):** the
+  753E table is 9 slots × 2 player-gender variants; real EN names are in
+  `translation/story_insert_names.json` (all ≤8 chars except slot 7's
+  "Lv15+ MinoDrag/DragGrif", 14, which sits alone on its line);
+  `tools/check_insert_rows.py` replays both banks with the real names
+  (story max line 30 / late 29, no screen overflow). msg 9 pronouns and
+  msg 46 insert spacing fixed. Next: consolidated prose/run-join QA,
+  then the insertion pass.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -1130,9 +1135,13 @@ needed beyond pointer retargeting.
   (chunk 6, final) delivered** — L27–L32 (the last scenes, staff-roll
   card, three ending variants), QA `problems=0`;
   `translation/milestone-20-late-story-6.md`. **Late bank complete:
-  33 messages / 174 runs.** Next: early-bank deferred fixes (msg 32/46,
-  msg 9 pronoun), consolidated prose/run-join QA, English glyph
-  strategy (bigfont relocation), relocation writer / BPS build.
+  33 messages / 174 runs.** **M21 delivered** — early-bank deferred
+  insert/pronoun fixes; the 753E name mapping locked
+  (`translation/story_insert_names.json`), real-name row checker
+  `tools/check_insert_rows.py` (both banks, both genders: no problems);
+  `translation/milestone-21-insert-row-qa.md`. Next: consolidated
+  prose/run-join QA, English glyph strategy (bigfont relocation),
+  relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);

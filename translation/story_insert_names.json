@@ -1,0 +1,149 @@
+{
+ "_notes": "753E story beast-name inserts. 18 strings = 9 slots x 2 variants (0/1 = male/female player). EN matches 8x8_mdb_en.tsv short names; slot 7 adds the Lv15 condition from the JP name. rom_target = bigfont string in R1 (0xCFA1E block), ptr_src = pointer slot at 0xC7410.",
+ "entries": [
+  {
+   "slot": 0,
+   "variant": 0,
+   "jp": "ゴーレムライト",
+   "en": "GolmLite",
+   "rom_target": "0x0CFA1E",
+   "ptr_src": "0x0C7410"
+  },
+  {
+   "slot": 0,
+   "variant": 1,
+   "jp": "ゴブリンフライ",
+   "en": "GobFly",
+   "rom_target": "0x0CFAA2",
+   "ptr_src": "0x0C7414"
+  },
+  {
+   "slot": 1,
+   "variant": 0,
+   "jp": "ホワイトドラゴン",
+   "en": "WhiteDrg",
+   "rom_target": "0x0CFA2E",
+   "ptr_src": "0x0C7418"
+  },
+  {
+   "slot": 1,
+   "variant": 1,
+   "jp": "ブラックドラゴン",
+   "en": "BlackDrg",
+   "rom_target": "0x0CFAB2",
+   "ptr_src": "0x0C741C"
+  },
+  {
+   "slot": 2,
+   "variant": 0,
+   "jp": "リトルガウ",
+   "en": "LilGau",
+   "rom_target": "0x0CFA40",
+   "ptr_src": "0x0C7420"
+  },
+  {
+   "slot": 2,
+   "variant": 1,
+   "jp": "チンビュアリー",
+   "en": "ChinVury",
+   "rom_target": "0x0CFAC4",
+   "ptr_src": "0x0C7424"
+  },
+  {
+   "slot": 3,
+   "variant": 0,
+   "jp": "リトルガウ",
+   "en": "LilGau",
+   "rom_target": "0x0CFA4C",
+   "ptr_src": "0x0C7428"
+  },
+  {
+   "slot": 3,
+   "variant": 1,
+   "jp": "チンビュアリー",
+   "en": "ChinVury",
+   "rom_target": "0x0CFAD4",
+   "ptr_src": "0x0C742C"
+  },
+  {
+   "slot": 4,
+   "variant": 0,
+   "jp": "こあくま",
+   "en": "Imp",
+   "rom_target": "0x0CFA58",
+   "ptr_src": "0x0C7430"
+  },
+  {
+   "slot": 4,
+   "variant": 1,
+   "jp": "ハイエルフ",
+   "en": "HighElf",
+   "rom_target": "0x0CFAE4",
+   "ptr_src": "0x0C7434"
+  },
+  {
+   "slot": 5,
+   "variant": 0,
+   "jp": "メインガウ",
+   "en": "MainGau",
+   "rom_target": "0x0CFA62",
+   "ptr_src": "0x0C7438"
+  },
+  {
+   "slot": 5,
+   "variant": 1,
+   "jp": "リンビュアリー",
+   "en": "LinVury",
+   "rom_target": "0x0CFAF0",
+   "ptr_src": "0x0C743C"
+  },
+  {
+   "slot": 6,
+   "variant": 0,
+   "jp": "メインガウ",
+   "en": "MainGau",
+   "rom_target": "0x0CFA6E",
+   "ptr_src": "0x0C7440"
+  },
+  {
+   "slot": 6,
+   "variant": 1,
+   "jp": "リンビュアリー",
+   "en": "LinVury",
+   "rom_target": "0x0CFB00",
+   "ptr_src": "0x0C7444"
+  },
+  {
+   "slot": 7,
+   "variant": 0,
+   "jp": "LV１５以上のミノドラゴン",
+   "en": "Lv15+ MinoDrag",
+   "rom_target": "0x0CFA7A",
+   "ptr_src": "0x0C7448"
+  },
+  {
+   "slot": 7,
+   "variant": 1,
+   "jp": "LV１５以上のドラグリフォン",
+   "en": "Lv15+ DragGrif",
+   "rom_target": "0x0CFB10",
+   "ptr_src": "0x0C744C"
+  },
+  {
+   "slot": 8,
+   "variant": 0,
+   "jp": "ヘビーガウ",
+   "en": "HeavyGau",
+   "rom_target": "0x0CFA96",
+   "ptr_src": "0x0C7450"
+  },
+  {
+   "slot": 8,
+   "variant": 1,
+   "jp": "メインビュアリー",
+   "en": "MainVury",
+   "rom_target": "0x0CFB2E",
+   "ptr_src": "0x0C7454"
+  }
+ ]
+}

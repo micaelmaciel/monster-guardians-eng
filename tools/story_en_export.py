@@ -45,6 +45,9 @@ MAX_SCREEN = 58      # working limit per screen
 # beast names (EN TBD, reserved), 7540 player name (6).
 WORD_W = [1, 8, 24, 3]
 BEAST_W = 12
+# NOTE: the reserves above are pre-translation placeholders. The final EN
+# insert widths live in `translation/story_insert_names.json`;
+# `tools/check_insert_rows.py` replays every screen with the real names.
 NAME_W = 6
 
 GLOSSARY = ["Grandate", "Canon", "Ignis", "hydra dragon"]
