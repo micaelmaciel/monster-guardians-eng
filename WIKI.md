@@ -8,14 +8,22 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** Both text
-  subsystems are now structurally understood: (1) 8×8 direct-code text
-  (2,223 strings, ready for translation), (2) 16×11 large-glyph story
-  script at `0xCFF84` with a 685-glyph store at `0xD3144`. The
-  large-glyph region is now **fully enumerated**: 63 story messages +
-  33 late messages + 13 status words + the R1 support strings (insert
-  tables, fragments, scene variants, debug prompts) — see "Complete
-  text inventory & completeness audit" in Findings.
+- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** *Three*
+  text subsystems are now structurally understood and **all three are
+  fully extracted**: (1) 8×8 direct-code text — region-aware extraction
+  gives **1,215 rows** (see "8×8 direct-code text corpus" in Findings);
+  the 32 four-glyph kanji names (`0x1A0–0x1BF`) still await the user's
+  reading from a rendered contact sheet; (2) 16×11 large-glyph story
+  script at `0xCFF84` with a 685-glyph store at `0xD3144` — **fully
+  enumerated**: 63 story messages + 33 late messages + 13 status words +
+  the R1 support strings — see "Complete text inventory & completeness
+  audit" in Findings; (3) the **field message box** system (9×9 message
+  font at `0xCDED4`, 317 glyphs, descriptor `0xCF520`, renderer
+  `0x0EC38`) — **169 strings fully extracted and decoded** into
+  `build/msgfont_strings.tsv` + `data/msgfont_charmap.json` (317/317
+  glyphs mapped) — see "Field message box — third text system" below.
+  Remaining extraction work: graphics containing text (title screen,
+  logos, name-input UI cells).
 - **Workflow change (user, 2026-10-19): extract first, translate later.**
   All remaining Japanese text is to be fully extracted and inventoried
   before any further translation; the translation itself is then done in
@@ -159,6 +167,12 @@ milestone.
   `0xCF52C..0xCFB82`. **649/685 glyphs verified** (readings via vision
   renders — no OCR); the 36 unfilled entries are unread symbols/fragments
   (see Open questions).
+- [x] T9 — **Third text system (field message box)**: 9×9 "message font"
+  317 glyphs at `0x0CDED4`, descriptor `0xCF520`, renderer `0x0EC38`,
+  string table `0x0CC92C..0x0CDED4` = **169 strings**, all extracted and
+  decoded (`build/msgfont_strings.tsv`, `data/msgfont_charmap.json`,
+  317/317 glyphs). Found 2026-10-19; see "Field message box — third text
+  system" in Findings.
 
 ## Prior art and tools
 
@@ -673,9 +687,12 @@ This is the monster status screen's bigfont label list; translation = M11.
 
 **Other regions re-checked and closed (no text)**
 
-- `0xCC874..0xCDED4` scenario/sequence id tables (`0x7FFF` separators,
-  ids only); `0xCDED4..0xCF52C` table data ending in a pointer to
-  `0xCDED4` at `0xCF528`.
+- `0xCC000..0xCC92C` mixed scenario/sequence id data (not text).
+  **Correction (2026-10-19):** `0xCC92C..0xCDED4` is *not* id data — it
+  is the **field-message string table** (the third text system, decoded
+  below), and `0xCDED4..0xCF51E` is that system's 317-glyph font store.
+  The font descriptor sits at `0xCF520` and its store pointer
+  `0x080CDED4` is the u32 at `0xCF528`.
 - All 8 single-term runs (`0x09C0BA`, `0x0A9C24`, `0x0A9F22`, `0x0F8FA2`,
   `0x21B266`, `0x2C9D78`, `0x2CA376`, `0x56F5BA`) = graphics/palette/tile
   data, not text.
@@ -683,9 +700,193 @@ This is the monster status screen's bigfont label list; translation = M11.
   (`0xCFB82..0xCFF82`); the story bank starts exactly at `0xCFF84`.
 
 **Still outside the story pipeline** (not missed, but not yet mined):
-8x8 direct-code text (menus/UI; candidate inventory in
-`build/strings.tsv`) and graphics containing text (title screen etc.) —
-future milestones.
+graphics containing text (title screen, logos, name-input UI key cells
+`0x0C6E00+`) — next extraction milestone. The 8×8 direct-code text is now
+fully extracted — see "8×8 direct-code text corpus" below.
+
+### 8×8 direct-code text corpus (M11, 2026-10-19) — EXTRACTED
+
+The 8×8 subsystem (menus, battles, shops, monster/item databases, network
+messages) is fully extracted. Window `0x099B40..0x0C6E00`; **1,215 rows**
+in `build/8x8_corpus.tsv` (columns: `addr region style n suffix refs
+sources text`; styles `term`/`len`/`slice`/`split`).
+
+Tooling (both committed):
+
+- `tools/extract_8x8.py` — pointer-driven extraction. Reference sources:
+  - `refs` = every halfword-aligned u32 in the ROM pointing into the
+    window (odd hits are byte-value coincidences and are dropped);
+  - `lenmap` = `{ptr, u16 len, u16 b}` entries (`1 <= len <= 300`,
+    `b <= 0xFF`) giving the **exact code length**;
+  - `runs` = every `0x0000`-terminated 16-bit code run at 2-aligned
+    offsets;
+  - `walk_names` = first name-like run in the first 0x18 bytes of each
+    monster-DB record (6 walks, 374 names);
+  - plus the `MANUAL_STARTS`, `SPLITS`, `EXCLUDED` tables below.
+- `tools/census_8x8.py` — pointer census → `build/8x8_ptrs.tsv`
+  (**1,502 targets** with source offsets).
+- `tools/render_glyph_sheet.py` — contact sheets for unresolved glyphs.
+
+**Entry layouts.** Pool tables are `{u32 ptr, u16 f1, u16 f2}` with
+`f1` = exact code length and `f2` = `b` (0 or small). The network message
+table at `0x09D8C0` (77 entries) uses `f1` = **code number** (e.g. 10-000),
+not a length. Item descriptions use `{ptr, len}` into the idesc pool.
+
+**Regions (row counts).**
+
+| region | rows | contents / notes |
+|--------|-----:|------------------|
+| `mobile` | 42 | tournament / Mobile Adapter GB UI at `0x099B64..0x099D72`: one *unterminated* run, split by declared fixed-width fields (`EXP`, `LV`, `しょうきん  0G`, `Lv51いじょうクラス      `) — slices from `MANUAL_STARTS`; fields are space-padded to fixed widths |
+| `net` | 140 | network/system message bank `0x09D000..0x0A1108`: `CODE：10−000 …とりあつかいせつめいしょをごらんください。` errors, connection screens |
+| `report` | 45 | post-battle / party-report messages from `0x0A12AC`: `がしゅぎょうからかえってきたよ。`, level-up / capture / release prompts (some are sentence fragments composed at runtime) |
+| `shop` | 110 | shop + password + save messages `0x0A7000..0x0AA000` (`いらっしゃいませ！`, `CL BS OK` input labels); two data blocks excluded |
+| `item` | 42 | item names: first 8 codes of each `0x40`-stride record at `0x0B5728` (letter/number fields follow inside the record) — **names are limited to 8 codes** |
+| `idesc` | 42 | item descriptions via `{ptr,len}` at record `+0x38` into pool `0x0B720C..0x0B7A40` |
+| `mdb1`–`mdb6` | 56/35/107/52/69/29 | monster database name fields (walks below); mdb1 stores each name at two consecutive records (56 rows = 28 unique × 2); mdb2 fragments (`メインガウ`, `ヘビーガウ`…) are legitimate fusion-name parts |
+| `map` | 35 | map / start-location names from `0x0C5DAE`: `すたーとちてん`, `へいげん`, `へいげん2`, `おか`… (digit table at `0x0C5D9C` is data) |
+| `battle` | 139 | battle message bank `0x0C6000..0x0C6E00` (incl. `タマゴ`, `レオ`, `ティーナ`) |
+| `bbxxx` | 2 | name-input row keys: `SPC` (`0x0BCC2C`), `あ` (`0x0BCC44`) |
+| `pool` | 270 | main label/message pool `0x0BD000..0x0BF000`: chapter labels, menu labels, the eight four-glyph monster names, name suggestions, system boxes, `COMPLETE`/`CLEAR`/`はい`/`いいえ`/`ON`/`OFF`… |
+
+**Monster-DB walks** (start, end, stride): `(0x0AEDE8,0x0AFCDE,0x30)`,
+`(0x0AFCDE,0x0B0B7C,0x34)`, `(0x0B0B7C,0x0B271C,0x34)`,
+`(0x0B271C,0x0B3900,0x34)`, `(0x0B3900,0x0B4A00,0x34)`,
+`(0x0B4A00,0x0B5728,0x34)`. Per-record constant field pairs
+(`0x00E0/0x0180/0x01C0` + `0x0040/0x0080/0x00A0`, which decode as kana
+like `ヴめ`/`百ケ`) are filtered out; unreferenced 2-code runs between
+terminators are dropped unless they sit on a record start.
+
+**Key tables.** `0x0BCA74` = 33 chapter/demo-select labels (13 entries are
+`？` placeholders); `0x0BAA1C` = 13 status names + 13 descriptions;
+`0x0BAB8C`/`0x0BABC4`/`0x0BABDC` = 18 four-code entries into `0x0BD4CC..`
+(beast/type names, incl. the eight kanji names); `0x0BAE3C` = 6×12-byte
+name-insert records `{ptr,len,id,handler}` ids `0x20–0x25` (what the story
+`753E` command inserts); `0x0C7410` = bigfont-side beast pointer table.
+
+**Split pool labels** (merged runs the game reads at fixed offsets — must
+stay contiguous when relocated): `0x0BD3B6 [4,4,5]`, `0x0BD3EC [3,4]`,
+`0x0BD46E [4,3,3]` (きしょう/いどう/ひこう), `0x0BD48A [1,5,4,7]`,
+`0x0BD4AC [2,4]`, `0x0BDB52 [5,20,21]`, `0x0BDF04 [10,15]`,
+`0x0BE264 [11,10]`, `0x0BE350 [18,11]`, `0x0BE3DA [8,4,18]`,
+`0x0BE45A [24,20]`, `0x0BE4DE [9,14]`, `0x0BE53C [4,26]`,
+`0x0BE922 [9,5]`, `0x0BE94A [5,4,4]`, `0x0BE9E4 [11,17,15,17]` (+ auto
+remainder `モンスターリストはじゅんびちゅう。`).
+
+**Excluded data zones** (inside the window, not text): `0x0A1108–0x0A12AC`
+(font rows), `0x0A9740–0x0A9C34` (font chart), `0x0A95BC–0x0A9690`
+(password-checksum blob), `0x0A8DE4–0x0A902A` (password-input ASCII/glyph
+tables; contains debug strings `testl1`), `0x0A9EE0–0x0AA000` (shop
+pointer/keyboard block), `0x0B7A40–0x0B8000` (kana composition table),
+`0x0BAB60–0x0BAB8C` + `0x0BAC20–0x0BAC40` (script data),
+`0x0BCB60–0x0BCC28` (glyph-code lists), `0x0C3000–0x0C5D9C`
+(graphics/map data), `0x099D90–0x09D000` (Mobile tables),
+`0x0C6E00–0x0C7400` (name-input keyboard cells).
+
+**Code-baked strings (`MANUAL_STARTS`)**: mobile fixed-width fields
+(`0x099BE8` クラス, `0x099C00`, `0x099C34/68/9C/D0`, `0x099CE2`,
+`0x099D2A/34/3E`, `0x099D4A`, `0x099D4E/54/5C/68` NEW/LOAD/OPTION/START)
+and the pool strings reached only via code-baked offsets: `0x0BD388`
+`COMPLETE`; `0x0BD46E` split labels; `0x0BDD08`
+`パーティがしゅぎょうにいっています` (composed with the preceding
+`すべての` row at runtime); `0x0BE264` split labels.
+
+**Audits.** Full-ROM kana coverage and a whole-window uncovered-span audit
+(maximal code spans minus corpus coverage) were run; every remaining
+uncovered text-like span is data (glyph-order table `0x0A1BCA..`, kana
+input grid `0x0AB004..`, DB field values, `TET` font bitmap at
+`0x0BEFB8`, small markers). The eight four-glyph monster names at
+`0x0BD4E4..0x0BD52A` use codes `0x1A0–0x1BF`, the only unmapped glyphs
+(32); contact sheets: `build/glyph_sheet_1A0_1BF.png` (grid) and
+`build/glyph_names_1A0_1BF.png` (the eight names as words) — **user
+reading pending**.
+
+**Open items.** `0x0BE2A8` `しゅぎょうちゅうパーティせんたくにもどる`
+kept as one slice (split `[8,12]` vs `[12,8]` undecidable); `0x0BECE6`
+`？？AB` rejected (two `？` + index letters, not text); `みへんせい` =
+未編成; a few mdb2 stray suffixes (`リン` etc.) are kept as fragments.
+
+### Field message box — third text system ("message font") — SOLVED & EXTRACTED (2026-10-19)
+
+The field message box ("ワールドマップへ切替えます") is **not** the 8×8
+system and **not** the 16×11 story bigfont. It is a third, self-contained
+text system with its own 9×9 font, its own code space (0–316), and its own
+renderer.
+
+**Font.** 317 glyphs × 18 bytes at `0x0CDED4` (`0xCDED4..0xCF51E`).
+Glyph format: 8 B = rows 0–7, left 8 columns (MSB = leftmost); 8 B = the
+9th column, bit 7 of each row byte; 1 B = row 8 left 8 columns; 1 B = row 8
+column 8. That is a 9×9 1bpp mask laid out as three stacked blocks.
+Descriptor at `0xCF520`:
+`{u16 w=9, u16 h=9, u32 flags=0x40000000, u32 store=0x080CDED4, u32 4,
+u32 stride=0x12, u32 0x7530, u32 0x7541, ...}`. The store pointer at file
+offset `0xCF528` is the single handle for relocating/extending the font.
+
+**Renderer** at `0x0EC38`: takes a u16 string pointer, draws into
+`0x0203E800` (64 OBJ-sized tiles = the box's two 64×32 halves), glyph
+advance 10 px, line 1 y=6, line 2 y=16, **auto-wraps after 11 glyphs**,
+terminates on `0x7FFF`. The box itself is 4 OBJ 64×32 sprites (tiles
+`0x000/0x020/0x040`, palette 14) at (76,16) and (140,16); EWRAM
+`0x3E000` = border-only box, `0x3E800` = box with text. The 8×8 font
+cannot draw text into this box; the message font's descriptor/renderer is
+the only path.
+
+**String table** `0x0CC92C..0x0CDED4`: 169 strings, each `0x7FFF`-
+terminated, pure glyph codes 0–316 (no control codes), 2,603 glyphs total.
+The table is referenced from code literal pools all over the ROM (e.g.
+`0x3114 -> 0x080CCE48`, `0x38BC -> 0x080CCE74`); a whole-ROM scan found no
+other message-font strings (the remaining `0x7FFF`-terminated runs are
+story bigfont / R1 / data).
+
+**Extraction (complete).**
+
+- `build/msgfont_strings_raw.json` — 169 × `{start, codes}`.
+- `data/msgfont_charmap.json` — **317/317 code→char mapped** (built by
+  reading all 169 strings from rendered PNGs at S=4–8 and aligning
+  code-by-code; every code appears in a readable context).
+- `build/msgfont_strings.tsv` — `addr idx codes text`, all 169 decoded.
+
+**Contents** (all UI/system text, translatable):
+
+- battle orders and clear conditions: `命令を決めてください`,
+  `指示の対象を決めてください`, `【クリア条件】…` (26 mission objectives,
+  0xCCE88–0xCD3DA), `【命令：戦え／待機／排除／アイテム／逃げる／守れ／
+  ボコれ】…`;
+- network/battle states: `通信準備ができたらＡボタンを押してください`,
+  `通信中です。Ｂボタンでキャンセルできます`, `通信エラーです。ケーブルを
+  確認してください`, class/fee table `ＬＶ５１以上クラス　料金３００Ｇ`,
+  `対戦成績　勝　負　引き分け`, `プレイヤーポイントが足りません`;
+- field menu descriptions: `ワールドマップ／ブリーフィング／モンスター管理／
+  パーティ編成／アイテム管理／システム処理へ切替えます`, `修行中の為、…`,
+  `位置変更／パーティから外せます`, item/parameter help lines;
+- save/load + sound/event config: `データをセーブしますか　はい　いいえ`,
+  `音楽のＯＮ／ＯＦＦを設定します`, `効果音の…`;
+- the 13 monster status labels (identical to the bigfont status list at
+  `0xD30F4`): 生命 耐久 攻撃 防御 行動 知識 必殺技 反撃 索敵 従順 命中
+  回避 技能.
+
+**Reading notes / quirks.** The font is first-use ordered, so it contains
+duplicate glyphs: 4/48 = ー, 49 = blank (space), 1/141 = ン, 59/76 = る,
+82 = ボ / 88 = ポ (msg 15/79 renders ポコれ; likely ボコれ), 158/302 = 魔,
+159/178/303 = 獣, 185 = グ, 186/221 = シ, 214/291 = へ, 68/206 = 除,
+58/292 = 撃, 267 = 技 / 316 = 能. Two strings contain **source typos**:
+msg 11/75 `排まえる` (should be 排除する) and msg 26/85 `あ加できない`
+(should be あつかえない/扱えない). One reading is still uncertain:
+code 166 (`砦` by shape; the word `砦備` in msg 47 is otherwise
+unexplained — probably a source typo for 配備/砦塞) and code 168
+(`塞`, word `城塞` in msgs 48/49).
+
+**Translation implication (recorded now, decision later).** The message
+font contains only a *subset* of Latin: A, B, F, G, L, V, N, O, digits
+0–9, `【】！：／～` — no lowercase, no most uppercase, no `.`/`,`/`?`.
+Translating the 169 strings in place would immediately run out of glyphs.
+Options: (a) relocate the 317-glyph store to free space (`0x76765D`),
+append Latin glyphs at 18 B each, update the descriptor's store pointer
+(one u32 at `0xCF528`); (b) keep the store and draw message text with the
+8×8 system instead (needs a different renderer path — the box uses OBJ
+tiles, so probably not); (c) shorten/avoid. The 11-glyph wrap and 2-line
+box also constrain English line length (11 chars/line × 2 lines per page;
+the renderer does not page automatically beyond the 2 lines — the string
+must be split manually). Decided in the translation pass, recorded here.
 
 ### Compression (T2)
 
@@ -872,6 +1073,15 @@ msg 60 width-foldings) — see
 - `tools/extract_r1.py` — extracts the R1 support region (`0xCF52C..0xCFB82`):
   37 segments, the 753E/753F tables, the name-input charset, and a
   pointer census → `build/r1_text_raw.json`.
+- `tools/extract_8x8.py` — the 8×8 direct-code corpus extractor (window
+  `0x099B40..0x0C6E00`): pointer-driven with `term`/`len`/`slice`/`split`
+  styles, DB walks, `MANUAL_STARTS`/`SPLITS`/`EXCLUDED` tables →
+  `build/8x8_corpus.tsv` (1,215 rows).
+- `tools/census_8x8.py` — halfword-aligned pointer census of the same
+  window → `build/8x8_ptrs.tsv` (1,502 targets + sources).
+- `tools/render_glyph_sheet.py` → `build/glyph_sheet_1A0_1BF.png` +
+  `build/glyph_names_1A0_1BF.png` — contact sheets for the unresolved
+  glyphs `0x1A0–0x1BF`.
 - `tools/story_en_export.py` — builds/QA-checks `translation/story_en.json`
   from `translation/story_en_runs.json`: run parity, control-code diff,
   char-exact wrap simulation, width/CJK checks, and a per-screen page

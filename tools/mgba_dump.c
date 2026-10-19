@@ -103,9 +103,9 @@ int main(int argc, char** argv) {
     for (int i = 0; i < nframes; i++) if (frames[i] > maxframe) maxframe = frames[i];
 
     /* parse input windows (strtok_r: inner/outer tokenizers must not share state) */
-    struct { int a, b; uint32_t keys; } inputs[256]; int nin = 0;
+    struct { int a, b; uint32_t keys; } inputs[8192]; int nin = 0;
     { char* tmp = strdup(input_spec); char* s1 = NULL; char* s2 = NULL; char* tok = strtok_r(tmp, ",", &s1);
-      while (tok && nin < 256) {
+      while (tok && nin < 8192) {
         char* colon = strchr(tok, ':');
         if (colon) { *colon = 0;
             int a = 0, b = 0;
