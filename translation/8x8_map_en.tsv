@@ -1,0 +1,32 @@
+addr	n_jp	jp	en
+0x0C5DAE	7	すたーとちてん	Start Point
+0x0C5DBE	4	へいげん	Plains
+0x0C5DC8	5	へいげん2	Plains 2
+0x0C5DD4	2	おか	Hill
+0x0C5DDA	5	よるのまち	Town (Night)
+0x0C5DE6	6	こはんのもり	Lakeside Forest
+0x0C5DF4	14	じょうがい＜じょうもんまえ＞	Castle Exterior (Gate)
+0x0C5E12	11	じょうない＜なかにわ＞	Castle (Inner Garden)
+0x0C5E2A	5	じょうない	Castle Interior
+0x0C5E4E	11	じょうない＜さいだん＞	Castle (Altar)
+0x0C5E66	4	こうげん	Highlands
+0x0C5E70	2	もり	Forest
+0x0C5E76	8	しつげん＜ぬま＞	Wetlands (Marsh)
+0x0C5E88	6	もり＜よる＞	Forest (Night)
+0x0C5E96	9	やま＜せまいたに＞	Mountain (Narrow Valley)
+0x0C5EAA	6	やま＜おか＞	Mountain (Hill)
+0x0C5EB8	6	やまいりぐち	Mountain Entrance
+0x0C5EC6	8	やま＜けいこく＞	Mountain (Ravine)
+0x0C5ED8	9	やま＜ちょうてん＞	Mountain (Summit)
+0x0C5EEC	7	やま＜かこう＞	Mountain (Crater)
+0x0C5EFC	7	やま＜でぐち＞	Mountain (Exit)
+0x0C5F0C	3	さばく	Desert
+0x0C5F14	7	はいきょのまち	Ruined Town
+0x0C5F24	7	もり＜こはん＞	Forest (Lakeside)
+0x0C5F34	16	こじょういせきせきじょうもんまえ	Old Castle Ruins Gate
+0x0C5F56	6	こじょうなか	Old Castle Inside
+0x0C5F72	6	こじょうない	Old Castle Interior
+0x0C5F80	12	こじょうないこじょうない	Old Castle Interior
+0x0C5F9A	14	こじょうない＜29とおなじ＞	Old Castle (same as 29)
+0x0C5FB8	14	こじょうない＜ごうせいしつ＞	Old Castle (Combine Room)
+0x0C5FF4	8	べんりなショップ	Convenience Shop

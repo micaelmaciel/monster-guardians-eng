@@ -1,0 +1,94 @@
+addr	n_jp	jp	en
+0x0A7FCC	4	0 0 	0 0 
+0x0A7FD0	2	0 	0 
+0x0A7FFC	3	は い	Yes
+0x0A8004	3	いいえ	No
+0x0A800C	11	で、なにがほしいんだ？	So, what do you want?
+0x0A8024	13	このアイテムでいいんだな？	You want this item, yeah?
+0x0A8040	40	なんだ、かねがないじゃないか。⏎かねをもってないものには、しょうひんはうれんな。	What, you've got no money.⏎Can't sell goods to the broke.
+0x0A8092	13	これだな。ホラ、うけとれ。	Here you go. Take it.
+0x0A80AE	16	どのアイテムをうってくれるんだ？	Which item are you selling?
+0x0A80D0	22	そのアイテムだな。⏎そいつのかいとりかかくは	That item, huh.⏎Its buy-back price is
+0x0A80FE	11	Gになるが、⏎どうだ？	G.⏎How about it?
+0x0A8116	49	おっと、これいじょうおかねをもちきれそうにないな。⏎もちきれるぶんだけしはらうが、それでもいいな？	Whoa, you can't carry any more money.⏎I'll pay what you can hold, OK?
+0x0A817A	3	う る	Sell
+0x0A8182	6	えらびなおす	Choose again
+0x0A8190	49	ん？ そのアイテムは、⏎しゅぎょうちゅうのモンスターがみにつけてるようだな。⏎それはひきとれんぞ。	Hmm? That item is⏎equipped by a monster in training.⏎I can't take it.
+0x0A866C	15	ほしいのは、どのモンスターだ？	Which monster do you want?
+0x0A868C	9	こいつでいいのか？	This one, then?
+0x0A86A0	48	ん？ かねがたらんようだな。⏎それじゃあ、うることはできんぞ。⏎ま、こっちもしょうばいだからな。	Hmm? You don't have enough.⏎Then I can't sell it to you.⏎Hey, I've got a business to run.
+0x0A8702	15	そら、きちんとせわしてやれよ。	There, take good care of it.
+0x0A8722	19	どのモンスターをひきとってほしいんだ？	Which monster should I take off you?
+0x0A874A	21	どれどれ．．．ふむ、そいつか。⏎そいつなら	Let's see... hmm, that one.⏎For that one,
+0x0A8776	20	Gでひきとってやるが、⏎それでもいいか？	G.⏎Is that OK?
+0x0A87A0	50	ふむ、どうやらおかねがいっぱいのようだな。⏎もちきれないぶんのしはらいはできんが、⏎それでもいいか？	Hmm, seems your money is full.⏎I can't pay what you can't hold,⏎but is that OK?
+0x0A881C	29	おおっと、⏎しゅぎょうにでているモンスターはひきとれんぞ。	Whoa there,⏎I can't take a monster that's out training.
+0x0A88A0	17	ほしいアイテムをえらんでください。	Choose the item you want.
+0x0A88C4	14	このアイテムがほしいんだね？	You want this item, right?
+0x0A88E2	32	アイテムがとうちゃくしたよ。⏎ハイこれ、ちゃんとわたしたからね！	Your item has arrived.⏎Here, I handed it over properly!
+0x0A8924	21	アイテムのこうにゅうをキャンセルしました。	Item purchase cancelled.
+0x0A8950	24	あ、あと、ほんきょちでセーブするのをわすれずに。	Oh, and don't forget to save at base.
+0x0A898C	10	なにかごようですか？	Can I help you?
+0x0A89A2	8	しゅぎょうにだす	Send to train
+0x0A89B4	10	しゅぎょうのかくにん	Check training
+0x0A89CA	10	モンスターのつうはん	Monster mail order
+0x0A89E0	9	アイテムのつうはん	Item mail order
+0x0A89F4	6	みなとをでる	Leave the port
+0x0A8A02	28	ええっと．．．⏎しゅぎょうにいけるパーティがないみたい。	Um...⏎it looks like no party can go train.
+0x0A8A3C	37	だれもしゅぎょうになんかいってないよ！⏎だからみにいくひつよう、なしなし。	Nobody has gone to train yet!⏎So there's nothing to see.
+0x0A8A88	33	なんか、モンスターがいっぱいなんで⏎これいじょうはむりみたいです。	Um, you have lots of monsters, so⏎it seems you can't take any more.
+0x0A8ACC	42	えっ？ だめだめ！⏎アイテムいっぱいもってるじゃない。⏎それいじょうもてないでしょ。	Huh? No no!⏎You're carrying lots of items.⏎You can't hold any more.
+0x0A8B22	11	きょうはなんのようだ？	What do you want today?
+0x0A8B3A	8	モンスターをかう	Buy monsters
+0x0A8B4C	7	アイテムをかう	Buy items
+0x0A8B5C	8	モンスターをうる	Sell monsters
+0x0A8B6E	7	アイテムをうる	Sell items
+0x0A8B7E	5	みせをでる	Leave the shop
+0x0A8B8A	44	ふむ、モンスターがいっぱいじゃないか。⏎どれかをうるなりなんなりしてから、かうこったな。	Hmm, your monsters are full.⏎Sell one or something before buying.
+0x0A8BE4	47	もうそれいじょう、アイテムはもちきれんぞ。⏎もしなんなら、いらないアイテムはひきとってやるが。	You can't carry any more items.⏎If you like, I'll take unwanted ones.
+0x0A8C44	27	なにいってるんだ？⏎モンスターなんていないじゃないか。	What are you saying?⏎You don't have any monsters.
+0x0A8C7C	30	アイテムをもっていないというのに、⏎なにをうるっていうんだ？	You don't even have items,⏎so what are you selling?
+0x0A8D10	15	どのモンスターをかうんですか？	Which monster will you buy?
+0x0A8D30	15	このモンスターでいいんですね？	This monster, is that right?
+0x0A8D50	28	モンスターがとどきました！⏎ちゃんとめんどうみるんだよ！	Your monster has arrived!⏎Take good care of it!
+0x0A8D8A	22	モンスターのこうにゅうをキャンセルしました。	Monster purchase cancelled.
+0x0A8DB8	22	それと、ちゃんとほんきょちでセーブもしてね。	Also, remember to save at base.
+0x0A902A	8	CL BS OK	CL BS OK
+0x0A904C	19	モバイルアダプタをしょきかちゅう．．．	Initializing Mobile Adapter...
+0x0A9074	15	かいせんをせつぞくちゅう．．．	Connecting the line...
+0x0A9094	10	つうしんちゅう．．．	Communicating...
+0x0A90AA	15	かいせんをせつだんちゅう．．．	Disconnecting the line...
+0x0A90CA	18	パスワードをにゅうりょくしてください	Enter the password.
+0x0A90F0	44	パスワードはアルファベットとすうじをくみあわせて⏎4〜16もじをにゅうりょくしてください	Combine letters and digits for⏎a 4 to 16 character password.
+0x0A914A	61	モバイルデータセンターにせつぞくします。⏎せつぞくするさいに、つうわりょうとせつぞくりょうがかかります。⏎よろしいですか？	You will connect to the Mobile Data Center.⏎Call and connection charges apply.⏎Is that OK?
+0x0A9242	74	モバイルデータセンターにせつぞくします。⏎せつぞくするさいに、つうわりょうとせつぞくりょうがかかります。⏎またこれとはべつに、コンテンツりょうとして	You will connect to the Mobile Data Center.⏎Call and connection charges apply.⏎Separately, a content fee of
+0x0A92D8	18	0えんかかります。⏎よろしいですか？	 yen will be charged.⏎Is that OK?
+0x0A92FE	17	せいじょうにしゅうりょうしました。	Finished successfully.
+0x0A9322	36	つうしんがせいじょうにしゅうりょうしました。⏎こんかいのつうしんじかんは	Communication finished successfully.⏎This session's time was
+0x0A936C	2	ふん	 min 
+0x0A9372	7	びょうでした。	 sec.
+0x0A9382	52	せつぞくさきがとうろくされていません。⏎とりあつかいせつめいしょをごらんのうえ、⏎とうろくしてください。	The connection target is not registered.⏎See the instruction manual and⏎register it.
+0x0A93EC	52	ログインIDがとうろくされていません。⏎とりあつかいせつめいしょをごらんのうえ、⏎とうろくしてください。	Your login ID is not registered.⏎See the instruction manual and⏎register it.
+0x0A9456	37	すでにほぞんされたパスワードがあります。⏎このパスワードをしようしますか？	A saved password already exists.⏎Use this password?
+0x0A94A2	5	いれなおす	Re-enter
+0x0A94AE	101	パスワードをカートリッジにほぞんすることができます。⏎しかし、モバイルアダプタGBとカートリッジをふんしつしたばあい、ほかのひとにふせいにしようされるかのうせいがあります。⏎パスワードをほぞんしますか？	You can save the password to the cartridge.⏎If you lose the Mobile Adapter GB or cartridge,⏎someone else could use it without permission.⏎Save the password?
+0x0A957A	33	パスワードのほぞんにしっぱいしました。⏎しょりをちゅうだんします。	Saving the password failed.⏎Aborting.
+0x0A9690	26	いらっしゃいませ！⏎ようこそ、おいでくださいました！	Welcome!⏎Thank you for coming!
+0x0A96C6	23	ありがとうございました！⏎またきてくださいね！	Thank you very much!⏎Please come again!
+0x0A96F6	17	おぅ、いらっしゃい！⏎よくきたな。	Oh, welcome!⏎Good of you to come.
+0x0A971A	20	なんだ、もうかえるのか？⏎またこいよな。	What, leaving already?⏎Come back again.
+0x0A9C44	16	パーティがへんせいされていません	No party is set up.
+0x0A9C66	22	しゅぎょうにだすパーティをえらんでください！	Choose a party to send to training!
+0x0A9C94	14	このパーティでいいんですか？	Is this party OK?
+0x0A9CB2	13	つづけてせんたくしますか？	Keep selecting?
+0x0A9CCE	11	パーティをせんたくする	Choose a party
+0x0A9CE6	11	ふねをしゅっこうさせる	Sail the ship
+0x0A9CFE	7	やっぱりやめる	Never mind
+0x0A9D0E	19	ふねはぶじ、しゅっこうしていきました！	The ship set sail safely!
+0x0A9D36	14	しゅっこうをとりけしました。	Departure cancelled.
+0x0A9D54	39	あとはほんきょちにもどってセーブするだけだから。⏎わすれずにセーブするんだよ。	Now just go back to base and save.⏎Don't forget to save, OK?
+0x0A9DA4	29	パーティがへんせいされてないんで、⏎そんなことできません！	The party isn't set up,⏎so that's not possible!
+0x0A9DE0	40	そのパーティはしゅぎょうにいっちゃってるじゃない。⏎そんなむりなこといわないで！	That party has already gone to train.⏎Don't ask for the impossible!
+0x0A9E32	41	えぇ、でもそのパーティ、もうふねにのってるし。⏎べつのパーティをえらんでほしいな。	Um, but that party is already on the ship.⏎Please choose another party.
+0x0A9E86	39	たまごがはいってるパーティは⏎しゅぎょうにはいけないんだよ。⏎ね！ わかった？	A party with an egg in it⏎can't go to training.⏎OK? Got it?
+0x0A9ED6	5	じょうせん	Board ship

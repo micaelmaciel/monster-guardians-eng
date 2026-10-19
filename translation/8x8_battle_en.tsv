@@ -1,0 +1,133 @@
+addr	n_jp	jp	en
+0x0C6006	4	いせき？	Ruins?
+0x0C6010	7	しんかサーバー	Evolution Server
+0x0C6020	11	スーパーしんかサーバー	Super Evolution Server
+0x0C6038	5	しょうきん	Prize
+0x0C6044	3	せんか	Spoils
+0x0C604C	3	おかね	Money
+0x0C6054	3	EXP	EXP
+0x0C605C	4	Gold	Gold
+0x0C6066	3	じかん	Time
+0x0C607E	4	ポイント	Points
+0x0C6092	7	せんとうけっか	Battle Result
+0x0C60A2	5	モンスター	Monster
+0x0C60AE	12	をなかまにくわえますか？	: add to your party?
+0x0C60C8	5	をはずして	: remove and 
+0x0C60D4	11	をなかまにくわえました	: joined your party.
+0x0C60EC	2	はい	Yes
+0x0C60F2	3	いいえ	No
+0x0C60FA	14	もとのじょうたいにもどします	Returns to its normal state.
+0x0C6118	24	アイテムがもちきれないので、どれかをすてますか？	You can't carry more items. Discard one?
+0x0C614A	16	すてるアイテムをえらんでください	Choose an item to discard.
+0x0C616C	4	をすてて	: discard and 
+0x0C6176	18	をアイテムにくわえてよろしいですか？	: add to your items?
+0x0C61A6	12	をアイテムにくわえました	: added to your items.
+0x0C61C0	34	はしゅぎょうちゅうのモンスターがそうびしているのでこうかんできません	Cannot trade: a monster in training has it equipped.
+0x0C6206	22	はしゅぎょうにでているのでこうかんできません	Cannot trade: it is out training.
+0x0C6234	9	たおしたモンスター	Defeated monsters
+0x0C6248	8	ほかくモンスター	Captured monsters
+0x0C625A	11	いきのこったモンスター	Surviving monsters
+0x0C6272	2	LV	LV
+0x0C6278	4	ぞくせい	Element
+0x0C6282	20	こうかんするモンスターをえらんでください	Choose a monster to trade.
+0x0C62AC	16	そのモンスターでよろしいですか？	Is this monster OK?
+0x0C62CE	37	モンスターをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results without trading monsters?
+0x0C631A	36	アイテムをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results without trading items?
+0x0C6364	13	モンスターをいれかえました	Monster swapped.
+0x0C638C	17	をなかまにくわえてよろしいですか？	: add to your party?
+0x0C63B0	1	・	-
+0x0C63B4	4	トータル	Total
+0x0C63BE	4	アイテム	Item
+0x0C63C8	22	パーティのしゅつげきせっていがされていません	The party is not set to deploy.
+0x0C63F6	17	じゅうじキー・・・せんとうステージ	D-Pad: battle stage
+0x0C641A	17	L／R・・・・・・ほんきょち／ほか	L / R: base / other
+0x0C643E	10	ステージ1 へいげん	Stage 1 Plains
+0x0C6454	10	ステージ2 へいげん	Stage 2 Plains
+0x0C646A	8	ステージ3 おか	Stage 3 Hills
+0x0C647C	8	ステージ4 まち	Stage 4 Town
+0x0C648E	11	ステージ5 もりこはん	Stage 5 Lakeside
+0x0C64A6	11	ステージ6 しろのそと	Stage 6 Outside Castle
+0x0C64BE	13	ステージ7 しろのなかにわ	Stage 7 Castle Garden
+0x0C64DA	11	ステージ8 じょうない	Stage 8 Inside Castle
+0x0C64F2	11	ステージ9 じょうない	Stage 9 Inside Castle
+0x0C650A	12	ステージ10 じょうない	Stage 10 Inside Castle
+0x0C6524	16	ステージ11 じょうないさいだん	Stage 11 Castle Altar
+0x0C6546	11	ステージ12 こうげん	Stage 12 Highlands
+0x0C655E	9	ステージ13 もり	Stage 13 Forest
+0x0C6572	11	ステージ14 しつげん	Stage 14 Wetlands
+0x0C658A	12	ステージ15 もり よる	Stage 15 Forest Night
+0x0C65A4	14	ステージ16 やま いりぐち	Stage 16 Mt. Entrance
+0x0C65C2	14	ステージ17 やま けいこく	Stage 17 Mt. Ravine
+0x0C65E0	12	ステージ18 やま おか	Stage 18 Mt. Hill
+0x0C65FA	15	ステージ19 やま けいこく2	Stage 19 Mt. Ravine 2
+0x0C661A	15	ステージ20 やま さんちょう	Stage 20 Mt. Summit
+0x0C663A	15	ステージ21 やま さんちょう	Stage 21 Mt. Summit
+0x0C665A	13	ステージ22 やま でぐち	Stage 22 Mt. Exit
+0x0C6676	10	ステージ23 さばく	Stage 23 Desert
+0x0C668C	14	ステージ24 はいきょのまち	Stage 24 Ruined Town
+0x0C66AA	10	ステージ25 ぬまち	Stage 25 Marsh
+0x0C66C0	15	ステージ26 こじょういりぐち	Stage 26 Old Castle Gate
+0x0C66E0	14	ステージ27 こじょうない1	Stage 27 Old Castle 1
+0x0C66FE	14	ステージ28 こじょうない2	Stage 28 Old Castle 2
+0x0C671C	18	ステージ29 ごうせいしついりぐち1	Stage 29 Combine Room 1
+0x0C6742	18	ステージ30 ごうせいしついりぐち2	Stage 30 Combine Room 2
+0x0C6768	13	ステージ31 ごうせいしつ	Stage 31 Combine Room
+0x0C6784	5	ほんきょち	Base
+0x0C6790	5	ごうせいや	Combine Shop
+0x0C679C	4	ショップ	Shop
+0x0C67A6	6	とうぎじょう	Arena
+0x0C67B4	3	みなと	Port
+0x0C67BC	14	ショップ・ごうせいや・そのた	Shop / Combine / Other
+0x0C67DA	10	せんとうをかいしする	Start battle
+0x0C67F0	8	せんきょうをみる	View status
+0x0C6802	10	しょうりじょうけん：	Win condition:
+0x0C6818	5	ミッション	Mission
+0x0C6824	22	あらわれたまじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts that appear!!
+0x0C6852	25	ゆくてをはばむ、やせいのまじゅうたちのせんめつ！！	Wipe out the wild beasts in your path!!
+0x0C6886	18	おそいくる、まじゅうたちをたおせ！！	Defeat the attacking beasts!!
+0x0C68AC	19	おってのまじゅうを、ぜんめつさせろ！！	Annihilate the pursuing beasts!!
+0x0C68D4	15	おってのついげきを、かわせ！！	Dodge the pursuers' attacks!!
+0x0C68F4	20	てきのまじゅうたちを、ぜんめつさせろ！！	Annihilate all enemy beasts!!
+0x0C691E	17	まじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts!!
+0x0C6942	16	けいびのまじゅうたちを、たおせ！	Defeat the guard beasts!
+0x0C6964	16	じょうないのまじゅうを、たおせ！	Defeat the castle beasts!
+0x0C6986	21	じょうないのまじゅうを、ぜんめつさせろ！！	Annihilate the castle beasts!!
+0x0C69B2	18	てきのまじゅうを、ぜんめつさせろ！！	Annihilate the enemy beasts!!
+0x0C69D8	15	あらわれたザーゴを、たおせ！！	Defeat Zargo who appeared!!
+0x0C69F8	17	いわの、ばんにんたちのせんめつ！！	Annihilate the rock guardians!!
+0x0C6A1C	24	ゆくてをはばむ、もりのせんじゅうしゃをたおせ！！	Defeat the forest dwellers in your path!!
+0x0C6A4E	17	あんこくからの、つかいをたおせ！！	Defeat the minion of darkness!!
+0x0C6A72	21	よみがえった、ぶしのたましいを、たおせ！！	Defeat the revived warrior spirits!!
+0x0C6A9E	16	まちぶせていた、てきのせんめつ！	Wipe out the ambushers!
+0x0C6AC0	18	てきの、はなったまじゅうを、たおせ！	Defeat the beasts the enemy released!
+0x0C6AE6	8	ザーゴをたおせ！	Defeat Zargo!
+0x0C6AF8	9	ラミレスをたおせ！	Defeat Ramires!
+0x0C6B0C	20	ベリンガムの、まじゅうたちを、たおせ！！	Defeat Beringham's beasts!!
+0x0C6B36	16	よみがえったイグニスを、たおせ！	Defeat the revived Ignis!
+0x0C6B58	19	おってのまじゅうたちをせんめつしろ！！	Annihilate the pursuing beasts!!
+0x0C6B80	19	さばくにすくう、まじゅうたちをたおせ！	Defeat the beasts lurking in the desert!
+0x0C6BA8	20	はいきょの、まじゅうたちをせんめつしろ！	Annihilate the beasts in the ruins!
+0x0C6BD2	15	てきの、ついせきしゃをたおせ！	Defeat the enemy trackers!
+0x0C6BF2	12	てきの、みはりをたおせ！	Defeat the enemy lookouts!
+0x0C6C0C	10	ザーゴを、たおせ！！	Defeat Zargo!!
+0x0C6C22	10	ラミレスを、たおせ！	Defeat Ramires!
+0x0C6C38	20	あらたに、あらわれてきたてきをたおせ！！	Defeat the newly appeared enemies!!
+0x0C6C62	11	ベリンガムを、たおせ！	Defeat Beringham!
+0x0C6C7A	14	さいきょうのてきを、たおせ！	Defeat the strongest enemy!
+0x0C6C98	9	ほんきょちにはいる	Enter the base
+0x0C6CAC	9	ごうせいやにはいる	Enter the combine shop
+0x0C6CC0	8	ショップにはいる	Enter the shop
+0x0C6CD2	10	とうぎじょうにはいる	Enter the arena
+0x0C6CE8	7	みなとにはいる	Enter the port
+0x0C6CF8	3	もどる	Back
+0x0C6D00	25	ここはアイテムとモンスターのみせ。なんのようじゃ？	This is the item and monster shop. What do you need?
+0x0C6D34	7	アイテムをかう	Buy items
+0x0C6D44	8	モンスターをかう	Buy monsters
+0x0C6D5E	14	まだじゅんびできてないんじゃ	Not ready yet, sonny.
+0x0C6D7C	7	せんとうかいし	Start battle
+0x0C6D8C	6	マップをみる	View map
+0x0C6DA2	13	モンスターいちらんへもどる	Back to monster list
+0x0C6DBE	4	ステージ	Stage
+0x0C6DD4	3	タマゴ	Egg
+0x0C6DDC	2	レオ	Leo
+0x0C6DE2	4	ティーナ	Tina
