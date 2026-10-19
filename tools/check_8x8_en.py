@@ -23,6 +23,13 @@ ROOT = os.path.dirname(HERE)
 CORPUS = os.path.join(ROOT, "build", "8x8_corpus.tsv")
 NL = "\u23ce"
 
+# Rows that stay in Japanese on purpose.  The name-entry keyboard is the kana
+# input grid, which belongs to the deferred name-entry localization, so its
+# row label stays kana until that system is redesigned for English input.
+KANA_ALLOW = {
+    "0x0BCC44": "name-entry kana row label (deferred)",
+}
+
 
 def load_corpus():
     rows = {}
@@ -68,8 +75,13 @@ def main(paths):
                             f"{addr}: line of {len(part)} glyphs: {part}")
                 odd = {c for c in en if ord(c) > 126 and c != NL}
                 if odd:
-                    errors.append(
-                        f"{addr}: non-ASCII {sorted(odd)}: {en}")
+                    if addr in KANA_ALLOW:
+                        warnings.append(
+                            f"{addr}: deferred kana row label "
+                            f"{en!r} ({KANA_ALLOW[addr]})")
+                    else:
+                        errors.append(
+                            f"{addr}: non-ASCII {sorted(odd)}: {en}")
                 if en == jp:
                     warnings.append(f"{addr}: untranslated (EN == JP)")
         region = None

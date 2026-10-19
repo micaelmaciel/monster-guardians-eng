@@ -1,0 +1,141 @@
+addr	n_jp	jp	en
+0x09DB34	74	CODE：10−000⏎ ⏎モバイルアダプタがただしくさしこまれていません。⏎とりあつかいせつめいしょをごらんのうえ、しっかりとさしこんでください。	CODE:10-000⏎ Mobile Adapter is not⏎inserted correctly.⏎See the manual and insert⏎it firmly.
+0x09DBCA	100	CODE：11−000⏎ ⏎でんわがうまくかけられないか、かいせんがこんでいるためつうしんできません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:11-000⏎ Can't dial out, or the line⏎is busy, so communication⏎is unavailable.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09DC94	58	CODE：12−000⏎ ⏎かいせんがこんでいるためつうしんできません。⏎しばらくまってつうしんしなおしてください。	CODE:12-000⏎ The line is busy, so⏎communication is unavailable.⏎Wait a while and try⏎connecting again.
+0x09DD0A	100	CODE：13−000⏎ ⏎でんわがうまくかけられないか、かいせんがこんでいるためつうしんできません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:13-000⏎ Can't dial out, or the line⏎is busy, so communication⏎is unavailable.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09DDD4	72	CODE：14−000⏎ ⏎モバイルアダプタにとうろくされたじょうほうがただしくありません。⏎モバイルトレーナーでしょきとうろくをしてください。	CODE:14-000⏎ The registration info on the⏎Mobile Adapter is incorrect.⏎Do the initial registration⏎in Mobile Trainer.
+0x09DE66	105	CODE：15−000⏎ ⏎モバイルアダプタのエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:15-000⏎ Mobile Adapter error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09DF3A	105	CODE：15−001⏎ ⏎モバイルアダプタのエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:15-001⏎ Mobile Adapter error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E00E	105	CODE：15−002⏎ ⏎モバイルアダプタのエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:15-002⏎ Mobile Adapter error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E0E2	58	CODE：15−003⏎ ⏎かいせんがこんでいるためつうしんできません。⏎しばらくまってつうしんしなおしてください。	CODE:15-003⏎ The line is busy, so⏎communication is unavailable.⏎Wait a while and try⏎connecting again.
+0x09E158	100	CODE：16−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:16-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E222	100	CODE：17−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:17-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E2EC	100	CODE：20−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:20-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E3B6	100	CODE：21−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:21-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E480	103	CODE：22−000⏎ ⏎パスワードかログインIDにまちがいがあります。⏎パスワードをごかくにんのうえ、しばらくまってからつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:22-000⏎ The password or login ID⏎is incorrect.⏎Check the password, wait a⏎while, and try again.⏎For details, see the⏎manual.
+0x09E550	71	CODE：23−000⏎ ⏎つうしんがせつだんされました。⏎とりあつかいせつめいしょをごらんのうえ、しばらくまってつうしんしなおしてください。	CODE:23-000⏎ The connection was cut.⏎See the manual, wait a⏎while, and try connecting⏎again.
+0x09E5E0	96	CODE：24−000⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:24-000⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09E6A2	72	CODE：25−000⏎ ⏎モバイルアダプタにとうろくされたじょうほうがただしくありません。⏎モバイルトレーナーでしょきとうろくをしてください。	CODE:25-000⏎ The registration info on the⏎Mobile Adapter is incorrect.⏎Do the initial registration⏎in Mobile Trainer.
+0x09E734	80	CODE：26−000⏎ ⏎タイムアウトによりつうしんがせつだんされました。⏎つうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:26-000⏎ The connection was cut by⏎a timeout.⏎Try connecting again.⏎For details, see the⏎manual.
+0x09E7D6	100	CODE：30−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09E8A0	96	CODE：30−221⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-221⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09E962	96	CODE：30−421⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-421⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09EA24	62	CODE：30−450⏎ ⏎あてさきメールアドレスにまちがいがあります。⏎ただしいメールアドレスをにゅうりょくしてください。	CODE:30-450⏎ The recipient email address⏎is incorrect.⏎Enter a correct email⏎address.
+0x09EAA2	96	CODE：30−451⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-451⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09EB64	96	CODE：30−452⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-452⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09EC26	100	CODE：30−500⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-500⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09ECF0	100	CODE：30−501⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-501⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09EDBA	100	CODE：30−502⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-502⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09EE84	100	CODE：30−503⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-503⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09EF4E	100	CODE：30−504⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:30-504⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F018	62	CODE：30−550⏎ ⏎あてさきメールアドレスにまちがいがあります。⏎ただしいメールアドレスをにゅうりょくしてください。	CODE:30-550⏎ The recipient email address⏎is incorrect.⏎Enter a correct email⏎address.
+0x09F096	62	CODE：30−551⏎ ⏎あてさきメールアドレスにまちがいがあります。⏎ただしいメールアドレスをにゅうりょくしてください。	CODE:30-551⏎ The recipient email address⏎is incorrect.⏎Enter a correct email⏎address.
+0x09F114	96	CODE：30−552⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-552⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09F1D6	62	CODE：30−553⏎ ⏎あてさきメールアドレスにまちがいがあります。⏎ただしいメールアドレスをにゅうりょくしてください。	CODE:30-553⏎ The recipient email address⏎is incorrect.⏎Enter a correct email⏎address.
+0x09F254	96	CODE：30−554⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-554⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09F316	96	CODE：30−XXX⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんができません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:30-XXX⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09F3D8	100	CODE：31−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:31-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F4A2	78	CODE：31−002⏎ ⏎メールアドレスにまちがいがあります。⏎とりあつかいせつめいしょをごらんのうえ、モバイルトレーナーでしょきとうろくをしてください。	CODE:31-002⏎ The email address is⏎incorrect.⏎See the manual and do the⏎initial registration in⏎Mobile Trainer.
+0x09F540	82	CODE：31−003⏎ ⏎パスワードにまちがいがあるか、サーバのエラーです。⏎ただしいパスワードをにゅうりょくして、しばらくまってからつうしんしなおしてください。	CODE:31-003⏎ The password is incorrect,⏎or the server has an error.⏎Enter the correct password,⏎wait a while, and try⏎again.
+0x09F5E6	100	CODE：31−004⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:31-004⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F6B0	95	CODE：31−XXX⏎ ⏎かいせんがこんでいるか、サーバのエラーのためつうしんできません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:31-XXX⏎ Can't communicate because⏎the line is busy or the⏎server has an error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x09F770	100	CODE：32−000⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-000⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F83A	100	CODE：32−301⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-301⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F8FC	3	さい。	he⏎manual and contact the⏎Mobile Support Center.
+0x09F904	100	CODE：32−302⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-302⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F9CE	100	CODE：32−400⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-400⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09F9EE	84	しんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	munication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FA98	100	CODE：32−401⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-401⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FB62	108	CODE：32−403⏎ ⏎コンテンツダウンロードができません。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-403⏎ Content download failed.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FC3C	108	CODE：32−404⏎ ⏎コンテンツダウンロードができません。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-404⏎ Content download failed.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FCF8	14	ターへおといあわせください。	, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FD00	10	といあわせください。	e the⏎manual and contact the⏎Mobile Support Center.
+0x09FD16	100	CODE：32−405⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-405⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FDE0	100	CODE：32−406⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-406⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FEAA	100	CODE：32−407⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-407⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FEF2	64	しなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	it a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x09FF74	80	CODE：32−408⏎ ⏎タイムアウトによりつうしんがせつだんされました。⏎つうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-408⏎ The connection was cut by⏎a timeout.⏎Try connecting again.⏎For details, see the⏎manual.
+0x0A0004	8	ごらんください。	For details, see the⏎manual.
+0x0A000E	3	さい。	etails, see the⏎manual.
+0x0A0016	77	CODE：32−500⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-500⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A00B2	100	CODE：32−501⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:32-501⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A00EE	70	ってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	or.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A00F2	68	つうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A00F8	65	んしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	ait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A00FC	63	なおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	t a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A017C	77	CODE：32−502⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-502⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A01FA	14	つめいしょをごらんください。	onnecting again.⏎For details, see the⏎manual.
+0x0A01FE	12	いしょをごらんください。	necting again.⏎For details, see the⏎manual.
+0x0A0202	10	ょをごらんください。	cting again.⏎For details, see the⏎manual.
+0x0A0218	84	CODE：32−503⏎ ⏎サーバがこんでいるためつうしんできません。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-503⏎ The server is busy, so⏎communication is unavailable.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A02C2	77	CODE：32−504⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-504⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0308	42	てつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	rror.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A035E	77	CODE：32−XXX⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:32-XXX⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A03EC	6	んください。	g again.⏎For details, see the⏎manual.
+0x0A03FA	81	CODE：33−101⏎ ⏎ごりようりょうきんのおしはらいがおくれたばあいには、ごりようができなくなります。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-101⏎ Your usage fees are overdue,⏎so service is suspended.⏎For details, see the⏎manual.
+0x0A03FE	79	DE：33−101⏎ ⏎ごりようりょうきんのおしはらいがおくれたばあいには、ごりようができなくなります。⏎くわしくはとりあつかいせつめいしょをごらんください。	DE:33-101⏎ Your usage fees are overdue,⏎so service is suspended.⏎For details, see the⏎manual.
+0x0A0400	78	E：33−101⏎ ⏎ごりようりょうきんのおしはらいがおくれたばあいには、ごりようができなくなります。⏎くわしくはとりあつかいせつめいしょをごらんください。	E:33-101⏎ Your usage fees are overdue,⏎so service is suspended.⏎For details, see the⏎manual.
+0x0A0406	75	3−101⏎ ⏎ごりようりょうきんのおしはらいがおくれたばあいには、ごりようができなくなります。⏎くわしくはとりあつかいせつめいしょをごらんください。	3-101⏎ Your usage fees are overdue,⏎so service is suspended.⏎For details, see the⏎manual.
+0x0A049E	65	CODE：33−102⏎ ⏎おきゃくさまのつごうにより、ごりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-102⏎ Service is unavailable due⏎to the customer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0500	16	いせつめいしょをごらんください。	stomer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0522	79	CODE：33−103⏎ ⏎ごりようりょうきんがじょうげんをこえているため、こんげつはりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-103⏎ You have exceeded the usage⏎limit, so service is⏎unavailable this month.⏎For details, see the⏎manual.
+0x0A05C2	59	CODE：33−104⏎ ⏎コンテンツダウンロードができません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-104⏎ Content download failed.⏎For details, see the⏎manual.
+0x0A05F4	34	ができません。⏎くわしくはとりあつかいせつめいしょをごらんください。	load failed.⏎For details, see the⏎manual.
+0x0A05FC	30	せん。⏎くわしくはとりあつかいせつめいしょをごらんください。	 failed.⏎For details, see the⏎manual.
+0x0A0600	28	。⏎くわしくはとりあつかいせつめいしょをごらんください。	ailed.⏎For details, see the⏎manual.
+0x0A0602	27	⏎くわしくはとりあつかいせつめいしょをごらんください。	iled.⏎For details, see the⏎manual.
+0x0A0604	26	くわしくはとりあつかいせつめいしょをごらんください。	led.⏎For details, see the⏎manual.
+0x0A063A	59	CODE：33−105⏎ ⏎コンテンツダウンロードができません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-105⏎ Content download failed.⏎For details, see the⏎manual.
+0x0A06B2	86	CODE：33−106⏎ ⏎げんざいメンテナンスちゅうのためごりようできません。⏎しばらくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-106⏎ Service is unavailable during⏎maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0700	47	。⏎しばらくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	ing⏎maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0702	46	⏎しばらくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	ng⏎maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0704	45	しばらくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	g⏎maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0706	44	ばらくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	⏎maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0708	43	らくまっておかけなおしください。⏎くわしくはとりあつかいせつめいしょをごらんください。	maintenance.⏎Wait a while and call again.⏎For details, see the⏎manual.
+0x0A0760	66	CODE：33−201⏎ ⏎とうろくしょのしょりがかんりょうしていないようです。⏎しょりがかんりょうするまでしばらくおまちください。	CODE:33-201⏎ Your registration is still⏎being processed.⏎Please wait until processing⏎is complete.
+0x0A07E6	100	CODE：33−202⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:33-202⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A0804	85	うしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	mmunication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A0806	84	しんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	munication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A080A	82	エラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	nication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A080C	81	ラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	ication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A08B0	59	CODE：33−203⏎ ⏎コンテンツダウンロードができません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-203⏎ Content download failed.⏎For details, see the⏎manual.
+0x0A0902	18	つかいせつめいしょをごらんください。	 details, see the⏎manual.
+0x0A0904	17	かいせつめいしょをごらんください。	details, see the⏎manual.
+0x0A0906	16	いせつめいしょをごらんください。	etails, see the⏎manual.
+0x0A0908	15	せつめいしょをごらんください。	tails, see the⏎manual.
+0x0A090A	14	つめいしょをごらんください。	ails, see the⏎manual.
+0x0A090C	13	めいしょをごらんください。	ils, see the⏎manual.
+0x0A0912	10	ょをごらんください。	, see the⏎manual.
+0x0A0928	100	CODE：33−204⏎ ⏎つうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎なおらないばあいは、とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:33-204⏎ Communication error.⏎Wait a while and try⏎connecting again.⏎If it still fails, see the⏎manual and contact the⏎Mobile Support Center.
+0x0A09F2	77	CODE：33−205⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-205⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0A08	66	⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0A0A	65	 ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	 Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0A0E	63	サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	erver communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0A8E	59	CODE：33−206⏎ ⏎コンテンツダウンロードができません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-206⏎ Content download failed.⏎For details, see the⏎manual.
+0x0A0AFC	4	ださい。	the⏎manual.
+0x0A0B06	65	CODE：33−299⏎ ⏎おきゃくさまのつごうにより、ごりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-299⏎ Service is unavailable due⏎to the customer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0B0A	63	DE：33−299⏎ ⏎おきゃくさまのつごうにより、ごりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	DE:33-299⏎ Service is unavailable due⏎to the customer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0B0C	62	E：33−299⏎ ⏎おきゃくさまのつごうにより、ごりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	E:33-299⏎ Service is unavailable due⏎to the customer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0B10	60	33−299⏎ ⏎おきゃくさまのつごうにより、ごりようできません。⏎くわしくはとりあつかいせつめいしょをごらんください。	33-299⏎ Service is unavailable due⏎to the customer's⏎circumstances.⏎For details, see the⏎manual.
+0x0A0B8A	77	CODE：33−301⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-301⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0C04	16	いせつめいしょをごらんください。	⏎connecting again.⏎For details, see the⏎manual.
+0x0A0C0C	12	いしょをごらんください。	necting again.⏎For details, see the⏎manual.
+0x0A0C0E	11	しょをごらんください。	ecting again.⏎For details, see the⏎manual.
+0x0A0C12	9	をごらんください。	ting again.⏎For details, see the⏎manual.
+0x0A0C26	77	CODE：33−401⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-401⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0CC2	77	CODE：33−402⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-402⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0D0C	40	うしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	or.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0D0E	39	しんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	r.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0D10	38	んしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0D5E	77	CODE：33−403⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-403⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0DFA	77	CODE：33−404⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-404⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0E10	66	⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0E12	65	 ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	 Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0E96	77	CODE：33−405⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-405⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0F0A	19	あつかいせつめいしょをごらんください。	try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0F32	77	CODE：33−406⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-406⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A0FCE	77	CODE：33−XXX⏎ ⏎サーバのつうしんエラーです。⏎しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	CODE:33-XXX⏎ Server communication error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A1008	48	しばらくまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	tion error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A100E	45	くまってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	n error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A1012	43	ってつうしんしなおしてください。⏎くわしくはとりあつかいせつめいしょをごらんください。	error.⏎Wait a while and try⏎connecting again.⏎For details, see the⏎manual.
+0x0A106A	78	CODE：XX−XXX⏎ ⏎そうていがいのエラーがはっせいしました。⏎とりあつかいせつめいしょをごらんのうえモバイルサポートセンターへおといあわせください。	CODE:XX-XXX⏎ An unexpected error⏎occurred.⏎See the manual and contact⏎the Mobile Support Center.

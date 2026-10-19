@@ -369,16 +369,19 @@ addr	region	style	n	suffix	refs	sources	text
 0x0AF388	mdb1	term	6	1	0		ミニゴーレム
 0x0AF3B8	mdb1	term	6	1	0		ミニゴーレム
 0x0AF3E8	mdb1	term	7	1	0		ゴーレムライト
-0x0AF3EE	mdb1	term	4	1	1	0x765716	ムライト
 0x0AF418	mdb1	term	7	1	0		ゴーレムライト
 0x0AF448	mdb1	term	7	1	0		フライゴーレム
 0x0AF478	mdb1	term	7	1	0		フライゴーレム
+0x0AF4A8	mdb1	term	8	0	0		ドラゴンゴーレム
+0x0AF4D8	mdb1	term	8	0	0		ドラゴンゴーレム
 0x0AF508	mdb1	term	5	1	0		ゴーペスト
 0x0AF538	mdb1	term	5	1	0		ゴーペスト
 0x0AF568	mdb1	term	6	1	0		ガリゴーレム
 0x0AF598	mdb1	term	6	1	0		ガリゴーレム
 0x0AF5C8	mdb1	term	6	1	0		ミノタウロス
 0x0AF5F8	mdb1	term	6	1	0		ミノタウロス
+0x0AF628	mdb1	term	8	0	0		ミニミノタウロス
+0x0AF658	mdb1	term	8	0	0		ミニミノタウロス
 0x0AF688	mdb1	term	7	1	0		ローンタウロス
 0x0AF6B8	mdb1	term	7	1	0		ローンタウロス
 0x0AF6E8	mdb1	term	7	1	0		フライングミノ
@@ -387,11 +390,16 @@ addr	region	style	n	suffix	refs	sources	text
 0x0AF778	mdb1	term	6	1	0		ミノドラゴン
 0x0AF7A8	mdb1	term	5	1	0		ロードミノ
 0x0AF7D8	mdb1	term	5	1	0		ロードミノ
+0x0AF808	mdb1	term	8	0	0		ミノガリズーント
+0x0AF838	mdb1	term	8	0	0		ミノガリズーント
 0x0AF868	mdb1	term	5	1	0		グリフォン
 0x0AF898	mdb1	term	5	1	0		グリフォン
 0x0AF8C8	mdb1	term	7	1	0		ミニグリフォン
 0x0AF8F8	mdb1	term	7	1	0		ミニグリフォン
-0x0AF8FC	mdb1	term	5	1	1	0x6EC136	グリフォン
+0x0AF928	mdb2	term	8	0	0		ビッググリフォン
+0x0AF958	mdb2	term	8	0	0		ビッググリフォン
+0x0AF988	mdb2	term	8	0	0		フットグリフォン
+0x0AF9B8	mdb2	term	8	0	0		フットグリフォン
 0x0AF9E8	mdb2	term	7	1	0		ドラグリフォン
 0x0AFA18	mdb2	term	7	1	0		ドラグリフォン
 0x0AFA48	mdb2	term	7	1	0		グリテンペスト
@@ -406,27 +414,76 @@ addr	region	style	n	suffix	refs	sources	text
 0x0AFBF8	mdb2	term	6	1	0		カラステング
 0x0AFC28	mdb2	term	3	1	0		かしら
 0x0AFC58	mdb2	term	3	1	0		かしら
-0x0AFD1E	mdb2	term	2	1	1	0x74EC38	シャ
-0x0AFD7A	mdb2	term	4	1	0		リムシャ
-0x0AFDAE	mdb2	term	2	1	0		リン
-0x0AFFEA	mdb2	term	3	1	0		あくま
-0x0B025A	mdb2	term	5	1	0		イドラゴン
-0x0B028E	mdb2	term	4	1	0		ンペスト
-0x0B02C2	mdb2	term	2	1	0		スト
-0x0B04CA	mdb2	term	6	1	0		ラテンペスト
-0x0B04FE	mdb2	term	4	1	0		ンペスト
-0x0B0500	mdb2	term	3	1	2	0x6F47F6,0x6FB18E	ペスト
-0x0B0706	mdb2	term	6	1	1	0x6F9D72	ケベヒーモス
-0x0B073A	mdb2	term	5	1	0		ァーブニル
-0x0B076E	mdb2	term	2	1	0		ガウ
-0x0B07FC	mdb2	term	5	1	1	0x706C28	ビュアリー
-0x0B0800	mdb2	term	3	1	1	0x70831E	アリー
-0x0B0A44	mdb2	term	4	1	16	0x015308,0x01551C,0x01E904,0x01E97C	ゴブリン
-0x0B0A78	mdb2	term	4	1	0		ゴブリン
-0x0B0AAC	mdb2	term	7	1	0		ゴブリンフライ
-0x0B0AE0	mdb2	term	7	1	0		ゴブリンフライ
-0x0B0B14	mdb2	term	3	1	0		オーク
-0x0B0B48	mdb2	term	3	1	0		オーク
+0x0AFC88	mdb2	term	8	0	0		ドラゴンザムライ
+0x0AFCB8	mdb2	term	8	0	0		ドラゴンザムライ
+0x0AFCE8	mdb2	term	5	1	0		テンムシャ
+0x0AFD18	mdb2	term	5	1	0		テンムシャ
+0x0AFD48	mdb2	term	5	1	0		ガリムシャ
+0x0AFD78	mdb2	term	5	1	0		ガリムシャ
+0x0AFDA8	mdb2	term	5	1	0		グレムリン
+0x0AFDD8	mdb2	term	5	1	0		グレムリン
+0x0AFE08	mdb2	term	3	1	0		イビル
+0x0AFE38	mdb2	term	3	1	0		イビル
+0x0AFE68	mdb2	term	4	1	0		デーモン
+0x0AFE98	mdb2	term	4	1	0		デーモン
+0x0AFEC8	mdb2	term	7	1	0		デビルドラゴン
+0x0AFEF8	mdb2	term	7	1	0		デビルドラゴン
+0x0AFF28	mdb2	term	4	1	0		ムールク
+0x0AFF58	mdb2	term	4	1	0		ムールク
+0x0AFF88	mdb2	term	4	1	0		ガリグレ
+0x0AFFB8	mdb2	term	4	1	0		ガリグレ
+0x0AFFE8	mdb2	term	4	1	0		こあくま
+0x0B0018	mdb2	term	4	1	0		こあくま
+0x0B0048	mdb2	term	8	0	0		ホワイトドラゴン
+0x0B0078	mdb2	term	8	0	0		ファイアドラゴン
+0x0B00A8	mdb2	term	7	1	0		アースドラゴン
+0x0B00D8	mdb2	term	8	0	0		ブラックドラゴン
+0x0B0108	mdb2	term	7	1	0		ブルードラゴン
+0x0B0138	mdb2	term	8	0	0		ウインドドラゴン
+0x0B0168	mdb2	term	6	1	0		ミニドラゴン
+0x0B0198	mdb2	term	6	1	0		ミニドラゴン
+0x0B01C8	mdb2	term	8	0	0		セカンドドラゴン
+0x0B01F8	mdb2	term	8	0	0		セカンドドラゴン
+0x0B0228	mdb2	term	6	1	0		ハイドラゴン
+0x0B0258	mdb2	term	6	1	0		ハイドラゴン
+0x0B0288	mdb2	term	7	1	0		ドラテンペスト
+0x0B02B8	mdb2	term	7	1	0		ドラテンペスト
+0x0B02E8	mdb2	term	8	0	0		ビジョンドラゴン
+0x0B0318	mdb2	term	8	0	0		ビジョンドラゴン
+0x0B0348	mdb2	term	5	1	0		テンペスト
+0x0B0378	mdb2	term	5	1	0		テンペスト
+0x0B03A8	mdb2	term	4	1	0		ミニテン
+0x0B03D8	mdb2	term	4	1	0		ミニテン
+0x0B0408	mdb2	term	7	1	0		ダイテンペスト
+0x0B0438	mdb2	term	7	1	0		ダイテンペスト
+0x0B0468	mdb2	term	8	0	0		スカイテンペスト
+0x0B0498	mdb2	term	8	0	0		スカイテンペスト
+0x0B04C8	mdb2	term	7	1	0		ドラテンペスト
+0x0B04F8	mdb2	term	7	1	0		ドラテンペスト
+0x0B0528	mdb2	term	6	1	0		ガリズーント
+0x0B0558	mdb2	term	6	1	0		ガリズーント
+0x0B0588	mdb2	term	8	0	0		ミニガリズーント
+0x0B05B8	mdb2	term	8	0	0		ミニガリズーント
+0x0B05E8	mdb2	term	8	0	0		チーフガリズント
+0x0B0618	mdb2	term	8	0	0		チーフガリズント
+0x0B0648	mdb2	term	6	1	0		ビッグガリン
+0x0B0678	mdb2	term	6	1	0		ビッグガリン
+0x0B06A8	mdb2	term	8	0	0		ドラガリズーント
+0x0B06D8	mdb2	term	8	0	0		ドラガリズーント
+0x0B0708	mdb2	term	5	1	0		ベヒーモス
+0x0B0738	mdb2	term	6	1	0		ファーブニル
+0x0B0768	mdb2	term	5	1	0		リトルガウ
+0x0B0798	mdb2	term	5	1	0		メインガウ
+0x0B07C8	mdb2	term	5	1	0		ヘビーガウ
+0x0B07F8	mdb2	term	7	1	0		チンビュアリー
+0x0B0828	mdb2	term	7	1	0		リンビュアリー
+0x0B0858	mdb2	term	8	0	0		メインビュアリー
+0x0B0888	mdb2	term	3	1	0		ザーゴ
+0x0B08B8	mdb2	term	4	1	0		ラミレス
+0x0B08E8	mdb2	term	8	1	0		だいいちけいたい
+0x0B0918	mdb2	term	7	1	0		だいにけいたい
+0x0B0948	mdb2	term	7	1	0		さいしゅうけい
+0x0B0978	mdb2	term	7	1	0		大地のイグニス
 0x0B0B7C	mdb3	term	6	1	0		ホブゴブリン
 0x0B0BB0	mdb3	term	6	1	0		ホブゴブリン
 0x0B0BE4	mdb3	term	6	1	0		ドラゴンマン
@@ -457,12 +514,16 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B10F8	mdb3	term	7	1	0		ゴーレムライト
 0x0B112C	mdb3	term	7	1	0		フライゴーレム
 0x0B1160	mdb3	term	7	1	0		フライゴーレム
+0x0B1194	mdb3	term	8	0	0		ドラゴンゴーレム
+0x0B11C8	mdb3	term	8	0	0		ドラゴンゴーレム
 0x0B11FC	mdb3	term	5	1	0		ゴーペスト
 0x0B1230	mdb3	term	5	1	0		ゴーペスト
 0x0B1264	mdb3	term	6	1	0		ガリゴーレム
 0x0B1298	mdb3	term	6	1	0		ガリゴーレム
 0x0B12CC	mdb3	term	6	1	0		ミノタウロス
 0x0B1300	mdb3	term	6	1	0		ミノタウロス
+0x0B1334	mdb3	term	8	0	0		ミニミノタウロス
+0x0B1368	mdb3	term	8	0	0		ミニミノタウロス
 0x0B139C	mdb3	term	7	1	0		ローンタウロス
 0x0B13D0	mdb3	term	7	1	0		ローンタウロス
 0x0B1404	mdb3	term	7	1	0		フライングミノ
@@ -471,10 +532,16 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B14A0	mdb3	term	6	1	0		ミノドラゴン
 0x0B14D4	mdb3	term	5	1	0		ロードミノ
 0x0B1508	mdb3	term	5	1	0		ロードミノ
+0x0B153C	mdb3	term	8	0	0		ミノガリズーント
+0x0B1570	mdb3	term	8	0	0		ミノガリズーント
 0x0B15A4	mdb3	term	5	1	0		グリフォン
 0x0B15D8	mdb3	term	5	1	0		グリフォン
 0x0B160C	mdb3	term	7	1	0		ミニグリフォン
 0x0B1640	mdb3	term	7	1	0		ミニグリフォン
+0x0B1674	mdb3	term	8	0	0		ビッググリフォン
+0x0B16A8	mdb3	term	8	0	0		ビッググリフォン
+0x0B16DC	mdb3	term	8	0	0		フットグリフォン
+0x0B1710	mdb3	term	8	0	0		フットグリフォン
 0x0B1744	mdb3	term	7	1	0		ドラグリフォン
 0x0B1778	mdb3	term	7	1	0		ドラグリフォン
 0x0B17AC	mdb3	term	7	1	0		グリテンペスト
@@ -489,6 +556,8 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B1980	mdb3	term	6	1	0		カラステング
 0x0B19B4	mdb3	term	3	1	0		かしら
 0x0B19E8	mdb3	term	3	1	0		かしら
+0x0B1A1C	mdb3	term	8	0	0		ドラゴンザムライ
+0x0B1A50	mdb3	term	8	0	0		ドラゴンザムライ
 0x0B1A84	mdb3	term	5	1	0		テンムシャ
 0x0B1AB8	mdb3	term	5	1	0		テンムシャ
 0x0B1AEC	mdb3	term	5	1	0		ガリムシャ
@@ -507,26 +576,42 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B1D90	mdb3	term	4	1	0		ガリグレ
 0x0B1DC4	mdb3	term	4	1	0		こあくま
 0x0B1DF8	mdb3	term	4	1	0		こあくま
+0x0B1E2C	mdb3	term	8	0	0		ホワイトドラゴン
+0x0B1E60	mdb3	term	8	0	0		ファイアドラゴン
 0x0B1E94	mdb3	term	7	1	0		アースドラゴン
+0x0B1EC8	mdb3	term	8	0	0		ブラックドラゴン
 0x0B1EFC	mdb3	term	7	1	0		ブルードラゴン
+0x0B1F30	mdb3	term	8	0	0		ウインドドラゴン
 0x0B1F64	mdb3	term	6	1	0		ミニドラゴン
 0x0B1F98	mdb3	term	6	1	0		ミニドラゴン
+0x0B1FCC	mdb3	term	8	0	0		セカンドドラゴン
+0x0B2000	mdb3	term	8	0	0		セカンドドラゴン
 0x0B2034	mdb3	term	6	1	0		ハイドラゴン
 0x0B2068	mdb3	term	6	1	0		ハイドラゴン
 0x0B209C	mdb3	term	7	1	0		ドラテンペスト
 0x0B20D0	mdb3	term	7	1	0		ドラテンペスト
+0x0B2104	mdb3	term	8	0	0		ビジョンドラゴン
+0x0B2138	mdb3	term	8	0	0		ビジョンドラゴン
 0x0B216C	mdb3	term	5	1	0		テンペスト
 0x0B21A0	mdb3	term	5	1	0		テンペスト
 0x0B21D4	mdb3	term	4	1	0		ミニテン
 0x0B2208	mdb3	term	4	1	0		ミニテン
 0x0B223C	mdb3	term	7	1	0		ダイテンペスト
 0x0B2270	mdb3	term	7	1	0		ダイテンペスト
+0x0B22A4	mdb3	term	8	0	0		スカイテンペスト
+0x0B22D8	mdb3	term	8	0	0		スカイテンペスト
 0x0B230C	mdb3	term	7	1	0		ドラテンペスト
 0x0B2340	mdb3	term	7	1	0		ドラテンペスト
 0x0B2374	mdb3	term	6	1	0		ガリズーント
 0x0B23A8	mdb3	term	6	1	0		ガリズーント
+0x0B23DC	mdb3	term	8	0	0		ミニガリズーント
+0x0B2410	mdb3	term	8	0	0		ミニガリズーント
+0x0B2444	mdb3	term	8	0	0		チーフガリズント
+0x0B2478	mdb3	term	8	0	0		チーフガリズント
 0x0B24AC	mdb3	term	6	1	0		ビッグガリン
 0x0B24E0	mdb3	term	6	1	0		ビッグガリン
+0x0B2514	mdb3	term	8	0	0		ドラガリズーント
+0x0B2548	mdb3	term	8	0	0		ドラガリズーント
 0x0B257C	mdb3	term	5	1	0		ベヒーモス
 0x0B25B0	mdb3	term	6	1	0		ファーニブル
 0x0B25E4	mdb3	term	5	1	0		リトルガウ
@@ -534,6 +619,7 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B264C	mdb3	term	5	1	0		ヘビーガウ
 0x0B2680	mdb3	term	7	1	0		チンビュアリー
 0x0B26B4	mdb3	term	7	1	0		リンビュアリー
+0x0B26E8	mdb3	term	8	0	0		メインビュアリー
 0x0B271C	mdb4	term	4	1	0		ゴブリン
 0x0B2750	mdb4	term	5	1	0		バードマン
 0x0B2784	mdb4	term	4	1	0		ゴーレム
@@ -548,6 +634,8 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B2958	mdb4	term	5	1	0		グレムリン
 0x0B298C	mdb4	term	7	1	0		ゴブリンフライ
 0x0B29C0	mdb4	term	7	1	0		ゴーレムライト
+0x0B29F4	mdb4	term	8	0	0		ホワイトドラゴン
+0x0B2A28	mdb4	term	8	0	0		ブラックドラゴン
 0x0B2A5C	mdb4	term	4	1	0		ゴブリン
 0x0B2A90	mdb4	term	5	1	0		バードマン
 0x0B2AC4	mdb4	term	4	1	0		ゴーレム
@@ -581,9 +669,13 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B33B4	mdb4	term	5	1	0		ハイエルフ
 0x0B33E8	mdb4	term	7	1	0		ドラゴンバード
 0x0B341C	mdb4	term	7	1	0		ゴーレムライト
+0x0B3450	mdb4	term	8	0	0		ドラゴンゴーレム
 0x0B3484	mdb4	term	6	1	0		ミノドラゴン
 0x0B34B8	mdb4	term	7	1	0		ドラグリフォン
+0x0B34EC	mdb4	term	8	0	0		ドラゴンザムライ
 0x0B3520	mdb4	term	4	1	0		こあくま
+0x0B3554	mdb4	term	8	0	0		ホワイトドラゴン
+0x0B3588	mdb4	term	8	0	0		ブラックドラゴン
 0x0B35BC	mdb4	term	5	1	0		テンペスト
 0x0B35F0	mdb4	term	6	1	0		ガリズーント
 0x0B39CC	mdb5	term	4	1	1	0x0B5128	ゴブリン
@@ -596,13 +688,16 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B3B38	mdb5	term	6	1	1	0x0B5188	ホブゴブリン
 0x0B3B6C	mdb5	term	7	1	1	0x0B518C	フライゴーレム
 0x0B3BA0	mdb5	term	3	1	1	0x0B5190	ムシャ
+0x0B3BD4	mdb5	term	8	0	1	0x0B5194	ホワイトドラゴン
 0x0B3C08	mdb5	term	5	1	1	0x0B51B8	グレムリン
 0x0B3C3C	mdb5	term	3	1	1	0x0B51BC	かしら
+0x0B3C70	mdb5	term	8	0	1	0x0B51C0	ドラゴンザムライ
 0x0B3CA4	mdb5	term	7	1	1	0x0B51C4	ローンタウロス
 0x0B3CD8	mdb5	term	5	1	1	0x0B51E8	グリフォン
 0x0B3D0C	mdb5	term	7	1	1	0x0B51EC	ゴブリンフライ
 0x0B3D40	mdb5	term	4	1	1	0x0B51F0	あしがる
 0x0B3D74	mdb5	term	5	1	1	0x0B51F4	ハイエルフ
+0x0B3DA8	mdb5	term	8	0	1	0x0B5218	フットグリフォン
 0x0B3DDC	mdb5	term	7	1	1	0x0B521C	アースドラゴン
 0x0B3E10	mdb5	term	6	1	1	0x0B5220	ミニドラゴン
 0x0B3E44	mdb5	term	7	1	1	0x0B5224	ドラゴンバード
@@ -617,16 +712,19 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B4018	mdb5	term	6	1	1	0x0B52A8	ドラゴンマン
 0x0B404C	mdb5	term	7	1	1	0x0B52AC	ドラゴンバード
 0x0B4080	mdb5	term	6	1	1	0x0B52B0	ミノドラゴン
+0x0B40B4	mdb5	term	8	0	1	0x0B52B4	ファイアドラゴン
 0x0B40E8	mdb5	term	7	1	1	0x0B52D8	ブルードラゴン
 0x0B411C	mdb5	term	3	1	1	0x0B52DC	ムシャ
 0x0B4150	mdb5	term	7	1	1	0x0B52E0	ミニグリフォン
 0x0B4184	mdb5	term	4	1	1	0x0B52E4	デーモン
 0x0B41B8	mdb5	term	3	1	1	0x0B5308	ザーゴ
+0x0B41EC	mdb5	term	8	0	1	0x0B530C	ウインドドラゴン
 0x0B4220	mdb5	term	7	1	1	0x0B5310	アースドラゴン
 0x0B4254	mdb5	term	5	1	1	0x0B5314	ハイエルフ
 0x0B4288	mdb5	term	7	1	1	0x0B5338	ゴーレムライト
 0x0B42BC	mdb5	term	6	1	1	0x0B533C	ミニゴーレム
 0x0B42F0	mdb5	term	4	1	1	0x0B5340	ゴーレム
+0x0B4324	mdb5	term	8	0	1	0x0B5344	ドラゴンゴーレム
 0x0B4358	mdb5	term	5	1	1	0x0B5368	バードマン
 0x0B438C	mdb5	term	3	1	1	0x0B536C	ノーム
 0x0B43C0	mdb5	term	5	1	1	0x0B5370	ハイエルフ
@@ -638,8 +736,10 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B44F8	mdb5	term	3	1	1	0x0B53C8	かしら
 0x0B452C	mdb5	term	4	1	1	0x0B53CC	あしがる
 0x0B4560	mdb5	term	3	1	1	0x0B53D0	ムシャ
+0x0B4594	mdb5	term	8	0	1	0x0B53D4	ドラゴンザムライ
 0x0B45C8	mdb5	term	6	1	1	0x0B53F8	ミノタウロス
 0x0B45FC	mdb5	term	6	1	1	0x0B53FC	ミニドラゴン
+0x0B4630	mdb5	term	8	0	1	0x0B5400	セカンドドラゴン
 0x0B4664	mdb5	term	3	1	1	0x0B5404	エルフ
 0x0B4698	mdb5	term	7	1	1	0x0B5428	ゴブリンフライ
 0x0B46CC	mdb5	term	5	1	1	0x0B542C	グレムリン
@@ -648,10 +748,13 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B4768	mdb5	term	3	1	1	0x0B5458	ザーゴ
 0x0B479C	mdb5	term	3	1	1	0x0B545C	オーク
 0x0B47D0	mdb5	term	4	1	1	0x0B5460	デーモン
+0x0B4804	mdb5	term	8	0	1	0x0B5464	セカンドドラゴン
 0x0B4838	mdb5	term	4	1	1	0x0B5488	ラミレス
 0x0B486C	mdb5	term	6	1	1	0x0B548C	ハイドラゴン
 0x0B48A0	mdb5	term	5	1	1	0x0B5490	バードマン
 0x0B48D4	mdb5	term	5	1	1	0x0B5494	グリフォン
+0x0B4908	mdb5	term	8	0	1	0x0B54B8	ブラックドラゴン
+0x0B493C	mdb5	term	8	0	1	0x0B54BC	ファイアドラゴン
 0x0B4970	mdb5	term	5	1	1	0x0B54C0	ハイエルフ
 0x0B49A4	mdb5	term	7	1	1	0x0B54C4	アースドラゴン
 0x0B49D8	mdb5	term	7	1	1	0x0B54E8	大地のイグニス
@@ -660,6 +763,7 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B4A74	mdb6	term	5	1	1	0x0B5520	グレムリン
 0x0B4AA8	mdb6	term	7	1	1	0x0B5524	ゴブリンフライ
 0x0B4ADC	mdb6	term	7	1	1	0x0B5548	ローンタウロス
+0x0B4B10	mdb6	term	8	0	1	0x0B554C	ミニミノタウロス
 0x0B4B44	mdb6	term	6	1	1	0x0B5550	ミノタウロス
 0x0B4B78	mdb6	term	4	1	1	0x0B5554	ゴーレム
 0x0B4BAC	mdb6	term	3	1	1	0x0B5578	イビル
@@ -675,15 +779,16 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B4DB4	mdb6	term	7	1	1	0x0B55E0	ゴブリンフライ
 0x0B4DE8	mdb6	term	7	1	1	0x0B55E4	ドラゴンバード
 0x0B4E1C	mdb6	term	3	1	1	0x0B5608	ザーゴ
+0x0B4E50	mdb6	term	8	0	1	0x0B560C	ウインドドラゴン
 0x0B4E84	mdb6	term	6	1	1	0x0B5610	ミノドラゴン
+0x0B4EB8	mdb6	term	8	0	1	0x0B5614	ドラゴンゴーレム
 0x0B4EEC	mdb6	term	4	1	1	0x0B5638	ラミレス
+0x0B4F20	mdb6	term	8	0	1	0x0B563C	ホワイトドラゴン
+0x0B4F54	mdb6	term	8	0	1	0x0B5640	セカンドドラゴン
 0x0B4F88	mdb6	term	7	1	1	0x0B5644	ブルードラゴン
+0x0B4FBC	mdb6	term	8	0	1	0x0B5668	だいいちけいたい
 0x0B4FF0	mdb6	term	7	1	1	0x0B5698	だいにけいたい
 0x0B5024	mdb6	term	7	1	1	0x0B56C8	さいしゅうけい
-0x0B5058	mdb6	term	4	1	1	0x0B56F8	？？？？
-0x0B508C	mdb6	term	4	1	1	0x0B56FC	？？？？
-0x0B50C0	mdb6	term	4	1	1	0x0B5700	？？？？
-0x0B50F4	mdb6	term	4	1	1	0x0B5704	？？？？
 0x0B5728	item	term	7	1	49	0x00584C,0x016CC4,0x017804,0x018804	ブロンズリング
 0x0B5768	item	term	6	1	0		かわのクビワ
 0x0B57A8	item	term	8	1	0		きれいなホウセキ

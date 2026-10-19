@@ -83,12 +83,12 @@ SPLITS = {
 
 # monster DB record lists: (start, end, stride)
 MDB_WALKS = [
-    (0x0AEDE8, 0x0AFCDE, 0x30),
-    (0x0AFCDE, 0x0B0B7C, 0x34),
+    (0x0AEDE8, 0x0AF9E8, 0x30),
+    (0x0AF9E8, 0x0B09A8, 0x30),
     (0x0B0B7C, 0x0B271C, 0x34),
-    (0x0B271C, 0x0B3900, 0x34),
-    (0x0B3900, 0x0B4A00, 0x34),
-    (0x0B4A00, 0x0B5728, 0x34),
+    (0x0B271C, 0x0B39CC, 0x34),
+    (0x0B39CC, 0x0B4A0C, 0x34),
+    (0x0B4A0C, 0x0B5728, 0x34),
 ]
 
 data = open(ROM, "rb").read()
@@ -252,22 +252,22 @@ def kana_in_text(s):
 
 
 walk_names = {}  # addr -> codes
+# Record name = 16-byte field at record +0, up to 8 codes, zero-padded.
+# A full 8-code name has no terminator, so no w(q)==0 check here.
 for mlo, mhi, stride in MDB_WALKS:
     rec = mlo
-    while rec < mhi:
-        for off in range(rec, rec + min(stride - 2, 0x18), 2):
-            codes = []
-            q = off
-            while q < rec + stride and len(codes) < 16:
-                v = w(q)
-                if v is None or v == 0:
-                    break
-                codes.append(v)
-                q += 2
-            if codes and w(q) == 0 and 1 <= len(codes) <= 14 and all(1 <= c < 0x300 for c in codes):
-                if kana_in_text(charmap.decode(codes, tab)):
-                    walk_names[off] = codes
-                    break
+    while rec + 16 <= mhi:
+        codes = []
+        q = rec
+        while q < rec + 16:
+            v = w(q)
+            if v is None or v == 0:
+                break
+            codes.append(v)
+            q += 2
+        if 1 <= len(codes) <= 8 and all(1 <= c < 0x300 for c in codes) \
+                and kana_in_text(charmap.decode(codes, tab)):
+            walk_names[rec] = codes
         rec += stride
 
 starts = sorted({r for r in runs if not is_pool(r)} | set(refs) | set(lenmap) | set(walk_names) | set(MANUAL_STARTS))
@@ -275,6 +275,10 @@ declared = set(refs) | set(lenmap) | set(walk_names) | set(MANUAL_STARTS)
 
 
 def extent(p):
+    if p in walk_names:
+        # monster-DB record name: fixed 16-byte field, up to 8 codes,
+        # full 8-code names have no terminator
+        return walk_names[p], "term"
     if region(p) == "mobile":
         # one big unterminated block of fixed-width fields; boundaries
         # come from referenced/manual starts
@@ -435,6 +439,12 @@ for r in rows:
         merged[key] = r
         order.append(key)
 rows = [merged[k] for k in order]
+
+# mdb regions: only record-start names are real display strings.  Mid-name
+# rows come from name-search pointers and from junk-bank references, not from
+# separate displayed text.  Filter before the sub-span pass so no junk row can
+# shadow a real record name.
+rows = [r for r in rows if not region(r[0]).startswith("mdb") or r[0] in walk_names]
 
 # mdb walks record a suffix when a record boundary falls inside a name; drop
 # unreferenced rows that are strict sub-spans of a longer mdb row

@@ -1,0 +1,43 @@
+addr	n_jp	jp	en
+0x099B64	3	EXP	EXP
+0x099B6A	2	LV	LV
+0x099B6E	3	DUR	DUR
+0x099B74	3	ATP	ATP
+0x099B7A	3	DEF	DEF
+0x099B80	3	ACT	ACT
+0x099B86	3	INT	INT
+0x099B8C	3	SPP	SPP
+0x099B92	3	CAT	CAT
+0x099B98	3	SER	SER
+0x099B9E	3	OBD	OBD
+0x099BA4	3	HIT	HIT
+0x099BAA	3	EVA	EVA
+0x099BB0	3	SKP	SKP
+0x099BB6	2	HP	HP
+0x099BBA	3	ほのお	Fire
+0x099BC0	2	かぜ	Wind
+0x099BC4	2	みず	Water
+0x099BC8	3	だいち	Earth
+0x099BCE	4	しんせい	Holy
+0x099BD6	4	あんこく	Dark
+0x099BDE	5	むせいげん	Unlim
+0x099BE8	12	クラス         	ited Class  
+0x099C00	9	しょうきん  0G	Prize  0G
+0x099C12	17	Lv51いじょうクラス      	Lv51+ Class      
+0x099C34	9	しょうきん300G	Prize300G
+0x099C46	17	Lv31〜Lv50クラス     	Lv31-50 Class    
+0x099C68	9	しょうきん 60G	Prize 60G
+0x099C7A	17	Lv11〜Lv30クラス     	Lv11-30 Class    
+0x099C9C	9	しょうきん 20G	Prize 20G
+0x099CAE	17	Lv1〜Lv10クラス      	Lv1-10 Class     
+0x099CD0	9	しょうきん 10G	Prize 10G
+0x099CE2	27	さんかできないモンスターが パーティーにはいっています	A party monster can't enter.
+0x099D18	9	たいせんせいせき 	Match results
+0x099D2A	5	かち   	Win  
+0x099D34	5	まけ   	Loss 
+0x099D3E	6	ひきわけ  	Draw  
+0x099D4A	2	Lv	Lv
+0x099D4E	3	NEW	NEW
+0x099D54	4	LOAD	LOAD
+0x099D5C	6	OPTION	OPTION
+0x099D68	5	START	START

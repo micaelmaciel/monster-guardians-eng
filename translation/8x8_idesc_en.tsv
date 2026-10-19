@@ -1,0 +1,43 @@
+addr	n_jp	jp	en
+0x0B720C	18	コウゲキリョクがすこしつよくなります	Attack rises a⏎little.
+0x0B7230	14	コウゲキリョクがアップします	Attack rises.
+0x0B724C	18	とってもコウゲキリョクがアップします	Attack rises⏎a lot.
+0x0B7270	24	コウゲキリョクがアップして、アタマもよくなります	Attack and⏎intellect rise.
+0x0B72A0	19	コウゲキにかんするチカラがアップします	Attack-related⏎power rises.
+0x0B72C6	17	ボウギョリョクがすこしアップします	Defense rises a⏎little.
+0x0B72E8	14	ボウギョリョクがアップします	Defense rises.
+0x0B7304	14	ボウギョリョクがアップします	Defense rises.
+0x0B7320	14	キビンにうごくようになります	Quickens your⏎movements.
+0x0B733C	14	コウゲキをよけやすくなります	Easier to dodge⏎attacks.
+0x0B7358	17	すこしメイレイをききやすくなります	Slightly easier⏎to obey orders.
+0x0B737A	14	メイレイをききやすくなります	Easier to obey⏎orders.
+0x0B7396	17	とてもメイレイをききやすくなります	Much easier to⏎obey orders.
+0x0B73B8	10	あたまがよくなります	Intellect rises.
+0x0B73CC	22	あたまがよくなって、うごきもキビンになります	Intellect and⏎agility rise.
+0x0B73F8	13	ゾクセイがむこうかされます	Nullifies the⏎attribute.
+0x0B7412	13	ゾクセイがむこうかされます	Nullifies the⏎attribute.
+0x0B742C	13	ゾクセイがむこうかされます	Nullifies the⏎attribute.
+0x0B7446	17	セイメイリョクがすこしアップします	Life rises a⏎little.
+0x0B7468	18	セイメイリョクがたいへんアップします	Life rises⏎a lot.
+0x0B748C	26	セイメイリョクがアップしてすこしボウギョがあがります	Life rises,⏎defense up a bit.
+0x0B74C0	14	メイレイをききやすくなります	Easier to obey⏎orders.
+0x0B74DC	18	たいへんメイレイをききやすくなります	Much easier to⏎obey orders.
+0x0B7500	29	メイレイをきかなくなるかわりに、コウゲキリョクがあがります	Stops obeying;⏎attack rises.
+0x0B753A	30	メイレイをききにくくなりますが、コウゲキリョクがアップします	Obeys less, but⏎attack rises.
+0x0B7576	29	ほかのパラメータがさがりますがメイレイをききやすくなります	Lower stats;⏎easier to obey.
+0x0B75B0	27	ハンゲキしにくくなりますが、コウゲキリョクがあがります	Counter drops;⏎attack rises.
+0x0B75E6	31	コウゲキをよけにくくなるかわりに、コウゲキリョクがアップします	Evasion drops;⏎attack rises.
+0x0B7624	29	モンスターのコウゲキをつよくしてメイレイをききやすくします	Boosts attack⏎and obedience.
+0x0B765E	16	みているとほしくなるアイテムです	One look and⏎you want it.
+0x0B767E	12	こんじきにかがやくよろい	Armor that⏎shines like gold.
+0x0B7696	17	なめらかにうごくようになれるピアス	An earring for⏎smooth moves.
+0x0B76B8	25	これをつけてゴウセイするとゾクセイがへんかしません	Combining keeps⏎the attribute.
+0x0B76EA	25	これをつけてゴウセイするとゾクセイがへんかしません	Combining keeps⏎the attribute.
+0x0B771C	25	これをつけてゴウセイするとゾクセイがへんかしません	Combining keeps⏎the attribute.
+0x0B774E	32	これをつけてゴウセイするとゴウセイケッカにえいきょうをあたえます	Affects the⏎combine result.
+0x0B778E	32	これをつけてゴウセイするとゴウセイケッカにえいきょうをあたえます	Affects the⏎combine result.
+0x0B77CE	25	モンスターをミリョウしてメイレイをききやすくします	Charms monsters;⏎easier to obey.
+0x0B7800	23	ココロをつなぎとめてメイレイをききやすくします	Holds the heart;⏎easier to obey.
+0x0B782E	20	シュジンのココロをリカイしやすくなります	Understand your⏎master's heart.
+0x0B7856	30	まぼろしのモンスターのツノ ゴウセイのときソウビしたら・・・	Phantom horn.⏎Equip to combine.
+0x0B7892	30	フシギなかたちをしたツバサ ゴウセイのときソウビしたら・・・	Odd wing.⏎Equip to combine.

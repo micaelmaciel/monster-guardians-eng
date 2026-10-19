@@ -1,0 +1,46 @@
+addr	n_jp	jp	en
+0x0A12AC	16	がしゅぎょうからかえってきたよ。	 has come back from training.
+0x0A12CE	2	は、	 was defeated on floor 
+0x0A12D4	5	Fにいる⏎	F⏎by the party of 
+0x0A12E0	14	のパーティにたおされました。	.
+0x0A12FE	44	は100Fぜんフロアをかんぜんせいは！⏎さいしゅうボス、ゼラートドラゴンをたおしました。	 has cleared all 100 floors!⏎Defeated the final boss,⏎Zellart Dragon.
+0x0A1358	6	はそれぞれ⏎	 each⏎
+0x0A1366	12	のけいけんちをえました。	 gained EXP.
+0x0A1380	9	がレベルアップ！⏎	 leveled up!⏎
+0x0A1394	4	はレベル	 reached level 
+0x0A139E	7	になりました。	.
+0x0A13AE	9	をほかくしました。	 was caught.
+0x0A13C2	10	をしゅとくしました。	 was obtained.
+0x0A13D8	40	あら、モンスターがもういっぱいじゃない。⏎わかれてもいいモンスターをえらんでね。	Oh, your monster box is full⏎already. Choose a monster⏎you can part with.
+0x0A140E	13	いモンスターをえらんでね。	l⏎already. Choose a monster⏎you can part with.
+0x0A142A	32	ん〜、まだモンスターがいっぱいだわ。⏎またえらんでもらえるかな？	Hmm, the monster box is still⏎full. Could you choose again?
+0x0A146C	20	とわかれることになるけど⏎それでもいい？	, you'll be released.⏎Is that okay?
+0x0A1496	11	はなかまにしないのね？	 won't join your team, then?
+0x0A14AE	15	じゃあ、このたまごをすてるよ？	Then I'll throw away this⏎egg, okay?
+0x0A14CE	33	ごめんなさい。⏎しゅぎょうちゅうのモンスターとはわかれられないの。	Sorry.⏎You can't part with a⏎monster that's in training.
+0x0A1512	39	アイテムがいっぱいで、もうもちきれない？⏎なら、なにかアイテムをすてなくちゃ。	Your items are full and you⏎can't carry any more?⏎Then you'll have to throw⏎something away.
+0x0A1520	32	ぱいで、もうもちきれない？⏎なら、なにかアイテムをすてなくちゃ。	ems are full and you⏎can't carry any more?⏎Then you'll have to throw⏎something away.
+0x0A1562	34	まだまだアイテムがおおいみたいね。⏎すててもいいアイテムはどれかな？	Looks like you still have⏎lots of items. Which one⏎can you throw away?
+0x0A15A8	8	をすてるんだね？	 will be thrown away, right?
+0x0A15BA	9	ふ〜ん、じゃあこの	Hmm, then you don't need 
+0x0A15CE	22	はいらないんだ？⏎このまますてちゃうからね？	?⏎I'm throwing it away, okay?
+0x0A15FC	46	あっと、ごめん。⏎しゅぎょうちゅうのモンスターがそうびしている⏎アイテムはすてられないんだ。	Oh, sorry.⏎You can't throw away an⏎item a monster in training⏎is wearing.
+0x0A1628	24	ーがそうびしている⏎アイテムはすてられないんだ。	hrow away an⏎item a monster in training⏎is wearing.
+0x0A165A	3	は い	Yes
+0x0A1662	6	えらびなおす	Redo
+0x0A1670	39	う〜ん．．．⏎でなおしといで！ てかんじかな。⏎もっとしゅぎょうにはげもうね。	Hmm...⏎'Try again!' I guess.⏎Train harder, okay?
+0x0A16C0	29	すこしはやるようになったけど．．．⏎しょうじき、まだまだ。	You've gotten a little⏎better... Honestly, still⏎not enough.
+0x0A16FC	25	やればできるじゃない。⏎ちょっとはみなおしたかな。	See, you can do it.⏎I guess I misjudged you⏎a little.
+0x0A170E	16	い。⏎ちょっとはみなおしたかな。	can do it.⏎I guess I misjudged you⏎a little.
+0x0A171C	9	はみなおしたかな。	it.⏎I guess I misjudged you⏎a little.
+0x0A1730	30	おしい！ あともうすこし！⏎ここからが、がんばりどころだよ。	Close! Just a little more!⏎This is where you dig in.
+0x0A176E	60	すご〜い！ しゅぎょうをクリアしちゃうなんて．．．⏎おどろきでことばもでないって、このことかな。⏎とにかく、おめでとう！	Amazing! You actually⏎cleared the training...⏎I guess this is what⏎'speechless' means.⏎Anyway, congratulations!
+0x0A17E8	43	あ、ほかにもしゅぎょうからかえってきた⏎パーティがいるね。⏎もうすこし、まってくれる？	Oh, another party has come⏎back from training.⏎Can you wait a little⏎longer?
+0x0A181E	16	ね。⏎もうすこし、まってくれる？	back from training.⏎Can you wait a little⏎longer?
+0x0A1840	32	うん、ほかにしゅぎょうからかえってきた⏎パーティはいないみたい。	Okay, it looks like no⏎other party has come back⏎from training.
+0x0A1882	36	それじゃあ、このあとほんきょちにもどって⏎セーブするのをわすれないでね。	Now then, don't forget to⏎go back to headquarters⏎and save.
+0x0A18CC	60	それじゃあ、しゅぎょうからもどってきたパーティが⏎いるかどうか、いまかくにんとってみるから。⏎すこしだけまっててくれる？	Now then, I'll check whether⏎any party has come back⏎from training. Can you wait⏎a moment?
+0x0A1946	42	ごめんなさい、かくにんがとれなかったの。⏎すこしまってからまた、かくにんしてみてね。	Sorry, I couldn't check.⏎Wait a moment and check⏎again.
+0x0A199C	34	しゅぎょうからかえってきたパーティがいるみたい。⏎ちょっとまってね。	It looks like a party has⏎come back from training.⏎Wait a moment.
+0x0A19E2	41	ん〜、まだしゅぎょうにはげんでるみたい。⏎またしばらくしてからかくにんしてみてね。	Hmm, they're still⏎training, it seems.⏎Check again in a little⏎while.
+0x0A1A38	1	ぁ	a

@@ -11,7 +11,8 @@ milestone.
 - **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
-  gives **1,215 rows** (see "8×8 direct-code text corpus" in Findings);
+  gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
+  direct-code text corpus" in Findings);
   the 32 four-glyph kanji names (`0x1A0–0x1BF`) still await the user's
   reading from a rendered contact sheet; (2) 16×11 large-glyph story
   script at `0xCFF84` with a 685-glyph store at `0xD3144` — **fully
@@ -39,12 +40,15 @@ milestone.
   `translation/late_story_en_runs.json`) are provisional and are to be
   retranslated from the complete corpus in that pass.
 - **Translation progress (2026-10-19).** Message box: all 169 strings
-  done (`f5b866c`, `translation/msgfont_en.tsv`). 8×8 system: battle,
-  map and shop regions done (`cb5e1d3`); **pool region done (M12)** —
-  270 rows, 0 QA errors (`translation/8x8_pool_en.tsv`,
-  `translation/milestone-12-pool.md`). Remaining 8×8 regions: `net`,
-  `report`, `mobile`, `item`, `idesc`, `mdb1`–`mdb6`, `bbxxx`. Then the
-  consolidated prose/run-join QA pass and the story retranslation.
+  done (`f5b866c`). 8×8 system: **every region now translated** —
+  battle/map/shop (`cb5e1d3`), pool (M12, 270 rows, `51a55af`), and the
+  **remaining regions (M13)**: net (140), report (45), mobile (42),
+  monster DB (453), item names (42), item descriptions (42), bbxxx (2)
+  — 766 rows, 0 QA errors (`translation/milestone-13-mdb-items.md`).
+  Corpus grew to 1,320 rows after the monster-DB walk fix. Deferred QA:
+  battle 132/139 rows and 20 long-line errors, map 31/35 and 4 missing
+  rows, shop 93/110 and 32 long-line errors. Then the consolidated
+  prose/run-join QA pass and the story retranslation.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -725,9 +729,10 @@ fully extracted — see "8×8 direct-code text corpus" below.
 ### 8×8 direct-code text corpus (M11, 2026-10-19) — EXTRACTED
 
 The 8×8 subsystem (menus, battles, shops, monster/item databases, network
-messages) is fully extracted. Window `0x099B40..0x0C6E00`; **1,215 rows**
+messages) is fully extracted. Window `0x099B40..0x0C6E00`; **1,320 rows**
 in `build/8x8_corpus.tsv` (columns: `addr region style n suffix refs
-sources text`; styles `term`/`len`/`slice`/`split`).
+sources text`; styles `term`/`len`/`slice`/`split`). The count grew from
+1,215 in M13 after the monster-DB walk fix (see below).
 
 Tooling (both committed):
 
@@ -738,8 +743,11 @@ Tooling (both committed):
     `b <= 0xFF`) giving the **exact code length**;
   - `runs` = every `0x0000`-terminated 16-bit code run at 2-aligned
     offsets;
-  - `walk_names` = first name-like run in the first 0x18 bytes of each
-    monster-DB record (6 walks, 374 names);
+  - `walk_names` = the name field of each monster-DB record: up to 8
+    codes decoded at `rec+0` (fixed 16-byte field; full 8-code names
+    have **no** terminator), kana required (6 walks, **453 names**;
+    M13 fix — the old scan started at `rec+2` and required a terminator,
+    so 8-code names were missed and binary fields produced junk rows);
   - plus the `MANUAL_STARTS`, `SPLITS`, `EXCLUDED` tables below.
 - `tools/census_8x8.py` — pointer census → `build/8x8_ptrs.tsv`
   (**1,502 targets** with source offsets).
@@ -772,19 +780,20 @@ reports every EN row that exceeds its JP count for the insertion stage.
 | `shop` | 110 | shop + password + save messages `0x0A7000..0x0AA000` (`いらっしゃいませ！`, `CL BS OK` input labels); two data blocks excluded |
 | `item` | 42 | item names: first 8 codes of each `0x40`-stride record at `0x0B5728` (letter/number fields follow inside the record) — **names are limited to 8 codes** |
 | `idesc` | 42 | item descriptions via `{ptr,len}` at record `+0x38` into pool `0x0B720C..0x0B7A40` |
-| `mdb1`–`mdb6` | 56/35/107/52/69/29 | monster database name fields (walks below); mdb1 stores each name at two consecutive records (56 rows = 28 unique × 2); mdb2 fragments (`メインガウ`, `ヘビーガウ`…) are legitimate fusion-name parts |
+| `mdb1`–`mdb6` | 60/88/136/58/80/31 | monster database name fields (walks below). **M13:** mdb regions keep only record-start names (453 rows, 84 unique); mid-name rows were name-search pointers in the `0x6C0000..0x76765D` overlay area / junk-bank false refs and are dropped. 38 records hold `？？？？` placeholders (unused slots, zero code refs) and are left untranslated |
 | `map` | 35 | map / start-location names from `0x0C5DAE`: `すたーとちてん`, `へいげん`, `へいげん2`, `おか`… (digit table at `0x0C5D9C` is data) |
 | `battle` | 139 | battle message bank `0x0C6000..0x0C6E00` (incl. `タマゴ`, `レオ`, `ティーナ`) |
 | `bbxxx` | 2 | name-input row keys: `SPC` (`0x0BCC2C`), `あ` (`0x0BCC44`) |
 | `pool` | 270 | main label/message pool `0x0BD000..0x0BF000`: chapter labels, menu labels, the eight four-glyph monster names, name suggestions, system boxes, `COMPLETE`/`CLEAR`/`はい`/`いいえ`/`ON`/`OFF`… |
 
-**Monster-DB walks** (start, end, stride): `(0x0AEDE8,0x0AFCDE,0x30)`,
-`(0x0AFCDE,0x0B0B7C,0x34)`, `(0x0B0B7C,0x0B271C,0x34)`,
-`(0x0B271C,0x0B3900,0x34)`, `(0x0B3900,0x0B4A00,0x34)`,
-`(0x0B4A00,0x0B5728,0x34)`. Per-record constant field pairs
-(`0x00E0/0x0180/0x01C0` + `0x0040/0x0080/0x00A0`, which decode as kana
-like `ヴめ`/`百ケ`) are filtered out; unreferenced 2-code runs between
-terminators are dropped unless they sit on a record start.
+**Monster-DB walks** (start, end, stride), M13:
+`(0x0AEDE8,0x0AF9E8,0x30)`, `(0x0AF9E8,0x0B09A8,0x30)`,
+`(0x0B0B7C,0x0B271C,0x34)`, `(0x0B271C,0x0B39CC,0x34)`,
+`(0x0B39CC,0x0B4A0C,0x34)`, `(0x0B4A0C,0x0B5728,0x34)`. Names sit in a
+fixed 16-byte (8-code) field at `rec+0`; the walk takes up to 8 codes
+with a kana requirement, so binary/unused fields are never treated as
+names. `extent()` returns the walk result at record starts so a name is
+never re-scanned into the binary fields after it.
 
 **Key tables.** `0x0BCA74` = 33 chapter/demo-select labels (13 entries are
 `？` placeholders); `0x0BAA1C` = 13 status names + 13 descriptions;
@@ -1054,7 +1063,8 @@ needed beyond pointer retargeting.
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
   ~240 px). EN budget: 30 chars/row, ≤3 pages/screen (M5).
 - [x] **Text inventory (M11, 2026-10-19)**: complete extraction of the
-  remaining Japanese text — 8×8 direct-code corpus 1,215 rows; story
+  remaining Japanese text — 8×8 direct-code corpus 1,320 rows (M13
+  monster-DB walk fix); story
   bank 63 + 33 late messages; message font 169 strings; graphics sweep
   clean. The four-kanji species names use codes outside the 8×8 font
   (cut content); parked, not blocking.
@@ -1087,8 +1097,12 @@ needed beyond pointer retargeting.
   the workflow Decision). **M11 (message box) delivered** — 169 strings,
   `translation/msgfont_en.tsv`. **M12 (8×8 pool) delivered** — 270 rows,
   0 QA errors, `translation/8x8_pool_en.tsv` +
-  `translation/milestone-12-pool.md`. Then: English glyph strategy
-  (bigfont relocation), relocation writer / BPS build.
+  `translation/milestone-12-pool.md`. **M13 (8×8 monster DB, item
+  names/descriptions, bbxxx) delivered** — 539 rows, 0 QA errors; corpus
+  walk fix (1,215 → 1,320 rows); `translation/milestone-13-mdb-items.md`.
+  All 8×8 regions translated. Next: deferred QA on battle/map/shop,
+  consolidated prose/run-join QA, story retranslation, English glyph
+  strategy (bigfont relocation), relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);
@@ -1157,6 +1171,10 @@ msg 60 width-foldings) — see
   referencing glyphs; and the English font requirement (need to add
   letters/digits to a relocated 22-byte store, or squeeze — 16×11 box
   may be tight for small capitals; will need user input).
+- M13 item/monster names (batch asked, awaiting user): だいだのリング =
+  `OrangeRg` (橙?) and しゅしのリング = `SeedRing` (種子?); monster
+  romanizations ムールク `Murok`, ファーブニル `Farbnir`, ファーニブル
+  `Farnible`; shortened forms `Hobgob`, `FootGrif`, `2ndDrg`.
 
 ## Tool list (with versions)
 
@@ -1188,7 +1206,7 @@ msg 60 width-foldings) — see
 - `tools/extract_8x8.py` — the 8×8 direct-code corpus extractor (window
   `0x099B40..0x0C6E00`): pointer-driven with `term`/`len`/`slice`/`split`
   styles, DB walks, `MANUAL_STARTS`/`SPLITS`/`EXCLUDED` tables →
-  `build/8x8_corpus.tsv` (1,215 rows).
+  `build/8x8_corpus.tsv` (1,320 rows).
 - `tools/census_8x8.py` — halfword-aligned pointer census of the same
   window → `build/8x8_ptrs.tsv` (1,502 targets + sources).
 - `tools/render_glyph_sheet.py` → `build/glyph_sheet_1A0_1BF.png` +
