@@ -60,8 +60,21 @@ milestone.
   "Lv15+ MinoDrag/DragGrif", 14, which sits alone on its line);
   `tools/check_insert_rows.py` replays both banks with the real names
   (story max line 30 / late 29, no screen overflow). msg 9 pronouns and
-  msg 46 insert spacing fixed. Next: consolidated prose/run-join QA,
-  then the insertion pass.
+  msg 46 insert spacing fixed.
+- **Story insertion DONE (2026-10-19, `--stage story`).** All 96 story
+  messages are encoded and relocated (`tools/insert_story.py`), every
+  message pointer retargeted (95 pointers; msg 92 is chained), the 8×8
+  font store moved to `0x767660`, streams at `0x76B968` (25,310 B), the
+  753E/753F insert tables localized (`stage_inserts`), and the EN
+  renderer patched (7 px advance, 31-char safety wrap, **64-slot page
+  glyph list + 62-glyph page guard** — see "EN renderer patch — final"
+  in Findings). `build/patch/patched.gba` + `dist/monster-guardians-en.bps`
+  (43,169 B, round-trip OK) build from the user's ROM on demand.
+  Verified in mGBA: msgs 8, 13, 14 (59 glyphs/page), 21 (insert + full
+  21-char line), 31/32 (styled 753E name), 50, 66.
+  **Remaining:** 8×8 region insertion (menus/items/status), msgfont
+  insertion + its renderer patch, final full-playthrough QA, release
+  patch.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -457,6 +470,47 @@ frames cited):
   information-dense narration legitimately takes one page more than JP
   (msgs 25 s1/s2, 31 s3). More than 3 pages is still flagged for
   restructuring.
+
+### EN renderer patch — final (2026-10-19, verified in mGBA)
+
+Applied by `tools/build_patch.py` `stage_renderer` (254 patches total,
+BPS 43,169 B):
+
+| what | where | orig | patched |
+|------|-------|------|---------|
+| glyph advance | font descriptor `0xD6C24` | `0x0B` (12 px) | `0x06` (7 px: `font->w + 1`) |
+| safety wrap, line 1 | `0x81094` | `movs r2,#0x11` (17) | `movs r2,#0x1F` (31) |
+| safety wrap, later lines | `0x8109C` | `movs r2,#0x10` (16) | `movs r2,#0x1F` (31) |
+| page glyph-slot allocation | `0x80BAE` | `movs r0,#0x88; lsls r0,r0,#2` (0x220 = 34 slots) | `movs r0,#0x80; lsls r0,r0,#3` (0x400 = 64 slots) |
+| list walkers (4 loops) | `0x80D04` / `0x80DA4` / `0x8102C` / `0x817F0` | `0x21` (33) | `0x3F` (63) |
+| page glyph-count guard | `0x80F92` | `cmp r0,#0x20` (>32 ends the box) | `cmp r0,#0x3E` (>62 ends the box) |
+
+Why the capacity patch was needed: the box keeps a **per-page glyph list**
+(16-byte slots: {glyph object, line, state, counter}) sized for the JP
+17+16 = 33-glyph page, and `obj[0x28]` (live page glyph count) was
+checked against 32 in the printer loop (`0x80F90`), which **closed the
+box** as soon as the 34th glyph arrived. EN rows of ≤30 chars need up to
+60 glyphs per page, so both were raised. `FUN_08081830` decrements
+`obj[0x28]` whenever a glyph is destroyed, so the count stays honest
+across page turns/clears.
+
+Verification (headless `tools/mgba_dump`, msg slot repointing):
+msg 8 (23+27 = 50 glyphs/page), msg 13 (30+23 = 53, portrait box),
+msg 14 (**30+29 = 59**, the corpus maximum), msg 21 (21-char line 2 no
+longer lost; `753F 0001` prints "son"), msg 31/32 (753E insert renders in
+its styled colour), msgs 50/66 all render both rows in full with no
+truncation, no stray mid-word break, and pages turn exactly at the
+explicit `7530`/`7531`/`7532`/`7533` breaks. Worst-case audit over all 96
+EN messages (inserts expanded at their longest variant): max page = 60
+glyphs (msg 14), max line = 30 chars — both inside the new bounds.
+
+Control semantics confirmed from the handler table at `0xC7460`
+(17 entries `0x7530–0x7540`): `0x7530` = line break
+(`FUN_08080D10`), `0x7531` = clear page + list reset (`FUN_08080D84`),
+`0x7532` = page flip, `0x7533` = clear page (after a `～…～` caption),
+`0x7534` = wait, `0x7535`/`0x7536` = styled block, `0x7537/38/39` =
+sprite/effect spawns (**not** text — kept verbatim in the EN streams),
+`0x753B`/`0x753C` = red span, `0x753E`/`0x753F`/`0x7540` = inserts.
 
 ### Story script readings (verified against renders + live frames)
 
