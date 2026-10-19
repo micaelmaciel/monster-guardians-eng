@@ -72,9 +72,38 @@ milestone.
   (43,169 B, round-trip OK) build from the user's ROM on demand.
   Verified in mGBA: msgs 8, 13, 14 (59 glyphs/page), 21 (insert + full
   21-char line), 31/32 (styled 753E name), 50, 66.
-  **Remaining:** 8×8 region insertion (menus/items/status), msgfont
-  insertion + its renderer patch, final full-playthrough QA, release
-  patch.
+  **Remaining:** msgfont insertion + its renderer patch, the 64 blocked
+  8×8 rows, final full-playthrough QA, release patch.
+- **Engine/count fixes DONE (2026-10-19, mGBA-verified).** Three bugs from
+  the longer EN strings were found and fixed in `tools/build_patch.py`
+  (`stage_engine_fixes` / `stage_8x8_fixes`):
+  1. **New-game freeze**: the 8×8 count patch at `0x58BF8` changed
+     `movs r0,#4` to `#7` for the 7-glyph EN "Element" label. That register
+     is copied to `r8` and written to the menu type `obj[1]` at `0x58C48`;
+     the dispatcher `0x56E50` accepts 0–5 only, so menu type 7 idled
+     forever. Fix: `0x58C48` `mov r2,r8` → `movs r2,#4`.
+  2. **Story page-clear overlay**: the `7531`/`7533` "A held / still
+     revealing" fast path reset the glyph list without destroying the glyph
+     records, so the next page drew on top of the old one. Fix: the `7531`
+     busy path at `0x8116E` now calls `0x81674` (destroy-and-reopen), and
+     the `7533` busy close mode at `0x811C4` is 0 (destroy). The engine
+     **clears** pages; it does not scroll. Verified live: holding A through
+     the `~Mount Famfantar~` card clears it and starts "That man stood at
+     the crater..." at the top with no overlay.
+  3. **Name truncation**: the male default name copy at `0x57E1A` used the
+     JP 2-glyph length, so "Leo" became "Le". Fix: copy 6 bytes (3
+     glyphs). Verified: RAM `0x030028A0` = `17 00 2A 00 34 00` ("Leo"),
+     and the setup/intro text uses "Leo".
+  Also fixed the status-screen shared count at `0x36D0E`: one `r4` was
+  used for the "Assign" (6 glyphs) and "Order" (5 glyphs) labels and two
+  4-digit number fields; the 8×8 patcher's last write left it at 5, which
+  truncated "Assign". `0x36D0E` now sets 6, and two small free-space
+  trampolines (`0x77EC10`, `0x77EC1C`) force the number draws to 4 and
+  "Order" to 5. **Not yet seen in-game** (status screen not reached).
+  Full setup verified in mGBA (`/tmp/opencode/play3`, 30,000 frames):
+  protagonist select → rename (shows "Leo") → attribute → legendary →
+  confirmation → intro story, no crash. A longer run is in progress for
+  the field/menus.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -303,7 +332,7 @@ milestone.
   without it screenshots are blank). Do NOT pass a zeroed `mCoreOptions`.
 - `color_t` is `uint32_t` (not COLOR_16_BIT) — framebuffer is BGR8.
 - Buttons set via `core->setKeys(core, 1<<GBA_KEY_*)`.
-- Scheduled input windows: `"start-end:KEY+KEY,..."`, up to 256 windows;
+- Scheduled input windows: `"start-end:KEY+KEY,..."`, up to 8192 windows;
   dump-frame list up to 1024 entries.
 - **Input bug fixed 2026-10-18**: the original parser used `strtok` for
   both the window list and the key list — shared tokenizer state meant
@@ -314,6 +343,22 @@ milestone.
   playthrough works under this harness.
 - Save loading: set `MGBA_SAV=<path>` to load a `.sav` via
   `mCoreLoadSaveFile(core, sav, false)` after `mCoreLoadFile` (optional).
+- **Crash detection (2026-10-19)**: after each frame the executive PC is
+  checked against the mapped bus regions; an invalid PC prints
+  `CRASH frame=… pc=… lr=… sp=…` and dumps VRAM/EWRAM/IWRAM/pal/OAM/IO
+  plus `crash_pcs.txt` (last 256 frame PCs). The end of every run also
+  writes `sram.bin` (32 KB) for save inspection.
+- **Instruction tracer**: `MGBA_TRACE_FROM=<frame>` steps the CPU after
+  that frame with a 128-entry register ring; on an invalid PC it prints
+  `TRACE CRASH step=…` and the ring (`pc r0-r4 sp lr`). Limit 200M steps.
+- **Savestates (2026-10-19)**: `MGBA_STATE_OUT=<path>` +
+  `MGBA_STATE_FRAME=<n>` writes a full libmgba state after frame n
+  (`mCoreSaveStateNamed`, `SAVESTATE_ALL`); `MGBA_STATE_IN=<path>` loads
+  one after renderer init. Input/frame numbers restart at the load point,
+  so a menu can be re-tested with different keys in seconds instead of
+  replaying the intro.
+- Every dump frame prints `frame N pc=… keys=…` so CPU idle loops vs game
+  code are visible without a crash.
 
 ### Graphics / screen structure
 

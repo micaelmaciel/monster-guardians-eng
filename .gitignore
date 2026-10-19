@@ -7,3 +7,4 @@ __pycache__/
 tools/mgba_dump
 tools/t
 tools/t[0-9]*
+dist/

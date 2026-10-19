@@ -229,6 +229,86 @@ def load_insert_story():
     return mod
 
 
+def load_insert_8x8():
+    spec = importlib.util.spec_from_file_location(
+        "insert_8x8", ROOT / "tools" / "insert_8x8.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def stage_8x8(p):
+    """Insert the English 8x8 menu / UI / item / monster text."""
+    mod = load_insert_8x8()
+    rows = mod.load_rows()
+    rows, blocked = mod.apply(p, rows)
+    mod.report(rows)
+    print(f"8x8: {sum(1 for r in rows if r['action'] == 'reloc')} relocated, "
+          f"{sum(1 for r in rows if r['action'] == 'inplace')} in place, "
+          f"{sum(1 for r in rows if r['action'] == 'field')} name fields, "
+          f"{len(blocked)} blocked")
+    return rows
+
+
+def encode_bl(addr, target):
+    """Encode a Thumb-2 BL from `addr` to `target`."""
+    off = target - (addr + 4)
+    if not -(1 << 24) <= off < (1 << 24):
+        raise SystemExit(f"BL out of range {addr:#x} -> {target:#x}")
+    s = (off >> 24) & 1
+    i1 = (off >> 23) & 1
+    i2 = (off >> 22) & 1
+    imm10 = (off >> 12) & 0x3FF
+    imm11 = (off >> 1) & 0x7FF
+    # Thumb-2 encodes J1/J2 inverted relative to I1/I2 when S is clear,
+    # and straight when S is set.
+    j1 = 1 - (i1 ^ s)
+    j2 = 1 - (i2 ^ s)
+    h1 = 0xF000 | (s << 10) | imm10
+    # second halfword: 11 J1 1 J2 imm11
+    h2 = 0xD000 | (j1 << 13) | (j2 << 11) | imm11
+    return struct.pack("<HH", h1, h2)
+
+
+def stage_engine_fixes(p):
+    """Engine fixes independent of which text stages are applied."""
+    # 7531 (page clear): the "A held / still revealing" fast path reset the
+    # glyph list without destroying the glyph records, so the next page drew
+    # on top of the old one.  Use the normal destroy-and-reopen path.
+    p.poke(0x8116E, encode_bl(0x8116E, 0x81674),
+           "7531 busy page clear destroys glyphs")
+    # 7533: same fast/slow split; make the deferred close destroy too.
+    p.poke(0x811C4, b"\x00\x21", "7533 busy page clear close_mode 0")
+
+
+def stage_8x8_fixes(p):
+    """Fixes required by the longer English 8x8 strings."""
+    # 0x58BF8 draws the 7-glyph "Element" label, but r8 is also the next
+    # menu id and must stay 4.
+    p.poke(0x58C48, b"\x04\x22", "setup next menu id = 4 (decouple Element count)")
+    # The default male name "Leo" is 3 glyphs; the copy length was the JP
+    # 2-glyph length.
+    p.poke(0x57E1A, b"\x06\x22", "default male name copy 3 glyphs")
+
+    # Status screen: one r4 count is shared by the "Assign"/"Order" labels
+    # and two 4-digit number fields.  English needs 6 and 5 glyphs; keep
+    # the numbers at 4 with tiny trampolines.
+    p.poke(0x36D0E, b"\x06\x24", "Assign label count 6")
+    num_tramp = p.alloc(12, "tramp_number_width4", align=2)
+    p.poke(num_tramp,
+           b"\x10\xb5" + b"\x04\x24" + b"\x00\x94"
+           + encode_bl(num_tramp + 6, 0x3D634) + b"\x10\xbd",
+           "trampoline: number width 4")
+    order_tramp = p.alloc(12, "tramp_order_count5", align=2)
+    p.poke(order_tramp,
+           b"\x10\xb5" + b"\x05\x24" + b"\x00\x94"
+           + encode_bl(order_tramp + 6, 0x3D114) + b"\x10\xbd",
+           "trampoline: Order label count 5")
+    for addr, target in ((0x36D2E, num_tramp), (0x36D60, num_tramp),
+                         (0x36D3E, order_tramp)):
+        p.poke(addr, encode_bl(addr, target), f"call trampoline {target:#x}")
+
+
 def stage_story(p):
     """Extended glyph store + all 96 EN message streams and pointers."""
     ins = load_insert_story()
@@ -403,8 +483,17 @@ def main():
         stage_story(p)
         stage_renderer(p)
         stage_inserts(p)
+    elif args.stage in ("8x8", "all"):
+        stage_story(p)
+        stage_renderer(p)
+        stage_inserts(p)
+        stage_8x8(p)
+        stage_8x8_fixes(p)
     else:
         raise SystemExit(f"unknown stage {args.stage!r}")
+
+    if args.stage in ("story", "8x8", "all"):
+        stage_engine_fixes(p)
 
     BUILD.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
