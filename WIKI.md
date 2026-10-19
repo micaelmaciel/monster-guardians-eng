@@ -45,9 +45,11 @@ milestone.
   **remaining regions (M13)**: net (140), report (45), mobile (42),
   monster DB (453), item names (42), item descriptions (42), bbxxx (2)
   — 766 rows, 0 QA errors (`translation/milestone-13-mdb-items.md`).
-  Corpus grew to 1,320 rows after the monster-DB walk fix. Deferred QA:
-  battle 132/139 rows and 20 long-line errors, map 31/35 and 4 missing
-  rows, shop 93/110 and 32 long-line errors. Then the consolidated
+  **Deferred QA closed (M14):** battle (139), map (35) and shop (110)
+  added their missing rows and re-split all >30-glyph lines; **every
+  8×8 region now passes the checker with 0 errors** (1,320 rows =
+  corpus; `translation/milestone-14-qa-8x8.md`). Corpus grew to 1,320
+  rows after the monster-DB walk fix. Next: consolidated
   prose/run-join QA pass and the story retranslation.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
@@ -1100,9 +1102,12 @@ needed beyond pointer retargeting.
   `translation/milestone-12-pool.md`. **M13 (8×8 monster DB, item
   names/descriptions, bbxxx) delivered** — 539 rows, 0 QA errors; corpus
   walk fix (1,215 → 1,320 rows); `translation/milestone-13-mdb-items.md`.
-  All 8×8 regions translated. Next: deferred QA on battle/map/shop,
-  consolidated prose/run-join QA, story retranslation, English glyph
-  strategy (bigfont relocation), relocation writer / BPS build.
+  **M14 (8×8 QA) delivered** — battle/map/shop missing rows added and
+  all >30-glyph lines re-split (≤30 per line, ≤3 pages); every 8×8
+  region passes with 0 errors; `translation/milestone-14-qa-8x8.md`.
+  All 8×8 regions translated and QA-clean. Next: consolidated
+  prose/run-join QA, story retranslation, English glyph strategy
+  (bigfont relocation), relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);

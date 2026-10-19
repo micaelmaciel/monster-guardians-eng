@@ -8,7 +8,10 @@ addr	n_jp	jp	en
 0x0C6054	3	EXP	EXP
 0x0C605C	4	Gold	Gold
 0x0C6066	3	じかん	Time
+0x0C606E	3	EXP	EXP
+0x0C6076	3	おかね	Money
 0x0C607E	4	ポイント	Points
+0x0C6088	4	Gold	Gold
 0x0C6092	7	せんとうけっか	Battle Result
 0x0C60A2	5	モンスター	Monster
 0x0C60AE	12	をなかまにくわえますか？	: add to your party?
@@ -17,13 +20,14 @@ addr	n_jp	jp	en
 0x0C60EC	2	はい	Yes
 0x0C60F2	3	いいえ	No
 0x0C60FA	14	もとのじょうたいにもどします	Returns to its normal state.
-0x0C6118	24	アイテムがもちきれないので、どれかをすてますか？	You can't carry more items. Discard one?
+0x0C6118	24	アイテムがもちきれないので、どれかをすてますか？	You can't carry more items.⏎Discard one?
 0x0C614A	16	すてるアイテムをえらんでください	Choose an item to discard.
 0x0C616C	4	をすてて	: discard and 
 0x0C6176	18	をアイテムにくわえてよろしいですか？	: add to your items?
+0x0C619C	4	をすてて	: discard and 
 0x0C61A6	12	をアイテムにくわえました	: added to your items.
-0x0C61C0	34	はしゅぎょうちゅうのモンスターがそうびしているのでこうかんできません	Cannot trade: a monster in training has it equipped.
-0x0C6206	22	はしゅぎょうにでているのでこうかんできません	Cannot trade: it is out training.
+0x0C61C0	34	はしゅぎょうちゅうのモンスターがそうびしているのでこうかんできません	Cannot trade: a monster in⏎training has it equipped.
+0x0C6206	22	はしゅぎょうにでているのでこうかんできません	Cannot trade: it is out⏎training.
 0x0C6234	9	たおしたモンスター	Defeated monsters
 0x0C6248	8	ほかくモンスター	Captured monsters
 0x0C625A	11	いきのこったモンスター	Surviving monsters
@@ -31,14 +35,15 @@ addr	n_jp	jp	en
 0x0C6278	4	ぞくせい	Element
 0x0C6282	20	こうかんするモンスターをえらんでください	Choose a monster to trade.
 0x0C62AC	16	そのモンスターでよろしいですか？	Is this monster OK?
-0x0C62CE	37	モンスターをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results without trading monsters?
-0x0C631A	36	アイテムをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results without trading items?
+0x0C62CE	37	モンスターをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results⏎without trading monsters?
+0x0C631A	36	アイテムをこうかんしないでせんとうけっかがめんにもどってよろしいですか？	Return to the results⏎without trading items?
 0x0C6364	13	モンスターをいれかえました	Monster swapped.
+0x0C6380	5	をはずして	: remove and 
 0x0C638C	17	をなかまにくわえてよろしいですか？	: add to your party?
 0x0C63B0	1	・	-
 0x0C63B4	4	トータル	Total
 0x0C63BE	4	アイテム	Item
-0x0C63C8	22	パーティのしゅつげきせっていがされていません	The party is not set to deploy.
+0x0C63C8	22	パーティのしゅつげきせっていがされていません	The party is not set⏎to deploy.
 0x0C63F6	17	じゅうじキー・・・せんとうステージ	D-Pad: battle stage
 0x0C641A	17	L／R・・・・・・ほんきょち／ほか	L / R: base / other
 0x0C643E	10	ステージ1 へいげん	Stage 1 Plains
@@ -82,10 +87,10 @@ addr	n_jp	jp	en
 0x0C67F0	8	せんきょうをみる	View status
 0x0C6802	10	しょうりじょうけん：	Win condition:
 0x0C6818	5	ミッション	Mission
-0x0C6824	22	あらわれたまじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts that appear!!
-0x0C6852	25	ゆくてをはばむ、やせいのまじゅうたちのせんめつ！！	Wipe out the wild beasts in your path!!
+0x0C6824	22	あらわれたまじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts⏎that appear!!
+0x0C6852	25	ゆくてをはばむ、やせいのまじゅうたちのせんめつ！！	Wipe out the wild beasts⏎in your path!!
 0x0C6886	18	おそいくる、まじゅうたちをたおせ！！	Defeat the attacking beasts!!
-0x0C68AC	19	おってのまじゅうを、ぜんめつさせろ！！	Annihilate the pursuing beasts!!
+0x0C68AC	19	おってのまじゅうを、ぜんめつさせろ！！	Annihilate the pursuing⏎beasts!!
 0x0C68D4	15	おってのついげきを、かわせ！！	Dodge the pursuers' attacks!!
 0x0C68F4	20	てきのまじゅうたちを、ぜんめつさせろ！！	Annihilate all enemy beasts!!
 0x0C691E	17	まじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts!!
@@ -94,24 +99,24 @@ addr	n_jp	jp	en
 0x0C6986	21	じょうないのまじゅうを、ぜんめつさせろ！！	Annihilate the castle beasts!!
 0x0C69B2	18	てきのまじゅうを、ぜんめつさせろ！！	Annihilate the enemy beasts!!
 0x0C69D8	15	あらわれたザーゴを、たおせ！！	Defeat Zargo who appeared!!
-0x0C69F8	17	いわの、ばんにんたちのせんめつ！！	Annihilate the rock guardians!!
-0x0C6A1C	24	ゆくてをはばむ、もりのせんじゅうしゃをたおせ！！	Defeat the forest dwellers in your path!!
-0x0C6A4E	17	あんこくからの、つかいをたおせ！！	Defeat the minion of darkness!!
-0x0C6A72	21	よみがえった、ぶしのたましいを、たおせ！！	Defeat the revived warrior spirits!!
+0x0C69F8	17	いわの、ばんにんたちのせんめつ！！	Annihilate the rock⏎guardians!!
+0x0C6A1C	24	ゆくてをはばむ、もりのせんじゅうしゃをたおせ！！	Defeat the forest⏎dwellers in your path!!
+0x0C6A4E	17	あんこくからの、つかいをたおせ！！	Defeat the minion⏎of darkness!!
+0x0C6A72	21	よみがえった、ぶしのたましいを、たおせ！！	Defeat the revived⏎warrior spirits!!
 0x0C6A9E	16	まちぶせていた、てきのせんめつ！	Wipe out the ambushers!
-0x0C6AC0	18	てきの、はなったまじゅうを、たおせ！	Defeat the beasts the enemy released!
+0x0C6AC0	18	てきの、はなったまじゅうを、たおせ！	Defeat the beasts⏎the enemy released!
 0x0C6AE6	8	ザーゴをたおせ！	Defeat Zargo!
 0x0C6AF8	9	ラミレスをたおせ！	Defeat Ramires!
 0x0C6B0C	20	ベリンガムの、まじゅうたちを、たおせ！！	Defeat Beringham's beasts!!
 0x0C6B36	16	よみがえったイグニスを、たおせ！	Defeat the revived Ignis!
-0x0C6B58	19	おってのまじゅうたちをせんめつしろ！！	Annihilate the pursuing beasts!!
-0x0C6B80	19	さばくにすくう、まじゅうたちをたおせ！	Defeat the beasts lurking in the desert!
-0x0C6BA8	20	はいきょの、まじゅうたちをせんめつしろ！	Annihilate the beasts in the ruins!
+0x0C6B58	19	おってのまじゅうたちをせんめつしろ！！	Annihilate the pursuing⏎beasts!!
+0x0C6B80	19	さばくにすくう、まじゅうたちをたおせ！	Defeat the beasts⏎lurking in the desert!
+0x0C6BA8	20	はいきょの、まじゅうたちをせんめつしろ！	Annihilate the beasts⏎in the ruins!
 0x0C6BD2	15	てきの、ついせきしゃをたおせ！	Defeat the enemy trackers!
 0x0C6BF2	12	てきの、みはりをたおせ！	Defeat the enemy lookouts!
 0x0C6C0C	10	ザーゴを、たおせ！！	Defeat Zargo!!
 0x0C6C22	10	ラミレスを、たおせ！	Defeat Ramires!
-0x0C6C38	20	あらたに、あらわれてきたてきをたおせ！！	Defeat the newly appeared enemies!!
+0x0C6C38	20	あらたに、あらわれてきたてきをたおせ！！	Defeat the newly⏎appeared enemies!!
 0x0C6C62	11	ベリンガムを、たおせ！	Defeat Beringham!
 0x0C6C7A	14	さいきょうのてきを、たおせ！	Defeat the strongest enemy!
 0x0C6C98	9	ほんきょちにはいる	Enter the base
@@ -120,12 +125,14 @@ addr	n_jp	jp	en
 0x0C6CD2	10	とうぎじょうにはいる	Enter the arena
 0x0C6CE8	7	みなとにはいる	Enter the port
 0x0C6CF8	3	もどる	Back
-0x0C6D00	25	ここはアイテムとモンスターのみせ。なんのようじゃ？	This is the item and monster shop. What do you need?
+0x0C6D00	25	ここはアイテムとモンスターのみせ。なんのようじゃ？	This is the item and monster⏎shop. What do you need?
 0x0C6D34	7	アイテムをかう	Buy items
 0x0C6D44	8	モンスターをかう	Buy monsters
+0x0C6D56	3	もどる	Back
 0x0C6D5E	14	まだじゅんびできてないんじゃ	Not ready yet, sonny.
 0x0C6D7C	7	せんとうかいし	Start battle
 0x0C6D8C	6	マップをみる	View map
+0x0C6D9A	3	もどる	Back
 0x0C6DA2	13	モンスターいちらんへもどる	Back to monster list
 0x0C6DBE	4	ステージ	Stage
 0x0C6DD4	3	タマゴ	Egg
