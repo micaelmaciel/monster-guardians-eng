@@ -37,9 +37,10 @@ milestone.
   before any further translation; the translation itself is then done in
   a dedicated pass with the translation skill (no RE/translation
   interleaving). The late-bank EN drafts (L0–L5) were retranslated from
-  the complete corpus in that pass — **M15–M19, chunks 1–5** (L0–L26,
-  2026-10-19, `translation/late_story_en_runs.json`); L27–L32 still
-  have no EN and are next in the retranslation.
+  the complete corpus in that pass — **M15–M20, chunks 1–6** (L0–L32,
+  2026-10-19, `translation/late_story_en_runs.json`). **The entire
+  story script (63 early + 33 late messages) now has EN** and both
+  banks export with `problems=0`.
 - **Translation progress (2026-10-19).** Message box: all 169 strings
   done (`f5b866c`). 8×8 system: **every region now translated** —
   battle/map/shop (`cb5e1d3`), pool (M12, 270 rows, `51a55af`), and the
@@ -50,10 +51,12 @@ milestone.
   added their missing rows and re-split all >30-glyph lines; **every
   8×8 region now passes the checker with 0 errors** (1,320 rows =
   corpus; `translation/milestone-14-qa-8x8.md`). Corpus grew to 1,320
-  rows after the monster-DB walk fix. **Story retranslation (M15–M19)
-  in progress** — late-bank L0–L26 retranslated from scratch, QA clean
-  (`problems=0`, milestone docs 15–19); L27–L32 remain. Next: late-bank
-  L27–L32, then consolidated prose/run-join QA.
+  rows after the monster-DB walk fix. **Story retranslation (M15–M20)
+  COMPLETE** — the late bank L0–L32 was retranslated from scratch and
+  the early bank re-verified: both export clean (`problems=0`; 63 + 33
+  messages; milestone docs 15–20). Next: early-bank deferred fixes
+  (msg 32/46, msg 9 pronoun), consolidated prose/run-join QA, then the
+  insertion pass.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -1123,11 +1126,13 @@ needed beyond pointer retargeting.
   `translation/milestone-18-late-story-4.md`. **M19 (chunk 5)
   delivered** — L21–L26 (20 runs; the Takt falls, the memory quote
   with 753F:0, castle collapse, the burned Takt found), QA
-  `problems=0`; `translation/milestone-19-late-story-5.md`. Next:
-  late-bank L27–L32 (final chunk: last scenes, staff roll, three
-  endings), consolidated prose/run-join QA, early-bank deferred fixes
-  (msg 32/46), English glyph strategy (bigfont relocation), relocation
-  writer / BPS build.
+  `problems=0`; `translation/milestone-19-late-story-5.md`. **M20
+  (chunk 6, final) delivered** — L27–L32 (the last scenes, staff-roll
+  card, three ending variants), QA `problems=0`;
+  `translation/milestone-20-late-story-6.md`. **Late bank complete:
+  33 messages / 174 runs.** Next: early-bank deferred fixes (msg 32/46,
+  msg 9 pronoun), consolidated prose/run-join QA, English glyph
+  strategy (bigfont relocation), relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);

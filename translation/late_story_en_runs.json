@@ -26,7 +26,13 @@
   "23": "Retranslation (M19). No added breaks (JP 7530 maps 1:1): 'Smoke wrapped the old castle, / its outer walls collapsed.' 2 lines/1 page.",
   "24": "Retranslation (M19). 7537:0x2E passes through. 2 added breaks in r0 (3 lines/2 pages vs JP 2). Name card pattern again: 'Kurimuto' + break, then the quote split as r2 (opening quote alone) and r3 ('...?'); [7540] sits between them in JP and is kept.",
   "25": "Retranslation (M19). 'the burning castle' for 炎に包まれていた城. No added breaks; 2 lines/1 page.",
-  "26": "Retranslation (M19). 1 added break in r0 ('...ruins,/searching for' + '###### among the rubble.'); r2/r3 1 added break each. Screens: 3+2+2 lines (JP 2+2+2). Term 'the Takt' and 'beast combining machine' kept."
+  "26": "Retranslation (M19). 1 added break in r0 ('...ruins,/searching for' + '###### among the rubble.'); r2/r3 1 added break each. Screens: 3+2+2 lines (JP 2+2+2). Term 'the Takt' and 'beast combining machine' kept.",
+  "27": "Retranslation (M20). 7534:0x1 passes through. 1 added break in r0 (\\n after 'I see...'), 1 in r1; screen 1 = 2+2 lines/2 pages (JP 2). Screen 2 = 2 lines/1 page; the JP break between the two verb parts is absorbed by the EN clause split ('Somewhere, you / survived.').",
+  "28": "Retranslation (M20). No added breaks (JP 7530 maps 1:1). 'the black Takt' for 黒くなったタクト (L26 used 'burned black by the fire'). 2 lines/1 page.",
+  "29": "Retranslation (M20). Staff roll card: tilde decoration kept ('~Staff Roll~'), no em dashes. '❋The End❋' is already English in the JP and kept byte-identical (❋ bigfont glyph).",
+  "30": "Retranslation (M20). Ending variant A (leave without the beasts). [7540] x2; r2 gets 1 added break so the name lands on its own line ('Thinking so,' / '###### left the place.'). r1 = 3 lines/2 pages (JP 2); r0 1 line; screen 2 2 lines. 'old Kurimuto' matches the approved early-bank phrasing.",
+  "31": "Retranslation (M20). Ending variant B (go complete the beasts). r2 = 3 lines/2 pages (JP 2); r3 gets 1 added break before the [7540] name. 'left the place' matches L30.",
+  "32": "Retranslation (M20). Ending variant C: JP is identical to L31 except a comma after ため; EN is therefore identical to L31 (the comma is already present)."
  },
  "0": [
   ": \"Haa haa!\"",
@@ -233,5 +239,39 @@
   "And he found the Takt,\nburned black by the fire.",
   "Kurimuto looked at the Takt",
   "and was certain."
+ ],
+ "27": [
+  "Kurimuto: \"I see...\n",
+  "A decision made with full\nknowledge, huh...\"",
+  "Kurimuto: \"Somewhere, you",
+  "survived. I'm sure!\""
+ ],
+ "28": [
+  "As if telling himself that,",
+  "he stared at the black Takt."
+ ],
+ "29": [
+  "~Staff Roll~",
+  "❋The End❋"
+ ],
+ "30": [
+  " stopped and thought.",
+  "Could they fight without\nthe Legendary Beasts,\nas old Kurimuto said?",
+  "Thinking so,\n",
+  " left the place."
+ ],
+ "31": [
+  " stopped and thought.",
+  "Ahead, Beringham and the\nothers are lying in wait.",
+  "Without completing the\nLegendary Beasts, could\nthey really win?",
+  "To complete the beasts,\n",
+  " left the place."
+ ],
+ "32": [
+  " stopped and thought.",
+  "Ahead, Beringham and the\nothers are lying in wait.",
+  "Without completing the\nLegendary Beasts, could\nthey really win?",
+  "To complete the beasts,\n",
+  " left the place."
  ]
 }
