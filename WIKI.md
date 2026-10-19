@@ -22,8 +22,15 @@ milestone.
   `0x0EC38`) — **169 strings fully extracted and decoded** into
   `build/msgfont_strings.tsv` + `data/msgfont_charmap.json` (317/317
   glyphs mapped) — see "Field message box — third text system" below.
-  Remaining extraction work: graphics containing text (title screen,
-  logos, name-input UI cells).
+  **Extraction is now complete.** The graphics-with-text sweep (2026-10-19)
+  found no untranslated baked-in Japanese: title logo, `PRESS START`,
+  copyright and the main menu (`NEW GAME / CONTINUE / OPTIONS`) are
+  already English graphics; the only Japanese *graphic* is the decorative
+  katakana title banner (`モンスターガーディアンズ`), which duplicates the
+  English logo and needs no action. All gameplay UI text (including the
+  new-game setup flow: protagonist select, rename prompt, attribute
+  select, legendary-monster select) is rendered from the three extracted
+  corpora. See "New-game setup flow" below.
 - **Workflow change (user, 2026-10-19): extract first, translate later.**
   All remaining Japanese text is to be fully extracted and inventoried
   before any further translation; the translation itself is then done in
@@ -887,6 +894,52 @@ tiles, so probably not); (c) shorten/avoid. The 11-glyph wrap and 2-line
 box also constrain English line length (11 chars/line × 2 lines per page;
 the renderer does not page automatically beyond the 2 lines — the string
 must be split manually). Decided in the translation pass, recorded here.
+
+### New-game setup flow and graphics-with-text sweep (2026-10-19)
+
+The last completeness question was whether any screen text lives outside
+the three corpora (8×8 / story bigfont / message font). A headless
+screen sweep (mGBA harvester) through title → main menu → load/new game →
+story → setup → field found the following.
+
+**Graphics with text.** Title screen logo is `MONSTER GUARDIANS`
+(English), with `PRESS START BUTTON` and the Konami/Mobile21 copyright
+also in English. The main menu is `NEW GAME / CONTINUE / OPTIONS`
+(English graphics). The only baked-in Japanese graphic is the small
+katakana banner `モンスターガーディアンズ` under the logo — decorative and
+redundant with the English logo, no action needed. Nothing else in the
+swept screens is a text-bearing graphic.
+
+**New-game setup flow** (after story message 15):
+
+| screen | text | corpus location |
+|--------|------|-----------------|
+| protagonist select | `レオ` / `ティーナ` | pool `0x0BD5A6` / `0x0BD5AA` |
+| rename prompt | `なまえ　<name>`, `なまえをへんこうしますか？`, `はい / いいえ` | `0x0BD600` |
+| attribute select | `しゅじんこうのゾクセイをえらんでください`; options `カゼ ミズ ホノオ ダイチ シンセイ アンコク` | `0x0BD636`; table `0x0BABFC..0x0BAC24` → `0x0BD53A..0x0BD55A` |
+| legendary monster select | `でんせつのモンスターをせんたくしてください`; options `ベヒーモス` / `メインビュアリー` | `0x0BD65E`; names are monster-DB names (`0x0B257C`, `0x0B0858`) |
+| confirmation | `すべてのせっていをしゅうりょうしました⏎これでよろしいですか？` | `0x0BD688` |
+
+All of these are in `build/8x8_corpus.tsv`; nothing new had to be
+extracted. Two reading traps found while checking: the earth attribute is
+`ダイチ` (not タイチ), and the second legendary is `メインビュアリー`
+(not メイジビュアリー); both confirmed against the ROM code bytes.
+
+**Name entry.** The player-name charset at `0xCFB82` (512 u16, ends
+`0xCFF82`) contains kana, `A–Z`, `a–z`, digits and punctuation, so
+English player names are enterable. The on-screen key labels
+`SPC / CL / BS / OK` and the kana row keys (`あ か さ た な は ま …`) are
+8×8 strings already in the corpus (region `0x0BCC2C+` and the key table at
+`0x0BCB60`). The capture run reached the rename prompt but the `はい`
+path advanced straight to the attribute screen, so the keyboard layout
+itself was not photographed; its text is covered regardless.
+
+**Reproducible harness timeline** for these screens (for later testing):
+`0-4000:A,8000-8010:START,9500-9510:START`, story `A` presses every
+200–1000 frames, then `23260,24560,26060,26700,27460` (`A`) for the story
+pages, `29060` (select レオ), `30060` (answer the rename prompt). Title at
+frame 8500, main menu 12000, load screen 14000, setup screens
+29100–31500.
 
 ### Compression (T2)
 
