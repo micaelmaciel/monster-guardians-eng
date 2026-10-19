@@ -16,7 +16,11 @@
   "13": "Retranslation (M17). 7537:0x2A/0x2B + 7534:0x1 pass through. Red span kept on 'power' only. r2/r3/r4/r5/r6 split so the 7530s map to: 'Beringham: \"Then,' / 'to grant even greater power, I' (28) / 'myself...\"'. Screen 3: 'With that, Beringham' / 'went into the beast' / 'combining machine.' (3 lines/2 pages vs JP 2). 3 added breaks total.",
   "14": "Retranslation (M17). Dying stutter kept as 'Da...' + 'damn you' (JP お・・・おのれ). 7534:0x5 passes through. No added breaks. Quote stays open into L15 (closing 」 is in L15 r0).",
   "15": "Retranslation (M17). Red span on Ignis. 'Inside' for その先には; passive kept ('was already put'; the space after 'Inside,' is supplied by r1). 3 added breaks (r4, r5 x2). Screens 3+3 lines = 2 pages each (JP 1 each).",
-  "16": "Retranslation (M17). Single run; 2 added breaks -> 3 lines/2 pages (JP 2 lines). 'burst into flames' for 火を噴き; term 'beast combining machine' kept."
+  "16": "Retranslation (M17). Single run; 2 added breaks -> 3 lines/2 pages (JP 2 lines). 'burst into flames' for 火を噴き; term 'beast combining machine' kept.",
+  "17": "Retranslation (M18). [7540] narration; r1 supplies the space after the name (6+' did not flee,' = 20). 1 added break in r2; the JP 7530s map 1:1 otherwise. 4 lines/2 pages vs JP 3 lines.",
+  "18": "Retranslation (M18). 7538:0x2C,0x2D pass through. [7540] + ' was remembering.' (23). No added breaks: JP 7530 maps 1:1. 1+2 lines.",
+  "19": "Retranslation (M18). Flashback: 'Winslow' name card + quote (L9 precedent). 1 added break in r3 (term 'the Legendary Beast Tamer's Takt' is 30 wide -> 23+18); [7540] + 's heart was seized by' (6+22=28). Screen 2 = 3 lines/2 pages vs JP 2.",
+  "20": "Retranslation (M18). Narration reordered so EN leads with Canon (JP leads with the grudge phrase); 'their younger brother' matches L5's approved phrasing (Winslow II). 2 added breaks in r1/r2. Screens 3+3 lines = 2 pages each (JP 2+2)."
  },
  "0": [
   ": \"Haa haa!\"",
@@ -165,5 +169,31 @@
  ],
  "16": [
   "The beast combining machine\nburst into flames, engulfing\nthe old castle in an instant!"
+ ],
+ "17": [
+  "Even as fire filled the room,",
+  " did not flee,",
+  "and gazed at the dead\nBeringham."
+ ],
+ "18": [
+  " was remembering.",
+  "The time when Beringham",
+  "attacked the castle."
+ ],
+ "19": [
+  "Winslow",
+  "\"So this was your goal!\"",
+  "When King Winslow",
+  "held out the Legendary\nBeast Tamer's Takt",
+  "before Beringham!",
+  "Seeing the Takt,",
+  "'s heart was seized by",
+  "Canon's soul,"
+ ],
+ "20": [
+  "Canon, who held a grudge",
+  "against the Legendary\nBeast Tamer,",
+  "what did Canon do to\ntheir younger brother,",
+  "King Winslow...?"
  ]
 }

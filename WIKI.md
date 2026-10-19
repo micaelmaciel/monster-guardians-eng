@@ -37,8 +37,8 @@ milestone.
   before any further translation; the translation itself is then done in
   a dedicated pass with the translation skill (no RE/translation
   interleaving). The late-bank EN drafts (L0–L5) were retranslated from
-  the complete corpus in that pass — **M15–M17, chunks 1–3** (L0–L16,
-  2026-10-19, `translation/late_story_en_runs.json`); L17–L32 still
+  the complete corpus in that pass — **M15–M18, chunks 1–4** (L0–L20,
+  2026-10-19, `translation/late_story_en_runs.json`); L21–L32 still
   have no EN and are next in the retranslation.
 - **Translation progress (2026-10-19).** Message box: all 169 strings
   done (`f5b866c`). 8×8 system: **every region now translated** —
@@ -50,10 +50,10 @@ milestone.
   added their missing rows and re-split all >30-glyph lines; **every
   8×8 region now passes the checker with 0 errors** (1,320 rows =
   corpus; `translation/milestone-14-qa-8x8.md`). Corpus grew to 1,320
-  rows after the monster-DB walk fix. **Story retranslation (M15–M17)
-  in progress** — late-bank L0–L16 retranslated from scratch, QA clean
-  (`problems=0`, milestone docs 15–17); L17–L32 remain. Next: late-bank
-  L17–L32, then consolidated prose/run-join QA.
+  rows after the monster-DB walk fix. **Story retranslation (M15–M18)
+  in progress** — late-bank L0–L20 retranslated from scratch, QA clean
+  (`problems=0`, milestone docs 15–18); L21–L32 remain. Next: late-bank
+  L21–L32, then consolidated prose/run-join QA.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -1117,8 +1117,11 @@ needed beyond pointer retargeting.
   `translation/milestone-16-late-story-2.md`. **M17 (chunk 3)
   delivered** — L11–L16 (29 runs; 7534/7537 controls pass through,
   courtyard ambush through the machine's eruption), QA `problems=0`;
-  `translation/milestone-17-late-story-3.md`. Next: late-bank L17–L32
-  (chunks 4+), consolidated prose/run-join QA, early-bank deferred
+  `translation/milestone-17-late-story-3.md`. **M18 (chunk 4)
+  delivered** — L17–L20 (18 runs; the flashback sequence, 7538
+  pass-through, [7540] narration), QA `problems=0`;
+  `translation/milestone-18-late-story-4.md`. Next: late-bank L21–L32
+  (chunks 5+), consolidated prose/run-join QA, early-bank deferred
   fixes (msg 32/46), English glyph strategy (bigfont relocation),
   relocation writer / BPS build.
 
