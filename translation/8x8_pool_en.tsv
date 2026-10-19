@@ -1,0 +1,271 @@
+addr	n_jp	jp	en
+0x0BD388	8	COMPLETE	COMPLETE
+0x0BD398	5	CLEAR	CLEAR
+0x0BD3A2	2	はい	Yes
+0x0BD3A6	3	いいえ	No
+0x0BD3AC	2	ON	ON
+0x0BD3B0	3	OFF	OFF
+0x0BD3B6	4	ステージ	Area
+0x0BD3BE	4	けってい	OK
+0x0BD3C6	5	キャンセル	Back
+0x0BD3D0	3	なまえ	Name
+0x0BD3D6	4	ぞくせい	Element
+0x0BD3DE	5	みせってい	Unset
+0x0BD3E8	2	LV	LV
+0x0BD3EC	3	EXP	EXP
+0x0BD3F2	4	けっとう	Kin
+0x0BD3FA	4	ごうせい	Combine
+0x0BD402	3	いのち	Life
+0x0BD408	5	たいきゅう	Durability
+0x0BD412	4	こうげき	Attack
+0x0BD41A	4	ぼうぎょ	Defense
+0x0BD422	4	こうどう	Agility
+0x0BD42A	3	ちしき	Knowledge
+0x0BD430	6	ひっさつわざ	Special
+0x0BD43C	4	はんげき	Counter
+0x0BD444	4	さくてき	Recon
+0x0BD44C	6	じゅうじゅん	Obedience
+0x0BD458	5	めいちゅう	Accuracy
+0x0BD462	3	かいひ	Evasion
+0x0BD468	3	ぎのう	Skill
+0x0BD46E	4	きしょう	Mood
+0x0BD476	3	いどう	Run
+0x0BD47C	3	ひこう	Fly
+0x0BD482	4	Gold	Gold
+0x0BD48A	1	G	G
+0x0BD48C	5	モンスター	Beast
+0x0BD496	4	アイテム	Item
+0x0BD49E	7	ブリーフィング	Brief
+0x0BD4AC	2	PP	PP
+0x0BD4B0	4	USED	USED
+0x0BD4B8	4	はいぶん	Assign
+0x0BD4C0	4	めいれい	Order
+0x0BD4C8	2	PP	PP
+0x0BD4CC	4	ゴブリン	Goblin
+0x0BD4D4	4	ヨクジン	Wingfolk
+0x0BD4DC	4	ゴーレム	Golem
+0x0BD4E4	4	{1A0}{1A1}{1A2}{1A3}	{1A0}{1A1}{1A2}{1A3}
+0x0BD4EC	4	{1A4}{1A5}{1A6}{1A7}	{1A4}{1A5}{1A6}{1A7}
+0x0BD4F4	3	ムシャ	Warrior
+0x0BD4FA	4	{1A8}{1A9}{1AA}{1AB}	{1A8}{1A9}{1AA}{1AB}
+0x0BD502	4	ドラゴン	Dragon
+0x0BD50A	4	{1AC}{1AD}{1AE}{1AF}	{1AC}{1AD}{1AE}{1AF}
+0x0BD512	4	{1B0}{1B1}{1B2}{1B3}	{1B0}{1B1}{1B2}{1B3}
+0x0BD51A	4	{1B4}{1B5}{1B6}{1B7}	{1B4}{1B5}{1B6}{1B7}
+0x0BD522	4	{1B8}{1B9}{1BA}{1BB}	{1B8}{1B9}{1BA}{1BB}
+0x0BD52A	4	{1BC}{1BD}{1BE}{1BF}	{1BC}{1BD}{1BE}{1BF}
+0x0BD532	4	でんせつ	Legend
+0x0BD53A	2	カゼ	Wind
+0x0BD53E	2	ミズ	Water
+0x0BD542	3	ホノオ	Fire
+0x0BD548	3	ダイチ	Earth
+0x0BD54E	4	シンセイ	Sacred
+0x0BD556	4	アンコク	Dark
+0x0BD55E	3	ザーゴ	Zargo
+0x0BD564	4	ラミレス	Ramires
+0x0BD56C	7	大地のイグニス	Ignis of the Earth
+0x0BD57A	8	だいいちけいたい	First Form
+0x0BD58A	7	だいにけいたい	Second Form
+0x0BD598	7	さいしゅうけい	Final Form
+0x0BD5A6	2	レオ	Leo
+0x0BD5AA	4	ティーナ	Tina
+0x0BD5B2	3	カノン	Canon
+0x0BD5C2	4	ベッフル	Beffle
+0x0BD5D2	5	ファーブス	Farbus
+0x0BD5E2	15	しゅじんこうをえらんでください	Choose a hero.
+0x0BD600	13	なまえをへんこうしますか？	Change name?
+0x0BD61A	14	このなまえでよろしいですか？	Use this name?
+0x0BD636	20	しゅじんこうのゾクセイをえらんでください	Choose your element.
+0x0BD65E	21	でんせつのモンスターをせんたくしてください	Pick a legendary beast.
+0x0BD688	31	すべてのせっていをしゅうりょうしました⏎これでよろしいですか？	Setup complete.⏎Is this OK?
+0x0BD6C6	11	ん？、どうするんじゃ。	Hm? What do you want?
+0x0BD6DC	39	ん？、ゴウセイできるモンスターがたりんぞ。⏎ちゃんとそろえてからきてくれんか。	Not enough monsters to⏎combine. Get them ready.
+0x0BD72A	23	ん？、モンスターがおらんぞ、かえったかえった。	Hm? No monsters here.⏎Off you go, off you go.
+0x0BD758	4	ごうせい	Combine
+0x0BD760	5	みせをでる	Leave
+0x0BD76A	18	どのモンスターをゴウセイするんじゃ？	Which monster to combine?
+0x0BD78E	21	このモンスターとゴウセイするのはどれじゃ？	Combine this with which one?
+0x0BD7B8	35	そのモンスターはもうえらんでおるぞ。⏎ちがうモンスターをえらぶんじゃ。	You already picked that one.⏎Choose a different monster.
+0x0BD7FE	14	この2タイをゴウセイすると、	These two make a 
+0x0BD81A	10	デンセツのモンスター	legendary 
+0x0BD82E	2	⏎「	⏎"
+0x0BD832	16	」になるようじゃ。⏎ゴウセイには	".⏎It costs 
+0x0BD852	9	かかるが、よいな？	. OK?
+0x0BD864	20	それでは、ゴウセイをしてくるとするかの。	Well then, I'll go and⏎combine them.
+0x0BD88C	21	まだ、ごうせいしたいモンスターはおるかの？	Any other monsters you⏎want to combine?
+0x0BD8B6	36	ゴウセイできるモンスターがおらんのぅ。⏎また、きてくれよ。まっておるぞ。	No monsters left to combine.⏎Come again, I'll be here.
+0x0BD8FE	39	すまんが、タマゴはゴウセイできんのじゃ。⏎べつのモンスターをえらんでくれんか。	Sorry, but eggs can't be⏎combined. Pick another one.
+0x0BD94C	40	ん？、そいつはいまここにはいないようじゃ。⏎べつのモンスターをえらんでくれんか。	Hm? That one isn't here now.⏎Pick a different monster.
+0x0BD99C	42	ん？、Goldがたりんぞ。⏎はらうものがはらえるようになってからきてくれんか⏎のぉ。	Hm? You don't have enough⏎Gold. Come back when you⏎can pay, sonny.
+0x0BD9F0	33	Goldがなくなったようじゃな。⏎また、きてくれよ。まっておるぞ。	Looks like you're out of Gold.⏎Come again, I'll be waiting.
+0x0BDA32	24	そいつとはゴウセイできないようじゃ、すまんのぉ。	Sorry, you can't combine⏎that one.
+0x0BDA62	45	ん？、モンスターがすくなくてゴウセイできんのぅ。⏎モンスターをそろえてからきてくれんかの。	Too few monsters to⏎combine. Get them ready.
+0x0BDABC	45	そいつとゴウセイできるモンスターはいないようじゃ。⏎べつのモンスターをえらんでくれんかの。	No monster can be combined⏎with that one. Pick another.
+0x0BDB16	20	ホッホッホッ、ゴウセイはせいこうじゃ。⏎	Ho ho ho! The combine⏎worked. 
+0x0BDB3E	10	になったようじゃの。	 has been born.
+0x0BDB52	5	みせんたく	Empty
+0x0BDB5C	20	あたらしいじょうほうは、とどいていません	No new information.
+0x0BDB84	21	しゅぎょうからパーティがかえってきています	A party is back.
+0x0BDBAE	21	しゅぎょうちゅうのためしゅつげきできません	Can't deploy during training.
+0x0BDBD8	16	パーティがへんせいされていません	No party has been formed.
+0x0BDBF8	29	パーティのナマエがきまっていないため、しゅつげきできません	The party has no name, so it⏎can't deploy.
+0x0BDC32	20	しゅぎょうちゅうのパーティはありません⏎	No party is in training.⏎
+0x0BDC5A	17	しゅぎょうパーティのキカンよてい⏎	Training party return plan⏎
+0x0BDC7C	21	しゅつげきパーティがせっていされていません	No deploy party has been set.
+0x0BDCA6	18	しゅつげきできるパーティがありません	No party can deploy.
+0x0BDCCA	27	へんせいされたパーティがすべてしゅぎょうにいっています	Every formed party is out⏎training.
+0x0BDD00	4	すべての	All 
+0x0BDD08	17	パーティがしゅぎょうにいっています	parties are in training.
+0x0BDD2A	22	すべてのモンスターがしゅぎょうにいっています	Every monster is in training.
+0x0BDD56	32	へんせいされていますが、なまえがきまっていないパーティがあります	A party is formed but has⏎no name yet.
+0x0BDD96	35	しゅつげきパーティにステージコウリャクにひつようなモンスターがいません	The deploy party lacks⏎monsters needed to clear⏎the stage.
+0x0BDDDC	10	モンスターがいません	No monsters.
+0x0BDDF0	25	パーティは、すでにしゅつげきにせっていされています	The party is already set⏎to deploy.
+0x0BDE22	9	つぎのこうりゃくは	Next up: 
+0x0BDE34	2	です	.
+0x0BDE38	17	つぎはモンスターじてんをそろえよう	Next, fill the Monster Book.
+0x0BDE5A	24	モンスターじてんコンプリート！！⏎おめでとう！！	Monster Book complete!⏎Congratulations!
+0x0BDE8A	5	メッセージ	Message
+0x0BDE94	4	つうしん	Link
+0x0BDE9C	5	モンスター	Monster
+0x0BDEA6	18	いまひつようなモンスターはありません	No monsters are needed now.
+0x0BDECA	11	のゴウセイほうほう！⏎	's combine recipe!⏎
+0x0BDEE0	5	いじょうの	the above 
+0x0BDEEA	1	と	 and 
+0x0BDEEC	5	いじょうの	the above 
+0x0BDEF6	7	をゴウセイする	 get combined.
+0x0BDF04	10	モンスターがいません	None found
+0x0BDF18	15	アイテムのソウビをおこないます	Equip an item.
+0x0BDF36	20	そうびかのうなアイテムを⏎もっていません	You have no item that⏎can be equipped.
+0x0BDF5E	30	しゅぎょうちゅうのため、⏎なまえのへんこうはおこな⏎えません	You can't change names⏎during training.
+0x0BDF9A	30	しゅぎょうちゅうのため、⏎アイテムへんこうはおこな⏎えません	You can't change items⏎during training.
+0x0BDFD6	19	たまごへアイテムのソウビ⏎はできません	You can't equip items⏎to an egg.
+0x0BDFFC	33	しゅぎょうちゅうのため、⏎プレイヤーポイントわりふ⏎りはできません	You can't assign Player⏎Points during training.
+0x0BE03E	25	たまごへのプレイヤーポイ⏎ントわりふりはできません	You can't assign Player⏎Points to an egg.
+0x0BE070	23	なくなるとモンスターはせんとうできなくなります	When it runs out, the⏎monster can't fight.
+0x0BE09E	23	ダメージをうけたときにスキができにくくなります	Makes it harder to be⏎caught off guard.
+0x0BE0CC	21	あいてにあたえるダメージがおおきくなります	Increases damage dealt⏎to the enemy.
+0x0BE0F6	18	あいてからうけるダメージをへらします	Reduces damage taken⏎from the enemy.
+0x0BE11A	20	はんだんしてうごくスピードがアップします	Increases how fast it⏎moves on its own.
+0x0BE142	17	メイレイをリカイするようになります	Helps it understand⏎your orders.
+0x0BE164	16	ひっさつわざをだしやすくなります	Makes Special moves⏎asier to use.
+0x0BE184	29	コウゲキされたさいにハンゲキをするかのうせいがアップします	May counterattack when⏎it is attacked.
+0x0BE1BE	21	かてそうなモンスターにむかうようになります	Makes it head for foes⏎it can beat.
+0x0BE1E8	14	メイレイをききやすくなります	Makes it listen to⏎orders more.
+0x0BE204	18	コウゲキがメイチュウしやすくなります	Makes attacks more⏎likely to hit.
+0x0BE228	14	コウゲキをよけやすくなります	Makes attacks easier⏎to dodge.
+0x0BE244	16	ホカクがせいこうしやすくなります	Makes captures more⏎likely to succeed.
+0x0BE264	11	へんせいされていません	No party
+0x0BE27A	10	しようできるめいれい	Commands
+0x0BE28E	5	みへんせい	No Party
+0x0BE298	3	たいき	Idle
+0x0BE29E	5	しゅつげき	Deploy
+0x0BE2A8	20	しゅぎょうちゅうパーティせんたくにもどる	Back to Training Party
+0x0BE2D0	9	へんせいをつづける	Keep editing
+0x0BE2E2	26	へんせいをしゅうりょうして⏎へんこうをはんえいします	Finish editing and⏎apply the changes.
+0x0BE316	20	パーティへんせいを⏎しゅうりょうしますか	Finish party editing?
+0x0BE33E	9	パーティからはずす	Remove from party
+0x0BE350	18	パーティから⏎はずしてよろしいですか	Remove from party?
+0x0BE374	11	はずしてよろしいですか	Remove it?
+0x0BE38A	18	はずすモンスターを⏎えらんでください	Choose the monster⏎to remove.
+0x0BE3AE	9	パーティにはいぞく	Add to party
+0x0BE3C0	13	パーティにはいぞくしますか	Add it to the party?
+0x0BE3DA	8	いったいはずして	Remove, 
+0x0BE3EA	4	はいぞく	add 
+0x0BE3F2	18	いったいはずして、⏎はいぞくしますか	Remove, then add?
+0x0BE416	15	しょぞくモンスターと⏎こうかん	Swap with a party⏎monster
+0x0BE434	19	しょぞくモンスターと⏎こうかんしますか	Swap it with a party⏎monster?
+0x0BE45A	24	げんざいのパーティから⏎はずしてはいぞくしますか	Remove from party, add?
+0x0BE48A	20	げんざいのパーティから⏎はずしてはいぞく	Remove then add
+0x0BE4B2	22	こうかんするモンスター⏎⏎をえらんでください	Choose the monster⏎to swap.
+0x0BE4DE	9	ポジションへんこう	Move slot
+0x0BE4F0	14	ポジションをへんこうしますか	Change slot?
+0x0BE50C	24	どのモンスターと⏎⏎ポジションをへんこうしますか	Change position with⏎which monster?
+0x0BE53C	4	はいぶん	Give
+0x0BE544	26	パラメータが⏎おおいためクリアします⏎よろしいですか	Too many points.⏎Clear?
+0x0BE578	29	しゅぎょうちゅうのため⏎へんせいさぎょうはおこ⏎なえません	You can't edit the party⏎during training.
+0x0BE5B2	30	モンスターがいないため、⏎へんせいさぎょうはおこ⏎なえません	You have no monsters, so⏎you can't edit the party.
+0x0BE5EE	31	しゅぎょうちゅうのため⏎パーティめいへんこう⏎はおこなえません	You can't rename the⏎party during training.
+0x0BE62C	29	しゅぎょうちゅうのため⏎しゅつげきせっていには⏎できません	You can't set up a⏎deploy party during⏎training.
+0x0BE666	26	みへんせいのためしゅつ⏎げきせっていにはできま⏎せん	The party isn't formed,⏎so it can't be set to⏎deploy.
+0x0BE69A	33	パーティめいがみせってい⏎のためしゅつげきせっていには⏎できません	The party has no name,⏎so it can't be set to⏎deploy.
+0x0BE6DC	12	アイテムをもっていません	You have no items.
+0x0BE6F4	36	しゅぎょうちゅうのモンスター⏎がソウビしているためセンタク⏎できません。	A monster in training is⏎using it, so you can't⏎select it.
+0x0BE73C	21	しゅぎょうちゅうのため⏎ソウビできません。	Can't equip items⏎during training.
+0x0BE766	20	タマゴにはソウビすること⏎はできません。	You can't equip items⏎to an egg.
+0x0BE78E	20	アイテムをはずします、⏎よろしいですか？	Remove the item.⏎Is that OK?
+0x0BE7B6	21	アイテムをそうびします、⏎よろしいですか？	Equip the item.⏎Is that OK?
+0x0BE7E0	14	ほかのモンスターにソウビする	Equip on another monster
+0x0BE7FC	8	アイテムをはずす	Remove item
+0x0BE80C	31	げんざいのアイテムをはず⏎してソウビします、よろし⏎いですか？	Remove the current item⏎and equip this one.⏎Is that OK?
+0x0BE84A	41	ほかのモンスターがソウビし⏎ていますので、はずしてソウビ⏎します。よろしいですか？	Another monster has it⏎equipped. Remove it and⏎equip it here. OK?
+0x0BE89C	18	そうびできるモンスターが⏎いません。	No monster can equip⏎this.
+0x0BE8C0	3	セーブ	Save
+0x0BE8C6	4	サウンド	Sound
+0x0BE8CE	9	メッセージスピード	Text Speed
+0x0BE8E0	8	モンスターマーク	Monster Mark
+0x0BE8F0	8	イベントリプレイ	Event Replay
+0x0BE900	3	ヘルプ	Help
+0x0BE906	8	モンスターじてん	Monster Book
+0x0BE916	6	データクリア	Erase Data
+0x0BE922	9	パスワードさくじょ	Clear Pwd
+0x0BE934	5	スピーカー	Spkr.
+0x0BE93E	6	ミュージック	Music
+0x0BE94A	5	こうかおん	SFX
+0x0BE954	4	モノラル	Mono
+0x0BE95C	4	ステレオ	2ch
+0x0BE964	9	つかわれていません	Not used
+0x0BE976	17	リプレイできるイベントがありません	No events to replay.
+0x0BE998	38	このコマンドをおこなうと、カートリッジにセーブしたデータをすべてクリアします	This will erase all data⏎saved on the cartridge.
+0x0BE9E4	11	ほんとうに消しますよ？	Erase it?
+0x0BE9FA	17	セーブはおこなえません、ごめんね。	Can't save now.
+0x0BEA1C	15	サウンドのそうさはできません。	Sound locked.
+0x0BEA3A	17	このそうさはできません、ごめんね。	Sorry, no can do.
+0x0BEA5C	17	モンスターリストはじゅんびちゅう。	List coming soon.
+0x0BEA7E	17	セーブデータをすべてクリアしました	All save data was erased.
+0x0BEAA0	36	カセットにほぞんしているモバイルアダプタGBのパスワードをさくじょします	This deletes the Mobile⏎Adapter GB password saved⏎on the cartridge.
+0x0BEAE8	14	パスワードをさくじょしました	Password deleted.
+0x0BEB04	28	いまあるデータにうわがきセーブします。⏎よろしいですか？	Save over the current data.⏎Is that OK?
+0x0BEB3C	19	データはせいじょうにセーブできました。	Data was saved safely.
+0x0BEB62	17	データのセーブにシッパイしました。	Failed to save the data.
+0x0BEB84	5	プロローグ	Prologue
+0x0BEB8E	11	オープニング ぜんはん	Opening, Part 1
+0x0BEBA4	11	オープニング こうはん	Opening, Part 2
+0x0BEBBA	3	テスト	Test
+0x0BEBC0	7	ザーゴあらわる	Zargo Appears
+0x0BEBCE	11	カコとゲンザイと・・・	Past and Present...
+0x0BEBE4	12	ファムファンタルかざんへ	To Mount Famfantar
+0x0BEBFC	10	ベリンガムのインボウ	Beringham's Plot
+0x0BEC10	8	イグニスのめざめ	Ignis Awakens
+0x0BEC20	8	イグニスやぶれる	Ignis Falls
+0x0BEC30	8	ザーゴとラミレス	Zargo and Ramires
+0x0BEC40	7	ゴウセイジュウ	The Combined Beast
+0x0BEC4E	8	ベリンガムのカケ	Beringham's Bet
+0x0BEC5E	8	さいごのたたかい	The Final Battle
+0x0BEC6E	6	エンディング	Ending
+0x0BEC7A	10	マジュウがいない 1	No Beasts 1
+0x0BEC8E	10	マジュウがいない 2	No Beasts 2
+0x0BECA2	10	マジュウがいない 3	No Beasts 3
+0x0BECB6	2	デモ	Demo
+0x0BECBA	9	オープニングオール	All Openings
+0x0BECCC	1	？	?
+0x0BECCE	1	？	?
+0x0BECD0	1	？	?
+0x0BECD2	1	？	?
+0x0BECD4	1	？	?
+0x0BECD6	1	？	?
+0x0BECD8	1	？	?
+0x0BECDA	1	？	?
+0x0BECDC	1	？	?
+0x0BECDE	1	？	?
+0x0BECE0	1	？	?
+0x0BECE2	1	？	?
+0x0BECE4	1	？	?
+0x0BECEE	1	？	?
+0x0BECF0	3	ロード	Load
+0x0BECF6	14	ロードしますよろしいですか？	Load the game.⏎Is that OK?
+0x0BED12	20	セーブデータが無いため⏎ロードできません	There is no save data,⏎so you can't load.
+0x0BED3A	27	ロードにしっぱいしました⏎データはしょうきょされます。	Load failed.⏎The data will be erased.
+0x0BED70	24	ロードにせいこうしました⏎ゲームをかいしします。	Load succeeded.⏎The game will start.
+0x0BEDA0	6	いやだ・・・	No...
+0x0BEDAC	11	たすけ・・・て・・・！	Help... me...!

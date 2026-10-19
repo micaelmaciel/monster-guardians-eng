@@ -38,6 +38,13 @@ milestone.
   interleaving). The late-bank EN drafts (L0–L5, in
   `translation/late_story_en_runs.json`) are provisional and are to be
   retranslated from the complete corpus in that pass.
+- **Translation progress (2026-10-19).** Message box: all 169 strings
+  done (`f5b866c`, `translation/msgfont_en.tsv`). 8×8 system: battle,
+  map and shop regions done (`cb5e1d3`); **pool region done (M12)** —
+  270 rows, 0 QA errors (`translation/8x8_pool_en.tsv`,
+  `translation/milestone-12-pool.md`). Remaining 8×8 regions: `net`,
+  `report`, `mobile`, `item`, `idesc`, `mdb1`–`mdb6`, `bbxxx`. Then the
+  consolidated prose/run-join QA pass and the story retranslation.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -230,14 +237,18 @@ milestone.
 - `0x170–0x193` kanji (36): 世界無私恒共巨太匹空天地上血戦応百年文化消去一人
   脱火山下助持以外間支配常 — **OCR-derived; verify individual kanji during
   translation.**
-- `0x194–0x19F` blank; `0x1A0–0x1BF` appear to be *cut/odd* tiles (possibly
-  two squeezed kana) — likely unused; `0x1C0–0x1FE` blank;
+- `0x194–0x19F` blank. `0x1A0–0x1BF` are **not in the 8×8 font at all**:
+  the tile store ends at `0xC21F0`, where a separate 16×16 4bpp kana font
+  begins (name-entry UI). Codes in that range (used by 8 cut species-name
+  entries) render garbage. `0x1C0–0x1FE` likewise has no glyph;
   `0x1FF` enter arrow (line break).
 
 ### Font (T5) — SOLVED
 
 - Font = **8×8 pixels, one glyph per tile, 4 bpp**, 32 bytes/glyph,
-  512 glyphs (`0x000–0x1FF`), 16 KiB.
+  **0x1A0 glyphs (`0x000–0x19F`), 13 KiB**. The store runs from
+  `0xBEDF0` to `0xC21F0`, where a separate 16×16 4bpp kana font begins;
+  codes `0x1A0+` have no 8×8 glyph.
 - **ROM base `0xBEDF0`**; loaded verbatim to **VRAM charBase 0**
   (`0x06000000`) at boot. BG2/BG3 draw text windows from it.
 - Fixed-width: every glyph is 8 px wide (no VWF). Implication: English
@@ -739,6 +750,18 @@ Tooling (both committed):
 table at `0x09D8C0` (77 entries) uses `f1` = **code number** (e.g. 10-000),
 not a length. Item descriptions use `{ptr, len}` into the idesc pool.
 
+**String length semantics (verified in code, M12).** Every 8×8 string is
+drawn with an explicit glyph count, not by scanning for a terminator:
+a `movs rX,#N` immediately after the pointer load (e.g. `0x0BD6C6`
+`ん？、どうするんじゃ。` → `0x805A1D4 movs r0,#0xB`; `0x0BE8C0`
+`セーブ` → `0x8048612 movs r4,#3`), a `u16` in the `{ptr,len}` table, or
+an object field (e.g. `はい` length 2 at struct `+0x48`). Consequences:
+`term` rows are free-length; `len` rows need the table u16 updated;
+`slice` rows need the code immediate (or struct field) patched; `split`
+pieces sit at fixed byte offsets with no individual pointers, so each
+must keep its exact JP code count (pad with spaces). `tools/check_8x8_en.py`
+reports every EN row that exceeds its JP count for the insertion stage.
+
 **Regions (row counts).**
 
 | region | rows | contents / notes |
@@ -802,10 +825,12 @@ and the pool strings reached only via code-baked offsets: `0x0BD388`
 uncovered text-like span is data (glyph-order table `0x0A1BCA..`, kana
 input grid `0x0AB004..`, DB field values, `TET` font bitmap at
 `0x0BEFB8`, small markers). The eight four-glyph monster names at
-`0x0BD4E4..0x0BD52A` use codes `0x1A0–0x1BF`, the only unmapped glyphs
-(32); contact sheets: `build/glyph_sheet_1A0_1BF.png` (grid) and
-`build/glyph_names_1A0_1BF.png` (the eight names as words) — **user
-reading pending**.
+`0x0BD4E4..0x0BD52A` use codes `0x1A0–0x1BF`, which are **outside the
+8×8 font store** (it ends at `0xC21F0`; the following bytes are a 16×16
+kana font). They render garbage and the table they sit in is referenced
+only from two data pointers — treat as cut content. They are parked with
+`{1A0}…` placeholders in the translation; revisit only if a monster-book
+screen shows them.
 
 **Open items.** `0x0BE2A8` `しゅぎょうちゅうパーティせんたくにもどる`
 kept as one slice (split `[8,12]` vs `[12,8]` undecidable); `0x0BECE6`
@@ -1028,11 +1053,11 @@ needed beyond pointer retargeting.
   **pages** (clears and continues) if more lines arrive; `7533` caption
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
   ~240 px). EN budget: 30 chars/row, ≤3 pages/screen (M5).
-- [ ] **Text inventory (next; M11 per user direction 2026-10-19)**:
-  complete extraction of the remaining Japanese text — categorize 8×8
-  direct-code strings (dialogue / menu / item / skill / UI) and locate
-  the pointer(s) for each; mine graphics containing text; finish the
-  four-kanji name tiles (blocked on a user read of the 8×8 sheet).
+- [x] **Text inventory (M11, 2026-10-19)**: complete extraction of the
+  remaining Japanese text — 8×8 direct-code corpus 1,215 rows; story
+  bank 63 + 33 late messages; message font 169 strings; graphics sweep
+  clean. The four-kanji species names use codes outside the 8×8 font
+  (cut content); parked, not blocking.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
@@ -1059,11 +1084,15 @@ needed beyond pointer retargeting.
   L0–L5 EN drafts were judged unacceptable and everything after msg 63
   is to be retranslated in a dedicated translation pass *after* the
   text extraction is complete (see the Text inventory item above and
-  the workflow Decision). Then: English glyph strategy (bigfont
-  relocation), relocation writer / BPS build.
+  the workflow Decision). **M11 (message box) delivered** — 169 strings,
+  `translation/msgfont_en.tsv`. **M12 (8×8 pool) delivered** — 270 rows,
+  0 QA errors, `translation/8x8_pool_en.tsv` +
+  `translation/milestone-12-pool.md`. Then: English glyph strategy
+  (bigfont relocation), relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
-`0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
+`0x1A0–0x1BF` codes are outside the font (cut species names, parked);
+indexing of the `0x39D000..0x48C000` banks;
 semantics of **7537** params only (7538 = 2 params, 7539 = 2-param
 pass-through pair, 753E = beast-name insert, 753F = word insert — **all
 resolved** 2026-10-18). M4–M9 translation flags awaiting user: msg 21
