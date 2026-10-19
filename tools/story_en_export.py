@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Build and QA translation/story_en.json from translation/story_en_runs.json.
+"""Build and QA the EN translation JSON from its runs file.
+
+Banks: story (translation/story_en_runs.json -> story_en.json) and late
+(translation/late_story_en_runs.json -> late_story_en.json).
 
 Walks each source message`s token stream, splits it into text runs and
 control items (params included), and attaches the English run texts 1:1.
@@ -12,7 +15,7 @@ Run count mismatch = hard error. Then runs QA:
 - CJK leftovers in EN;
 - glossary spelling spot-checks.
 
-Usage: .venv/bin/python tools/story_en_export.py [msg ...]
+Usage: .venv/bin/python tools/story_en_export.py [--bank story|late] [msg ...]
 """
 import json
 import os
@@ -21,9 +24,14 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
-RAW = os.path.join(ROOT, "build", "story_messages_raw.json")
-RUNS = os.path.join(ROOT, "translation", "story_en_runs.json")
-OUT = os.path.join(ROOT, "translation", "story_en.json")
+# bank -> (raw json in build/, runs json in translation/,
+#          output json in translation/, message tag)
+BANKS = {
+    "story": ("story_messages_raw.json",
+              "story_en_runs.json", "story_en.json", "msg"),
+    "late": ("late_story_raw.json",
+             "late_story_en_runs.json", "late_story_en.json", "L"),
+}
 
 PARAMS = {0x7534: 1, 0x7535: 2, 0x7537: 1, 0x7538: 2,
           0x753B: 1, 0x753E: 1, 0x753F: 1, 0x7539: 2}
@@ -31,6 +39,13 @@ PARAMS = {0x7534: 1, 0x7535: 2, 0x7537: 1, 0x7538: 2,
 WRAP = 30            # assumed EN glyph advance fits 30 chars in the box
 MAX_EXPLICIT = 29    # working limit for a line that must not auto-wrap
 MAX_SCREEN = 58      # working limit per screen
+
+# Simulated EN display width (chars) of dynamic inserts, so QA accounts
+# for them: 753F word table (I / son/daughter / Tamer / he/she), 753E
+# beast names (EN TBD, reserved), 7540 player name (6).
+WORD_W = [1, 8, 24, 3]
+BEAST_W = 12
+NAME_W = 6
 
 GLOSSARY = ["Grandate", "Canon", "Ignis", "hydra dragon"]
 
@@ -86,7 +101,14 @@ def en_screens(items, en_runs):
                 stream.append(("scr",))
             elif code == 0x7540:
                 # Player-name insert: reserve placeholder width in the sim.
-                stream.append(("t", "######"))
+                stream.append(("t", "#" * NAME_W))
+            elif code == 0x753E:
+                # Beast-name insert (dynamic; EN name TBD).
+                stream.append(("t", "#" * BEAST_W))
+            elif code == 0x753F:
+                # Word-table insert: reserve the slot's EN width.
+                slot = int(it[2][0], 16) if it[2] else 0
+                stream.append(("t", "#" * WORD_W[slot % len(WORD_W)]))
             else:
                 stream.append(("ctl", code, it[2]))
     screens = [[]]
@@ -110,10 +132,20 @@ def char_lines(text, width=WRAP):
 
 
 def main():
-    msgs = json.load(open(RAW))["messages"]
-    runs = {int(k): v for k, v in json.load(open(RUNS)).items()
+    args = sys.argv[1:]
+    bank = "story"
+    if args and args[0] == "--bank":
+        bank = args[1]
+        args = args[2:]
+    raw_name, runs_name, out_name, tag = BANKS[bank]
+    raw_path = os.path.join(ROOT, "build", raw_name)
+    runs_path = os.path.join(ROOT, "translation", runs_name)
+    out_path = os.path.join(ROOT, "translation", out_name)
+
+    msgs = json.load(open(raw_path))["messages"]
+    runs = {int(k): v for k, v in json.load(open(runs_path)).items()
             if not k.startswith("_")}
-    todo = [int(a) for a in sys.argv[1:]] or sorted(runs)
+    todo = [int(a) for a in args] or sorted(runs)
 
     out_msgs = []
     problems = 0
@@ -121,7 +153,7 @@ def main():
         items = parse_message(msgs[idx]["raw"])
         n_runs = sum(1 for it in items if it[0] == "text")
         if n_runs != len(runs[idx]):
-            print(f"msg {idx}: RUN COUNT MISMATCH source={n_runs} "
+            print(f"{tag} {idx}: RUN COUNT MISMATCH source={n_runs} "
                   f"en={len(runs[idx])}")
             problems += 1
             continue
@@ -130,7 +162,7 @@ def main():
         # QA 1: controls identical (7530 counted separately)
         src_ctl = [it for it in items
                    if it[0] == "ctl" and it[1] != 0x7530]
-        print(f"msg {idx}: runs={n_runs} screens={len(screens)} "
+        print(f"{tag} {idx}: runs={n_runs} screens={len(screens)} "
               f"added7530={len(added)}")
 
         # QA 2: per-screen lengths (manual breaks + char-based auto-wrap).
@@ -189,11 +221,12 @@ def main():
                                "params": it[2]})
         out_msgs.append({"message": idx, "items": oitems})
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w") as f:
-        json.dump({"messages": out_msgs}, f, ensure_ascii=False, indent=1)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w") as f:
+        json.dump({"bank": bank, "messages": out_msgs}, f,
+                  ensure_ascii=False, indent=1)
         f.write("\n")
-    print(f"\nwrote {OUT}: {len(out_msgs)} messages; problems={problems}")
+    print(f"\nwrote {out_path}: {len(out_msgs)} messages; problems={problems}")
     return 1 if problems else 0
 
 

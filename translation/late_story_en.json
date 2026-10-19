@@ -1,0 +1,944 @@
+{
+ "bank": "late",
+ "messages": [
+  {
+   "message": 0,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": ": \"Haa haa!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "After Ignis left, "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "came to and collapsed."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"You..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "I see! So some trigger"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "awakens Canon's soul!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Kurimuto: \"I must tell you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "everything now,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "Kurimuto: \"What Beringham"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "said was true!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "I combined "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "Canon"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": " and the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 14,
+     "en": "Beast Tamer"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": ", and so"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 16,
+     "en": "you were born.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 1,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"In the beginning,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "I created the beast combining"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "machine in this world.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"This world was"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "ruled by two dragons and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "savage beasts. I sought"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "beast-humans"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "bearing human order.\""
+    }
+   ]
+  },
+  {
+   "message": 2,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"The first"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "beast-human"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": " I made,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "that was Beringham.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Kurimuto: \"Combined beasts"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "are shaped by strong genes."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "I combined him with many"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "beasts. But he inherited"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "the dark genes even stronger."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "He has a human form, but his"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "heart is no different from"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "the savage beasts.\""
+    }
+   ]
+  },
+  {
+   "message": 3,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"In the end, when"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "my ideal began to feel"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "too hard,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "appeared.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Kurimuto: \""
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x3"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": " fought a"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "desperate battle with"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "the two dragons,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x3"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": " won, but"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x3"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": " too was gravely wounded,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "Only the beast combining"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "machine could save them."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x1E"
+     ]
+    }
+   ]
+  },
+  {
+   "message": 4,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"I combined"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x20"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Canon"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "'s strong life with"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "!\""
+    }
+   ]
+  },
+  {
+   "message": 5,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"And the genes of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "ran strong in you,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "And so"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "you"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": " were born a beast-human.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "But you lost all your memory."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Later, you turned out to be"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "the child of a Barroa"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "noble, Winslow I."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "In other words,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x1"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "your late father, Winslow II,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "was your younger brother!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "He learned the truth and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "took you in; you had lost"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "all your memories. He raised"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "you like his own child.\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "Winslow II: not a father,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "but their own younger"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "brother"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": " could barely keep"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": "their composure."
+    }
+   ]
+  }
+ ]
+}

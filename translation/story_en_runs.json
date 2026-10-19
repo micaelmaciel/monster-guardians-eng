@@ -155,9 +155,9 @@
     "Kurimuto: \"No. I heard the\nname Beringham. I stepped in.",
     "That one and I have a past",
     "...",
-    "Hmm. I peg you for the son of",
-    "Winslow of Vandam Castle",
-    "...",
+    "Hmm. I peg you for",
+    "the ",
+    " of Winslow of\nVandam Castle...",
     "What happened at the castle?"
   ],
   "22": [
@@ -189,7 +189,7 @@
     "18": "m4: 7540 name insert (before run 1) + 7532 screen split; no added breaks. \"in shock\" = 唖然.",
     "19": "m4: 7535/7536 style span passes through; screen 2 breaks at the source 7530. あっというまに = \"in no time\".",
     "20": "m4: 7537(0002) and 7534(0006) pass through (invisible in-game, frames 18000). Speaker card \"Old man:\" — name arrives next message. やかましい → \"Noisy!\" (18 chars keeps row <=26).",
-    "21": "m4: caption (7533) shows alone and clears. Added 1 break inside the quote run (JP auto-wraps mid-word). 753F(0001) prints the canned word ご子息 — DROP the control at insertion; EN carries \"son\" just before that position. Interpretation flag: line 1 read as \"[reason] I heard the name Beringham\" (milestone-04 flag 1).",
+    "21": "m4: caption (7533) shows alone and clears. Added 1 break inside the quote run (JP auto-wraps mid-word). 753F(0001) prints ご子息/ご息女 (player-gender variant): M11 change — the control is now KEPT (the localized word table prints son/daughter) instead of dropping it, so female players read correctly; run 4 'the ' feeds into the insert and run 5 carries the rest. Interpretation flag: line 1 read as \"[reason] I heard the name Beringham\" (milestone-04 flag 1).",
     "22": "m4: 7538(0031,0030) + 7540 pass through; the source 7530 is the row break. Red span = \"yesterday's incident\" (JP red = 事件 only; width compromise — milestone-04 flag 5). Runs carry a leading space in run 1 (after the name insert).",
     "23": "m4: 7531 clears the caption after the player's input (▼ verified, frame 19700). \"Barroa's Vandam Castle\" compresses バルロア王国、ヴァンダム城 to fit the 30-char row (milestone-04 flag 3).",
     "24": "m4: 7537(0032) passes through. JP clears the box between its two lines (2 display pages, frames 19900-20100); EN is also 2 pages but splits mid-sentence (milestone-04 flag 4). Added 1 break in run 2; 二世 = \"II\".",

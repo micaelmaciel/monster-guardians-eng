@@ -1,0 +1,84 @@
+{
+ "_notes": {
+  "0": "Opening after the awakening fight. [7540] name is a speaker card (EN ': \"Haa haa!\"' matches msg 57 precedent) and then mid-sentence in narration. JP puts a 7532 right after クリムト「おぬし・・・ -> EN keeps 'You...' on its own box page. Screen 7 (red-span line) runs 3 EN lines (2 pages) vs 2 JP lines; recorded, not compressed.",
+  "1": "Kurimuto origin speech. 合獣機 = 'beast combining machine'. 魔獣人間 = 'beast-humans' (red span kept on the word). Screen 3 = ['savage beasts. I sought' / 'beast-humans' / 'bearing human order.'] via two added breaks (24+12+21), 2 pages vs 1 JP.",
+  "2": "7537 delay control passes through. Red span on 'beast-human' only. Screen with r6+r7: JP 2 lines, EN 2+1 lines across the 7532. Final screen uses one added break (28/26/19).",
+  "3": "Word-table inserts: [753F:2] = 伝説の魔獣使い -> EN 'the Legendary Beast Tamer' (24 wide); [753F:3] = 彼/彼女 -> EN 'he'/'she'. Controls are KEPT and the table is localized (strategy change from M5 msg 21 note), so both player genders read correctly. Screen 1 = 3 lines (2 pages) vs 2 JP; insert screen = 'the Legendary Beast Tamer' / 'appeared.' via one added break.",
+  "4": "Red span around Canon; insert screen = [red 'the Legendary Beast Tamer'] + '!\"' (26) one line. r0 carries an added break after 'I combined'.",
+  "5": "Calls to '[753F:2]' inserts kept. Name row r13 = ###### + ' could barely keep'. r8 'your late father, Winslow II, was your younger brother!' kept as-is (the JP paradox is intentional). Added breaks: r0 after 'of', r1 before 'ran', r7 after 'words,'.",
+  "auth": "M11 milestone (2026-10-19). Messages L0-L5 of 33. Sentence design accounts for localized insert widths: word table EN = I/I, son/daughter, the Legendary Beast Tamer x2, he/she. SUPERSEDED 2026-10-19 by user direction: drafts judged unacceptable; to be retranslated in the dedicated translation pass after the full text extraction (see WIKI). Do not ship."
+ },
+ "0": [
+  ": \"Haa haa!\"",
+  "After Ignis left, ",
+  "\ncame to and collapsed.",
+  "Kurimuto: \"You...",
+  "I see! So some trigger",
+  "awakens Canon's soul!\"",
+  "Kurimuto: \"I must tell you",
+  "everything now,",
+  "...",
+  "\"",
+  "Kurimuto: \"What Beringham\nsaid was true!",
+  "I combined ",
+  "Canon",
+  " and the\n",
+  "Beast Tamer",
+  ", and so",
+  "you were born.\""
+ ],
+ "1": [
+  "Kurimuto: \"In the beginning,",
+  "I created the beast combining",
+  "machine in this world.\"",
+  "Kurimuto: \"This world was",
+  "ruled by two dragons and",
+  "savage beasts. I sought\n",
+  "beast-humans",
+  "\nbearing human order.\""
+ ],
+ "2": [
+  "Kurimuto: \"The first\n",
+  "beast-human",
+  " I made,",
+  "that was Beringham.\"",
+  "Kurimuto: \"Combined beasts",
+  "are shaped by strong genes.",
+  "I combined him with many\nbeasts. But he inherited",
+  "the dark genes even stronger.",
+  "He has a human form, but his",
+  "heart is no different from\nthe savage beasts.\""
+ ],
+ "3": [
+  "Kurimuto: \"In the end, when\nmy ideal began to feel\ntoo hard,",
+  "\nappeared.\"",
+  "Kurimuto: \"",
+  " fought a",
+  "desperate battle with\nthe two dragons,",
+  " won, but",
+  " too was gravely wounded,",
+  "Only the beast combining\nmachine could save them."
+ ],
+ "4": [
+  "Kurimuto: \"I combined\n",
+  "Canon",
+  "'s strong life with",
+  "!\""
+ ],
+ "5": [
+  "Kurimuto: \"And the genes of\n",
+  "\nran strong in you,",
+  "And so\n",
+  "you",
+  " were born a beast-human.\"",
+  "But you lost all your memory.",
+  "Later, you turned out to be\nthe child of a Barroa\nnoble, Winslow I.",
+  "In other words,\n",
+  "your late father, Winslow II,\nwas your younger brother!",
+  "He learned the truth and\ntook you in; you had lost",
+  "all your memories. He raised\nyou like his own child.\"",
+  "Winslow II: not a father,\nbut their own younger\nbrother",
+  "...",
+  " could barely keep\ntheir composure."
+ ]
+}

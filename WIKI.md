@@ -16,6 +16,13 @@ milestone.
   33 late messages + 13 status words + the R1 support strings (insert
   tables, fragments, scene variants, debug prompts) — see "Complete
   text inventory & completeness audit" in Findings.
+- **Workflow change (user, 2026-10-19): extract first, translate later.**
+  All remaining Japanese text is to be fully extracted and inventoried
+  before any further translation; the translation itself is then done in
+  a dedicated pass with the translation skill (no RE/translation
+  interleaving). The late-bank EN drafts (L0–L5, in
+  `translation/late_story_en_runs.json`) are provisional and are to be
+  retranslated from the complete corpus in that pass.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -737,8 +744,11 @@ needed beyond pointer retargeting.
   **pages** (clears and continues) if more lines arrive; `7533` caption
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
   ~240 px). EN budget: 30 chars/row, ≤3 pages/screen (M5).
-- [ ] Text inventory: categorize strings (dialogue / menu / item / skill /
-  UI) and locate the pointer(s) for each.
+- [ ] **Text inventory (next; M11 per user direction 2026-10-19)**:
+  complete extraction of the remaining Japanese text — categorize 8×8
+  direct-code strings (dialogue / menu / item / skill / UI) and locate
+  the pointer(s) for each; mine graphics containing text; finish the
+  four-kanji name tiles (blocked on a user read of the 8×8 sheet).
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
@@ -761,9 +771,12 @@ needed beyond pointer retargeting.
   per-milestone review. **M10 (completeness audit + late-bank/R1
   integration) delivered 2026-10-19** — 33 late messages extracted and
   verified, charmap 649/685, R1 + status word list extracted. **M11
-  (translation of the late bank, R1 strings and status words) is next**,
-  then the English glyph strategy (bigfont relocation), the relocation
-  writer / BPS build, and the 8×8 menu/UI milestones.
+  (late-bank translation) paused 2026-10-19 by user direction**: the
+  L0–L5 EN drafts were judged unacceptable and everything after msg 63
+  is to be retranslated in a dedicated translation pass *after* the
+  text extraction is complete (see the Text inventory item above and
+  the workflow Decision). Then: English glyph strategy (bigfont
+  relocation), relocation writer / BPS build.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` tiles; indexing of the `0x39D000..0x48C000` banks;
@@ -803,6 +816,14 @@ msg 60 width-foldings) — see
   >6 rows). EN rows hold 30 chars vs JP's 17 glyphs, so JP-aligned page
   counts are not always achievable; compressions are kept to a minimum
   and recorded per message.
+- Workflow (user, 2026-10-19): **complete all Japanese-text extraction
+  before translating.** Translation is a separate, dedicated pass using
+  the translation skill, working from the complete corpus (full context,
+  no RE interleaving). The late-bank EN drafts (L0–L5) are superseded
+  and will be retranslated. Translation QA must include a composed-prose
+  review (cohesion, punctuation, repetition) and a run-join spacing check
+  — runs concatenate raw in engine order, and the current exporter does
+  not detect a missing space between runs.
 
 ## Open questions
 

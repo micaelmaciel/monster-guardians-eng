@@ -1,4 +1,5 @@
 {
+ "bank": "story",
  "messages": [
   {
    "message": 0,
@@ -1590,7 +1591,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "Hmm. I peg you for the son of"
+     "en": "Hmm. I peg you for"
     },
     {
      "type": "ctl",
@@ -1600,7 +1601,7 @@
     {
      "type": "text",
      "run": 5,
-     "en": "Winslow of Vandam Castle"
+     "en": "the "
     },
     {
      "type": "ctl",
@@ -1612,7 +1613,18 @@
     {
      "type": "text",
      "run": 6,
-     "en": "..."
+     "en": " of Winslow of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Vandam Castle..."
     },
     {
      "type": "ctl",
