@@ -5,7 +5,12 @@
   "2": "Retranslation (M15). 1 added break in r0 ('The first\\nbeast-human I made,') to keep the screen 1-line->2-line pairing with the JP 7532. Screen r6/r7 use 1 added break each (2 lines each, 1 page). 7537 not present. Red span on 'beast-human' only.",
   "3": "Retranslation (M15). 753F table is KEPT and localized: [753F:2] = 'the Legendary Beast Tamer' (25 wide; exporter reserves 24), [753F:3] = 'he'/'she' LOWERCASE so both genders read correctly in any position; r2 supplies the sentence lead 'Then' so the first insert is never sentence-initial. Screen 1: 2 added breaks (27/25/25/10 = 4 lines/2 pages vs 2 JP lines), insert gets its own line. Screen 2: 1 added break in r3. r7 has no 753F control -> gender-safe 'save a life' (not 'his').",
   "4": "Retranslation (M15). [753F:2] insert wrapped in the red span in JP and kept so in EN ('the Legendary Beast Tamer' + deco). 1 added break in r0 -> segs 21/24 + screen2 27. 7537:0x20 control passes through (position unchanged).",
-  "5": "Retranslation (M15). [753F:2] insert gets its own line (added breaks both sides). Red span on 'you' (おぬし) kept. Screens: r6 3 lines/2 pages (1 added break x2), r7/r8 pairs per JP. r11-r12 narrator line: 1 added break; 7535/7536 kept on the white dots. r13: 1 added break, [7540] name width 6 accounted (6+' could barely keep' = 24)."
+  "5": "Retranslation (M15). [753F:2] insert gets its own line (added breaks both sides). Red span on 'you' (おぬし) kept. Screens: r6 3 lines/2 pages (1 added break x2), r7/r8 pairs per JP. r11-r12 narrator line: 1 added break; 7535/7536 kept on the white dots. r13: 1 added break, [7540] name width 6 accounted (6+' could barely keep' = 24).",
+  "6": "Retranslation (M16). Red span on Ignis; 1 added break in r0. r2 supplies the space after the insert. Screen 2 = 'Ignis had to be lured out, so / he used you.' (29+13, 1 page). 7537:0x21 passes through.",
+  "7": "Retranslation (M16). Added breaks: 2 in r0, 1 in r2; screens run 3 lines/2 pages each (JP 1+2 lines). 'beast combining machine' term kept. No inserts.",
+  "8": "Retranslation (M16). 7537:0x22 passes through; no added breaks (JP 7530s map 1:1). 'Legendary Beasts' plural matches msgs 31/47 EN. Red span only in L8? none here.",
+  "9": "Retranslation (M16). 7539 pairs pass through; r0 = standalone name card. 753E beast-name inserts (0x8, 0x6, 0x7) keep their red spans; 12-wide reserve respected ('Beast ' + insert = 28, insert+r4 = 16, insert7+r5 = 14). Added breaks in r1 and r3. JP leaves the opening quote unclosed; EN closes it at r5 = '!\"'.",
+  "10": "Retranslation (M16). 753E insert 0x8 red-wrapped; the JP 7530 right before it forces the insert onto its own line ('Legendary Beast ' ends the seg). Screen 1 = 5 lines/3 pages (JP 4 lines/2): 20+29/6/26/24/18, both added breaks necessary (no word fits the >30 remainder). Screen 2 maps 1:1 (2 lines). 'and foil his plan' for 野望を阻止."
  },
  "0": [
   ": \"Haa haa!\"",
@@ -79,5 +84,39 @@
   "Winslow II, not a father but\ntheir own younger brother",
   "...",
   " could barely keep\ntheir composure."
+ ],
+ "6": [
+  "Kurimuto: \"Beringham knew\nthis truth.",
+  "Ignis",
+  " had to be lured out, so",
+  "he used you.\""
+ ],
+ "7": [
+  "Kurimuto: \"He should be\nheading for the old\ncastle ruins.",
+  "The beast combining machine\nthat combined you long",
+  "\nago is still there.",
+  "He is trying to become you.\""
+ ],
+ "8": [
+  "Kurimuto: \"You and Ignis",
+  "are bound by fate forever.",
+  "You can never escape it!\"",
+  "Revive the Legendary Beasts,",
+  "and defeat them!\""
+ ],
+ "9": [
+  "Kurimuto",
+  "\"Listen! The Legendary Beast\n",
+  " is complete.",
+  "Combine the medium forms\n",
+  " and",
+  "!\""
+ ],
+ "10": [
+  "Kurimuto: \"Then, the\nLegendary Beast ",
+  " is complete!\"",
+  "The only one who can use",
+  "this beast is you.",
+  "Head to the old castle ruins\nand foil his plan!\""
  ]
 }

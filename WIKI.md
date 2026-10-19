@@ -37,9 +37,9 @@ milestone.
   before any further translation; the translation itself is then done in
   a dedicated pass with the translation skill (no RE/translation
   interleaving). The late-bank EN drafts (L0–L5) were retranslated from
-  the complete corpus in that pass — **M15, chunk 1** (L0–L5,
-  2026-10-19, `translation/late_story_en_runs.json`); L6–L32 still have
-  no EN and are next in the retranslation.
+  the complete corpus in that pass — **M15/M16, chunks 1–2** (L0–L10,
+  2026-10-19, `translation/late_story_en_runs.json`); L11–L32 still
+  have no EN and are next in the retranslation.
 - **Translation progress (2026-10-19).** Message box: all 169 strings
   done (`f5b866c`). 8×8 system: **every region now translated** —
   battle/map/shop (`cb5e1d3`), pool (M12, 270 rows, `51a55af`), and the
@@ -50,10 +50,11 @@ milestone.
   added their missing rows and re-split all >30-glyph lines; **every
   8×8 region now passes the checker with 0 errors** (1,320 rows =
   corpus; `translation/milestone-14-qa-8x8.md`). Corpus grew to 1,320
-  rows after the monster-DB walk fix. **Story retranslation (M15)
-  started** — late-bank L0–L5 retranslated from scratch, QA clean
-  (`problems=0`, `translation/milestone-15-late-story-1.md`); L6–L32
-  remain. Next: late-bank L6–L32, then consolidated prose/run-join QA.
+  rows after the monster-DB walk fix. **Story retranslation (M15/M16)
+  in progress** — late-bank L0–L10 retranslated from scratch, QA clean
+  (`problems=0`, `translation/milestone-15-late-story-1.md`,
+  `milestone-16-late-story-2.md`); L11–L32 remain. Next: late-bank
+  L11–L32, then consolidated prose/run-join QA.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.
@@ -1111,8 +1112,11 @@ needed beyond pointer retargeting.
   All 8×8 regions translated and QA-clean. **M15 (late-bank
   retranslation, chunk 1) delivered** — L0–L5 rewritten from scratch
   (the rejected M11 drafts are superseded), 61 runs, QA `problems=0`;
-  `translation/milestone-15-late-story-1.md`. Next: late-bank L6–L32
-  (chunks 2+), consolidated prose/run-join QA, early-bank deferred
+  `translation/milestone-15-late-story-1.md`. **M16 (chunk 2)
+  delivered** — L6–L10 (24 runs; 753E beast-name inserts 0x6/0x7/0x8
+  and 7537/7539 controls handled), QA `problems=0`;
+  `translation/milestone-16-late-story-2.md`. Next: late-bank L11–L32
+  (chunks 3+), consolidated prose/run-join QA, early-bank deferred
   fixes (msg 32/46), English glyph strategy (bigfont relocation),
   relocation writer / BPS build.
 
