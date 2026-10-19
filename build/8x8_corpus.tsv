@@ -292,7 +292,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0A8D50	shop	term	28	1	1	0x024E2C	モンスターがとどきました！⏎ちゃんとめんどうみるんだよ！
 0x0A8D8A	shop	term	22	1	1	0x024E9C	モンスターのこうにゅうをキャンセルしました。
 0x0A8DB8	shop	term	22	1	1	0x024F0C	それと、ちゃんとほんきょちでセーブもしてね。
-0x0A8F4E	shop	term	18	1	1	0x026258	いeぐうだZもlゥはニIメQチふbK
 0x0A902A	shop	term	8	1	1	0x0264A4	CL BS OK
 0x0A903C	shop	term	3	1	10	0x026354,0x02638C,0x0265CC,0x026604	は い
 0x0A9044	shop	term	3	1	8	0x0265D0,0x026608,0x0266BC,0x0266E8	いいえ
@@ -337,7 +336,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0A9E32	shop	term	41	1	1	0x029B44	えぇ、でもそのパーティ、もうふねにのってるし。⏎べつのパーティをえらんでほしいな。
 0x0A9E86	shop	term	39	1	1	0x029B98	たまごがはいってるパーティは⏎しゅぎょうにはいけないんだよ。⏎ね！ わかった？
 0x0A9ED6	shop	term	5	1	1	0x029700	じょうせん
-0x0A9EF8	shop	term	4	1	0		ぁぁ私U
 0x0AEDE8	mdb1	term	4	1	72	0x002914,0x008FF8,0x00AD3C,0x01530C	ゴブリン
 0x0AEE18	mdb1	term	4	1	0		ゴブリン
 0x0AEE48	mdb1	term	7	1	0		ゴブリンフライ
@@ -459,8 +457,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B10F8	mdb3	term	7	1	0		ゴーレムライト
 0x0B112C	mdb3	term	7	1	0		フライゴーレム
 0x0B1160	mdb3	term	7	1	0		フライゴーレム
-0x0B11C0	mdb3	term	2	1	0		百ケ
-0x0B11F4	mdb3	term	2	1	0		百ケ
 0x0B11FC	mdb3	term	5	1	0		ゴーペスト
 0x0B1230	mdb3	term	5	1	0		ゴーペスト
 0x0B1264	mdb3	term	6	1	0		ガリゴーレム
@@ -585,7 +581,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B33B4	mdb4	term	5	1	0		ハイエルフ
 0x0B33E8	mdb4	term	7	1	0		ドラゴンバード
 0x0B341C	mdb4	term	7	1	0		ゴーレムライト
-0x0B347C	mdb4	term	2	1	0		百ケ
 0x0B3484	mdb4	term	6	1	0		ミノドラゴン
 0x0B34B8	mdb4	term	7	1	0		ドラグリフォン
 0x0B3520	mdb4	term	4	1	0		こあくま
@@ -655,7 +650,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B47D0	mdb5	term	4	1	1	0x0B5460	デーモン
 0x0B4838	mdb5	term	4	1	1	0x0B5488	ラミレス
 0x0B486C	mdb5	term	6	1	1	0x0B548C	ハイドラゴン
-0x0B489A	mdb5	term	2	1	0		ヴぁ
 0x0B48A0	mdb5	term	5	1	1	0x0B5490	バードマン
 0x0B48D4	mdb5	term	5	1	1	0x0B5494	グリフォン
 0x0B4970	mdb5	term	5	1	1	0x0B54C0	ハイエルフ
@@ -682,7 +676,6 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B4DE8	mdb6	term	7	1	1	0x0B55E4	ドラゴンバード
 0x0B4E1C	mdb6	term	3	1	1	0x0B5608	ザーゴ
 0x0B4E84	mdb6	term	6	1	1	0x0B5610	ミノドラゴン
-0x0B4EE4	mdb6	term	2	1	0		{1C0}ケ
 0x0B4EEC	mdb6	term	4	1	1	0x0B5638	ラミレス
 0x0B4F88	mdb6	term	7	1	1	0x0B5644	ブルードラゴン
 0x0B4FF0	mdb6	term	7	1	1	0x0B5698	だいにけいたい
@@ -718,27 +711,21 @@ addr	region	style	n	suffix	refs	sources	text
 0x0B5D28	item	term	8	1	0		くろきペンダント
 0x0B5D68	item	term	7	1	0		ちいさいクビワ
 0x0B5DA8	item	term	6	1	0		おちたウデワ
-0x0B5DBC	item	term	2	1	0		ぁぁ
 0x0B5DE8	item	term	7	1	0		だいだのリング
-0x0B5DFC	item	term	2	1	0		mま
 0x0B5E28	item	term	7	1	0		キセイのゆびわ
-0x0B5E42	item	term	2	1	0		Uぁ
 0x0B5E68	item	term	8	1	0		ごうよくチェーン
 0x0B5EA8	item	term	8	1	0		こんじきアーマー
 0x0B5EE8	item	term	6	1	0		かぜのピアス
 0x0B5F28	item	term	7	1	0		しゅしのリング
 0x0B5F68	item	term	8	1	0		いちぞくたましい
-0x0B5F92	item	term	2	1	0		3ェ
 0x0B5FA8	item	term	6	1	0		たみのこころ
 0x0B5FE8	item	term	6	1	0		マゴのユビワ
 0x0B6028	item	term	6	1	0		トキのピアス
 0x0B6068	item	term	7	1	0		こころのクサリ
 0x0B60A8	item	term	7	1	0		こころのピアス
 0x0B60E8	item	term	8	1	0		シンガンのクビワ
-0x0B6112	item	term	2	1	0		Iづ
 0x0B6128	item	term	7	1	0		まぼろしのツノ
 0x0B6168	item	term	7	1	0		なにかのツバサ
-0x0B6190	item	term	2	1	0		ぁめ
 0x0B720C	idesc	len	18	0	1	0x0B5760	コウゲキリョクがすこしつよくなります
 0x0B7230	idesc	len	14	0	1	0x0B57A0	コウゲキリョクがアップします
 0x0B724C	idesc	len	18	0	1	0x0B57E0	とってもコウゲキリョクがアップします

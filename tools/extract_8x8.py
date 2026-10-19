@@ -181,6 +181,8 @@ EXCLUDED = (
     (0x0BAC20, 0x0BAC40),   # script data (decodes as "1 " and junk)
     (0x0BCB60, 0x0BCC28),   # input-grid glyph-code lists (data)
     (0x0A95BC, 0x0A9690),   # password-checksum blob between shop messages
+    (0x0A8DE4, 0x0A902A),   # password-input ASCII/glyph tables (before CL/BS/OK)
+    (0x0A9EE0, 0x0AA000),   # shop-region pointer/keyboard data block
 )
 CLEAN_OK = ("net", "report", "shop", "item", "map", "battle")  # + mdb*
 
@@ -318,6 +320,14 @@ def extent(p):
     return None
 
 
+def at_name_pos(p):
+    """True when p sits on a monster-DB record start (name field position)."""
+    for mlo, mhi, stride in MDB_WALKS:
+        if mlo <= p < mhi and (p - mlo) % stride == 0:
+            return True
+    return False
+
+
 def accept(p, codes, text):
     refd = p in refs or p in lenmap or p in walk_names
     reg = region(p)
@@ -332,6 +342,11 @@ def accept(p, codes, text):
         return refd or p in MANUAL_STARTS
     if reg == "other":
         return False
+    if reg == "item" and (p - 0x0B5728) % 0x40:
+        return False  # item names live at 0x40-stride record starts only
+    if reg.startswith("mdb") and len(codes) == 2 and not refd \
+            and w(p - 2) == 0 and w(p + 4) == 0 and not at_name_pos(p):
+        return False  # per-record parameter field between two terminators
     if refd:
         if unmapped_count(codes) >= 2 and pauld == 0 and not is_pool(p):
             return False
@@ -366,6 +381,9 @@ for p in starts:
         if reg.startswith("mdb"):
             if codes == [0x00E0, 0x0080]:
                 continue  # constant per-record parameter field (decodes as ヴめ)
+            if len(codes) == 2 and codes[0] in (0x00E0, 0x0180, 0x01C0) \
+                    and codes[1] in (0x0040, 0x0080, 0x00A0):
+                continue  # same field family in the other DBs (百ケ / ヴぁ / {1C0}ケ)
             # fusion/monster records: name starts at the first name-like code
             for i, c in enumerate(codes):
                 ch = tab.get(c)
