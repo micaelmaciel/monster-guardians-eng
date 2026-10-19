@@ -10,7 +10,13 @@
   "7": "Retranslation (M16). Added breaks: 2 in r0, 1 in r2; screens run 3 lines/2 pages each (JP 1+2 lines). 'beast combining machine' term kept. No inserts.",
   "8": "Retranslation (M16). 7537:0x22 passes through; no added breaks (JP 7530s map 1:1). 'Legendary Beasts' plural matches msgs 31/47 EN. Red span only in L8? none here.",
   "9": "Retranslation (M16). 7539 pairs pass through; r0 = standalone name card. 753E beast-name inserts (0x8, 0x6, 0x7) keep their red spans; 12-wide reserve respected ('Beast ' + insert = 28, insert+r4 = 16, insert7+r5 = 14). Added breaks in r1 and r3. JP leaves the opening quote unclosed; EN closes it at r5 = '!\"'.",
-  "10": "Retranslation (M16). 753E insert 0x8 red-wrapped; the JP 7530 right before it forces the insert onto its own line ('Legendary Beast ' ends the seg). Screen 1 = 5 lines/3 pages (JP 4 lines/2): 20+29/6/26/24/18, both added breaks necessary (no word fits the >30 remainder). Screen 2 maps 1:1 (2 lines). 'and foil his plan' for 野望を阻止."
+  "10": "Retranslation (M16). 753E insert 0x8 red-wrapped; the JP 7530 right before it forces the insert onto its own line ('Legendary Beast ' ends the seg). Screen 1 = 5 lines/3 pages (JP 4 lines/2): 20+29/6/26/24/18, both added breaks necessary (no word fits the >30 remainder). Screen 2 maps 1:1 (2 lines). 'and foil his plan' for 野望を阻止.",
+  "11": "Retranslation (M17). [7540] narration: 'them' for the player. r0 supplies the leading space after the name (6+23 = 29, 1 line). 1 added break in each of r1/r2/r3 (JP has none): r1 stacks the 'Suddenly...' sentence 2 lines; Zargo/Ramires lines split at the JP ・・・ cadence.",
+  "12": "Retranslation (M17). 7537:0x27/0x28/0x29 pass through. 2 added breaks (end of r0, r1) -> 3 lines/2 pages vs 2 JP lines. Screen 2 maps 1:1 (25+23).",
+  "13": "Retranslation (M17). 7537:0x2A/0x2B + 7534:0x1 pass through. Red span kept on 'power' only. r2/r3/r4/r5/r6 split so the 7530s map to: 'Beringham: \"Then,' / 'to grant even greater power, I' (28) / 'myself...\"'. Screen 3: 'With that, Beringham' / 'went into the beast' / 'combining machine.' (3 lines/2 pages vs JP 2). 3 added breaks total.",
+  "14": "Retranslation (M17). Dying stutter kept as 'Da...' + 'damn you' (JP お・・・おのれ). 7534:0x5 passes through. No added breaks. Quote stays open into L15 (closing 」 is in L15 r0).",
+  "15": "Retranslation (M17). Red span on Ignis. 'Inside' for その先には; passive kept ('was already put'; the space after 'Inside,' is supplied by r1). 3 added breaks (r4, r5 x2). Screens 3+3 lines = 2 pages each (JP 1 each).",
+  "16": "Retranslation (M17). Single run; 2 added breaks -> 3 lines/2 pages (JP 2 lines). 'burst into flames' for 火を噴き; term 'beast combining machine' kept."
  },
  "0": [
   ": \"Haa haa!\"",
@@ -118,5 +124,46 @@
   "The only one who can use",
   "this beast is you.",
   "Head to the old castle ruins\nand foil his plan!\""
+ ],
+ "11": [
+  " came to the courtyard,",
+  "Suddenly Zargo and Ramires\nappeared before them.",
+  "Zargo: \"This time...\nI'm serious!\"",
+  "Ramires: \"I won't...\nhold back!\""
+ ],
+ "12": [
+  "Back at Beringham's,\n",
+  "Zargo and Ramires\n",
+  "came crawling back.",
+  "Beringham: \"Pathetic lot.",
+  "Get in there, you two!\""
+ ],
+ "13": [
+  "Beringham: \"Curse you...\n",
+  "Combining small fry only\nyields this much strength!\"",
+  "Beringham: \"Then,",
+  "to grant even greater ",
+  "power",
+  ", ",
+  "I myself...\"",
+  "With that, Beringham",
+  "went into the beast\ncombining machine."
+ ],
+ "14": [
+  "Beringham: \"Da... ",
+  "damn you",
+  "With this...",
+  "I..."
+ ],
+ "15": [
+  "will be the strongest...\"",
+  "Inside, ",
+  "Ignis",
+  " was already",
+  "put into the beast combining\nmachine.",
+  "Dragging his body, Beringham\nwent into the beast\ncombining machine."
+ ],
+ "16": [
+  "The beast combining machine\nburst into flames, engulfing\nthe old castle in an instant!"
  ]
 }
