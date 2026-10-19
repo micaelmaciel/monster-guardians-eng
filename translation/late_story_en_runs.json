@@ -20,7 +20,13 @@
   "17": "Retranslation (M18). [7540] narration; r1 supplies the space after the name (6+' did not flee,' = 20). 1 added break in r2; the JP 7530s map 1:1 otherwise. 4 lines/2 pages vs JP 3 lines.",
   "18": "Retranslation (M18). 7538:0x2C,0x2D pass through. [7540] + ' was remembering.' (23). No added breaks: JP 7530 maps 1:1. 1+2 lines.",
   "19": "Retranslation (M18). Flashback: 'Winslow' name card + quote (L9 precedent). 1 added break in r3 (term 'the Legendary Beast Tamer's Takt' is 30 wide -> 23+18); [7540] + 's heart was seized by' (6+22=28). Screen 2 = 3 lines/2 pages vs JP 2.",
-  "20": "Retranslation (M18). Narration reordered so EN leads with Canon (JP leads with the grudge phrase); 'their younger brother' matches L5's approved phrasing (Winslow II). 2 added breaks in r1/r2. Screens 3+3 lines = 2 pages each (JP 2+2)."
+  "20": "Retranslation (M18). Narration reordered so EN leads with Canon (JP leads with the grudge phrase); 'their younger brother' matches L5's approved phrasing (Winslow II). 2 added breaks in r1/r2. Screens 3+3 lines = 2 pages each (JP 2+2).",
+  "21": "Retranslation (M19). [7540] name + 's hand let go, and' (6+21=27); r1 keeps 'the Beast Tamer's Takt' (JP has the short form here, no 伝説の). No added breaks; JP 7530 maps 1:1. 2 lines/1 page.",
+  "22": "Retranslation (M19). Memory quote: r0 = opening quote alone (name card + 7530 in JP); 753F:0 = 'I' (WORD_W = 1), the following space is supplied by r1; 7535 style controls kept around the insert. 'killed him' = King Winslow (male, L19). r0-r2 = 1 line (JP same); r3/r4 have 1 added break each -> 2+2 lines.",
+  "23": "Retranslation (M19). No added breaks (JP 7530 maps 1:1): 'Smoke wrapped the old castle, / its outer walls collapsed.' 2 lines/1 page.",
+  "24": "Retranslation (M19). 7537:0x2E passes through. 2 added breaks in r0 (3 lines/2 pages vs JP 2). Name card pattern again: 'Kurimuto' + break, then the quote split as r2 (opening quote alone) and r3 ('...?'); [7540] sits between them in JP and is kept.",
+  "25": "Retranslation (M19). 'the burning castle' for 炎に包まれていた城. No added breaks; 2 lines/1 page.",
+  "26": "Retranslation (M19). 1 added break in r0 ('...ruins,/searching for' + '###### among the rubble.'); r2/r3 1 added break each. Screens: 3+2+2 lines (JP 2+2+2). Term 'the Takt' and 'beast combining machine' kept."
  },
  "0": [
   ": \"Haa haa!\"",
@@ -195,5 +201,37 @@
   "against the Legendary\nBeast Tamer,",
   "what did Canon do to\ntheir younger brother,",
   "King Winslow...?"
+ ],
+ "21": [
+  "'s hand let go, and",
+  "the Beast Tamer's Takt fell."
+ ],
+ "22": [
+  "\"",
+  " killed him",
+  "...\"",
+  "Flames spread through the\nwhole room, and",
+  "'s body too was\nengulfed in flames."
+ ],
+ "23": [
+  "Smoke wrapped the old castle,",
+  "its outer walls collapsed."
+ ],
+ "24": [
+  "Kurimuto: \"That old beast\ncombining machine was forced\nto run. This is the result!\"",
+  "Kurimuto",
+  "\"",
+  "...?\""
+ ],
+ "25": [
+  "Just then, the burning castle",
+  "came crumbling down."
+ ],
+ "26": [
+  "Kurimuto walked the ruins,\nsearching for",
+  " among the rubble.",
+  "And he found the Takt,\nburned black by the fire.",
+  "Kurimuto looked at the Takt",
+  "and was certain."
  ]
 }

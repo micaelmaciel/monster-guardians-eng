@@ -2084,6 +2084,337 @@
      "en": "King Winslow...?"
     }
    ]
+  },
+  {
+   "message": 21,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "'s hand let go, and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "the Beast Tamer's Takt fell."
+    }
+   ]
+  },
+  {
+   "message": 22,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xFFFF"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753F",
+     "params": [
+      "0x0"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " killed him"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7535",
+     "params": [
+      "0x1",
+      "0xFFFF"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "...\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Flames spread through the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "whole room, and"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "'s body too was"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "engulfed in flames."
+    }
+   ]
+  },
+  {
+   "message": 23,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Smoke wrapped the old castle,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "its outer walls collapsed."
+    }
+   ]
+  },
+  {
+   "message": 24,
+   "items": [
+    {
+     "type": "ctl",
+     "code": "0x7537",
+     "params": [
+      "0x2E"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto: \"That old beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "combining machine was forced"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "to run. This is the result!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Kurimuto"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "...?\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    }
+   ]
+  },
+  {
+   "message": 25,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Just then, the burning castle"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "came crumbling down."
+    }
+   ]
+  },
+  {
+   "message": 26,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Kurimuto walked the ruins,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 0,
+     "en": "searching for"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": " among the rubble."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "And he found the Takt,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": [],
+     "added": true
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "burned black by the fire."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto looked at the Takt"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "and was certain."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    }
+   ]
   }
  ]
 }
