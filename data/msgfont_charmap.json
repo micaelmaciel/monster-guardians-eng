@@ -5,7 +5,7 @@
  "space_code": 49,
  "notes": {
   "glyph_format": "18B/glyph: 8B rows0-7 left cols(MSB=left), 8B col8(bit7 each row), 1B row8 left, 1B row8 col8",
-  "duplicates": "4/48=ー, 49=space(blank), 1/141=ン, 59/76=る, 82=ボ 88=ポ, 158/302=魔, 159/178/303=獣, 185=グ, 186/221=シ, 214/291=へ, 206/68=除, 267/316=技能 dup(267=技,316=能), 292=撃 dup of 58, 313/316=能",
+  "duplicates": "4/48=ー, 49=space(blank), 1/141=ン, 59/76=る, 82=ボ 88=ポ, 158/302=魔, 159/178/303=獣, 185=グ, 186=ニ, 221=シ, 214/291=へ, 206/68=除, 267/316=技能 dup(267=技,316=能), 292=撃 dup of 58, 313/316=能",
   "uncertain": "166 read as 砦 (word '砦備' unclear, likely typo); 168 read as 塞 (城塞); 88 could be ボ in msg79 (ポコれ/ボコれ)",
   "status_list": "strings 156-168 are the 13 status labels identical to the bigfont status word list (0xD30F4): 生命 耐久 攻撃 防御 行動 知識 必殺技 反撃 索敵 従順 命中 回避 技能",
   "game_typos": "msg11/75 '排まえる' should be 排除する; msg26/85 'あ加できない' should be あつかえない(扱えない)"
@@ -197,7 +197,7 @@
   "183": "放",
   "184": "ミ",
   "185": "グ",
-  "186": "シ",
+  "186": "ニ",
   "187": "砂",
   "188": "漠",
   "189": "廃",

@@ -15,9 +15,32 @@ every decided term and every piece of user feedback. Companion docs:
 - Tone: earnest 2001-era kids'/teens' fantasy adventure. The story mode
   narration is epic and solemn (war, gods, legendary beasts); in-game
   dialogue is lighter (comedy sidekicks, thugs). Preserve the contrast.
-- Two text subsystems: (1) 8×8 system/dialogue strings (2,223), (2) 16×11
-  "bigfont" story/cutscene messages (63). Milestones so far cover the
-  bigfont story text only.
+- Three text subsystems, all extracted (2026-10-19): (1) 8×8 system/UI
+  strings (1,215 corpus rows / 855 unique), (2) 16×11 "bigfont"
+  story/cutscene messages (63 early + 33 late + 13 status words + R1
+  support strings), (3) the field **message box** (169 strings, own 9×9
+  font). Story M1–M9 cover bigfont; the message box is translated in
+  `translation/msgfont_en.tsv` (M11); the 8×8 corpus and the story
+  retranslation follow.
+- Note: the message-box font's glyph 186 is ニ (not シ) → msg 61 is
+  `イグニスを倒せ!` = **Ignis**, the story's final boss.
+
+## Display constraints (message box, 169 strings)
+
+- Box art 128×24 px inside two 64×32 OBJ sprites; interior exactly 20 px
+  = **2 lines of 10 px pitch** (JP: wrap after **11 glyphs** on line 1,
+  12 on line 2; measured in-game on msg 154).
+- Planned patch (see WIKI.md): relocate font store + add ASCII glyphs,
+  advance 10 → 9 px, wrap on spaces at 13 glyphs/line, optional 3rd line
+  (box art redrawn ~8 px taller in the same OBJ bounds).
+- **EN budget: ≤ 39 chars/string (3 lines × 13)**; keep the string's own
+  header/body split (e.g. `Goal:` objectives) since the layout is
+  automatic. Longest EN string in the pass is 40 (flagged); no manual
+  line-break codes exist in this system — the engine wraps by count.
+- Term locks: Order (命令), Goal (クリア条件 battle objectives; the
+  standalone label stays "Clear Condition"), Battle Over (戦闘終了),
+  Player Points, link (通信), deploy (出撃), in training (修行中),
+  Eliminate (排除), Pummel (ボコれ), Item/Flee/Defend/Wait.
 
 ## Display constraints (bigfont story text)
 
@@ -125,7 +148,7 @@ every decided term and every piece of user feedback. Companion docs:
 | フフフ | "Heh heh heh..." | Beringham's laugh; inside a `7535`/`7536` white-style span (msg 40). |
 | ヴァンダム城 | Vandam Castle | msg 23 caption, msgs 24+. |
 | ウィンスロー | Winslow | ウィンスローのご子息 = "son of Winslow" (msg 21 via 753F); ウィンスロー二世 = "Winslow II" (msg 24). |
-| 0x753F insert | [canned word] | One occurrence: ご子息 "son" (msg 21). **Drop the control; carry the word as plain EN text.** |
+| 0x753F insert | [canned word] | Word-insert table `0xC73F0`: 4 slots × 2 gender variants (僕/私, ご子息/ご息女, 伝説の魔獣使い ×2, 彼/彼女); the engine picks `slot*2 + gender`. **Keep the control in the stream; localize the table** (supersedes the earlier "drop the control" note — hardcoding would lose the gender variant). |
 | 0x753E insert | [beast name] | Beast-name inserts (msgs 31/32): **keep the control in the stream** — the name is dynamic (beast table, still JP until the monster-names milestone). EN is worded so the name slot reads naturally. |
 | 0x7540 insert | [player name] | Keep as variable `{NAME}`; never translate. QA sim width = 6 chars. |
 

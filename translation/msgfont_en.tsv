@@ -1,0 +1,170 @@
+idx	addr	jp	en	len
+0	0x0CC92C	命令を決めてください	Choose an order.	16
+1	0x0CC942	指示の対象を決めてください	Choose the target.	18
+2	0x0CC95E	全部のモンスターに指示を出します	Order all monsters.	19
+3	0x0CC980	モンスター個別に指示を出します	Order each monster.	19
+4	0x0CC9A0	どのモンスターを狙うか決めてください	Choose a target monster.	24
+5	0x0CC9C6	コマンド対象モンスターを決めてください	Choose the target monster.	26
+6	0x0CC9EE	戦闘終了	Battle Over	11
+7	0x0CC9F8	クリア条件	Clear Condition	15
+8	0x0CCA04	ー クリア条件 ー   全ての敵を倒す	[Clear Condition] Defeat all enemies.	37
+9	0x0CCA2C	ー 命令：戦え ー   敵をみつけて攻撃する	[Order: Attack] Find and attack foes.	37
+10	0x0CCA5A	ー 命令：待機 ー   その場で立ち止まる	[Order: Wait] Hold your position.	33
+11	0x0CCA86	ー 命令：排除 ー   敵を指定して排まえる	[Order: Eliminate] Hunt down the target.	40
+12	0x0CCAB4	ー 命令：アイテム ー アイテムを拾いにいく	[Order: Item] Go and pick up items.	35
+13	0x0CCAE2	ー 命令：逃げる ー  敵から逃げる	[Order: Flee] Run from the enemy.	33
+14	0x0CCB08	ー 命令：守れ ー   ガードして攻撃をかわす	[Order: Defend] Guard and dodge attacks.	40
+15	0x0CCB38	ー 命令：ボコれ ー  集中攻撃	[Order: Pummel] Focus your attacks.	35
+16	0x0CCB5A	プレイヤーポイントが足りません	Not enough Player Points.	25
+17	0x0CCB7A	対象となるモンスターがいません	No target monster.	18
+18	0x0CCB9A	通信準備ができたらボタンを押してください	Press a button when ready to link.	34
+19	0x0CCBC4	通信できませんでした	Link failed.	12
+20	0x0CCBDA	通信中	Linking...	10
+21	0x0CCBE2	無制限クラス      料金０Ｇ	Unlimited Class    Fee 0G	25
+22	0x0CCC04	ＬＶ５１以上クラス   料金３００Ｇ	Lv 51+ Class       Fee 300G	27
+23	0x0CCC2A	ＬＶ３１～ＬＶ５０クラス料金６０Ｇ	Lv 31-50 Class     Fee 60G	26
+24	0x0CCC4E	ＬＶ１１～ＬＶ３０クラス料金２０Ｇ	Lv 11-30 Class     Fee 20G	26
+25	0x0CCC72	ＬＶ１～ＬＶ１０クラス 料金１０Ｇ	Lv 1-10 Class      Fee 10G	26
+26	0x0CCC96	あ加できないモンスターがパーティーに入っています	Your party has a monster you can't use.	39
+27	0x0CCCC8	対戦成績 勝   負   引き分け	Battle Record  Win Loss Draw	28
+28	0x0CCCEC	０１２３４５６７８９	0123456789	10
+29	0x0CCD02	プレイヤーポイントが足りません	Not enough Player Points.	25
+30	0x0CCD22	モンスターを選んでください	Choose a monster.	17
+31	0x0CCD3E	指示対象を決めてください	Choose the target.	18
+32	0x0CCD58	命令を決めてください	Choose an order.	16
+33	0x0CCD6E	全部のモンスターに指示を出します	Order all monsters.	19
+34	0x0CCD90	モンスター個別に指示を出します	Order each monster.	19
+35	0x0CCDB0	対象となるモンスターがいません	No target monster.	18
+36	0x0CCDD0	 クリア条件      戦闘終了	Clear Condition  Battle Over	28
+37	0x0CCDF2	通信中です。Ｂボタンでキャンセルできます	Linking. Press B to cancel.	27
+38	0x0CCE1C	通信エラーです。ケーブルを確認してください	Link error. Check the cable.	28
+39	0x0CCE48	通信準備ができたらＡボタンを押してください	Press A when ready to link.	27
+40	0x0CCE74	  相手の作戦中！	  Opponent is planning!	23
+41	0x0CCE88	【クリア条件】    行く手を阻む魔獣を殲滅	Goal: Beat the beasts in your way.	34
+42	0x0CCEB6	【クリア条件】    襲いくる魔獣達を倒せ！	Goal: Defeat the attacking beasts!	34
+43	0x0CCEE4	【クリア条件】    追手の魔獣を全滅せよ！	Goal: Wipe out the pursuing beasts!	35
+44	0x0CCF12	【クリア条件】    追手の魔獣を全滅せよ！	Goal: Wipe out the pursuing beasts!	35
+45	0x0CCF40	【クリア条件】    敵の魔獣の全滅！	Goal: Annihilate the enemy beasts!	34
+46	0x0CCF68	【クリア条件】    敵の魔獣達を全滅せよ！	Goal: Wipe out all enemy beasts!	32
+47	0x0CCF96	【クリア条件】    砦備の魔獣を倒せ！	Goal: Defeat the fort's beasts!	31
+48	0x0CCFC0	【クリア条件】    城塞の魔獣を倒せ！	Goal: Defeat the citadel beasts!	32
+49	0x0CCFEA	【クリア条件】    城塞の魔獣の殲滅！	Goal: Wipe out the citadel beasts!	34
+50	0x0CD014	【クリア条件】    敵の魔獣達を全滅せよ！	Goal: Wipe out all enemy beasts!	32
+51	0x0CD042	【クリア条件】    サーゴを倒せ！	Goal: Defeat Zargo!	19
+52	0x0CD068	【クリア条件】    岩の番人達の殲滅！	Goal: Annihilate the rock guardians!	36
+53	0x0CD092	【クリア条件】    森の先住者を倒せ！	Goal: Defeat the forest dwellers!	33
+54	0x0CD0BC	【クリア条件】    魔獣たちを倒せ！	Goal: Defeat the beasts!	24
+55	0x0CD0E4	【クリア条件】    癒った兵士の殲滅！	Goal: Annihilate the healed soldiers!	37
+56	0x0CD10E	【クリア条件】    待ち伏せた魔獣を倒せ！	Goal: Defeat the ambushing beasts!	34
+57	0x0CD13C	【クリア条件】    敵の放った魔獣を倒せ！	Goal: Defeat the enemy's beasts!	32
+58	0x0CD16A	【クリア条件】    サーゴを倒せ！	Goal: Defeat Zargo!	19
+59	0x0CD190	【クリア条件】    ラミレスを倒せ！	Goal: Defeat Ramires!	21
+60	0x0CD1B8	【クリア条件】    魔獣を倒せ！	Goal: Defeat the beast!	23
+61	0x0CD1DC	【クリア条件】    イグニスを倒せ！	Goal: Defeat Ignis!	19
+62	0x0CD204	【クリア条件】    追手の魔獣を殲滅せよ！	Goal: Annihilate the pursuers!	30
+63	0x0CD232	【クリア条件】    砂漠の魔獣達を倒せ！	Goal: Defeat the desert beasts!	31
+64	0x0CD25E	【クリア条件】    廃墟の魔獣達を倒せ！	Goal: Defeat the ruin beasts!	29
+65	0x0CD28A	【クリア条件】    敵の追跡者を倒せ！	Goal: Defeat the enemy trackers!	32
+66	0x0CD2B4	【クリア条件】    敵の見張りを倒せ！	Goal: Defeat the enemy lookouts!	32
+67	0x0CD2DE	【クリア条件】    サーゴを倒せ！	Goal: Defeat Zargo!	19
+68	0x0CD304	【クリア条件】    ラミレスを倒せ！	Goal: Defeat Ramires!	21
+69	0x0CD32C	【クリア条件】    敵の合成魔獣を倒せ！	Goal: Defeat the combined beast!	32
+70	0x0CD358	【クリア条件】    ベリンガムを倒せ！	Goal: Defeat Beringham!	23
+71	0x0CD382	【クリア条件】    敵最終形態の魔獣を倒せ	Goal: Defeat the final-form beast!	34
+72	0x0CD3B0	【クリア条件】    現れた魔獣達の殲滅！	Goal: Annihilate the beasts!	28
+73	0x0CD3DC	 【命令：戦え】   敵をみつけて攻撃する	[Order: Attack] Find and attack foes.	37
+74	0x0CD408	 【命令：待機】   その場で立ち止まる	[Order: Wait] Hold your position.	33
+75	0x0CD432	 【命令：排除】   敵を指定して排まえる	[Order: Eliminate] Hunt down the target.	40
+76	0x0CD45E	 【命令：アイテム】 アイテムを拾いにいく	[Order: Item] Go and pick up items.	35
+77	0x0CD48A	 【命令：逃げる】  敵から逃げる	[Order: Flee] Run from the enemy.	33
+78	0x0CD4AE	 【命令：守れ】   ガードして攻撃をかわす	[Order: Defend] Guard and dodge attacks.	40
+79	0x0CD4DC	 【命令：ポコれ】  集中攻撃	[Order: Pummel] Focus your attacks.	35
+80	0x0CD4FC	無制限級         料金０Ｇ	Unlimited Class     Fee 0G	26
+81	0x0CD520	レベル５１以上級     料金３００Ｇ	Level 51+ Class     Fee 300G	28
+82	0x0CD548	レベル３１～レベル５０級 料金６０Ｇ	Level 31-50 Class   Fee 60G	27
+83	0x0CD56E	レベル１１～レベル３０級 料金２０Ｇ	Level 11-30 Class   Fee 20G	27
+84	0x0CD594	レベル１～レベル１０級  料金１０Ｇ	Level 1-10 Class    Fee 10G	27
+85	0x0CD5BA	あ加できないモンスターがパーティーに入っています	Your party has a monster you can't use.	39
+86	0x0CD5EC	対戦成績  勝  負  引き分け	Battle Record  Win Loss Draw	28
+87	0x0CD60E	０１２３４５６７８９	0123456789	10
+88	0x0CD624	記録が破壊されています 削除完了しました	Data is corrupted. Deletion complete.	37
+89	0x0CD64E	データをセーブしますか はい  いいえ	Save data?  Yes  No	19
+90	0x0CD676	データをセーブしました	Data saved.	11
+91	0x0CD68E	残念ですがデータはセーブできないようです	Sorry, can't save the data.	27
+92	0x0CD6B8	ワールドマップへ切替えます	Switching to World Map.	23
+93	0x0CD6D4	ブリーフィングへ切替えます	Switching to Briefing.	22
+94	0x0CD6F0	モンスター管理へ切替えます	Switching to Monsters.	22
+95	0x0CD70C	パーティ編成へ切替えます	Switching to Party.	19
+96	0x0CD726	アイテム管理へ切替えます	Switching to Items.	19
+97	0x0CD740	システム処理へ切替えます	Switching to System.	20
+98	0x0CD75A	プレイヤーの名前を変更します	Change the player's name.	25
+99	0x0CD778	メッセージ表示を行います	Show messages.	14
+100	0x0CD792	通信イベント中のパーティ状態を表示します	Show party status during links.	31
+101	0x0CD7BC	攻略に必要なモンスターの情報を表示します	Show info on monsters you need.	31
+102	0x0CD7E6	モンスターパラメータを確認します	Check monster stats.	20
+103	0x0CD808	モンスターの名前変更が行えます	Rename a monster.	17
+104	0x0CD828	モンスターの名前変更は、只今行えません	Can't rename monsters now.	26
+105	0x0CD850	出撃設定にできます	Can be deployed.	16
+106	0x0CD864	このパーティが戦闘を行います	This party will fight.	22
+107	0x0CD882	修行中の為、出撃設定にはできません	In training: can't deploy.	26
+108	0x0CD8A6	編成されていないので出撃設定にはできません	Not in a party: can't deploy.	29
+109	0x0CD8D2	パーティ名未設定の為、出撃設定できません	No party name: can't deploy.	28
+110	0x0CD8FC	パーティ名を設定します	Set the party name.	19
+111	0x0CD914	パーティ名を変更します	Change the party name.	22
+112	0x0CD92C	修行中の為、名前の変更は行えません	In training: can't rename.	26
+113	0x0CD950	パーティ編成を行います	Set up the party.	17
+114	0x0CD968	修行中の為、編成は行えません	In training: can't edit party.	30
+115	0x0CD986	パーティに加えることができます	Can be added to the party.	26
+116	0x0CD9A6	位置変更／パーティから外せます	Reorder / remove from party.	28
+117	0x0CD9C6	修行中の為、操作は行えません	In training: can't change.	26
+118	0x0CD9E4	アイテムの装備を行います	Equip items.	12
+119	0x0CD9FE	アイテムの装備／解除を行います	Equip / remove items.	21
+120	0x0CDA1E	このアイテムの装備変更は行えません	This item can't be changed.	27
+121	0x0CDA42	モンスターにアイテムを装備します	Equip an item on a monster.	27
+122	0x0CDA64	装備中のアイテムを外します	Remove the equipped item.	25
+123	0x0CDA80	このモンスターには装備できません	This monster can't equip it.	28
+124	0x0CDAA2	このパラメータを強化します	Boost this stat.	16
+125	0x0CDABE	これがなくなるとダウンします	Knocked out when it hits zero.	30
+126	0x0CDADC	ダメージ時のスキが小さくなります	Smaller openings when hit.	26
+127	0x0CDAFE	与えるダメージが大きくなります	Increases damage dealt.	23
+128	0x0CDB1E	受けたダメージを軽減します	Reduces damage taken.	21
+129	0x0CDB3A	移動するスピードが速くなります	Increases movement speed.	25
+130	0x0CDB5A	行動のムダな動作が減ります	Fewer wasted movements.	23
+131	0x0CDB76	必殺技を行いやすくなります	Improves special moves.	23
+132	0x0CDB92	反撃を行いやすくなります	Improves counterattacks.	24
+133	0x0CDBAC	相性の良い敵を選ぶようになります	Picks foes it is strong against.	32
+134	0x0CDBCE	命令に服従しやすくなります	Obeys orders more often.	24
+135	0x0CDBEA	攻撃が命中しやすくなります	Improves attack accuracy.	25
+136	0x0CDC06	攻撃を回避しやすくなります	Improves evasion.	17
+137	0x0CDC22	排除の成功する確率がアップします	Boosts eliminate success.	25
+138	0x0CDC44	データを保存します	Save data.	10
+139	0x0CDC58	いままでのイベントを見ます	View events so far.	19
+140	0x0CDC74	仲間にした事のあるモンスターなどを表示します	Show monsters you recruited.	28
+141	0x0CDCA2	サウンド関連の調整を行います	Adjust sound settings.	22
+142	0x0CDCC0	メッセージの表示スピードを変更します	Change message speed.	21
+143	0x0CDCE6	自分のモンスターにマークをつけます	Mark your own monsters.	23
+144	0x0CDD0A	ヘルプの自動表示を行うか設定します	Set auto-help on or off.	24
+145	0x0CDD2E	出撃タイプを選択します	Choose the deploy type.	23
+146	0x0CDD46	音楽のＯＮ／ＯＦＦを設定します	Set music ON / OFF.	19
+147	0x0CDD66	効果音のＯＮ／ＯＦＦを設定します	Set sound ON / OFF.	19
+148	0x0CDD88	データを保存するファイルを選択してください	Choose a file to save.	22
+149	0x0CDDB4	見たいイベントを選択してください	Choose an event to view.	24
+150	0x0CDDD6	魔獣モンスターを選択してください	Choose a beast monster.	23
+151	0x0CDDF8	全ての保存データのクリアを行います	Erase all saved data.	21
+152	0x0CDE1C	パスワードの削除を行います	Delete the password.	20
+153	0x0CDE38	前回の続きからはじめます	Continue from last save.	24
+154	0x0CDE52	セーブデータが存在しません	There is no save data.	22
+155	0x0CDE6E	０１２３４５６７８９	0123456789	10
+156	0x0CDE84	生命	Life	4
+157	0x0CDE8A	耐久	Durability	10
+158	0x0CDE90	攻撃	Attack	6
+159	0x0CDE96	防御	Defense	7
+160	0x0CDE9C	行動	Agility	7
+161	0x0CDEA2	知識	Knowledge	9
+162	0x0CDEA8	必殺技	Special	7
+163	0x0CDEB0	反撃	Counter	7
+164	0x0CDEB6	索敵	Recon	5
+165	0x0CDEBC	従順	Obedience	9
+166	0x0CDEC2	命中	Accuracy	8
+167	0x0CDEC8	回避	Evasion	7
+168	0x0CDECE	技能	Skill	5

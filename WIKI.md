@@ -389,7 +389,7 @@ against in-game frames where noted:
 | `0x7538` | **2** | param command (5×). **Fixed 2026-10-18**: 2 params, not 1 — msg 22 desync fix, display-verified in-game (both consumed, prints nothing, frame 19400). Params are consecutive ID pairs: `0031 0030`, `0007 0008`, `000E 000F`, `0012 0013`, `001D 001E` (msgs 22, 28, 35, 44, 55) — likely two related page/event IDs. |
 | `0x7539` | 2 | rare (4×, msgs 32/46; params are consecutive pairs 0xB–0xE, 0x15–0x18 — semantics TBD, pass-through) |
 | `0x753E` | 1 | param command (10×, msgs 31/32/46; params 0–5,8 — **beast-name inserts** inside red spans; the name comes from the beast table. EN **keeps the control** (names stay dynamic); sentences are worded so the slot reads naturally.) |
-| `0x753F` | 1 | word insert (1×, msg 21): prints the canned word ご子息 "son" mid-line — verified in-game, frame 19200. EN drops the control and carries the word as plain text. |
+| `0x753F` | 1 | word insert (1×, msg 21): prints a canned word mid-line — verified in-game, frame 19200 (ご子息 "son"). **Decision (2026-10-19, supersedes "drop the control"): keep the control and localize the word table** at `0xC73F0` — the table is 4 slots × 2 gender variants (僕/私, ご子息/ご息女, 伝説の魔獣使い ×2, 彼/彼女) and the engine picks `slot*2 + player gender`, so hardcoding the word would lose the gender variant. |
 | `0x7540` | 0 | player-name variable insert (30×). Occurs inside red blocks (msg 16: `「[753B][7540][753C]だった！」`) and mid-sentence (`追っ手達が[7540]に手をかけようとした`). Keep verbatim in translation. |
 | `0x7FFF` | 0 | end of message |
 | `0xFFFE`/`0xFFFF` | 0/1 | in-block sentinels/params (msg 2/3 use `7535 0001 FFFF`; 60/62 use `FFFE` + glyphs) |
@@ -828,14 +828,35 @@ Descriptor at `0xCF520`:
 u32 stride=0x12, u32 0x7530, u32 0x7541, ...}`. The store pointer at file
 offset `0xCF528` is the single handle for relocating/extending the font.
 
-**Renderer** at `0x0EC38`: takes a u16 string pointer, draws into
+**Renderer** at `0x0EC38`: takes `(u16 x, u16 y, u16* string)`, draws into
 `0x0203E800` (64 OBJ-sized tiles = the box's two 64×32 halves), glyph
 advance 10 px, line 1 y=6, line 2 y=16, **auto-wraps after 11 glyphs**,
-terminates on `0x7FFF`. The box itself is 4 OBJ 64×32 sprites (tiles
-`0x000/0x020/0x040`, palette 14) at (76,16) and (140,16); EWRAM
-`0x3E000` = border-only box, `0x3E800` = box with text. The 8×8 font
+terminates on `0x7FFF`. Wrap logic in code: `cmp r7,#0xA / bgt` sends the
+12th glyph to line 2; x for line 1 is `8 + 10*col`, line 2 is
+`-102 + 10*col` (i.e. it restarts at x=8); line 2 has no further wrap, so
+it can show 12 glyphs (x=118+9=127 ≤ 128). The box itself is 4 OBJ 64×32
+sprites (tiles `0x000/0x020/0x040`, palette 14) at (76,16) and (140,16);
+EWRAM `0x3E000` = border-only box, `0x3E800` = box with text. The 8×8 font
 cannot draw text into this box; the message font's descriptor/renderer is
 the only path.
+
+**Measured on hardware/emulator (2026-10-19, load screen msg 154
+`セーブデータが存在しません`)**: displayed as `セーブデータが存在しま` (11
+glyphs) + `せん` (2), so the wrap is **11 glyphs on line 1**. The box
+interior is exactly **20 px tall** (rows 78–97 at slot y; line 1 glyph top
+at 78, line 2 at 88, pitch 10) with a 2 px white border — i.e. exactly two
+10-px lines, no room for a third line inside the current art. Total box
+art is 128×24 px inside the 64×32 OBJ sprites. Strings longer than 22–23
+glyphs (msgs 14, 26, 85: 23–24 glyphs) therefore overrun the art in the
+JP original: glyph 23 lands at x=118 (still on the box), glyph 24 at
+x=128 (clipped).
+
+**Consequence for EN.** To fit natural English, the plan is to patch the
+renderer for a narrow advance + word wrap + a third line, and (if the
+third line is used) redraw the box art ~8–10 px taller within the same
+64×32 OBJ bounds. Target budget for the EN pass: **≤39 chars/string
+(3 lines × 13 chars)**; all 169 EN strings are already within that (max
+40). See `translation/msgfont_en.tsv`.
 
 **String table** `0x0CC92C..0x0CDED4`: 169 strings, each `0x7FFF`-
 terminated, pure glyph codes 0–316 (no control codes), 2,603 glyphs total.
@@ -874,26 +895,35 @@ story bigfont / R1 / data).
 **Reading notes / quirks.** The font is first-use ordered, so it contains
 duplicate glyphs: 4/48 = ー, 49 = blank (space), 1/141 = ン, 59/76 = る,
 82 = ボ / 88 = ポ (msg 15/79 renders ポコれ; likely ボコれ), 158/302 = 魔,
-159/178/303 = 獣, 185 = グ, 186/221 = シ, 214/291 = へ, 68/206 = 除,
-58/292 = 撃, 267 = 技 / 316 = 能. Two strings contain **source typos**:
+159/178/303 = 獣, 185 = グ, **186 = ニ** (corrected 2026-10-19 by
+re-rendering the glyph: two horizontal strokes, not シ — so msg 61 is
+`イグニスを倒せ!` = Ignis, matching the story's final boss, not
+"イグシス"), 221 = シ, 214/291 = へ, 68/206 = 除, 58/292 = 撃, 267 = 技 /
+316 = 能, 313 = 識, 314 = 索. Two strings contain **source typos**:
 msg 11/75 `排まえる` (should be 排除する) and msg 26/85 `あ加できない`
 (should be あつかえない/扱えない). One reading is still uncertain:
 code 166 (`砦` by shape; the word `砦備` in msg 47 is otherwise
 unexplained — probably a source typo for 配備/砦塞) and code 168
 (`塞`, word `城塞` in msgs 48/49).
 
-**Translation implication (recorded now, decision later).** The message
-font contains only a *subset* of Latin: A, B, F, G, L, V, N, O, digits
-0–9, `【】！：／～` — no lowercase, no most uppercase, no `.`/`,`/`?`.
-Translating the 169 strings in place would immediately run out of glyphs.
-Options: (a) relocate the 317-glyph store to free space (`0x76765D`),
-append Latin glyphs at 18 B each, update the descriptor's store pointer
-(one u32 at `0xCF528`); (b) keep the store and draw message text with the
-8×8 system instead (needs a different renderer path — the box uses OBJ
-tiles, so probably not); (c) shorten/avoid. The 11-glyph wrap and 2-line
-box also constrain English line length (11 chars/line × 2 lines per page;
-the renderer does not page automatically beyond the 2 lines — the string
-must be split manually). Decided in the translation pass, recorded here.
+**Translation (done 2026-10-19, M11).** All 169 strings translated; see
+`translation/msgfont_en.tsv` (idx/addr/jp/en/len) and
+`translation/milestone-11-messagebox.md` (review table). Terminology:
+命令 = Order, クリア条件 = Clear Condition (battle objectives compressed
+to `Goal:` for width), 戦闘終了 = Battle Over, プレイヤーポイント =
+Player Points, 通信 = link, 出撃 = deploy, 修行中 = in training,
+排除 = eliminate, ボコれ = Pummel. The 13 status labels (156–168) are
+Life/Durability/Attack/Defense/Agility/Knowledge/Special/Counter/Recon/
+Obedience/Accuracy/Evasion/Skill.
+
+**Font/renderer plan (chosen, `(a)+`).** The message font contains only a
+*subset* of Latin (A, B, F, G, L, V, N, O, digits, `【】！：／～`), so the
+store cannot render EN: relocate the 317-glyph store to free space
+(`0x76765D..0x800000`), append an ASCII set (18 B/glyph, 9×9 format, can
+be copied from the 8×8 font's Latin glyphs), update the store pointer u32
+at file offset `0xCF528`. Together with the renderer patch (advance 10 → 9,
+wrap 11 → 13, wrap on spaces, optional line 3 at y=26 with a slightly
+taller box art) this gives the EN budget used above.
 
 ### New-game setup flow and graphics-with-text sweep (2026-10-19)
 
