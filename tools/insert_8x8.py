@@ -241,6 +241,32 @@ def encode_movs(rom, off, value):
 DRAW_FN = 0x3D114
 WRAP_SPAN = 0x40
 
+# Draw-count immediates the dataflow scan cannot reach: the count sits behind a
+# conditional branch / DMA wait loop before the draw call, or is fed to a
+# custom buffer writer instead of DRAW_FN.  They are still real `movs` counts
+# and must be widened when the row relocates to a longer EN string.
+# addr -> (count-site offsets, ...) holding the JP glyph count
+EXTRA_COUNT_SITES = {
+    "0x0BD3A2": (0x4893A, 0x4D5C0, 0x4DB74),   # はい Yes (dialog widgets)
+    "0x0BD3D0": (0x5EBFE,),                    # なまえ Name (combine result)
+    "0x0BE298": (0x2971E,),                    # たいき Idle (training row)
+    "0x0BE29E": (0x29748,),                    # しゅつげき Deploy (training row)
+}
+
+
+def add_extra_counts(r, rom):
+    """Merge manual count sites into a row, guarded by the JP immediate."""
+    extra = EXTRA_COUNT_SITES.get(r["addr"])
+    if not extra:
+        return
+    for off in extra:
+        h = _h(rom, off)
+        if (h & 0xF800) != 0x2000 or (h & 0xFF) != r["n_jp"]:
+            raise SystemExit(
+                f"extra count site {off:#x} for {r['addr']}: expected "
+                f"movs #{r['n_jp']}, got {h:#06x}")
+    r["count_sites"] = sorted(set(r.get("count_sites", [])) | set(extra))
+
 
 def _is_bl(h):
     return (h & 0xF800) == 0xF000
@@ -586,6 +612,7 @@ def plan(rows, rom):
                     notes += nt
                 r["count_sites"] = sorted(set(sites))
                 r["count_notes"] = notes
+                add_extra_counts(r, rom)
             else:
                 r["action"] = "blocked"
                 r["why"] = f"slice EN {L} > {n} and no pointer"
@@ -616,6 +643,7 @@ def plan(rows, rom):
                     notes += nt
                 r["count_sites"] = sorted(set(sites))
                 r["count_notes"] = notes
+                add_extra_counts(r, rom)
             else:
                 r["action"] = "blocked"
                 r["why"] = f"term EN {L} > {n} and no pointer"
@@ -730,6 +758,8 @@ def report(rows, extra=None):
             | ({"why": r["why"]} if "why" in r else {})
             | ({"new_addr": r["new_addr"]} if "new_addr" in r else {})
             | ({"ptr_hits": len(r.get("ptr_hits", []))})
+            | ({"count_sites": [f"0x{x:06X}" for x in r["count_sites"]]}
+               if r.get("count_sites") else {})
             for r in rows
         ],
         "blocked": [r["addr"] for r in blocked],

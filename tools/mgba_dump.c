@@ -210,6 +210,7 @@ int main(int argc, char** argv) {
             uint32_t off = 0;
             if (addr >= 0x03000000 && addr < 0x03008000) { base = (uint8_t*)gba->memory.iwram; off = addr - 0x03000000; }
             else if (addr >= 0x02000000 && addr < 0x02040000) { base = (uint8_t*)gba->memory.wram; off = addr - 0x02000000; }
+            else if (addr >= 0x06000000 && addr < 0x06018000) { base = (uint8_t*)gba->video.vram; off = addr - 0x06000000; }
             if (base) {
                 const char* stop_env = getenv("MGBA_WATCH_STOP");
                 int stop_val = (stop_env && *stop_env) ? (int)strtol(stop_env, NULL, 0) : -1;
@@ -258,6 +259,11 @@ int main(int argc, char** argv) {
                             uint32_t* e = hist[idx];
                             printf("  H %08X r0=%08X r1=%08X r2=%08X r3=%08X r4=%08X r5=%08X r6=%08X sp=%08X lr=%08X\n",
                                    e[0], e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8], e[9]);
+                        }
+                        uint32_t spv = gba->cpu->gprs[13] & ~3u;
+                        if (spv >= 0x03000000 && spv < 0x03008000) {
+                            uint32_t* st = (uint32_t*)((uint8_t*)gba->memory.iwram + (spv - 0x03000000));
+                            for (int i = 0; i < 160; i++) printf("  STK %08X: %08X\n", spv + i * 4, st[i]);
                         }
                         fflush(stdout);
                         changes++;

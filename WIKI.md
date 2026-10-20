@@ -8,10 +8,11 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: insertion + QA.** 8×8, story, msgfont, status labels and
-  battle command/target label graphics are inserted and building;
-  remaining gaps are the chapter-title card, 64 blocked 8×8 rows, and
-  the full playthrough/release QA. *Three*
+- **Phase: release candidate (2026-10-20).** 8×8, story, msgfont, status
+  labels and battle command/target label graphics are inserted; final
+  patch at `dist/monster-guardians-en.bps` (2,575 patches, 158,005 B,
+  round-trip OK). Non-blocking gaps: chapter-title card, 64 blocked 8×8
+  rows, and the cosmetic combine-card species names. *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
   gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
@@ -142,6 +143,28 @@ milestone.
   **Remaining:** 64 blocked 8×8 rows; chapter-title card;
   full-playthrough QA; release patch. Build (2026-10-20, status +
   dialog): **2,566 patches, BPS 157,659 B, round-trip OK**.
+- **Combine Shop QA + final build (2026-10-20).** Full combine flow
+  verified in mGBA: entry/greeting/menu, monster list, recipe preview,
+  Yes/No confirm, success message and result card (`Name Golem`; the
+  なまえ draw count at `0x5EBFE` is now 4), gold deduction (100G → 80G,
+  not clipped), duplicate-pick warning (`You already picked that one.`)
+  and leave/exit. Added `EXTRA_COUNT_SITES` to `tools/insert_8x8.py`
+  for the four rows whose extra draw sites the dataflow scan cannot see
+  (`0x0BD3A2` Yes, `0x0BD3D0` Name, `0x0BE298` Idle, `0x0BE29E`
+  Deploy); each extra site is guarded by a `movs #n_jp` check, and count
+  sites are recorded per row in `build/patch/8x8_report.json`. The Leo
+  name-copy paths (`0x5508E`/`0x55202`/`0x57E18`, 2-glyph DMA, and
+  `0x57E1A`'s shifted count) remain unresolved and are listed under
+  Open questions. Final build:
+  **2,575 patches, BPS 158,005 B, round-trip OK**
+  (`dist/monster-guardians-en.bps`). Known cosmetic issues, accepted
+  by the user (2026-10-20) as non-blocking: (a) the Yes/No confirm
+  widget renders with no gap ("YesNo"); (b) combine cards show JP
+  species names (e.g. `ミノタウロス`) alongside the translated monster
+  name — that text exists neither as codes in the patched ROM nor in
+  RAM/VRAM, so its source is unidentified. Out-of-gold and
+  deploy-error shop messages are translated but not separately
+  re-verified.
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
@@ -1411,7 +1434,12 @@ needed beyond pointer retargeting.
   repoints `0xC4DD0`/`0xC4E04`, patches the label advance at `0x2F24E`
   (12→8 px), and enforces an 18-glyph description limit. All 13 verified
   on the scene 2 stat panel in mGBA.
-- [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
+- [x] Relocation writer: assemble new ROM copy, retarget pointers, emit
+  BPS (`tools/build_patch.py`; round-trip verified in-process).
+- [x] **Combine Shop QA (2026-10-20)**: entry, greeting, menu, monster
+  list, recipe preview, Yes/No confirm, success/result card, gold
+  deduction, duplicate-pick warning, leave/exit. Extra draw-count
+  sites merged via `EXTRA_COUNT_SITES` in `tools/insert_8x8.py`.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
   delivered 2026-10-17, revs 2–3 after user feedback**. **M3 (story
@@ -1531,6 +1559,13 @@ msg 60 width-foldings) — see
   including the All target box), preserving each block's box style and
   text/shadow/fill indices. Approved abbreviations:
   `Atk/Grd/Run/Itm/Pum/Cap/Out/All`.
+- **Release blockers / nitpicks (user, 2026-10-20):** the missing gap
+  between Yes and No in the confirm widget, and the JP species names on
+  the combine cards, are **not** release blockers. Do not spend further
+  time on cosmetic issues of this size without asking the user first.
+- **QA artifacts location (user, 2026-10-20):** keep savestates, screen
+  dumps and scratch data under `build/qa/` (gitignored), not `/tmp`
+  (wiped mid-session, losing the combine QA chain).
 
 ## Open questions
 
@@ -1560,6 +1595,19 @@ msg 60 width-foldings) — see
   whether a separate Aim/ねらえ command exists outside the radial order
   menu; which commands the msg descriptions 10 `待機` (Wait) and 11
   `排除` (Eliminate) describe.
+- Combine-card species names: where the JP species text (`ミノタウロス`
+  etc., shown on the monster-selection cards and the result/target rows)
+  comes from. It is not present as 16-bit or 8-bit codes in the patched
+  ROM, EWRAM, IWRAM, VRAM or SRAM at draw time. Cosmetic, non-blocking
+  (user decision 2026-10-20); investigate only on request.
+- Combine-shop out-of-gold and deploy-error messages: translated but
+  not separately re-verified in mGBA.
+- Leo name-copy paths unresolved: `0x5508E`/`0x55202`/`0x57E18` DMA
+  only 2 glyphs into the `0x030028A0` party struct (control
+  `0x80000002`; `0x57E1A` uses `movs r2,#4; lsrs #1`), and `0x57738`
+  stores the Leo pointer at struct+0x14 (field +0x12=5 is not a count).
+  Renderer unknown; the hero-select visible-name path
+  (`0x492C4`/`0x49314`, already patched 2→3) is fine.
 
 ## Tool list (with versions)
 

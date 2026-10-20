@@ -120,7 +120,7 @@ addr	n_jp	jp	en
 0x0C6C62	11	ベリンガムを、たおせ！	Defeat Beringham!
 0x0C6C7A	14	さいきょうのてきを、たおせ！	Beat the strongest!
 0x0C6C98	9	ほんきょちにはいる	Enter the base
-0x0C6CAC	9	ごうせいやにはいる	Enter the combine shop
+0x0C6CAC	9	ごうせいやにはいる	Enter shop
 0x0C6CC0	8	ショップにはいる	Enter the shop
 0x0C6CD2	10	とうぎじょうにはいる	Enter the arena
 0x0C6CE8	7	みなとにはいる	Enter the port

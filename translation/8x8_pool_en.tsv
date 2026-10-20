@@ -84,8 +84,8 @@ addr	n_jp	jp	en
 0x0BD758	4	ごうせい	Combine
 0x0BD760	5	みせをでる	Leave
 0x0BD76A	18	どのモンスターをゴウセイするんじゃ？	Which monster to combine?
-0x0BD78E	21	このモンスターとゴウセイするのはどれじゃ？	Combine this with which one?
-0x0BD7B8	35	そのモンスターはもうえらんでおるぞ。⏎ちがうモンスターをえらぶんじゃ。	You already picked that one.⏎Choose a different monster.
+0x0BD78E	21	このモンスターとゴウセイするのはどれじゃ？	Combine this with⏎which one?
+0x0BD7B8	35	そのモンスターはもうえらんでおるぞ。⏎ちがうモンスターをえらぶんじゃ。	You already picked⏎that one. Choose a⏎different monster.
 0x0BD7FE	14	この2タイをゴウセイすると、	These two make a 
 0x0BD81A	10	デンセツのモンスター	legendary 
 0x0BD82E	2	⏎「	⏎"
@@ -93,22 +93,22 @@ addr	n_jp	jp	en
 0x0BD852	9	かかるが、よいな？	. OK?
 0x0BD864	20	それでは、ゴウセイをしてくるとするかの。	Well then, I'll go and⏎combine them.
 0x0BD88C	21	まだ、ごうせいしたいモンスターはおるかの？	Any other monsters you⏎want to combine?
-0x0BD8B6	36	ゴウセイできるモンスターがおらんのぅ。⏎また、きてくれよ。まっておるぞ。	No monsters left to combine.⏎Come again, I'll be here.
+0x0BD8B6	36	ゴウセイできるモンスターがおらんのぅ。⏎また、きてくれよ。まっておるぞ。	No monsters left to⏎combine. Come again,⏎I'll be here.
 0x0BD8FE	39	すまんが、タマゴはゴウセイできんのじゃ。⏎べつのモンスターをえらんでくれんか。	Sorry, but eggs can't be⏎combined. Pick another one.
-0x0BD94C	40	ん？、そいつはいまここにはいないようじゃ。⏎べつのモンスターをえらんでくれんか。	Hm? That one isn't here now.⏎Pick a different monster.
+0x0BD94C	40	ん？、そいつはいまここにはいないようじゃ。⏎べつのモンスターをえらんでくれんか。	Hm? That one isn't⏎here now. Pick a⏎different monster.
 0x0BD99C	42	ん？、Goldがたりんぞ。⏎はらうものがはらえるようになってからきてくれんか⏎のぉ。	Hm? You don't have enough⏎Gold. Come back when you⏎can pay, sonny.
-0x0BD9F0	33	Goldがなくなったようじゃな。⏎また、きてくれよ。まっておるぞ。	Looks like you're out of Gold.⏎Come again, I'll be waiting.
+0x0BD9F0	33	Goldがなくなったようじゃな。⏎また、きてくれよ。まっておるぞ。	Looks like you're out⏎of Gold. Come again,⏎I'll be waiting.
 0x0BDA32	24	そいつとはゴウセイできないようじゃ、すまんのぉ。	Sorry, you can't combine⏎that one.
 0x0BDA62	45	ん？、モンスターがすくなくてゴウセイできんのぅ。⏎モンスターをそろえてからきてくれんかの。	Too few monsters to⏎combine. Get them ready.
-0x0BDABC	45	そいつとゴウセイできるモンスターはいないようじゃ。⏎べつのモンスターをえらんでくれんかの。	No monster can be combined⏎with that one. Pick another.
-0x0BDB16	20	ホッホッホッ、ゴウセイはせいこうじゃ。⏎	Ho ho ho! The combine⏎worked. 
+0x0BDABC	45	そいつとゴウセイできるモンスターはいないようじゃ。⏎べつのモンスターをえらんでくれんかの。	No monster can be⏎combined with that one.⏎Pick another.
+0x0BDB16	20	ホッホッホッ、ゴウセイはせいこうじゃ。⏎	Ho ho ho! The combine⏎worked.⏎
 0x0BDB3E	10	になったようじゃの。	 has been born.
 0x0BDB52	5	みせんたく	Empty
 0x0BDB5C	20	あたらしいじょうほうは、とどいていません	No new information.
 0x0BDB84	21	しゅぎょうからパーティがかえってきています	A party is back.
-0x0BDBAE	21	しゅぎょうちゅうのためしゅつげきできません	Can't deploy during training.
+0x0BDBAE	21	しゅぎょうちゅうのためしゅつげきできません	Can't deploy during⏎training.
 0x0BDBD8	16	パーティがへんせいされていません	No party has been formed.
-0x0BDBF8	29	パーティのナマエがきまっていないため、しゅつげきできません	The party has no name, so it⏎can't deploy.
+0x0BDBF8	29	パーティのナマエがきまっていないため、しゅつげきできません	The party has no⏎name, so it can't⏎deploy.
 0x0BDC32	20	しゅぎょうちゅうのパーティはありません⏎	No party is in training.⏎
 0x0BDC5A	17	しゅぎょうパーティのキカンよてい⏎	Training party return plan⏎
 0x0BDC7C	21	しゅつげきパーティがせっていされていません	No deploy party has been set.
@@ -189,7 +189,7 @@ addr	n_jp	jp	en
 0x0BE62C	29	しゅぎょうちゅうのため⏎しゅつげきせっていには⏎できません	You can't set up a⏎deploy party during⏎training.
 0x0BE666	26	みへんせいのためしゅつ⏎げきせっていにはできま⏎せん	The party isn't formed,⏎so it can't be set to⏎deploy.
 0x0BE69A	33	パーティめいがみせってい⏎のためしゅつげきせっていには⏎できません	The party has no name,⏎so it can't be set to⏎deploy.
-0x0BE6DC	12	アイテムをもっていません	You have no items.
+0x0BE6DC	12	アイテムをもっていません	No items.
 0x0BE6F4	36	しゅぎょうちゅうのモンスター⏎がソウビしているためセンタク⏎できません。	A monster in training is⏎using it, so you can't⏎select it.
 0x0BE73C	21	しゅぎょうちゅうのため⏎ソウビできません。	Can't equip items⏎during training.
 0x0BE766	20	タマゴにはソウビすること⏎はできません。	You can't equip items⏎to an egg.
