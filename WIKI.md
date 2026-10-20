@@ -8,10 +8,10 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: insertion + QA.** 8×8, story, and msgfont text are inserted
-  and building; remaining gaps are battle order labels, unverified
-  status labels, the chapter-title card, 64 blocked 8×8 rows, and the
-  full playthrough/release QA. *Three*
+- **Phase: insertion + QA.** 8×8, story, msgfont and battle command/
+  target label graphics are inserted and building; remaining gaps are
+  unverified status labels, the chapter-title card, 64 blocked 8×8 rows,
+  and the full playthrough/release QA. *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
   gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
@@ -95,11 +95,14 @@ milestone.
   select, battle "Pick order." / "Choose the target.", and the clear
   conditions "Clear Cond. / Battle Over" and "Goal: beat the beasts."
   Build: 2,504 patches, BPS 154,668 B, round-trip OK.
-  **Remaining:** the in-battle order labels (fight/defend/item/flee
-  etc.) are still Japanese and are not in the 169-string msgfont table;
-  status labels 156–168 are encoded but not yet seen on-screen; 64
-  blocked 8×8 rows; chapter-title card; full-playthrough QA; release
-  patch.
+  **Battle labels DONE (2026-10-19, mGBA-verified).** The radial
+  order-menu labels are pre-rendered 32×16 OBJ sprites, not text; all 30
+  style/variant blocks in the brown, teal and cream families (including
+  the "All" target box) are redrawn in English. See "Battle command/
+  target label graphics" below.
+  **Remaining:** status labels 156–168 are encoded but not yet seen
+  on-screen; 64 blocked 8×8 rows; chapter-title card; full-playthrough
+  QA; release patch.
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
@@ -1206,6 +1209,88 @@ pages, `29060` (select レオ), `30060` (answer the rename prompt). Title at
 frame 8500, main menu 12000, load screen 14000, setup screens
 29100–31500.
 
+### Battle command/target label graphics (2026-10-19) — SOLVED
+
+The battle radial order menu is **not** drawn with any of the three text
+systems. Each label is a pre-rendered **32×16 OBJ sprite**: 8 tiles × 32
+bytes = **256 bytes, 4bpp**, uncompressed. The game copies the block
+verbatim to OBJ VRAM; every visible label tile base was matched
+byte-for-byte to its ROM source. Patching the ROM sprite blocks therefore
+needs no code changes.
+
+**Correction to the earlier mapping.** The labels visible in the order
+menu are **Fight, Guard, Flee, Item and Pummel**, plus the cream **"All"**
+target-scope box. The earlier reading "Protect / Aim / Defend / Flee" was
+wrong: `0xEC7D8` is `にげろ` (Flee), not Aim, and `0xEC9D8` is `ボコれ`
+(Pummel), not Defend. There is **no Aim/ねらえ label in this menu**. The
+`ほかく!` (Capture) and `たいいん!` (Leave/Retire) commands exist in the
+teal family, and the cream family has all seven commands plus All.
+
+**Three visual styles, 30 blocks total.** All offsets are ROM file
+offsets; each block is 256 B. "slot" is the logical command slot
+(`A0` Fight, `A8` Guard, `B0` Flee, `B8` Item, `C0` Pummel, `C8`
+Capture, `D0` Leave, `D8` All); it is not necessarily the OAM tile base
+in the other menus.
+
+| style | variant | block contents | text / shadow / fill |
+|---|---|---|---|
+| brown | selected | 5 commands Fight/Guard/Flee/Item/Pummel | 15 / 12 / 3 |
+| brown | unselected | same 5 commands | 5 / none / 3 |
+| teal | selected | 6 commands Fight/Guard/Flee/Item/Capture/Leave | 15 / 12 / 4 |
+| teal | unselected | same 6 commands | 6 / none / 4 |
+| cream | single | 7 commands + All target | 1 / none / 15 |
+
+Brown selected blocks: `0x0EB3D8` Fight, `0x0EB4D8` Guard, `0x0EB5D8`
+Flee, `0x0EB6D8` Item, `0x0EB7D8` Pummel. Brown unselected:
+`0x0EC5D8` Fight, `0x0EC6D8` Guard, `0x0EC7D8` Flee, `0x0EC8D8` Item,
+`0x0EC9D8` Pummel.
+
+Teal selected: `0x0EB8D8` Fight, `0x0EB9D8` Guard, `0x0EBAD8` Flee,
+`0x0EBBD8` Item, `0x0EBCD8` Capture, `0x0EBDD8` Leave. Teal unselected:
+`0x0ECAD8` Fight, `0x0ECBD8` Guard, `0x0ECCD8` Flee, `0x0ECDD8` Item,
+`0x0ECED8` Capture, `0x0ECFD8` Leave.
+
+Cream single: `0x0EBED8` Fight, `0x0EBFD8` Guard, `0x0EC0D8` Flee,
+`0x0EC1D8` Item, `0x0EC2D8` Pummel, `0x0EC3D8` Capture, `0x0EC4D8`
+Leave, `0x0ED538` All (`ぜんたい`).
+
+**English labels:** Fight→`Atk`, Guard→`Grd`, Flee→`Run`, Item→`Itm`,
+Pummel→`Pum`, Capture→`Cap`, Leave/Retire→`Out`, All→`All`. Three letters
+are the practical maximum in a 32×16 box whose rounded interior is 20 px
+on rows 4/11 and 22 px on rows 5–10.
+
+**Implementation.** `tools/insert_battle_labels.py` decodes each 256-byte
+block to a 32×16 index grid, blanks only the old text/shadow **inside the
+rounded interior**, and draws trimmed ASCII glyphs from
+`data/en_glyphs_8x8.json` with a 1 px gap where it fits (0 px otherwise).
+The box border, fill and transparent pixels are preserved. The cream
+style needs the interior-only blanking because its text index `1` is also
+the colour of the dark border: a global colour replacement would erase the
+border. The selected brown/teal labels keep their 1 px shadow; shadow
+pixels at the rounded edge may be clipped just as in the originals.
+`translation/battle_labels_en.tsv` is the 30-row table;
+`tools/build_patch.py` runs the stage after msgfont.
+
+**mGBA verification (2026-10-19).** With `MGBA_STATE_IN` on the battle
+savestate and inputs `50-60:A,100-110:A`:
+- frame 150: five command labels and the cream **All** box all English
+  (`Atk`, `Grd`, `Run`, `Itm`, `Pum`, `All`); all six OAM tile bases
+  (A0/A8/B0/B8/C0/D0) present and matched to the patched ROM blocks.
+- frame 180: selected `Atk`; unselected `Grd`/`Run`/`Itm`/`Pum`; D0 All
+  box has just disappeared (present through frame 160, gone at 170).
+- frame 260 after `RIGHT`: selected `Grd`, unselected `Atk` and the rest
+  English. No crash; PC `0x08010490` / `0x0801048C`.
+- The original capture's D0 All box at frame 180 was therefore a timing
+  difference, not a different sprite.
+
+**Build:** 2,534 patches, BPS **157,955 B**, round-trip OK.
+
+**Not yet observed:** the teal (Capture/Leave) and cream command variants
+have no confirmed on-screen appearance yet; they were patched proactively
+from the contiguous label family. The cream All box is confirmed. The
+msg descriptions 10 `待機` (Wait) and 11 `排除` (Eliminate) still have no
+matching radial label; they may belong to another menu.
+
 ### Compression (T2)
 
 - Text is plain 16-bit codes, uncompressed. No verified compressed asset.
@@ -1269,6 +1354,12 @@ needed beyond pointer retargeting.
   bank 63 + 33 late messages; message font 169 strings; graphics sweep
   clean. The four-kanji species names use codes outside the 8×8 font
   (cut content); parked, not blocking.
+- [x] **Battle command/target label graphics (M22, 2026-10-19)**: 30
+  pre-rendered 32×16 OBJ blocks across the brown/teal/cream families,
+  including the cream "All" target box, redrawn in English and
+  mGBA-verified in the battle order menu.
+  `tools/insert_battle_labels.py` +
+  `translation/battle_labels_en.tsv`.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
@@ -1327,9 +1418,15 @@ needed beyond pointer retargeting.
   insert/pronoun fixes; the 753E name mapping locked
   (`translation/story_insert_names.json`), real-name row checker
   `tools/check_insert_rows.py` (both banks, both genders: no problems);
-  `translation/milestone-21-insert-row-qa.md`. Next: consolidated
-  prose/run-join QA, English glyph strategy (bigfont relocation),
-  relocation writer / BPS build.
+  `translation/milestone-21-insert-row-qa.md`. **M22 (battle command/
+  target labels) delivered 2026-10-19** — all 30 pre-rendered 32×16
+  label blocks (brown 5 commands selected/unselected, teal 6 commands
+  selected/unselected, cream 7 commands + All target) redrawn in English;
+  mGBA-verified in the order menu (frames 150/180/260), including the
+  cream All box. `tools/insert_battle_labels.py`,
+  `translation/battle_labels_en.tsv`. Next: verify status labels
+  156–168 on-screen, the chapter-title card, the 64 blocked 8×8 rows,
+  full-playthrough QA, and the release patch.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);
@@ -1378,6 +1475,12 @@ msg 60 width-foldings) — see
   review (cohesion, punctuation, repetition) and a run-join spacing check
   — runs concatenate raw in engine order, and the current exporter does
   not detect a missing space between runs.
+- Battle labels (2026-10-19): the radial order menu uses pre-rendered
+  32×16 OBJ graphics, not a text table. Patch the ROM sprite blocks
+  directly and translate every style/variant (brown, teal, cream,
+  including the All target box), preserving each block's box style and
+  text/shadow/fill indices. Approved abbreviations:
+  `Atk/Grd/Run/Itm/Pum/Cap/Out/All`.
 
 ## Open questions
 
@@ -1402,6 +1505,11 @@ msg 60 width-foldings) — see
   `OrangeRg` (橙?) and しゅしのリング = `SeedRing` (種子?); monster
   romanizations ムールク `Murok`, ファーブニル `Farbnir`, ファーニブル
   `Farnible`; shortened forms `Hobgob`, `FootGrif`, `2ndDrg`.
+- Battle labels: where the teal (Capture/Leave) and cream command
+  variants appear on-screen (patched proactively, not yet observed);
+  whether a separate Aim/ねらえ command exists outside the radial order
+  menu; which commands the msg descriptions 10 `待機` (Wait) and 11
+  `排除` (Eliminate) describe.
 
 ## Tool list (with versions)
 

@@ -9,17 +9,21 @@ Free-space allocator: the one free block `0x76765D..0x800000` (625,059
 bytes, 0x00 fill) is handed out sequentially in 16-byte aligned chunks.
 Every allocation is recorded in `build/patch/allocations.json`.
 
-Stages are cumulative; the current milestone is `--stage story`:
+Stages are cumulative:
   font   relocate the 685-glyph story bigfont store (22 B/glyph) and
          rewrite the single descriptor pointer at 0xD6C2C.
-  story  font + append 95 ASCII glyphs to the store + encode all 96 EN
+  story  font + append ASCII glyphs to the store + encode all 96 EN
          story messages, relocate the streams (keeping bank order and the
          L28/L29 chain) and retarget every message pointer, then patch the
          renderer (7 px advance, explicit-break wrapping) and localize the
          R1 insert tables (753E beast names, 753F words).
+  8x8    story + the 8x8 menu/UI/item/monster text + engine/count fixes +
+         the 9x9 field-message font + the battle command/target label
+         graphics (full build).
+  all    alias for 8x8 (full build).
 
 Usage:
-  .venv/bin/python tools/build_patch.py [--stage story] [--no-bps]
+  .venv/bin/python tools/build_patch.py [--stage all] [--no-bps]
 """
 import argparse
 import importlib.util
@@ -251,6 +255,21 @@ def stage_msgfont(p):
     info = mod.stage(p, encode_bl)
     print(f"msgfont: store {info['store']:#x}, {info['glyphs']} ASCII "
           f"glyphs, lookup {info['table']:#x}, code {info['far']:#x}")
+
+
+def load_insert_battle_labels():
+    spec = importlib.util.spec_from_file_location(
+        "insert_battle_labels", ROOT / "tools" / "insert_battle_labels.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def stage_battle_labels(p):
+    """Redraw the pre-rendered battle command and target labels in English."""
+    mod = load_insert_battle_labels()
+    count = mod.stage(p)
+    print(f"battle labels: {count} command/target sprites redrawn")
 
 
 def stage_8x8(p):
@@ -535,6 +554,7 @@ def main():
         stage_8x8(p)
         stage_8x8_fixes(p)
         stage_msgfont(p)
+        stage_battle_labels(p)
     else:
         raise SystemExit(f"unknown stage {args.stage!r}")
 

@@ -1,0 +1,31 @@
+tile	offset	style	variant	jp	en	text	shadow	fill
+0x0A0	0x0EB3D8	brown	sel	たたかえ	Atk	15	12	3
+0x0A8	0x0EB4D8	brown	sel	守れ!	Grd	15	12	3
+0x0B0	0x0EB5D8	brown	sel	にげろ	Run	15	12	3
+0x0B8	0x0EB6D8	brown	sel	アイテム	Itm	15	12	3
+0x0C0	0x0EB7D8	brown	sel	ボコれ	Pum	15	12	3
+0x0A0	0x0EC5D8	brown	unsel	たたかえ	Atk	5		3
+0x0A8	0x0EC6D8	brown	unsel	守れ!	Grd	5		3
+0x0B0	0x0EC7D8	brown	unsel	にげろ	Run	5		3
+0x0B8	0x0EC8D8	brown	unsel	アイテム	Itm	5		3
+0x0C0	0x0EC9D8	brown	unsel	ボコれ	Pum	5		3
+0x0A0	0x0EB8D8	teal	sel	たたかえ	Atk	15	12	4
+0x0A8	0x0EB9D8	teal	sel	守れ!	Grd	15	12	4
+0x0B0	0x0EBAD8	teal	sel	にげろ	Run	15	12	4
+0x0B8	0x0EBBD8	teal	sel	アイテム	Itm	15	12	4
+0x0C8	0x0EBCD8	teal	sel	ほかく!	Cap	15	12	4
+0x0D0	0x0EBDD8	teal	sel	たいいん!	Out	15	12	4
+0x0A0	0x0ECAD8	teal	unsel	たたかえ	Atk	6		4
+0x0A8	0x0ECBD8	teal	unsel	守れ!	Grd	6		4
+0x0B0	0x0ECCD8	teal	unsel	にげろ	Run	6		4
+0x0B8	0x0ECDD8	teal	unsel	アイテム	Itm	6		4
+0x0C8	0x0ECED8	teal	unsel	ほかく!	Cap	6		4
+0x0D0	0x0ECFD8	teal	unsel	たいいん!	Out	6		4
+0x0A0	0x0EBED8	cream	single	たたかえ	Atk	1		15
+0x0A8	0x0EBFD8	cream	single	守れ!	Grd	1		15
+0x0B0	0x0EC0D8	cream	single	にげろ	Run	1		15
+0x0B8	0x0EC1D8	cream	single	アイテム	Itm	1		15
+0x0C0	0x0EC2D8	cream	single	ボコれ	Pum	1		15
+0x0C8	0x0EC3D8	cream	single	ほかく!	Cap	1		15
+0x0D0	0x0EC4D8	cream	single	たいいん!	Out	1		15
+0x0D8	0x0ED538	cream	single	ぜんたい	All	1		15
