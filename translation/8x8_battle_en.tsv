@@ -83,42 +83,42 @@ addr	n_jp	jp	en
 0x0C67A6	6	とうぎじょう	Arena
 0x0C67B4	3	みなと	Port
 0x0C67BC	14	ショップ・ごうせいや・そのた	Shop / Combine / Other
-0x0C67DA	10	せんとうをかいしする	Start battle
-0x0C67F0	8	せんきょうをみる	View status
+0x0C67DA	10	せんとうをかいしする	To battle
+0x0C67F0	8	せんきょうをみる	Status
 0x0C6802	10	しょうりじょうけん：	Win condition:
 0x0C6818	5	ミッション	Mission
-0x0C6824	22	あらわれたまじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts⏎that appear!!
-0x0C6852	25	ゆくてをはばむ、やせいのまじゅうたちのせんめつ！！	Wipe out the wild beasts⏎in your path!!
-0x0C6886	18	おそいくる、まじゅうたちをたおせ！！	Defeat the attacking beasts!!
-0x0C68AC	19	おってのまじゅうを、ぜんめつさせろ！！	Annihilate the pursuing⏎beasts!!
-0x0C68D4	15	おってのついげきを、かわせ！！	Dodge the pursuers' attacks!!
-0x0C68F4	20	てきのまじゅうたちを、ぜんめつさせろ！！	Annihilate all enemy beasts!!
-0x0C691E	17	まじゅうたちを、ぜんめつさせろ！！	Annihilate the beasts!!
-0x0C6942	16	けいびのまじゅうたちを、たおせ！	Defeat the guard beasts!
-0x0C6964	16	じょうないのまじゅうを、たおせ！	Defeat the castle beasts!
-0x0C6986	21	じょうないのまじゅうを、ぜんめつさせろ！！	Annihilate the castle beasts!!
-0x0C69B2	18	てきのまじゅうを、ぜんめつさせろ！！	Annihilate the enemy beasts!!
-0x0C69D8	15	あらわれたザーゴを、たおせ！！	Defeat Zargo who appeared!!
-0x0C69F8	17	いわの、ばんにんたちのせんめつ！！	Annihilate the rock⏎guardians!!
-0x0C6A1C	24	ゆくてをはばむ、もりのせんじゅうしゃをたおせ！！	Defeat the forest⏎dwellers in your path!!
-0x0C6A4E	17	あんこくからの、つかいをたおせ！！	Defeat the minion⏎of darkness!!
-0x0C6A72	21	よみがえった、ぶしのたましいを、たおせ！！	Defeat the revived⏎warrior spirits!!
-0x0C6A9E	16	まちぶせていた、てきのせんめつ！	Wipe out the ambushers!
-0x0C6AC0	18	てきの、はなったまじゅうを、たおせ！	Defeat the beasts⏎the enemy released!
+0x0C6824	22	あらわれたまじゅうたちを、ぜんめつさせろ！！	Wipe out the beasts!
+0x0C6852	25	ゆくてをはばむ、やせいのまじゅうたちのせんめつ！！	Wipe out beasts!
+0x0C6886	18	おそいくる、まじゅうたちをたおせ！！	Defeat attackers!
+0x0C68AC	19	おってのまじゅうを、ぜんめつさせろ！！	Wipe out pursuers!
+0x0C68D4	15	おってのついげきを、かわせ！！	Dodge attacks!
+0x0C68F4	20	てきのまじゅうたちを、ぜんめつさせろ！！	Wipe out all foes!
+0x0C691E	17	まじゅうたちを、ぜんめつさせろ！！	Wipe out the beasts!
+0x0C6942	16	けいびのまじゅうたちを、たおせ！	Beat the guards!
+0x0C6964	16	じょうないのまじゅうを、たおせ！	Beat castle beasts!
+0x0C6986	21	じょうないのまじゅうを、ぜんめつさせろ！！	Clear the castle!
+0x0C69B2	18	てきのまじゅうを、ぜんめつさせろ！！	Wipe out the enemy!
+0x0C69D8	15	あらわれたザーゴを、たおせ！！	Defeat Zargo!
+0x0C69F8	17	いわの、ばんにんたちのせんめつ！！	Beat rock guards!
+0x0C6A1C	24	ゆくてをはばむ、もりのせんじゅうしゃをたおせ！！	Beat forest foes!
+0x0C6A4E	17	あんこくからの、つかいをたおせ！！	Beat dark minion!
+0x0C6A72	21	よみがえった、ぶしのたましいを、たおせ！！	Beat spirits!
+0x0C6A9E	16	まちぶせていた、てきのせんめつ！	Wipe out ambushers!
+0x0C6AC0	18	てきの、はなったまじゅうを、たおせ！	Beat loose beasts!
 0x0C6AE6	8	ザーゴをたおせ！	Defeat Zargo!
 0x0C6AF8	9	ラミレスをたおせ！	Defeat Ramires!
-0x0C6B0C	20	ベリンガムの、まじゅうたちを、たおせ！！	Defeat Beringham's beasts!!
-0x0C6B36	16	よみがえったイグニスを、たおせ！	Defeat the revived Ignis!
-0x0C6B58	19	おってのまじゅうたちをせんめつしろ！！	Annihilate the pursuing⏎beasts!!
-0x0C6B80	19	さばくにすくう、まじゅうたちをたおせ！	Defeat the beasts⏎lurking in the desert!
-0x0C6BA8	20	はいきょの、まじゅうたちをせんめつしろ！	Annihilate the beasts⏎in the ruins!
-0x0C6BD2	15	てきの、ついせきしゃをたおせ！	Defeat the enemy trackers!
-0x0C6BF2	12	てきの、みはりをたおせ！	Defeat the enemy lookouts!
+0x0C6B0C	20	ベリンガムの、まじゅうたちを、たおせ！！	Defeat his beasts!
+0x0C6B36	16	よみがえったイグニスを、たおせ！	Beat revived Ignis!
+0x0C6B58	19	おってのまじゅうたちをせんめつしろ！！	Wipe out pursuers!
+0x0C6B80	19	さばくにすくう、まじゅうたちをたおせ！	Beat desert beasts!
+0x0C6BA8	20	はいきょの、まじゅうたちをせんめつしろ！	Clear the ruins!
+0x0C6BD2	15	てきの、ついせきしゃをたおせ！	Defeat the trackers!
+0x0C6BF2	12	てきの、みはりをたおせ！	Defeat the lookouts!
 0x0C6C0C	10	ザーゴを、たおせ！！	Defeat Zargo!!
 0x0C6C22	10	ラミレスを、たおせ！	Defeat Ramires!
-0x0C6C38	20	あらたに、あらわれてきたてきをたおせ！！	Defeat the newly⏎appeared enemies!!
+0x0C6C38	20	あらたに、あらわれてきたてきをたおせ！！	Beat new enemies!
 0x0C6C62	11	ベリンガムを、たおせ！	Defeat Beringham!
-0x0C6C7A	14	さいきょうのてきを、たおせ！	Defeat the strongest enemy!
+0x0C6C7A	14	さいきょうのてきを、たおせ！	Beat the strongest!
 0x0C6C98	9	ほんきょちにはいる	Enter the base
 0x0C6CAC	9	ごうせいやにはいる	Enter the combine shop
 0x0C6CC0	8	ショップにはいる	Enter the shop

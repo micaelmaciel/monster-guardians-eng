@@ -100,14 +100,27 @@ milestone.
   style/variant blocks in the brown, teal and cream families (including
   the "All" target box) are redrawn in English. See "Battle command/
   target label graphics" below.
+- **Stage-card footer overlap fixed (2026-10-20).** The world-map stage
+  card draws "start battle" and "view status" at fixed x positions. The
+  longer EN labels merged into "Start battleView status"; they are now
+  "To battle" (9 glyphs, fits 10) and "Status" (6, fits 8). Verified in
+  mGBA on the stage card. The stage mission line is a one-line scrolling
+  marquee, not a wrapped text box: EN missions were shortened to ≤20
+  glyphs with no `⏎`, while the full clear-condition text remains in the
+  msgfont strings (41–72).
+- **Battle prompt QA (2026-10-20).** In the live battle, "Pick order."
+  (msgfont 0), "Choose the target." (1), and "Need more Player Pts."
+  (16) render correctly. The stage card's "Status" action has not yet
+  been mapped to a usable status screen; the party monster detail view
+  with the 13-cell bar is a rename/keyboard UI, not the status page.
   **Remaining:** status labels 156–168 are encoded but not yet seen
   on-screen; 64 blocked 8×8 rows; chapter-title card; full-playthrough
   QA; release patch.
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
-  "L/R: base/other". The 8×8 pass now reports 572 relocated / 122 in
-  place.
+  "L/R: base/other". The 8×8 pass reports 551 relocated / 143 in place
+  after the 2026-10-20 stage-card label shortening.
 - **Harness ROM bound (2026-10-19).** `tools/mgba_dump.c` now treats
   `0x08000000–0x087FFFFF` as the valid 8 MiB cart range (was 0x0A000000),
   so a jump past the ROM is caught instead of looping on open bus.
@@ -1283,7 +1296,13 @@ savestate and inputs `50-60:A,100-110:A`:
 - The original capture's D0 All box at frame 180 was therefore a timing
   difference, not a different sprite.
 
-**Build:** 2,534 patches, BPS **157,955 B**, round-trip OK.
+**Build (2026-10-20):** 2,513 patches, BPS **156,829 B**, round-trip OK.
+The stage-card footer/mission fix reduced the patch count by 21 (shorter
+strings now fit in place instead of relocating).
+
+**Stage-card QA:** `To battle` / `Status` no longer overlap; mission text
+is a one-line marquee, so short EN mission labels were used. The stage
+card's `Status` action is not yet mapped to a status screen.
 
 **Not yet observed:** the teal (Capture/Leave) and cream command variants
 have no confirmed on-screen appearance yet; they were patched proactively
