@@ -44,8 +44,8 @@ addr	n_jp	jp	en
 0x0C63B4	4	トータル	Total
 0x0C63BE	4	アイテム	Item
 0x0C63C8	22	パーティのしゅつげきせっていがされていません	The party is not set⏎to deploy.
-0x0C63F6	17	じゅうじキー・・・せんとうステージ	D-Pad: battle stage
-0x0C641A	17	L／R・・・・・・ほんきょち／ほか	L / R: base / other
+0x0C63F6	17	じゅうじキー・・・せんとうステージ	D-Pad: battle
+0x0C641A	17	L／R・・・・・・ほんきょち／ほか	L/R: base/other
 0x0C643E	10	ステージ1 へいげん	Stage 1 Plains
 0x0C6454	10	ステージ2 へいげん	Stage 2 Plains
 0x0C646A	8	ステージ3 おか	Stage 3 Hills

@@ -1,0 +1,170 @@
+idx	lines
+0	Pick order.
+1	Choose the|target.
+2	Order all|monsters.
+3	Order each|monster.
+4	Choose a|target foe.
+5	Choose the|target foe.
+6	Battle Over
+7	Clear|Condition
+8	Goal: defeat|all enemies.
+9	Attack: find|and hit foes.
+10	Wait: hold|your ground.
+11	Eliminate:|hunt the foe.
+12	Item: go|grab items.
+13	Flee: run|from the foe.
+14	Defend:|guard, dodge.
+15	Pummel: focus|attacks.
+16	Need more|Player Pts.
+17	No target|monster.
+18	Press A when|ready to link
+19	Link failed.
+20	Linking...
+21	Unlimited|Fee 0G
+22	Lv 51+ Class|Fee 300G
+23	Lv 31-50|Fee 60G
+24	Lv 11-30|Fee 20G
+25	Lv 1-10|Fee 10G
+26	Party monster|can't be used
+27	Battle Record|Win Loss Draw
+28	0123456789
+29	Need more|Player Pts.
+30	Choose a|monster.
+31	Choose the|target.
+32	Pick order.
+33	Order all|monsters.
+34	Order each|monster.
+35	No target|monster.
+36	Clear Cond.|Battle Over
+37	Linking.|B to cancel.
+38	Link error.|Check cable.
+39	Press A when|ready to link
+40	Opponent is|planning!
+41	Goal: beat|the beasts.
+42	Goal: defeat|attackers!
+43	Goal: wipe|out pursuers!
+44	Goal: wipe|out pursuers!
+45	Goal: wipe|out all foes!
+46	Goal: wipe|out all foes!
+47	Goal: clear|the fort!
+48	Goal: clear|the citadel!
+49	Goal: wipe|out citadel!
+50	Goal: wipe|out all foes!
+51	Goal: defeat|Zargo!
+52	Goal: wipe|rock guards!
+53	Goal: beat|forest foes!
+54	Goal: defeat|the beasts!
+55	Goal: wipe|out healers!
+56	Goal: beat|ambushers!
+57	Goal: beat|enemy beasts!
+58	Goal: defeat|Zargo!
+59	Goal: defeat|Ramires!
+60	Goal: defeat|the beast!
+61	Goal: defeat|Ignis!
+62	Goal: wipe|out pursuers!
+63	Goal: beat|sand beasts!
+64	Goal: beat|ruin beasts!
+65	Goal: beat|the trackers!
+66	Goal: beat|the lookouts!
+67	Goal: defeat|Zargo!
+68	Goal: defeat|Ramires!
+69	Goal: beat|the fusion!
+70	Goal: defeat|Beringham!
+71	Goal: beat|final form!
+72	Goal: wipe|out beasts!
+73	Attack: find|and hit foes.
+74	Wait: hold|your ground.
+75	Eliminate:|hunt the foe.
+76	Item: go|grab items.
+77	Flee: run|from the foe.
+78	Defend:|guard, dodge.
+79	Pummel: focus|attacks.
+80	Unlimited|Fee 0G
+81	Level 51+|Fee 300G
+82	Level 31-50|Fee 60G
+83	Level 11-30|Fee 20G
+84	Level 1-10|Fee 10G
+85	Party monster|can't be used
+86	Battle Record|Win Loss Draw
+87	0123456789
+88	Data corrupt.|Deleted.
+89	Save data?|Yes / No
+90	Data saved.
+91	Sorry, can't|save data.
+92	Switching to|World Map.
+93	Switching to|Briefing.
+94	Switching to|Monsters.
+95	Switching to|Party.
+96	Switching to|Items.
+97	Switching to|System.
+98	Change your|name.
+99	Show|messages.
+100	Party status|during link.
+101	Show monster|info needed.
+102	Check|monster data.
+103	Rename a|monster.
+104	Can't rename|monsters now.
+105	Can be|deployed.
+106	This party|will fight.
+107	In training:|can't deploy.
+108	No party:|can't deploy.
+109	Name missing.|Can't deploy.
+110	Set the|party name.
+111	Change the|party name.
+112	In training:|can't rename.
+113	Set up the|party.
+114	In training:|can't edit.
+115	Can be added|to the party.
+116	Reorder or|remove member
+117	In training:|can't change.
+118	Equip items.
+119	Equip or|remove items.
+120	Item can't|be changed.
+121	Equip item|on a monster.
+122	Unequip|the item.
+123	Monster can't|equip it.
+124	Boost this|stat.
+125	Knocked out|at zero HP.
+126	Smaller gaps|when hit.
+127	More damage|dealt.
+128	Less damage|taken.
+129	Move faster.
+130	Fewer wasted|moves.
+131	Special moves|improved.
+132	Counters|improved.
+133	Hunts foes it|is strong vs.
+134	Obeys orders|more often.
+135	Accuracy up.
+136	Evasion up.
+137	Eliminate|works better.
+138	Save data.
+139	View events|so far.
+140	View your|recruits.
+141	Adjust sound|settings.
+142	Message|speed.
+143	Mark your|own monsters.
+144	Auto-help|on or off.
+145	Choose|deploy type.
+146	Music|ON / OFF.
+147	Sound|ON / OFF.
+148	Choose a|save file.
+149	Choose an|event to see.
+150	Pick a beast|monster.
+151	Erase all|saved data.
+152	Delete the|password.
+153	Continue|last save.
+154	No save data.
+155	0123456789
+156	Life
+157	Durability
+158	Attack
+159	Defense
+160	Agility
+161	Knowledge
+162	Special
+163	Counter
+164	Recon
+165	Obedience
+166	Accuracy
+167	Evasion
+168	Skill

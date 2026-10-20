@@ -29,7 +29,7 @@ static int mgba_pc_valid(uint32_t pc) {
     if (pc >= 0x05000000 && pc < 0x05000400) return 1;    /* palette */
     if (pc >= 0x06000000 && pc < 0x06018000) return 1;    /* VRAM */
     if (pc >= 0x07000000 && pc < 0x07000400) return 1;    /* OAM */
-    if (pc >= 0x08000000 && pc < 0x0A000000) return 1;    /* ROM */
+    if (pc >= 0x08000000 && pc < 0x08800000) return 1;    /* ROM (8 MiB cart) */
     if (pc >= 0x0E000000 && pc < 0x0E010000) return 1;    /* SRAM */
     return 0;
 }

@@ -8,7 +8,10 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: strategy APPROVED (2026-10-17); no ROM edits yet.** *Three*
+- **Phase: insertion + QA.** 8×8, story, and msgfont text are inserted
+  and building; remaining gaps are battle order labels, unverified
+  status labels, the chapter-title card, 64 blocked 8×8 rows, and the
+  full playthrough/release QA. *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
   gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
@@ -73,9 +76,38 @@ milestone.
   on demand.
   Verified in mGBA: msgs 8, 13, 14 (59 glyphs/page), 21 (insert + full
   21-char line), 31/32 (styled 753E name), 50, 66.
-  **Remaining:** msgfont insertion + its renderer patch, the 64 blocked
-  8×8 rows, the chapter-title card, final full-playthrough QA, release
+- **Msgfont insertion DONE (2026-10-19, mGBA-verified).**
+  The 9×9 field-message font is relocated/extended and all 169 strings
+  are encoded. Store `0x77EC08` (317 JP + 67 ASCII glyphs = 384 × 18 B,
+  6,912 B), strings `0x780708`, lookup `0x7823E0`, far routine
+  `0x782928`, near stub `0xD3144`, renderer hook at `0xEC3A`. ASCII
+  glyphs come from `data/en_glyphs_8x8.json` (the VGA PSF table already
+  embedded in the story bigfont), placed at y+1 in the 9×9 cell. Layout:
+  9 px advance, 13 glyphs/line, 2 lines, line 1 padded to 13 with space
+  code 49; line-2 x = `8 + 9*(n-13)`. Runtime old→new pointer lookup
+  avoids retargeting 55 strings that have no direct pointer. The near
+  stub must set bit 0 of the far address (`bx` state bit) — omitting it
+  executed the Thumb routine as ARM and jumped off the ROM end.
+  Verified in mGBA: field-menu tab tooltips (World Map, Monsters, Party,
+  Items, System), "Check monster data.", "Rename a monster.", system
+  tooltips (Save data, recruits, sound, text speed, monster mark,
+  auto-help, clear password, erase data), Music/SFX submenu, save-file
+  select, battle "Pick order." / "Choose the target.", and the clear
+  conditions "Clear Cond. / Battle Over" and "Goal: beat the beasts."
+  Build: 2,504 patches, BPS 154,668 B, round-trip OK.
+  **Remaining:** the in-battle order labels (fight/defend/item/flee
+  etc.) are still Japanese and are not in the 169-string msgfont table;
+  status labels 156–168 are encoded but not yet seen on-screen; 64
+  blocked 8×8 rows; chapter-title card; full-playthrough QA; release
   patch.
+- **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
+  a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
+  now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
+  "L/R: base/other". The 8×8 pass now reports 572 relocated / 122 in
+  place.
+- **Harness ROM bound (2026-10-19).** `tools/mgba_dump.c` now treats
+  `0x08000000–0x087FFFFF` as the valid 8 MiB cart range (was 0x0A000000),
+  so a jump past the ROM is caught instead of looping on open bus.
 - **Engine/count fixes DONE (2026-10-19, mGBA-verified).** Three bugs from
   the longer EN strings were found and fixed in `tools/build_patch.py`
   (`stage_engine_fixes` / `stage_8x8_fixes`):
@@ -139,7 +171,8 @@ milestone.
   21300) confirms the glyph codes. The top banner is **not** a graphic:
   it is the 9×9 msgfont description string `ワールドマップへ切替えます`
   (msg 92), drawn in the two-line message box. The msgfont insertion
-  will translate it. **Also open:** the chapter-title card
+  translates it (verified in mGBA: "Switching to / World Map.").
+  **Also open:** the chapter-title card
   `第1章 仕組まれた野望`; 第/章 are absent from both the 685-glyph
   bigfont and the 8×8 font, so the card is a graphic or a fourth font —
   the earlier graphics sweep missed it.
@@ -249,7 +282,8 @@ milestone.
   Verified: `tools/decode_strings.py` decodes the whole ROM to coherent
   Japanese (2,223 TEXT strings, 603 DATA/table strings).
 - Charmap lives in `data/charmap.json` (built by `tools/charmap.py`).
-- **Do not edit the ROM until the user approves the strategy proposal.**
+- **Do not edit the ROM until the user approves the strategy proposal**
+  (approved 2026-10-17; insertion and QA are now in progress).
 
 ## ROM identification
 
@@ -283,8 +317,9 @@ milestone.
   317 glyphs at `0x0CDED4`, descriptor `0xCF520`, renderer `0x0EC38`,
   string table `0x0CC92C..0x0CDED4` = **169 strings**, all extracted and
   decoded (`build/msgfont_strings.tsv`, `data/msgfont_charmap.json`,
-  317/317 glyphs). Found 2026-10-19; see "Field message box — third text
-  system" in Findings.
+  317/317 glyphs). Found 2026-10-19; **insertion completed and verified
+  2026-10-19** (see Current state and "Field message box — third text
+  system" in Findings).
 
 ## Prior art and tools
 
@@ -1101,14 +1136,29 @@ Player Points, 通信 = link, 出撃 = deploy, 修行中 = in training,
 Life/Durability/Attack/Defense/Agility/Knowledge/Special/Counter/Recon/
 Obedience/Accuracy/Evasion/Skill.
 
-**Font/renderer plan (chosen, `(a)+`).** The message font contains only a
-*subset* of Latin (A, B, F, G, L, V, N, O, digits, `【】！：／～`), so the
-store cannot render EN: relocate the 317-glyph store to free space
-(`0x76765D..0x800000`), append an ASCII set (18 B/glyph, 9×9 format, can
-be copied from the 8×8 font's Latin glyphs), update the store pointer u32
-at file offset `0xCF528`. Together with the renderer patch (advance 10 → 9,
-wrap 11 → 13, wrap on spaces, optional line 3 at y=26 with a slightly
-taller box art) this gives the EN budget used above.
+**Font/renderer implementation (DONE 2026-10-19).** The 317-glyph
+9×9 store is copied to `0x77EC08`; 67 ASCII glyphs (the characters
+actually used in the EN strings) are appended, 18 B each. The ASCII
+source is `data/en_glyphs_8x8.json`, the VGA-PSF table used by the
+story bigfont, placed at y+1 in the 9×9 cell (one-pixel top/bottom
+margin). The descriptor store pointer at `0xCF528` is rewritten to
+`0x0807EC08`. Renderer patches: advance 10 → 9 (`0xECF0`/`0xECF4`
+constant), wrap 11 → 13 (`0xECB8`), line-2 y init `0xFF9A0000` →
+`0xFF930000` (so 13 glyphs place line 2 at x=8). No third line and no
+box-art change: the box remains two lines (20 px).
+
+Strings are encoded in `translation/msgfont_lines.tsv`: 169 records,
+each exactly two lines of ≤13 glyphs, line 1 padded to 13 with space
+code 49. 55 of the 169 JP strings have no direct u32 pointer, so instead
+of retargeting callers the box renderer is hooked at `0xEC3A` with a BL
+to the near stub `0xD3144`; the stub loads the far routine
+`0x08000000|0x782928|1` and `bx`es it. The far routine (`0x782928`,
+40 B) preserves `r0/r1`, binary-searches the 169-entry sorted old→new
+pointer table at `0x7823E0`, replaces `r2`, replays the two overwritten
+instructions (`mov r7,sl` / `mov r6,sb`), and returns to `0xEC3E`.
+The low bit of the stub literal **must** be set; otherwise `bx` enters
+ARM state at Thumb code, and the CPU runs off the ROM end (this was the
+one crash found and fixed during verification).
 
 ### New-game setup flow and graphics-with-text sweep (2026-10-19)
 
