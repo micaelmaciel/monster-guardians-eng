@@ -8,10 +8,10 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: insertion + QA.** 8×8, story, msgfont and battle command/
-  target label graphics are inserted and building; remaining gaps are
-  unverified status labels, the chapter-title card, 64 blocked 8×8 rows,
-  and the full playthrough/release QA. *Three*
+- **Phase: insertion + QA.** 8×8, story, msgfont, status labels and
+  battle command/target label graphics are inserted and building;
+  remaining gaps are the chapter-title card, 64 blocked 8×8 rows, and
+  the full playthrough/release QA. *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
   gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
@@ -107,15 +107,41 @@ milestone.
   mGBA on the stage card. The stage mission line is a one-line scrolling
   marquee, not a wrapped text box: EN missions were shortened to ≤20
   glyphs with no `⏎`, while the full clear-condition text remains in the
-  msgfont strings (41–72).
+  msgfont strings (41–72). **Re-verified 2026-10-20** after the status
+  build: `Stage 1 Plains` / `Mission: Wipe out beasts!` fits, and
+  `To battle` / `Status` are clean.
+- **Status labels/descriptions DONE (2026-10-20, mGBA-verified).**
+  The status view is the **scene 2 stat panel** reached from the base
+  menu: Monsters tab (`0x03001DB8=1`) → A on a party slot → DOWN to a
+  stat bar. LEFT/RIGHT cycles the 13 bars (cursor `0x03001D3B` 8–20);
+  the bottom box draws the bigfont label (`0xC4DD0`) and the short
+  msgfont description (`0xC4E04`). `tools/insert_status.py` relocates
+  the 13 labels, encodes the 13 descriptions, repoints both tables and
+  patches the label advance at `0x2F24E` from 12→8 px (description
+  advance stays 10 px). The description row is an **18-glyph strip** in
+  the EWRAM glyph buffer (`0x02020000 + 0x2C0`), not the 22 previously
+  assumed; the 19th glyph is written past the strip and clipped.
+  Final descriptions (all ≤18): `Faints at zero.`, `Smaller openings.`,
+  `Raises damage.`, `Cuts damage taken.`, `Raises move speed.`,
+  `Less wasted moves.`, `Better specials.`, `Better counters.`,
+  `Seeks favored foe.`, `Obeys orders more.`, `Better hit rate.`,
+  `Better evasion.`, `Eliminate rate up.` All 13 labels/descriptions
+  verified in mGBA with no clipping or overlap. The scene 3 view
+  (A on a bar) is stat allocation and shows only the label + gauge, so
+  the scene 2 panel is the QA target.
+- **Party-dialog overflow fixed (2026-10-20, mGBA-verified).** The
+  relocating 8×8 split piece at `0x0BE45A` is a fixed 24-glyph slot with
+  a JP line break; EN had lost the `⏎`, so `Remove from party, add?`
+  ran past the box. Now `Remove from party⏎add?` (22 codes + pad), two
+  lines, verified in mGBA.
 - **Battle prompt QA (2026-10-20).** In the live battle, "Pick order."
   (msgfont 0), "Choose the target." (1), and "Need more Player Pts."
   (16) render correctly. The stage card's "Status" action has not yet
-  been mapped to a usable status screen; the party monster detail view
+  been mapped to the scene 2 stat panel; the party monster detail view
   with the 13-cell bar is a rename/keyboard UI, not the status page.
-  **Remaining:** status labels 156–168 are encoded but not yet seen
-  on-screen; 64 blocked 8×8 rows; chapter-title card; full-playthrough
-  QA; release patch.
+  **Remaining:** 64 blocked 8×8 rows; chapter-title card;
+  full-playthrough QA; release patch. Build (2026-10-20, status +
+  dialog): **2,566 patches, BPS 157,659 B, round-trip OK**.
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
@@ -1302,7 +1328,8 @@ strings now fit in place instead of relocating).
 
 **Stage-card QA:** `To battle` / `Status` no longer overlap; mission text
 is a one-line marquee, so short EN mission labels were used. The stage
-card's `Status` action is not yet mapped to a status screen.
+card's `Status` action is not yet mapped; the 13 status labels/
+descriptions are verified on the separate scene 2 stat panel.
 
 **Not yet observed:** the teal (Capture/Leave) and cream command variants
 have no confirmed on-screen appearance yet; they were patched proactively
@@ -1379,6 +1406,11 @@ needed beyond pointer retargeting.
   mGBA-verified in the battle order menu.
   `tools/insert_battle_labels.py` +
   `translation/battle_labels_en.tsv`.
+- [x] **Status labels/descriptions (2026-10-20)**: `tools/insert_status.py`
+  relocates 13 bigfont labels, encodes 13 short msgfont descriptions,
+  repoints `0xC4DD0`/`0xC4E04`, patches the label advance at `0x2F24E`
+  (12→8 px), and enforces an 18-glyph description limit. All 13 verified
+  on the scene 2 stat panel in mGBA.
 - [ ] Relocation writer: assemble new ROM copy, retarget pointers, emit BPS.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
@@ -1443,9 +1475,8 @@ needed beyond pointer retargeting.
   selected/unselected, cream 7 commands + All target) redrawn in English;
   mGBA-verified in the order menu (frames 150/180/260), including the
   cream All box. `tools/insert_battle_labels.py`,
-  `translation/battle_labels_en.tsv`. Next: verify status labels
-  156–168 on-screen, the chapter-title card, the 64 blocked 8×8 rows,
-  full-playthrough QA, and the release patch.
+  `translation/battle_labels_en.tsv`. Next: the chapter-title card, the
+  64 blocked 8×8 rows, full-playthrough QA, and the release patch.
 
 Open items to resolve: OCR'd kanji review (8×8 charmap); the
 `0x1A0–0x1BF` codes are outside the font (cut species names, parked);

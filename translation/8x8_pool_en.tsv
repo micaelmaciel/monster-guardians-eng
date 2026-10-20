@@ -175,7 +175,7 @@ addr	n_jp	jp	en
 0x0BE3F2	18	いったいはずして、⏎はいぞくしますか	Remove, then add?
 0x0BE416	15	しょぞくモンスターと⏎こうかん	Swap with a party⏎monster
 0x0BE434	19	しょぞくモンスターと⏎こうかんしますか	Swap it with a party⏎monster?
-0x0BE45A	24	げんざいのパーティから⏎はずしてはいぞくしますか	Remove from party, add?
+0x0BE45A	24	げんざいのパーティから⏎はずしてはいぞくしますか	Remove from party⏎add?
 0x0BE48A	20	げんざいのパーティから⏎はずしてはいぞく	Remove then add
 0x0BE4B2	22	こうかんするモンスター⏎⏎をえらんでください	Choose the monster⏎to swap.
 0x0BE4DE	9	ポジションへんこう	Move slot

@@ -256,10 +256,12 @@ def stage(p, encode_bl, rom_base=0x08000000):
     # 2. English strings
     strings = build_strings(rom, lines, code)
     pairs = []
+    placed = []
     for idx, old, data in strings:
         off = p.alloc(len(data), f"msgfont_str_{idx}", align=2)
         p.poke(off, data, f"msgfont EN string {idx}")
         pairs.append((old, rom_base | off))
+        placed.append((idx, old, off))
 
     # 3. lookup table + far routine
     table_off = p.alloc(8 * 169, "msgfont_lookup", align=4)
@@ -277,7 +279,8 @@ def stage(p, encode_bl, rom_base=0x08000000):
            "msgfont line-2 x origin (-109)")
     p.poke(RENDERER_ADVANCE, b"\x90\x20", "msgfont advance 9 px")
     return {"store": store_off, "table": table_off,
-            "far": far_off, "glyphs": len(used_chars(lines))}
+            "far": far_off, "glyphs": len(used_chars(lines)),
+            "strings": placed}
 
 
 if __name__ == "__main__":

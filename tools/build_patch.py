@@ -255,6 +255,23 @@ def stage_msgfont(p):
     info = mod.stage(p, encode_bl)
     print(f"msgfont: store {info['store']:#x}, {info['glyphs']} ASCII "
           f"glyphs, lookup {info['table']:#x}, code {info['far']:#x}")
+    return info
+
+
+def load_insert_status():
+    spec = importlib.util.spec_from_file_location(
+        "insert_status", ROOT / "tools" / "insert_status.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def stage_status(p, msg_info):
+    """Translate the status-screen labels and one-line descriptions."""
+    mod = load_insert_status()
+    info = mod.stage(p, msg_info)
+    print(f"status: {len(info['labels'])} labels, "
+          f"{len(info['descs'])} descriptions")
 
 
 def load_insert_battle_labels():
@@ -553,7 +570,8 @@ def main():
         stage_inserts(p)
         stage_8x8(p)
         stage_8x8_fixes(p)
-        stage_msgfont(p)
+        msg_info = stage_msgfont(p)
+        stage_status(p, msg_info)
         stage_battle_labels(p)
     else:
         raise SystemExit(f"unknown stage {args.stage!r}")
