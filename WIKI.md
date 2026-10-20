@@ -69,11 +69,13 @@ milestone.
   renderer patched (7 px advance, 31-char safety wrap, **64-slot page
   glyph list + 62-glyph page guard** — see "EN renderer patch — final"
   in Findings). `build/patch/patched.gba` + `dist/monster-guardians-en.bps`
-  (43,169 B, round-trip OK) build from the user's ROM on demand.
+  (138,934 B, 2,328 patches, round-trip OK) build from the user's ROM
+  on demand.
   Verified in mGBA: msgs 8, 13, 14 (59 glyphs/page), 21 (insert + full
   21-char line), 31/32 (styled 753E name), 50, 66.
   **Remaining:** msgfont insertion + its renderer patch, the 64 blocked
-  8×8 rows, final full-playthrough QA, release patch.
+  8×8 rows, the chapter-title card, final full-playthrough QA, release
+  patch.
 - **Engine/count fixes DONE (2026-10-19, mGBA-verified).** Three bugs from
   the longer EN strings were found and fixed in `tools/build_patch.py`
   (`stage_engine_fixes` / `stage_8x8_fixes`):
@@ -104,6 +106,43 @@ milestone.
   protagonist select → rename (shows "Leo") → attribute → legendary →
   confirmation → intro story, no crash. A longer run is in progress for
   the field/menus.
+- **Field/menu QA (2026-10-19).** The field-menu screen (reached by
+  loading the `play4` state and advancing ~21,300 frames) exposed two
+  more fixed-width sites; both are fixed in `stage_8x8_fixes`:
+  1. **Monster-name windows.** Party init at `0x552DA` copies exactly
+     8 glyphs from each of three 16-byte slots (`0x0BD5B2` カノン,
+     `0x0BD5C2` ベッフル, `0x0BD5D2` ファーブス) into `0x030028F0`.
+     The 8×8 insertion had relocated カノン to a 5-glyph "Canon" whose
+     neighbours were other strings, so the fixed window read
+     "Canon Be". Fix: three zero-padded 16-byte slots at `0x77EC28`
+     ("Canon", "Beffle", "Farbus"), with the literals at
+     `0x553A4/0x553A8/0x553B0` repointed. The existing `play4`
+     savestate keeps the stale pre-fix buffer (party init does not
+     rerun), so a fresh playthrough is needed to see the fix.
+  2. **Footer label counts.** `0x0BDE8A` メッセージ → "Message" and
+     `0x0BDE9C` モンスター → "Monster" were drawn with the JP 5-glyph
+     counts at `0x46BCA` / `0x47032`. Both are now 7. The footer x
+     offsets are 1/9/17 cells, so "Message Link Monster" fits before
+     the next cell; verified on screen.
+  **Fresh-save verification (2026-10-19).** A clean boot with the setup
+  timeline reached the party init; IWRAM at frame 42,000 holds the three
+  fixed fields **14 glyphs apart** (not consecutive): `0x030028F0`
+  "Canon", `0x0300290C` "Beffle", `0x03002928` "Farbus". Continuing from
+  a frame-50,000 state to the field menu, BG1 row 7 = "Deploy", row 8 =
+  "Canon", row 10 = "Assign", and the footer reads "Message Link
+  Monster". (The A-mash also opened the rename keyboard and left the
+  player name as "Le" in that run; the default-name copy fix itself was
+  verified earlier as "Leo". This is an input artifact, not a
+  regression.)
+  The left column is Deploy / [selected monster name] / Assign (the
+  はいぶん string), not "Assist"; the BG1 map at `0x06009000` (frame
+  21300) confirms the glyph codes. The top banner is **not** a graphic:
+  it is the 9×9 msgfont description string `ワールドマップへ切替えます`
+  (msg 92), drawn in the two-line message box. The msgfont insertion
+  will translate it. **Also open:** the chapter-title card
+  `第1章 仕組まれた野望`; 第/章 are absent from both the 685-glyph
+  bigfont and the 8×8 font, so the card is a graphic or a fourth font —
+  the earlier graphics sweep missed it.
 - **Story script is READABLE.** The 63 messages are fully decodeable;
   `tools/render_story.py` renders any message as a PNG (game-like layout,
   optional hex labels) and `tools/zoom_tokens.py` zooms token ranges.

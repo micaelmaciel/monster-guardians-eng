@@ -308,6 +308,35 @@ def stage_8x8_fixes(p):
                          (0x36D3E, order_tramp)):
         p.poke(addr, encode_bl(addr, target), f"call trampoline {target:#x}")
 
+    # Default monster name parts.  The game copies fixed 8-glyph windows from
+    # three 16-byte slots at 0x0BD5B2/0x0BD5C2/0x0BD5D2; independent
+    # relocation put the next name inside each window, so the battle screen
+    # showed "Canon Be".  Keep three zero-padded 8-glyph slots and repoint
+    # the three literals used by the copy loop at 0x552DA-0x552EA.
+    slots = p.alloc(48, "monster_name_slots", align=2)
+    for alloc_name, slot in (("8x8 term 0x0BD5B2", 0),
+                             ("8x8 term 0x0BD5C2", 16),
+                             ("8x8 term 0x0BD5D2", 32)):
+        a = next((x for x in p.allocations if x["name"] == alloc_name), None)
+        if a is None:
+            raise SystemExit(f"missing allocation {alloc_name}")
+        codes = [struct.unpack_from("<H", p.data, a["offset"] + 2 * i)[0]
+                 for i in range(8)]
+        if 0 in codes:
+            codes = codes[:codes.index(0)]
+        codes = codes + [0] * (8 - len(codes))
+        p.poke(slots + slot, struct.pack("<8H", *codes),
+               f"monster name slot {slot // 16}")
+    for lit, slot in ((0x553B0, 0), (0x553A4, 16), (0x553A8, 32)):
+        p.poke(lit, struct.pack("<I", 0x08000000 + slots + slot),
+               f"monster name slot pointer {slot // 16}")
+
+    # Field-menu footer: the "Message" and "Monster" labels use the JP
+    # 5-glyph counts; widen both so the English fits.  The footer x offsets
+    # are 1/9/17 cells, so 7 glyphs still fit before the next label.
+    p.poke(0x46BCA, b"\x07\x24", "Message label count 7")
+    p.poke(0x47032, b"\x07\x24", "Monster label count 7")
+
 
 def stage_story(p):
     """Extended glyph store + all 96 EN message streams and pointers."""
