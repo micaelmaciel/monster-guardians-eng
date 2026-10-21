@@ -8,11 +8,12 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: release candidate (2026-10-20).** 8×8, story, msgfont, status
+- **Phase: release candidate (2026-10-21).** 8×8, story, msgfont, status
   labels and battle command/target label graphics are inserted; final
-  patch at `dist/monster-guardians-en.bps` (2,575 patches, 158,005 B,
-  round-trip OK). Non-blocking gaps: chapter-title card, 64 blocked 8×8
-  rows, and the cosmetic combine-card species names. *Three*
+  patch at `dist/monster-guardians-en.bps` (2,564 patches, 157,619 B,
+  round-trip OK) after the Yes/No draw-count fix. Non-blocking gaps:
+  chapter-title card, 64 blocked 8×8 rows, and the cosmetic combine-card
+  species names. *Three*
   text subsystems are now structurally understood and **all three are
   fully extracted**: (1) 8×8 direct-code text — region-aware extraction
   gives **1,320 rows** after the monster-DB walk fix (M13; see "8×8
@@ -155,9 +156,10 @@ milestone.
   sites are recorded per row in `build/patch/8x8_report.json`. The Leo
   name-copy paths (`0x5508E`/`0x55202`/`0x57E18`, 2-glyph DMA, and
   `0x57E1A`'s shifted count) remain unresolved and are listed under
-  Open questions. Final build:
+  Open questions. Final build then:
   **2,575 patches, BPS 158,005 B, round-trip OK**
-  (`dist/monster-guardians-en.bps`). Known cosmetic issues, accepted
+  (`dist/monster-guardians-en.bps`), superseded by the 2026-10-21 Yes/No
+  rebuild (**2,564 patches, 157,619 B**). Known cosmetic issues, accepted
   by the user (2026-10-20) as non-blocking: (a) the Yes/No confirm
   widget renders with no gap ("YesNo"); (b) combine cards show JP
   species names (e.g. `ミノタウロス`) alongside the translated monster
@@ -165,6 +167,29 @@ milestone.
   RAM/VRAM, so its source is unidentified. Out-of-gold and
   deploy-error shop messages are translated but not separately
   re-verified.
+- **Yes/No draw-count fix (2026-10-21, mGBA-verified).** The party and
+  question-box widgets store the option length in a struct field, not only
+  as a `movs` next to the draw call. Four builders wrote the JP length
+  (`movs r0,#2; strh ...`) for the Yes label:
+  `0x41A12`, `0x41E04`, `0x42DA4`, `0x5FAB2`. Because the scanner only
+  sees draws fed directly to `DRAW_FN`, "Yes" was truncated to "Ye". All
+  four are now in `EXTRA_COUNT_SITES["0x0BD3A2"]` in
+  `tools/insert_8x8.py`, alongside the five scanner-found sites
+  (`0x4893A`, `0x4D5C0`, `0x4DB74`, `0x595F8`, `0x5CE0A`) — nine count
+  sites total, recorded per row in `build/patch/8x8_report.json`.
+  Verified in mGBA: party-formation "End editing and apply it?"
+  (`0x41A12`) now shows `Yes`; "Swap monster?" (`0x42DA4`) shows
+  `YesNo` (full Yes, accepted cosmetic gap issue); the "End Party
+  editing?" variant (`0x41E04`, reached by forcing party state
+  `0x03006203=8`) shows `Yes No`, and reverting only that site
+  reproduces `Ye No`. `0x5FAB2` has no static callers or pointer
+  references in the ROM; it is patched defensively and is not reachable
+  through any tested screen. The battle pair at `0x0C60EC`/`0x0C60F2`
+  needs no count patch: it is referenced only from fixed choice-list
+  tables (`0xC4F74`, `0xC5058`, `0xC50C4`) that store packed coordinates
+  and string pointers, with no length field, so the renderer draws the
+  null-terminated EN string in full. Current build:
+  **2,564 patches, BPS 157,619 B, round-trip OK**.
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →

@@ -247,7 +247,12 @@ WRAP_SPAN = 0x40
 # and must be widened when the row relocates to a longer EN string.
 # addr -> (count-site offsets, ...) holding the JP glyph count
 EXTRA_COUNT_SITES = {
-    "0x0BD3A2": (0x4893A, 0x4D5C0, 0x4DB74),   # はい Yes (dialog widgets)
+    # はい Yes.  Besides the direct draw counts, four question-box builders
+    # copy the JP length into a text-slot field (movs #2; strh ...), so the
+    # scanner cannot see them next to a draw call.  Left unpatched they clip
+    # the English "Yes" to "Ye".
+    "0x0BD3A2": (0x41A12, 0x41E04, 0x42DA4, 0x4893A, 0x4D5C0, 0x4DB74,
+                 0x5FAB2),
     "0x0BD3D0": (0x5EBFE,),                    # なまえ Name (combine result)
     "0x0BE298": (0x2971E,),                    # たいき Idle (training row)
     "0x0BE29E": (0x29748,),                    # しゅつげき Deploy (training row)
