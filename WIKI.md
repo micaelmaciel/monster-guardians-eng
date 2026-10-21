@@ -46,6 +46,17 @@ milestone.
   breaks (blank line), drops invisible timing/animation controls, and marks
   runtime inserts as `{{PLAYER}}`, `{{BEAST:n}}`, `{{WORD:n}}` with the
   original JP insert strings listed in an appendix.
+- **Story-term reuse list (2026-10-21).** `translation/shared_terms.md`
+  records the English terms chosen in the story that are also used in
+  another text system (battle missions, clear conditions, event/menu
+  labels, monster DB). Scope is story-origin terms only, per user
+  clarification; generic UI-only vocabulary is excluded. Covers
+  Beringham, Ignis / Ignis of the Earth, Canon, Zargo, Ramires, Mount
+  Famfantar, Legendary Beast, 魔獣 = beast, 合成 = combine, and the 753E
+  inserted monster names (all matching the monster DB). Flags the real
+  conflict ハイドラゴン = hydra dragon in story vs `HighDrg` in the DB, and
+  the intentional `Ignis` short form in the DB. Story-only recurring names
+  are listed separately.
 - **Workflow change (user, 2026-10-19): extract first, translate later.**
   All remaining Japanese text is to be fully extracted and inventoried
   before any further translation; the translation itself is then done in
