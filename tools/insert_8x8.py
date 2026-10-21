@@ -242,38 +242,54 @@ DRAW_FN = 0x3D114
 WRAP_SPAN = 0x40
 
 # Draw-count immediates the dataflow scan cannot reach: the count sits behind a
-# conditional branch / DMA wait loop before the draw call, or is fed to a
-# custom buffer writer instead of DRAW_FN.  They are still real `movs` counts
-# and must be widened when the row relocates to a longer EN string.
-# addr -> (count-site offsets, ...) holding the JP glyph count
-EXTRA_COUNT_SITES = {
-    # はい Yes.  Besides the direct draw counts, four question-box builders
-    # copy the JP length into a text-slot field (movs #2; strh ...), so the
-    # scanner cannot see them next to a draw call.  Left unpatched they clip
-    # the English "Yes" to "Ye".
-    "0x0BD3A2": (0x41A12, 0x41E04, 0x42DA4, 0x4893A, 0x4D5C0, 0x4DB74,
-                 0x5FAB2),
-    # へんせいをつづける Edit again.  Third option of the "End editing and
-    # apply it?" party box; the builder writes the JP length into the slot
-    # field (movs #9; strh ...) and the draw itself is a tail call, so the
-    # scanner bails out.  Left unpatched, "Edit again" clips to "Edit agai".
-    "0x0BE2D0": (0x41A8C,),
-    "0x0BD3D0": (0x5EBFE,),                    # なまえ Name (combine result)
-    "0x0BE298": (0x2971E,),                    # たいき Idle (training row)
-    "0x0BE29E": (0x29748,),                    # しゅつげき Deploy (training row)
-}
+# conditional branch / DMA wait loop before the draw call, is fed to a custom
+# buffer writer instead of DRAW_FN, or the draw is a tail call the scanner
+# refuses to follow.  They are still real `movs` counts and must be widened
+# when the row relocates to a longer EN string.
+#
+# The list lives in a hand-editable data file so a newly found site is a
+# one-row edit instead of a Python change:
+#   translation/8x8_count_overrides.tsv  ->  addr \t site \t note
+# Each site is re-checked against the JP immediate on every build.
+OVERRIDES = os.path.join(TRANS, "8x8_count_overrides.tsv")
 
 
-def add_extra_counts(r, rom):
+def load_count_overrides(path=OVERRIDES):
+    """Read the manual count-site list (addr -> [site, ...])."""
+    out = {}
+    if not os.path.exists(path):
+        raise SystemExit(f"missing count override list {path}")
+    with open(path, encoding="utf-8") as fh:
+        for n, line in enumerate(fh, 1):
+            line = line.strip()
+            if not line or line.startswith("#") or line.startswith("addr\t"):
+                continue
+            p = line.split("\t")
+            if len(p) < 2:
+                raise SystemExit(f"{path}:{n}: expected addr<TAB>site")
+            try:
+                addr, site = p[0], int(p[1], 16)
+            except ValueError:
+                raise SystemExit(f"{path}:{n}: bad hex in {line!r}")
+            sites = out.setdefault(addr, [])
+            if site in sites:
+                raise SystemExit(f"{path}:{n}: duplicate site {p[1]}")
+            sites.append(site)
+    return out
+
+
+def add_extra_counts(r, rom, overrides=None):
     """Merge manual count sites into a row, guarded by the JP immediate."""
-    extra = EXTRA_COUNT_SITES.get(r["addr"])
+    if overrides is None:
+        overrides = load_count_overrides()
+    extra = overrides.get(r["addr"])
     if not extra:
         return
     for off in extra:
         h = _h(rom, off)
         if (h & 0xF800) != 0x2000 or (h & 0xFF) != r["n_jp"]:
             raise SystemExit(
-                f"extra count site {off:#x} for {r['addr']}: expected "
+                f"count override site {off:#x} for {r['addr']}: expected "
                 f"movs #{r['n_jp']}, got {h:#06x}")
     r["count_sites"] = sorted(set(r.get("count_sites", [])) | set(extra))
 
@@ -578,6 +594,7 @@ def find_count_imms(rom, site, n_jp, span=28):
 # ---------------------------------------------------------------- planning
 def plan(rows, rom):
     """Decide the treatment for every row (no ROM writes)."""
+    overrides = load_count_overrides()
     for r in rows:
         addrs = r["addr"]
         a = int(addrs, 16)
@@ -622,7 +639,7 @@ def plan(rows, rom):
                     notes += nt
                 r["count_sites"] = sorted(set(sites))
                 r["count_notes"] = notes
-                add_extra_counts(r, rom)
+                add_extra_counts(r, rom, overrides)
             else:
                 r["action"] = "blocked"
                 r["why"] = f"slice EN {L} > {n} and no pointer"
@@ -653,7 +670,7 @@ def plan(rows, rom):
                     notes += nt
                 r["count_sites"] = sorted(set(sites))
                 r["count_notes"] = notes
-                add_extra_counts(r, rom)
+                add_extra_counts(r, rom, overrides)
             else:
                 r["action"] = "blocked"
                 r["why"] = f"term EN {L} > {n} and no pointer"
@@ -741,6 +758,63 @@ def summarize(rows):
     return by
 
 
+# Kinds whose draw is bounded by a terminator or a hard field width, so an
+# English string longer than the Japanese one is not truncated by a count.
+TERMINATED = ("term", "field")
+
+SIZES_TSV = os.path.join(ROOT, "build", "patch", "8x8_sizes.tsv")
+
+
+def size_status(r):
+    """(size_used, status) for one planned row.
+
+    `size_used` is the glyph count the game will actually draw at runtime
+    (blank when no count applies).  `status` flags every row where that count
+    is smaller than the English string, i.e. a suspected truncation.
+    """
+    sites = r.get("count_sites") or []
+    if r["action"] == "blocked":
+        return "", "blocked"
+    if sites:
+        return r["en_len"], "patched"
+    if r["kind"] in TERMINATED:
+        return "", "n/a-terminated"
+    if r["en_len"] > r["n_jp"]:
+        return r["n_jp"], "TRUNCATED"
+    return r["n_jp"], "fits"
+
+
+def write_sizes_tsv(rows, path=SIZES_TSV):
+    """Write the size audit sheet (generated; do not hand-edit)."""
+    rank = {"TRUNCATED": 0, "blocked": 1, "patched": 2, "fits": 3,
+            "n/a-terminated": 4}
+    recs = []
+    for r in rows:
+        used, status = size_status(r)
+        recs.append((r["addr"], r["kind"], r["n_jp"], r["en_len"], used,
+                     ",".join(f"0x{s:06X}" for s in r.get("count_sites") or []),
+                     status, r["en"].replace(NL, "\\n")))
+    recs.sort(key=lambda x: (rank.get(x[6], 9), int(x[0], 16)))
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("addr\tkind\tn_jp\ten_len\tsize_used\tsites\tstatus\ten\n")
+        for rec in recs:
+            fh.write("\t".join(str(c) for c in rec) + "\n")
+    trunc = [r for r in recs if r[6] == "TRUNCATED"]
+    print(f"  size sheet -> {os.path.relpath(path, ROOT)} "
+          f"({len(recs)} rows, {len(trunc)} TRUNCATED)")
+    if trunc:
+        print("  TRUNCATED rows (EN longer than the count the game uses; "
+              "verify each, then add a row to translation/"
+              "8x8_count_overrides.tsv):")
+        for t in trunc[:15]:
+            print(f"    {t[0]} {t[1]:6s} jp={t[2]:3d} en={t[3]:3d} "
+                  f"used={t[4]:3d}  {t[7][:48]}")
+        if len(trunc) > 15:
+            print(f"    ... {len(trunc) - 15} more (see the size sheet)")
+    return trunc
+
+
 def report(rows, extra=None):
     by = summarize(rows)
     print("8x8 insertion plan")
@@ -758,6 +832,7 @@ def report(rows, extra=None):
         for a, b in ov:
             print(f"    0x{a[0]:06X}-0x{a[1]:06X} {a[3]} {a[2]}  /  "
                   f"0x{b[0]:06X}-0x{b[1]:06X} {b[3]} {b[2]}")
+    trunc = write_sizes_tsv(rows)
     os.makedirs(os.path.dirname(REPORT), exist_ok=True)
     doc = {
         "summary": {f"{k[0]}/{k[1]}": v for k, v in by.items()},
@@ -774,6 +849,7 @@ def report(rows, extra=None):
         ],
         "blocked": [r["addr"] for r in blocked],
         "overlaps": [{"a": a[2], "b": b[2]} for a, b in ov],
+        "truncated": [t[0] for t in trunc],
     }
     if extra:
         doc.update(extra)

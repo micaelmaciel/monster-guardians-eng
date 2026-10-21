@@ -1,0 +1,13 @@
+addr	site	note
+0x0BD3A2	0x41A12	Yes: party box "End editing and apply it?"
+0x0BD3A2	0x41E04	Yes: party box "End party editing?" (party state 8 variant)
+0x0BD3A2	0x42DA4	Yes: generic "Swap monster?" choice box
+0x0BD3A2	0x4893A	Yes: scanner also finds this site; listed for completeness
+0x0BD3A2	0x4D5C0	Yes: scanner also finds this site; listed for completeness
+0x0BD3A2	0x4DB74	Yes: scanner also finds this site; listed for completeness
+0x0BD3A2	0x5FAB2	Yes: defensive only, no static callers or pointers in ROM
+0x0BE2D0	0x41A8C	Edit again: third option of the party box
+0x0BE28E	0x296AC	No Party: party detail label (training party select)
+0x0BD3D0	0x5EBFE	Name, combine result
+0x0BE298	0x2971E	Idle, training row
+0x0BE29E	0x29748	Deploy, training row

@@ -149,8 +149,9 @@ milestone.
   Yes/No confirm, success message and result card (`Name Golem`; the
   なまえ draw count at `0x5EBFE` is now 4), gold deduction (100G → 80G,
   not clipped), duplicate-pick warning (`You already picked that one.`)
-  and leave/exit. Added `EXTRA_COUNT_SITES` to `tools/insert_8x8.py`
-  for the four rows whose extra draw sites the dataflow scan cannot see
+  and leave/exit. Added manual count overrides (now
+  `translation/8x8_count_overrides.tsv`) for the four rows whose extra
+  draw sites the dataflow scan cannot see
   (`0x0BD3A2` Yes, `0x0BD3D0` Name, `0x0BE298` Idle, `0x0BE29E`
   Deploy); each extra site is guarded by a `movs #n_jp` check, and count
   sites are recorded per row in `build/patch/8x8_report.json`. The Leo
@@ -173,8 +174,9 @@ milestone.
   (`movs r0,#2; strh ...`) for the Yes label:
   `0x41A12`, `0x41E04`, `0x42DA4`, `0x5FAB2`. Because the scanner only
   sees draws fed directly to `DRAW_FN`, "Yes" was truncated to "Ye". All
-  four are now in `EXTRA_COUNT_SITES["0x0BD3A2"]` in
-  `tools/insert_8x8.py`, alongside the five scanner-found sites
+  four are now in
+  `translation/8x8_count_overrides.tsv` (key `0x0BD3A2`), alongside the
+  five scanner-found sites
   (`0x4893A`, `0x4D5C0`, `0x4DB74`, `0x595F8`, `0x5CE0A`) — nine count
   sites total, recorded per row in `build/patch/8x8_report.json`.
   Verified in mGBA: party-formation "End editing and apply it?"
@@ -189,15 +191,48 @@ milestone.
   tables (`0xC4F74`, `0xC5058`, `0xC50C4`) that store packed coordinates
   and string pointers, with no length field, so the renderer draws the
   null-terminated EN string in full. Current build:
-  **2,566 patches, BPS 157,629 B, round-trip OK**.
+  **2,567 patches, BPS 157,632 B, round-trip OK**.
+- **Count overrides moved to data + size audit sheet (2026-10-21).**
+  Manual count sites now live in
+  `translation/8x8_count_overrides.tsv`
+  (`addr<TAB>site<TAB>note`), loaded by `load_count_overrides()`; the
+  `EXTRA_COUNT_SITES` dict is gone. Each site is still re-checked against
+  the JP immediate at build time, so a shifted ROM aborts the build
+  instead of corrupting code. Adding a site is now a one-row edit.
+  `tools/insert_8x8.py` also writes `build/patch/8x8_sizes.tsv` every
+  build: one row per string with `n_jp`, `en_len`, `size_used`,
+  `sites`, `status` and the English text, sorted so problems come first.
+  Statuses: `patched` (167), `fits` (137), `n/a-terminated` (913),
+  `blocked` (64), `TRUNCATED` (39, see below). A `TRUNCATED` row means
+  the English is longer than the count the game uses and no count site
+  was found — a truncation candidate, not proof. The build prints the
+  first 15 and lists them under `truncated` in `8x8_report.json`.
+  The refactor was verified neutral: rebuilding with the TSV instead of
+  the Python dict produced a byte-identical `patched.gba` and BPS.
+  Note `TERMINATED = ("term", "field")` rows are reported as
+  `n/a-terminated` because the field message box reveals text until the
+  end marker (confirmed in mGBA: `0x0A8A3C` finishes the full 56-glyph
+  string by frame ~300; the reveal is just slow, ~6 frames/glyph).
+- **"No Party" draw-count fix (2026-10-21, mGBA-verified).** The first
+  row the new size sheet flagged was `0x0BE28E` `みへんせい` → `No Party`
+  (5 → 8 glyphs), used as the party slot label in the training party
+  select screen. It rendered as `No Pa`. Two sites hold the count: the
+  party detail panel `0x296AC` (`movs r0,#5; str r0,[sp,#4]`) and the
+  party list `0x36C7A` (`movs r4,#6`). Only `0x296AC` drives the visible
+  label (A/B tested by reverting it alone) and it is now in the override
+  TSV; it renders `No Party` in full and stays inside the slot. `0x36C7A`
+  is deliberately **not** patched: its immediate is 6, not `n_jp`=5, so
+  the current guard cannot validate it, and `r4` is reused for the party
+  name draw at `0x36C96`. Revisit only if that list is seen clipping.
 - **"Edit again" draw-count fix (2026-10-21, mGBA-verified).** The third
   option of the same party box (`0x0BE2D0`, JP
   `へんせいをつづける`, 9 glyphs) was clipped to `Edit agai`. The builder
   writes the JP length into the slot field at `0x41A8C`
   (`movs r4,#9; strh r4,[r1,#0x1c]`); the string load at `0x41A90` feeds
   a draw the scanner rejects (`tail-call`), so `count_sites` was empty and
-  the row relocated with the count still 9. Added `0x41A8C` to
-  `EXTRA_COUNT_SITES["0x0BE2D0"]`; the build's `#9` guard catches drift.
+  the row relocated with the count still 9. Fixed with the override row
+  `0x0BE2D0<TAB>0x41A8C` in `translation/8x8_count_overrides.tsv`; the
+  build's `#9` guard catches drift.
   Verified in mGBA from save state `patched.ss3` (party formation screen,
   press B): the box now reads `Yes / No / Edit again`, the cursor moves
   down to the third option, selecting it returns to editing, and
@@ -206,9 +241,10 @@ milestone.
   Lesson: rows whose kind is `slice`/`split`, whose EN is longer than
   `n_jp`, and whose `count_sites` is empty are truncation *candidates* —
   the scanner cannot distinguish a real implicit count from a
-  null-terminated draw, so each needs a human look. Known remaining
-  candidates in the same family include `0x0BE2A8`
-  (`Back to Training Party`, 22 vs 20).
+  null-terminated draw, so each needs a human look. Use
+  `build/patch/8x8_sizes.tsv` as the worklist (status `TRUNCATED`); it
+  currently lists 39, all kind `slice`. Remaining candidates in the same
+  family include `0x0BE2A8` (`Back to Training Party`, 22 vs 20).
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →
@@ -1522,7 +1558,7 @@ needed beyond pointer retargeting.
 - [x] **Combine Shop QA (2026-10-20)**: entry, greeting, menu, monster
   list, recipe preview, Yes/No confirm, success/result card, gold
   deduction, duplicate-pick warning, leave/exit. Extra draw-count
-  sites merged via `EXTRA_COUNT_SITES` in `tools/insert_8x8.py`.
+  sites merged via `translation/8x8_count_overrides.tsv`.
 - [~] Translation (translation skill, milestone workflow). **M1 (story
   msgs 0–4) approved 2026-10-17** (rev 2). **M2 (story msgs 5–9)
   delivered 2026-10-17, revs 2–3 after user feedback**. **M3 (story
