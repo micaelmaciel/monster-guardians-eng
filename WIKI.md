@@ -350,6 +350,45 @@ milestone.
 - **Do not edit the ROM until the user approves the strategy proposal**
   (approved 2026-10-17; insertion and QA are now in progress).
 
+### Playtest support (2026-10-20)
+
+**WhiteDrg location — stage numbering correction.** The Chinese guide
+numbers battles from the prologue, so its "third battle" is **in-game
+Stage 2**, not Stage 3. Verified from the mission table at `0x85980`
+(8-byte records: title ptr, objective ptr):
+
+- `0x85980` = Stage 1 (へいげん), objective `0x0C6886`
+  「おそいくる、まじゅうたちをたおせ！！」 = guide battle 2.
+- `0x85988` = **Stage 2 (へいげん)**, objective `0x0C68AC`
+  「おってのまじゅうを、ぜんめつさせろ！！」 = guide battle 3 —
+  **the battle with WhiteDrg Lv2** (Hobgoblin Lv2, WhiteDrg Lv2,
+  Msha Lv3, FlyGolem Lv2).
+- `0x85990` = Stage 3 (おか), objective `0x0C68D4` = guide battle 4
+  (LoneTaurus etc.); no WhiteDrg.
+
+Guide battle 1 is the prologue (`0x0C6852`, 「ゆくてをはばむ…」),
+which is why every later number is shifted by one. Capture WhiteDrg in
+**Stage 2 (Plains)**; don't kill it. Capture requires protagonist level
+≥ monster level (Lv2 here). If Stage 2 is no longer replayable, use the
+dragon-gene fusion workaround or a cheat/savestate.
+
+**Cheats (mGBA, CodeBreaker format).** Verified against mGBA source:
+type `8` = 16-bit write, type `3` = 8-bit write; address = `op1 &
+0x0FFFFFFF`.
+
+- Gold: `830028B4 270F` → 9999G (RAM `0x030028B4`; verified).
+- EXP (in battle only, disable after victory): `83003198 0064`,
+  `830031CC 0064`, `83003200 0064` for battle slots 1–3 (EXP at
+  `0x03003184 + n*0x34 + 0x14`). Reaches the level cap quickly. The
+  post-battle sync to the persistent party record was not fully
+  verified; check the status screen after battle.
+- Battle slots: `0x03003184`, stride `0x34`; persistent party:
+  `0x03002940`, stride `0x34` (level `+0x17`, EXP `+0x18`,
+  species `+0x19`). Species IDs: WhiteDrg 98, LilGau 136, MainGau 137,
+  HeavyGau 138.
+
+**LilGau recipe:** GolmLite + WhiteDrg = LilGau; LilGau + Imp = MainGau.
+
 ## ROM identification
 
 - File: `rom/monster-guardians.gba`, 8,388,608 bytes (8 MiB / 64 Mbit).
