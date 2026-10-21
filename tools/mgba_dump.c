@@ -148,6 +148,35 @@ int main(int argc, char** argv) {
         tok = strtok_r(NULL, ",", &s1); } free(tmp); }
     fprintf(stderr, "input windows parsed: %d\n", nin);
 
+    /* parse poke list: addr=value[:size],... (simulates cheat codes) */
+    struct { uint32_t addr, value; int size; } pokes[64]; int npokes = 0;
+    const char* pokeenv = getenv("MGBA_POKE");
+    if (pokeenv && *pokeenv) {
+        char* tmp = strdup(pokeenv); char* s1 = NULL;
+        char* tok = strtok_r(tmp, ",", &s1);
+        while (tok && npokes < 64) {
+            char* eq = strchr(tok, '=');
+            if (eq) {
+                *eq = 0;
+                char* vs = eq + 1;
+                int size = 2;
+                char* colon = strchr(vs, ':');
+                if (colon) { *colon = 0; size = atoi(colon + 1); }
+                pokes[npokes].addr = (uint32_t)strtoul(tok, NULL, 0);
+                pokes[npokes].value = (uint32_t)strtoul(vs, NULL, 0);
+                pokes[npokes].size = size;
+                npokes++;
+            }
+            tok = strtok_r(NULL, ",", &s1);
+        }
+        free(tmp);
+        fprintf(stderr, "pokes parsed: %d\n", npokes);
+    }
+    const char* pokeframe_env = getenv("MGBA_POKE_FRAME");
+    int poke_frame = (pokeframe_env && *pokeframe_env) ? atoi(pokeframe_env) : 0;
+    const char* pokeevery_env = getenv("MGBA_POKE_EVERY");
+    int poke_every = pokeevery_env && *pokeevery_env;
+
     struct GBA* gba = core->board;
     uint32_t pchist[256]; int pchist_n = 0, pchist_pos = 0;
 
@@ -159,6 +188,15 @@ int main(int argc, char** argv) {
         for (int i = 0; i < nin; i++)
             if (frame >= inputs[i].a && frame <= inputs[i].b) keys |= inputs[i].keys;
         core->setKeys(core, keys);
+        if (npokes && (frame == poke_frame || (poke_every && frame >= poke_frame))) {
+            for (int i = 0; i < npokes; i++) {
+                switch (pokes[i].size) {
+                case 1: core->busWrite8(core, pokes[i].addr, pokes[i].value); break;
+                case 4: core->busWrite32(core, pokes[i].addr, pokes[i].value); break;
+                default: core->busWrite16(core, pokes[i].addr, pokes[i].value); break;
+                }
+            }
+        }
         core->runFrame(core);
         const char* stateout = getenv("MGBA_STATE_OUT");
         if (stateout && *stateout) {

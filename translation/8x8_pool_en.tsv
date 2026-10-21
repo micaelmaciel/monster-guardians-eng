@@ -118,7 +118,7 @@ addr	n_jp	jp	en
 0x0BDD08	17	パーティがしゅぎょうにいっています	parties are in training.
 0x0BDD2A	22	すべてのモンスターがしゅぎょうにいっています	Every monster is in training.
 0x0BDD56	32	へんせいされていますが、なまえがきまっていないパーティがあります	A party is formed but has⏎no name yet.
-0x0BDD96	35	しゅつげきパーティにステージコウリャクにひつようなモンスターがいません	The deploy party lacks⏎monsters needed to clear⏎the stage.
+0x0BDD96	35	しゅつげきパーティにステージコウリャクにひつようなモンスターがいません	The deploy party lacks⏎necessary monsters.
 0x0BDDDC	10	モンスターがいません	No monsters.
 0x0BDDF0	25	パーティは、すでにしゅつげきにせっていされています	The party is already set⏎to deploy.
 0x0BDE22	9	つぎのこうりゃくは	Next up: 
@@ -161,26 +161,26 @@ addr	n_jp	jp	en
 0x0BE298	3	たいき	Idle
 0x0BE29E	5	しゅつげき	Deploy
 0x0BE2A8	20	しゅぎょうちゅうパーティせんたくにもどる	Back to Training Party
-0x0BE2D0	9	へんせいをつづける	Keep editing
-0x0BE2E2	26	へんせいをしゅうりょうして⏎へんこうをはんえいします	Finish editing and⏎apply the changes.
-0x0BE316	20	パーティへんせいを⏎しゅうりょうしますか	Finish party editing?
-0x0BE33E	9	パーティからはずす	Remove from party
+0x0BE2D0	9	へんせいをつづける	Edit it
+0x0BE2E2	26	へんせいをしゅうりょうして⏎へんこうをはんえいします	End editing and⏎apply it?
+0x0BE316	20	パーティへんせいを⏎しゅうりょうしますか	End party editing?
+0x0BE33E	9	パーティからはずす	Remove
 0x0BE350	18	パーティから⏎はずしてよろしいですか	Remove from party?
 0x0BE374	11	はずしてよろしいですか	Remove it?
 0x0BE38A	18	はずすモンスターを⏎えらんでください	Choose the monster⏎to remove.
-0x0BE3AE	9	パーティにはいぞく	Add to party
+0x0BE3AE	9	パーティにはいぞく	Add
 0x0BE3C0	13	パーティにはいぞくしますか	Add it to the party?
 0x0BE3DA	8	いったいはずして	Remove, 
 0x0BE3EA	4	はいぞく	add 
 0x0BE3F2	18	いったいはずして、⏎はいぞくしますか	Remove, then add?
-0x0BE416	15	しょぞくモンスターと⏎こうかん	Swap with a party⏎monster
-0x0BE434	19	しょぞくモンスターと⏎こうかんしますか	Swap it with a party⏎monster?
-0x0BE45A	24	げんざいのパーティから⏎はずしてはいぞくしますか	Remove from party⏎add?
+0x0BE416	15	しょぞくモンスターと⏎こうかん	Swap monster
+0x0BE434	19	しょぞくモンスターと⏎こうかんしますか	Swap monster?
+0x0BE45A	24	げんざいのパーティから⏎はずしてはいぞくしますか	Swap with⏎monster?
 0x0BE48A	20	げんざいのパーティから⏎はずしてはいぞく	Remove then add
-0x0BE4B2	22	こうかんするモンスター⏎⏎をえらんでください	Choose the monster⏎to swap.
-0x0BE4DE	9	ポジションへんこう	Move slot
+0x0BE4B2	22	こうかんするモンスター⏎⏎をえらんでください	Swap with whom?
+0x0BE4DE	9	ポジションへんこう	Reorder
 0x0BE4F0	14	ポジションをへんこうしますか	Change slot?
-0x0BE50C	24	どのモンスターと⏎⏎ポジションをへんこうしますか	Change position with⏎which monster?
+0x0BE50C	24	どのモンスターと⏎⏎ポジションをへんこうしますか	Swap with whom?
 0x0BE53C	4	はいぶん	Give
 0x0BE544	26	パラメータが⏎おおいためクリアします⏎よろしいですか	Too many points.⏎Clear?
 0x0BE578	29	しゅぎょうちゅうのため⏎へんせいさぎょうはおこ⏎なえません	You can't edit the party⏎during training.

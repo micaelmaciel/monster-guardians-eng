@@ -91,12 +91,12 @@ idx	addr	jp	en	len
 89	0x0CD64E	データをセーブしますか はい  いいえ	Save data?  Yes  No	19
 90	0x0CD676	データをセーブしました	Data saved.	11
 91	0x0CD68E	残念ですがデータはセーブできないようです	Sorry, can't save the data.	27
-92	0x0CD6B8	ワールドマップへ切替えます	Switching to World Map.	23
-93	0x0CD6D4	ブリーフィングへ切替えます	Switching to Briefing.	22
-94	0x0CD6F0	モンスター管理へ切替えます	Switching to Monsters.	22
-95	0x0CD70C	パーティ編成へ切替えます	Switching to Party.	19
-96	0x0CD726	アイテム管理へ切替えます	Switching to Items.	19
-97	0x0CD740	システム処理へ切替えます	Switching to System.	20
+92	0x0CD6B8	ワールドマップへ切替えます	Switch to World Map.	23
+93	0x0CD6D4	ブリーフィングへ切替えます	Switch to Briefing.	22
+94	0x0CD6F0	モンスター管理へ切替えます	Switch to Monsters.	22
+95	0x0CD70C	パーティ編成へ切替えます	Switch to Party.	19
+96	0x0CD726	アイテム管理へ切替えます	Switch to Items.	19
+97	0x0CD740	システム処理へ切替えます	Switch to System.	20
 98	0x0CD75A	プレイヤーの名前を変更します	Change the player's name.	25
 99	0x0CD778	メッセージ表示を行います	Show messages.	14
 100	0x0CD792	通信イベント中のパーティ状態を表示します	Show party status during links.	31

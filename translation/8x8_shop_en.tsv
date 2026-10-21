@@ -38,11 +38,11 @@ addr	n_jp	jp	en
 0x0A8924	21	アイテムのこうにゅうをキャンセルしました。	Item purchase cancelled.
 0x0A8950	24	あ、あと、ほんきょちでセーブするのをわすれずに。	Oh, and don't forget⏎to save at base.
 0x0A898C	10	なにかごようですか？	Can I help you?
-0x0A89A2	8	しゅぎょうにだす	Send to train
+0x0A89A2	8	しゅぎょうにだす	Train team
 0x0A89B4	10	しゅぎょうのかくにん	Check training
-0x0A89CA	10	モンスターのつうはん	Monster mail order
-0x0A89E0	9	アイテムのつうはん	Item mail order
-0x0A89F4	6	みなとをでる	Leave the port
+0x0A89CA	10	モンスターのつうはん	Mail monster
+0x0A89E0	9	アイテムのつうはん	Mail item
+0x0A89F4	6	みなとをでる	Leave port
 0x0A8A02	28	ええっと．．．⏎しゅぎょうにいけるパーティがないみたい。	Um...⏎it looks like no party⏎can go train.
 0x0A8A3C	37	だれもしゅぎょうになんかいってないよ！⏎だからみにいくひつよう、なしなし。	Nobody has gone to train yet!⏎So there's nothing to see.
 0x0A8A88	33	なんか、モンスターがいっぱいなんで⏎これいじょうはむりみたいです。	Um, you have lots of⏎monsters, so it seems⏎you can't take any more.
@@ -52,7 +52,7 @@ addr	n_jp	jp	en
 0x0A8B4C	7	アイテムをかう	Buy items
 0x0A8B5C	8	モンスターをうる	Sell monsters
 0x0A8B6E	7	アイテムをうる	Sell items
-0x0A8B7E	5	みせをでる	Leave the shop
+0x0A8B7E	5	みせをでる	Leave shop
 0x0A8B8A	44	ふむ、モンスターがいっぱいじゃないか。⏎どれかをうるなりなんなりしてから、かうこったな。	Hmm, your monsters are full.⏎Sell one or something⏎before buying.
 0x0A8BE4	47	もうそれいじょう、アイテムはもちきれんぞ。⏎もしなんなら、いらないアイテムはひきとってやるが。	You can't carry more items.⏎If you like, I'll take⏎unwanted ones.
 0x0A8C44	27	なにいってるんだ？⏎モンスターなんていないじゃないか。	What are you saying?⏎You don't have any monsters.

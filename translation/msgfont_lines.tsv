@@ -91,12 +91,12 @@ idx	lines
 89	Save data?|Yes / No
 90	Data saved.
 91	Sorry, can't|save data.
-92	Switching to|World Map.
-93	Switching to|Briefing.
-94	Switching to|Monsters.
-95	Switching to|Party.
-96	Switching to|Items.
-97	Switching to|System.
+92	Switch to|World Map.
+93	Switch to|Briefing.
+94	Switch to|Monsters.
+95	Switch to|Party.
+96	Switch to|Items.
+97	Switch to|System.
 98	Change your|name.
 99	Show|messages.
 100	Party status|during link.

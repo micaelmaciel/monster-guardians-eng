@@ -130,8 +130,8 @@ addr	n_jp	jp	en
 0x0C6D44	8	モンスターをかう	Buy monsters
 0x0C6D56	3	もどる	Back
 0x0C6D5E	14	まだじゅんびできてないんじゃ	Not ready yet, sonny.
-0x0C6D7C	7	せんとうかいし	Start battle
-0x0C6D8C	6	マップをみる	View map
+0x0C6D7C	7	せんとうかいし	Start
+0x0C6D8C	6	マップをみる	Map
 0x0C6D9A	3	もどる	Back
 0x0C6DA2	13	モンスターいちらんへもどる	Back to monster list
 0x0C6DBE	4	ステージ	Stage
