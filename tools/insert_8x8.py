@@ -253,6 +253,11 @@ EXTRA_COUNT_SITES = {
     # the English "Yes" to "Ye".
     "0x0BD3A2": (0x41A12, 0x41E04, 0x42DA4, 0x4893A, 0x4D5C0, 0x4DB74,
                  0x5FAB2),
+    # へんせいをつづける Edit again.  Third option of the "End editing and
+    # apply it?" party box; the builder writes the JP length into the slot
+    # field (movs #9; strh ...) and the draw itself is a tail call, so the
+    # scanner bails out.  Left unpatched, "Edit again" clips to "Edit agai".
+    "0x0BE2D0": (0x41A8C,),
     "0x0BD3D0": (0x5EBFE,),                    # なまえ Name (combine result)
     "0x0BE298": (0x2971E,),                    # たいき Idle (training row)
     "0x0BE29E": (0x29748,),                    # しゅつげき Deploy (training row)

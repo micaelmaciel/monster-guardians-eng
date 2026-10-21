@@ -189,7 +189,26 @@ milestone.
   tables (`0xC4F74`, `0xC5058`, `0xC50C4`) that store packed coordinates
   and string pointers, with no length field, so the renderer draws the
   null-terminated EN string in full. Current build:
-  **2,564 patches, BPS 157,619 B, round-trip OK**.
+  **2,566 patches, BPS 157,629 B, round-trip OK**.
+- **"Edit again" draw-count fix (2026-10-21, mGBA-verified).** The third
+  option of the same party box (`0x0BE2D0`, JP
+  `へんせいをつづける`, 9 glyphs) was clipped to `Edit agai`. The builder
+  writes the JP length into the slot field at `0x41A8C`
+  (`movs r4,#9; strh r4,[r1,#0x1c]`); the string load at `0x41A90` feeds
+  a draw the scanner rejects (`tail-call`), so `count_sites` was empty and
+  the row relocated with the count still 9. Added `0x41A8C` to
+  `EXTRA_COUNT_SITES["0x0BE2D0"]`; the build's `#9` guard catches drift.
+  Verified in mGBA from save state `patched.ss3` (party formation screen,
+  press B): the box now reads `Yes / No / Edit again`, the cursor moves
+  down to the third option, selecting it returns to editing, and
+  reopening the box shows no leftover glyphs. Dimmer layers in the box
+  (`End editing and apply it?`) are unchanged.
+  Lesson: rows whose kind is `slice`/`split`, whose EN is longer than
+  `n_jp`, and whose `count_sites` is empty are truncation *candidates* —
+  the scanner cannot distinguish a real implicit count from a
+  null-terminated draw, so each needs a human look. Known remaining
+  candidates in the same family include `0x0BE2A8`
+  (`Back to Training Party`, 22 vs 20).
 - **8×8 banner clipping fix (2026-10-19).** The world-map hint banner is
   a fixed 17-glyph window, so two relocated 8×8 hints were clipped. They
   now fit in place: `0x0C63F6` → "D-Pad: battle", `0x0C641A` →

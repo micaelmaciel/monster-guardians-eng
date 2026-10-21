@@ -161,7 +161,7 @@ addr	n_jp	jp	en
 0x0BE298	3	たいき	Idle
 0x0BE29E	5	しゅつげき	Deploy
 0x0BE2A8	20	しゅぎょうちゅうパーティせんたくにもどる	Back to Training Party
-0x0BE2D0	9	へんせいをつづける	Edit it
+0x0BE2D0	9	へんせいをつづける	Edit again
 0x0BE2E2	26	へんせいをしゅうりょうして⏎へんこうをはんえいします	End editing and⏎apply it?
 0x0BE316	20	パーティへんせいを⏎しゅうりょうしますか	End party editing?
 0x0BE33E	9	パーティからはずす	Remove
