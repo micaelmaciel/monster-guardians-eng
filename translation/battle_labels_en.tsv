@@ -31,5 +31,5 @@ tile	offset	style	variant	jp	en	text	shadow	fill
 0x0D8	0x0ED538	cream	single	ぜんたい	All	1		15
 0x0D0	0x0ED138	brown	sel	ぜんたい	All	15	12	3
 0x0D0	0x0ED338	brown	unsel	ぜんたい	All	5		3
-0x0D8	0x0ED238	teal	sel	ぜんたい	All	15	12	4
-0x0D8	0x0ED438	teal	unsel	ぜんたい	All	6		4
+0x0D8	0x0ED238	teal	sel	ぜんたい	One	15	12	4
+0x0D8	0x0ED438	teal	unsel	ぜんたい	One	6		4

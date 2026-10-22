@@ -8,10 +8,10 @@ milestone.
 
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
-- **Phase: release candidate (2026-10-21).** 8×8, story, msgfont, status
+- **Phase: release candidate (2026-10-22).** 8×8, story, msgfont, status
   labels and battle command/target label graphics are inserted; the
   user-authored constrained story script is inserted; final patch at
-  `dist/monster-guardians-en.bps` (2,565 patches, 160,467 B, round-trip
+  `dist/monster-guardians-en.bps` (2,565 patches, 160,489 B, round-trip
   OK). Non-blocking gaps:
   chapter-title card, 64 blocked 8×8 rows, and the cosmetic combine-card
   species names. *Three*
@@ -38,6 +38,16 @@ milestone.
   new-game setup flow: protagonist select, rename prompt, attribute
   select, legendary-monster select) is rendered from the three extracted
   corpora. See "New-game setup flow" below.
+- **Order-scope label fix (2026-10-22, user-requested, mGBA-verified).**
+  The two boxes on the pre-battle order-scope screen ("Order all
+  monsters." / "Order each monster.") both read `All`. The JP original
+  reuses `ぜんたい` on both, but the left teal box is the
+  choose-one-monster-at-a-time scope. The two teal blocks
+  (`0x0ED238` selected, `0x0ED438` unselected) are now `One`; the right
+  brown box and the cream command-menu target box remain `All`.
+  Verified in mGBA from `build/qa/battle_all/f6000.state` in both
+  selection states and through the "Choose a monster." path. Final build
+  is **2,565 patches, BPS 160,489 B, round-trip OK**.
 - **Plain JP story dump (2026-10-21).** `translation/story_jp.txt` is the
   complete original Japanese story script in one file: all 96 messages in
   order (msg 00–09 opening, msg 10–62 main story, L00–L32 ending; L30–L32
@@ -1620,7 +1630,8 @@ wrong: `0xEC7D8` is `にげろ` (Flee), not Aim, and `0xEC9D8` is `ボコれ`
 `ほかく!` (Capture) and `たいいん!` (Leave/Retire) commands exist in the
 teal family, and the cream family has all seven commands plus All.
 
-**Three visual styles, 30 blocks total.** All offsets are ROM file
+**Three visual styles, 34 blocks total (30 command/target labels plus
+four scope-box All variants).** All offsets are ROM file
 offsets; each block is 256 B. "slot" is the logical command slot
 (`A0` Fight, `A8` Guard, `B0` Flee, `B8` Item, `C0` Pummel, `C8`
 Capture, `D0` Leave, `D8` All); it is not necessarily the OAM tile base
@@ -1653,6 +1664,18 @@ Pummel→`Pum`, Capture→`Cap`, Leave/Retire→`Out`, All→`All`. Three letter
 are the practical maximum in a 32×16 box whose rounded interior is 20 px
 on rows 4/11 and 22 px on rows 5–10.
 
+**Order-scope boxes (2026-10-22).** The pre-battle scope screen uses two
+fixed style slots: the **right brown box (`D0`) is the "all monsters"
+scope** and the **left teal box (`D8`) is the "each monster" scope**,
+confirmed by the prompt and the following screen ("Pick order." vs.
+"Choose a monster."). The JP original labels both boxes `ぜんたい`
+(`All`), so EN inherited the ambiguity. Only the teal scope labels are
+changed to `One` (`0x0ED238` selected, `0x0ED438` unselected); the brown
+scope labels (`0x0ED138`/`0x0ED338`) and the cream target box
+(`0x0ED538`) stay `All`. `One` fits at a 1 px gap (22/21 px wide in the
+22 px interior). `Each` does not fit with the 8×8 glyph set (30 px at a
+1 px gap).
+
 **Implementation.** `tools/insert_battle_labels.py` decodes each 256-byte
 block to a 32×16 index grid, blanks only the old text/shadow **inside the
 rounded interior**, and draws trimmed ASCII glyphs from
@@ -1662,7 +1685,7 @@ style needs the interior-only blanking because its text index `1` is also
 the colour of the dark border: a global colour replacement would erase the
 border. The selected brown/teal labels keep their 1 px shadow; shadow
 pixels at the rounded edge may be clipped just as in the originals.
-`translation/battle_labels_en.tsv` is the 30-row table;
+`translation/battle_labels_en.tsv` is the 34-row table;
 `tools/build_patch.py` runs the stage after msgfont.
 
 **mGBA verification (2026-10-19).** With `MGBA_STATE_IN` on the battle
@@ -1676,6 +1699,15 @@ savestate and inputs `50-60:A,100-110:A`:
   English. No crash; PC `0x08010490` / `0x0801048C`.
 - The original capture's D0 All box at frame 180 was therefore a timing
   difference, not a different sprite.
+
+**Order-scope verification (2026-10-22).** From
+`build/qa/battle_all/f6000.state` with `RIGHT` toggles:
+- left teal box selected: `One` / `All`, prompt "Order each monster.";
+  `A` opens "Choose a monster." with `One` still on the teal box;
+- right brown box selected: `All` / `One`, prompt "Order all monsters.";
+  `A` opens "Pick order." and the cream command-menu box still reads
+  `All`.
+No clipping, no crash, no other label changed.
 
 **Build (2026-10-20):** 2,513 patches, BPS **156,829 B**, round-trip OK.
 The stage-card footer/mission fix reduced the patch count by 21 (shorter
@@ -1761,10 +1793,12 @@ needed beyond pointer retargeting.
   bank 63 + 33 late messages; message font 169 strings; graphics sweep
   clean. The four-kanji species names use codes outside the 8×8 font
   (cut content); parked, not blocking.
-- [x] **Battle command/target label graphics (M22, 2026-10-19)**: 30
+- [x] **Battle command/target label graphics (M22, 2026-10-19)**: 34
   pre-rendered 32×16 OBJ blocks across the brown/teal/cream families,
   including the cream "All" target box, redrawn in English and
-  mGBA-verified in the battle order menu.
+  mGBA-verified in the battle order menu. **2026-10-22:** the teal
+  order-scope pair now reads `One` so the "each monster" box is no
+  longer confused with the brown "all monsters" box.
   `tools/insert_battle_labels.py` +
   `translation/battle_labels_en.tsv`.
 - [x] **Status labels/descriptions (2026-10-20)**: `tools/insert_status.py`
@@ -1896,7 +1930,9 @@ msg 60 width-foldings) — see
   directly and translate every style/variant (brown, teal, cream,
   including the All target box), preserving each block's box style and
   text/shadow/fill indices. Approved abbreviations:
-  `Atk/Grd/Run/Itm/Pum/Cap/Out/All`.
+  `Atk/Grd/Run/Itm/Pum/Cap/Out/All/One` (2026-10-22: `One` replaces
+  `All` only on the teal "order each monster" scope box; brown and cream
+  `All` boxes are unchanged).
 - **Release blockers / nitpicks (user, 2026-10-20):** the missing gap
   between Yes and No in the confirm widget, and the JP species names on
   the combine cards, are **not** release blockers. Do not spend further
