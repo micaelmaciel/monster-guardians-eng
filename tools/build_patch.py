@@ -462,11 +462,22 @@ def stage_story(p):
 
 # ---------------------------------------------------------------- BPS
 def _varint(n):
+    """BPS variable-length integer (VLV).
+
+    This is not LEB128: continuation bytes have bit 7 clear and each
+    continuation implicitly adds a bias of 128**position. The final byte
+    has bit 7 set. See the BPS specification / RomPatcher.js
+    BPS_writeVLV.
+    """
     out = bytearray()
-    while n >= 0x80:
-        out.append((n & 0x7F) | 0x80)
+    while True:
+        x = n & 0x7F
         n >>= 7
-    out.append(n)
+        if n == 0:
+            out.append(0x80 | x)
+            break
+        out.append(x)
+        n -= 1
     return bytes(out)
 
 
@@ -477,6 +488,7 @@ def bps_encode(source, target):
     out = bytearray(b"BPS1")
     out += _varint(len(source))
     out += _varint(len(target))
+    out += _varint(0)                        # empty metadata
     i = 0
     n = len(target)
     while i < n:
@@ -498,6 +510,9 @@ def bps_encode(source, target):
         i = j
     out += struct.pack("<I", zlib.crc32(source) & 0xFFFFFFFF)
     out += struct.pack("<I", zlib.crc32(target) & 0xFFFFFFFF)
+    # The BPS patch checksum covers every preceding byte, including the
+    # source and target checksum fields, but not the checksum itself.
+    out += struct.pack("<I", zlib.crc32(bytes(out)) & 0xFFFFFFFF)
     return bytes(out)
 
 
@@ -509,18 +524,21 @@ def bps_apply(patch, source):
 
     def varint():
         nonlocal pos
-        shift = 0
-        value = 0
+        data = 0
+        shift = 1
         while True:
             b = patch[pos]
             pos += 1
-            value |= (b & 0x7F) << shift
-            if not (b & 0x80):
-                return value
-            shift += 7
+            data += (b & 0x7F) * shift
+            if b & 0x80:
+                return data
+            shift <<= 7
+            data += shift
 
     src_size = varint()
     tgt_size = varint()
+    meta_len = varint()
+    pos += meta_len
     if src_size != len(source):
         raise SystemExit("BPS source size mismatch")
     out = bytearray()
@@ -546,11 +564,15 @@ def bps_apply(patch, source):
             for _ in range(length):
                 out.append(out[tgt_rel])
                 tgt_rel += 1
-    src_crc, tgt_crc = struct.unpack("<II", patch[-8:])
+    if len(patch) < 12:
+        raise SystemExit("truncated BPS patch")
+    src_crc, tgt_crc, patch_crc = struct.unpack("<III", patch[-12:])
     if zlib.crc32(source) & 0xFFFFFFFF != src_crc:
         raise SystemExit("source CRC mismatch")
     if zlib.crc32(bytes(out)) & 0xFFFFFFFF != tgt_crc:
         raise SystemExit("target CRC mismatch")
+    if zlib.crc32(patch[:-4]) & 0xFFFFFFFF != patch_crc:
+        raise SystemExit("patch CRC mismatch")
     return bytes(out)
 
 

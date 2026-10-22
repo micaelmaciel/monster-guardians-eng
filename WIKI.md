@@ -11,8 +11,8 @@ milestone.
 - **Phase: release candidate (2026-10-22).** 8×8, story, msgfont, status
   labels and battle command/target label graphics are inserted; the
   user-authored constrained story script is inserted; final patch at
-  `dist/monster-guardians-en.bps` (2,565 patches, 160,489 B, round-trip
-  OK). Non-blocking gaps:
+  `dist/monster-guardians-en.bps` (2,565 patches, 160,494 B, round-trip
+  and RomPatcher.js-validated). Non-blocking gaps:
   chapter-title card, 64 blocked 8×8 rows, and the cosmetic combine-card
   species names. *Three*
   text subsystems are now structurally understood and **all three are
@@ -47,7 +47,14 @@ milestone.
   brown box and the cream command-menu target box remain `All`.
   Verified in mGBA from `build/qa/battle_all/f6000.state` in both
   selection states and through the "Choose a monster." path. Final build
-  is **2,565 patches, BPS 160,489 B, round-trip OK**.
+  is **2,565 patches, BPS 160,494 B, round-trip OK**.
+  **BPS writer fixed 2026-10-22** after RomPatcher.js reported a patch
+  checksum mismatch: `bps_encode` was using LEB128 instead of the BPS VLV
+  encoding, omitted the mandatory metadata-length field, and omitted the
+  final patch CRC32. All three are fixed; `bps_apply` now decodes the
+  spec encoding and validates all three checksums. The shipped patch was
+  parsed, checksum-validated and applied byte-exactly by Marc Robledo's
+  actual `RomPatcher.format.bps.js` module (not just our own applier).
 - **Plain JP story dump (2026-10-21).** `translation/story_jp.txt` is the
   complete original Japanese story script in one file: all 96 messages in
   order (msg 00–09 opening, msg 10–62 main story, L00–L32 ending; L30–L32
@@ -924,8 +931,11 @@ supplies `the` where needed.
   6 / 5 lines; no insert-spacing problems.
 - `tools/insert_story.py --check`: 96 messages, **14,138 words /
   28,276 bytes**, no unencodable characters; only message 92 is chained.
-- `tools/build_patch.py --stage all`: 2,565 patches; BPS 160,467 B;
-  round-trip OK (final QA build, 2026-10-21).
+- `tools/build_patch.py --stage all`: 2,565 patches; BPS 160,494 B;
+  round-trip OK and independently applied with RomPatcher.js's BPS module
+  (final QA build, 2026-10-22). BPS VLV, metadata-length field and patch
+  CRC32 were corrected on 2026-10-22; the earlier 160,489 B file was not
+  a spec-valid BPS despite passing our own applier.
 - mGBA early bank: loaded `patched.ss4` (msg 36), advanced to msgs 37–39;
   player-name `7540` inserts render as `Leo`; msg 39 page 1 renders the
   red `Zargo` span and page 2 continues correctly. No crash.

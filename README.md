@@ -1,8 +1,27 @@
+This is a machine English translation of an obscure Japanese-only Konami game for the GBA, namely Monster Guardians.
+
+---
+
+# The patch
+The `.bps` patch can be downloaded in the [releases](https://github.com/micaelmaciel/monster-guardians-eng/releases) page. It is not game breaking, it can be beaten, but there are still a few minor graphical issues here and there. I did some QA myself, I went over the entire storyline (which isn't that big), so hopefully you won't find anything too jarring.
+
+## Known issues
+
+- The name selection keyboard screen still displays japanese characters;
+- The status screen of stages doesn't show the stage number
+- A few graphical issues
+
+## Translation
+
+As I said, I did some QA and made sure the game was beatable. I also read through the storyline and corrected a lot of the weird stuff AI put there. There was only one instance where the game crashed and I couldn't reproduce, but I would advise making saves often, just in case.
+
+## How to apply
+You need the original ROM, with MD5 **a62155a1c3dd4bad9e260a2bf527b69f**.
+After obtaining it, you can apply the `.bps` patch with an [online patcher](https://www.marcrobledo.com/RomPatcher.js/).
+
 # About
 
-This an English translation of an obscure Japanese-only Konami game for the GBA, namely Monster Guardians.
-
-That was mostly an excuse for testing some open-weight, non-frontier models on a range of complex tasks, though. Since the romhacking scene is triving right now and given the amount of work required for reverse engineering + a full translation, I thought on jumping on the bandwagon, because why not? I spent 0$ dollars on this and used 2 different Opencode free models, with **Deepseek V4.1** Flash doing the vast majority of the work here. It took 4 days from start to end (not real work time, though).
+Romhacking this was mostly an excuse for testing some open-weight, non-frontier models on a range of complex tasks. Since the romhacking scene is triving right now and given the amount of work required for reverse engineering + a full translation, I thought on jumping on the bandwagon, because why not? I spent 0 dollars on this and used 2 different Opencode free models, with **Deepseek V4.1 Flash** doing the vast majority of the work here. It took 4 days from start to end (not real work time, though).
 
 The models used during the lifetime of this project:
 - Big Pickle (which is not a disclosed model)
@@ -12,11 +31,6 @@ GLM 5.3 was in use in another RE project, though I forgot to include it on this 
 
 I specifically chose a game that had a decent amount of text, but could not be considered to have a heavy narrative, such that I could proofread it. I don't even care for this game (it's kinda dogshit, with all due respect), but I'm sure some people would enjoy it. Maybe Pokémon fans.
 
-# The patch
-
-The `.bps` patch can be downloaded in the releases page. It is not game breaking, it can be beaten, but there are still a few minor graphical issues here and there. I did some QA myself, I went over the entire storyline (which isn't that big), so hopefully you won't find anything too jarring.
-
-You can apply the `.bps` patch with an [online patcher.](https://www.marcrobledo.com/RomPatcher.js/)
 
 # For the curious
 
