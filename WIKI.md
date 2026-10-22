@@ -859,7 +859,9 @@ the old msg 19 "Then, from the next room..." line → the new equivalent,
 
 **Layout changes accepted from the constrained text.** Screen repartitions
 and line merges were applied where the old four-line JP screen did not
-fit the EN wording; these are structural only (no wording changes):
+fit the EN wording; these are structural only. The sole wording-level
+change in the constrained version is L03 `the {{WORD:2}} appeared.` →
+`The {{WORD:2}} appeared.` (sentence-initial capital):
 splits at msgs 05, 07, 27, 39, L00, L01, L05, L19; merge at L28;
 repartition of msg 25. Line reflows keep names/possessives together:
 L05 s4 is now `Winslow I, a nobleman / of Barroa.` and L20 s2 is now
