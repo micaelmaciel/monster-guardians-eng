@@ -1,0 +1,891 @@
+Monster Guardians - English story script
+===================================================
+
+96 messages in game order: msg 00-09 (opening narration), msg 10-62 (main story), L00-L32 (ending).
+L30-L32 are alternate versions of the same final scene.
+
+## 00
+
+A world without gods can never prosper.
+
+That is why I was sent.
+
+## 01
+
+The Age of Darkness
+
+The continent of Grandate had always
+existed alongside threats to humankind.
+
+Two colossal High Dragons,
+said to possess eternal life,
+
+held the continent's power in their grip.
+
+## 02
+
+Ruling the skies: Canon of the Sky
+
+## 03
+
+Ruling the land: Ignis of the Earth
+
+## 04
+
+The two faced one another, each seeking to conquer the continent,
+
+and waged a blood-soaked war.
+
+## 05
+
+After a long war, just as all life
+and prosperity on the continent
+were about to vanish...
+
+a lone Beast Tamer appeared,
+leading two beasts of a kind no one had ever seen,
+
+and challenged the two dragons to battle!
+
+## 06
+
+A long and harrowing battle raged on...
+
+## 07
+
+Canon of the Sky was defeated,
+and Ignis of the Earth, wounded,
+hid itself deep beneath Mount Famfantar.
+
+## 08
+
+That victory was won at the cost of
+the lives of the two beasts.
+
+And the Beast Tamer, too,
+was on the verge of collapse.
+
+At that time, there was no one in this world
+but me
+
+who had the skill to save the Beast Tamer.
+
+## 09
+
+In time, the Beast Tamer and
+the two beasts became legend.
+
+People came to call them the Legendary Beast Tamer.
+
+And the continent of Grandate
+came to be ruled by humankind.
+
+## 10
+
+~Mount Famfantar~
+
+The man stood at the crater,
+which still belched smoke in great plumes.
+
+## 11
+
+Ruins that looked to have once been a shrine to Ignis
+remained in place.
+
+Man: "What's the matter, Ignis of the Earth?!"
+
+## 12
+
+Man: "Does the sight of this Takt not bring it all back?"
+
+Man: "It is the Takt of the Legendary Beast Tamer
+who drove you from this world!"
+
+Man: "Rise again now, and let us take revenge together,
+on that wretch...
+
+no, on this entire world!!"
+
+## 13
+
+Man: "..."
+
+Man: "Is this alone still not enough?!
+I suppose I'll need that wretch after all..."
+
+Just then, the man felt something
+stirring deep in the earth beneath his feet.
+
+## 14
+
+~The Ruins~
+
+In the morning mist, men's voices
+could be heard from a ruin far from any village!
+
+Pursuer 1: "We'll hunt them down!"
+
+Pursuer 2: "Don't let them get away!!"
+
+## 15
+
+They were guards in the service
+of the Kingdom of Barroa.
+Pursuer 3: "You won't get away this time!"
+
+Pursuer 2:
+"Um... what's this one's name?"
+
+## 16
+
+Pursuer 3: "Oh, right!"
+
+Pursuer 1:
+"It's {{PLAYER}}!"
+
+Pursuer 2: "Prepare yourself,
+{{PLAYER}}!
+
+If we catch you and hand you over to Lord Beringham,
+we'll be set for life..."
+
+Just as the pursuers were about to lay hands on {{PLAYER}}--!
+
+## 17
+
+From behind, beasts suddenly
+leapt upon the pursuers!
+
+## 18
+
+Pursuers: "Waaah!!"
+
+{{PLAYER}} watched in stunned silence
+as it happened.
+
+## 19
+
+The pursuers were beaten in the blink of an eye.
+
+Then an old man came out
+of the next room.
+
+## 20
+
+Old Man: "What a racket! I'm foul-tempered
+when I wake up, I'll have you know!"
+
+## 21
+
+The old man gave his name as Kurimuto.
+
+Kurimuto: "Now, I didn't help you out of kindness. I only stepped in
+because I heard the name Beringham.
+That one and I have some history...
+
+Hmm, I take it you're Winslow's {{WORD:1}},
+from Vandam Castle...
+
+Did something happen at the castle?"
+
+## 22
+
+{{PLAYER}} began to tell Kurimuto
+about the incident that had happened the day before.
+
+## 23
+
+~Kingdom of Barroa, Vandam Castle~
+
+## 24
+
+The lord of the castle was Winslow II, a nobleman.
+The incident struck suddenly, on a drizzly morning.
+
+## 25
+
+The Beast Knight Order, under the Pope's direct command,
+burst into the castle and seized it!
+The mastermind was Duke Beringham Roe,
+who had long served as the Pope's military advisor.
+
+He was also the supreme commander
+of the Beast Knight Order.
+He declared that he had seized the castle
+on suspicion of treasonous dealings with enemies of the Kingdom!
+
+But it was a complete frame-up.
+
+## 26
+
+Anyone who got in the way of the search was seized without mercy.
+
+In the midst of that chaos, what {{PLAYER}} saw
+
+was {{PLAYER}}'s father, Winslow,
+already lifeless right before {{PLAYER}}'s eyes.
+
+## 27
+
+And there stood Beringham,
+holding the Beast Tamer's Takt,
+which {{PLAYER}} didn't recognize.
+
+## 28
+
+Kurimuto: "..."
+
+Kurimuto: "So the Legendary Beast Tamer's Takt was what he was after?
+No... never mind.
+
+More to the point... do you
+mean to avenge your father and family?
+
+You needn't say a word.
+Those eyes of yours say it all!"
+
+## 29
+
+With that, Kurimuto handed his own Takt to {{PLAYER}}.
+
+## 30
+
+Kurimuto: "I'll entrust my beasts to you.
+
+Make these ruins your den for a while
+and train hard!"
+
+## 31
+
+Kurimuto: "Listen well. To fight Beringham and his lot,
+
+these beasts aren't strong enough!
+
+So you must create the legendary beast
+that once fought alongside the Legendary Beast Tamer,
+
+{{BEAST:8}}!"
+
+## 32
+
+Kurimuto: "I've been doing some research.
+
+I've only worked out a part of it so far, you see..."
+
+Kurimuto: "By my findings, first of all,
+
+you combine {{BEAST:0}} with
+{{BEAST:1}},
+
+and that should produce {{BEAST:2}},
+the young form of {{BEAST:8}}!"
+
+## 33
+
+Kurimuto: "I'll go back to research and work out how to make the next forms!"
+Kurimuto: "I leave the rest to you!"
+
+## 34
+
+With those parting words, Kurimuto
+set off for parts unknown.
+
+Watching that retreating figure,
+{{PLAYER}} thought:
+
+## 35
+
+Perhaps old Kurimuto had known all along that this would happen...
+
+## 36
+
+RUMBLE!
+
+As {{PLAYER}} entered the room with the altar,
+the castle began to shake violently.
+
+{{PLAYER}}: "An earthquake?"
+
+## 37
+
+While {{PLAYER}} was distracted by the quake,
+
+a huge man, a complete stranger,
+stood before {{PLAYER}}.
+
+He approached, glaring at {{PLAYER}}.
+
+## 38
+
+Beringham: "Can you feel it?! This earthquake is Ignis, who has begun to sense you,
+raging beneath the earth!"
+
+Beringham loomed
+in the direction of the voice.
+
+## 39
+
+{{PLAYER}} was about to raise the Takt
+against Beringham, when
+
+Kurimuto: "Careful! The beast he made, Zargo, is coming after you!"
+
+Before {{PLAYER}} knew it,
+Kurimuto was standing behind {{PLAYER}}.
+
+Kurimuto:
+"You did well to make it this far."
+
+## 40
+
+Beringham: "Heh heh heh... So Kurimuto was behind this after all!
+But it's already too late!"
+
+Just then, the ground began
+to shake violently once more!
+
+## 41
+
+Beringham: "Ignis, upon noticing {{PLAYER}}'s presence,
+
+is about to rise again!
+
+Zargo! I leave the rest to you!
+
+I'm going to Mount Famfantar
+
+to pay {{PLAYER}}'s old friend a visit."
+
+With those words, Beringham left the room.
+
+And Zargo slowly approached {{PLAYER}}...
+
+## 42
+
+Zargo: "Guuuuh!"
+
+Zargo let out a groan
+and collapsed to his knees!
+
+## 43
+
+Then Ramires, Beringham's other beast, appeared from above!
+
+## 44
+
+Ramires stood before Zargo
+and spoke to {{PLAYER}}!
+Ramires: "You... want to know...
+about yourself...?
+
+Then... go to Mount Famfantar..."
+
+With those words, Ramires gathered Zargo up
+and took off into the sky.
+
+## 45
+
+Kurimuto: "Perhaps this too is fate...
+Well, there's nothing for it but to go.
+
+To Mount Famfantar...!
+
+You'll learn everything about yourself there!"
+
+## 46
+
+Kurimuto: "Listen well. Before then,
+
+you must complete the mid-sized form
+of the legendary beast {{BEAST:8}}!
+
+Next, combine {{BEAST:3}} with
+
+{{BEAST:4}}.
+
+Do that, and {{BEAST:5}},
+
+the mid-sized form of {{BEAST:8}},
+should be complete!"
+
+## 47
+
+Kurimuto: "I'm off on another journey to research the legendary beast.
+The road to the volcano
+will be brutally hard!!"
+
+With that,
+Kurimuto departed.
+
+## 48
+
+Ever since {{PLAYER}} began climbing Mount Famfantar,
+
+countless earthquakes had struck.
+
+{{PLAYER}} could feel it:
+
+these tremors were Ignis
+raging in the depths of the earth.
+
+## 49
+
+Suddenly, Beringham's beasts
+Zargo and Ramires appeared.
+
+Zargo: "Fight... more!"
+
+Ramires: "If you fight... a lot,
+Ignis... gets angry!"
+
+{{PLAYER}} felt a savage power surging up from within...
+
+## 50
+
+Upon reaching the crater of Mount Famfantar,
+
+{{PLAYER}} found the ruins of a decayed temple.
+
+Beringham: "This is the altar where Ignis of the Earth was worshipped.
+
+I've been waiting for you.
+
+Though I suspect Ignis has been waiting
+for you even more than I have...
+
+Now! Let us celebrate the revival
+in grand style!!"
+
+Then beasts appeared from behind Beringham.
+Kurimuto: "Hm! I'm too late!
+
+No, we mustn't fight here!"
+
+But Kurimuto's voice, arriving late, went unheard...
+
+## 51
+
+The moment Beringham's beasts fell, the ground shook violently,
+
+and the earth beneath {{PLAYER}} and the others began to crumble.
+
+## 52
+
+Then, from deep within the earth,
+a gigantic dragon appeared.
+
+## 53
+
+The dragon's body was red as magma,
+and from its enormous maw
+came a breathing like a raging storm.
+
+## 54
+
+Beringham: "Hah hah!!
+I've waited for this moment!
+
+The full revival of Ignis of the Earth!"
+
+## 55
+
+Beringham: "You lot, go and prepare the beast combining machine
+at the old castle ruins!
+
+I'll follow once I've seen the two of them reunite.
+
+Ignis, and {{PLAYER}},
+
+who was made by combining Canon of the Sky
+and the Legendary Beast Tamer..."
+{{PLAYER}} gasped.
+
+## 56
+
+Kurimuto: "With our strength as it is now,
+there's no way to defeat Ignis!
+
+So for now, we run!!"
+
+But just then,
+{{PLAYER}} felt something
+
+deep inside...
+
+## 57
+
+Kurimuto: "What is it?!"
+
+{{PLAYER}}: "Heh heh heh!"
+
+{{PLAYER}}:
+"It's been a long time..."
+
+{{PLAYER}}'s expression
+
+had completely changed, as though a different person had taken over.
+
+## 58
+
+{{PLAYER}}:
+"I'll settle this battle, centuries in the making,
+here and now!"
+
+Kurimuto saw the figure of Canon looming behind {{PLAYER}}.
+
+## 59
+
+Ignis of the Earth let out a roar
+and lay down upon the ground.
+
+Beringham: "What is this?!
+Ignis, defeated?!"
+
+## 60
+
+Beringham:
+"No, at this rate--!!"
+
+A band of strange light shot from Beringham's hand
+
+and wrapped around Ignis's body,
+lifting that huge frame into the air.
+
+## 61
+
+Wrapped in light, Ignis and Beringham flew off into the distant sky.
+
+## 62
+
+Beringham: "How is this possible!
+
+Even if {{PLAYER}} is the combination
+of Canon and the Beast Tamer,
+
+where does such strength..."
+
+## L00
+
+{{PLAYER}}: "Haa... haa!"
+
+With Ignis gone, {{PLAYER}} came to and collapsed on the spot.
+
+Kurimuto: "You... I see!
+So there's a trigger to it,
+and Canon's soul awakens!"
+
+Kurimuto: "I can put it off no longer.
+I must tell you everything..."
+
+Kurimuto: "What Beringham said is true!
+
+I combined Canon and the Beast Tamer,
+and you were born."
+
+## L01
+
+Kurimuto: "To begin with, I'm the one
+who created the thing called the beast combining machine
+
+in this world."
+
+Kurimuto: "In this world, ruled by two dragons
+and overrun by savage beasts,
+
+I set out to create
+beast-humans who could live like people."
+
+## L02
+
+Kurimuto: "The first beast-human I ever made
+
+was Beringham."
+
+Kurimuto: "Beasts created through combination
+are strongly shaped by heredity.
+
+I combined him with several beasts over and over, but he inherited the dark-type genes
+
+too strongly.
+
+He looks human, but his heart is no different
+from those savage beasts."
+
+## L03
+
+Kurimuto: "In the end, just as I was starting to feel
+my ideal was impossible to accomplish,
+
+the {{WORD:2}} appeared."
+
+Kurimuto: "{{WORD:3}} fought a fierce battle
+against the two dragons and won,
+
+but was left on the brink of death
+with grievous wounds all over the body.
+
+By then, the beast combining machine was the only way left
+to save the {{WORD:2}}'s life."
+
+## L04
+
+Kurimuto: "So I combined Canon, who had a mighty life force,
+
+with the {{WORD:2}}!"
+
+## L05
+
+Kurimuto: "And so you were born, a beast-human
+who strongly inherited the {{WORD:2}}'s genes.
+
+But you had lost every last memory.
+
+Later, it was discovered that you were a child of Winslow I,
+a nobleman of Barroa.
+
+Which means Winslow II, the father you just lost,
+was your younger brother!
+
+He learned the truth, and he raised you,
+who had no memories,
+
+like his own child."
+
+Winslow II, whom {{PLAYER}} thought was their father...
+
+{{PLAYER}} could barely hold back the surge of emotions...
+
+## L06
+
+Kurimuto: "Beringham learned of this,
+
+and used you to lure Ignis out."
+
+## L07
+
+Kurimuto: "He should be headed for the old castle ruins.
+
+The beast combining machine that made you
+long ago is there.
+
+He means to become what you are."
+
+## L08
+
+Kurimuto: "The karmic bond between you and Ignis
+is eternal.
+You cannot escape it!
+
+Revive the legendary beast
+and defeat them!"
+
+## L09
+
+Kurimuto:
+"Listen! With this, the legendary beast
+{{BEAST:8}} will be complete.
+
+Combine the mid-sized {{BEAST:6}} with
+
+{{BEAST:7}}!"
+
+## L10
+
+Kurimuto: "Do that, and the legendary beast
+{{BEAST:8}} will come to life!
+Only you can wield this beast.
+
+Go to the old castle ruins and stop Beringham's ambitions!"
+
+## L11
+
+When {{PLAYER}} reached the courtyard,
+
+Zargo and Ramires suddenly appeared before {{PLAYER}}.
+
+Zargo: "This time... I'm serious!"
+
+Ramires: "No more... mercy!"
+
+## L12
+
+Zargo and Ramires fled back to Beringham.
+
+Beringham: "Pathetic wretches.
+Get inside this, both of you!"
+
+## L13
+
+Beringham: "Damn it all! Combining mere small fry
+only gets you more small fry!"
+
+Beringham: "In that case,
+to give them greater power still,
+I shall combine them with myself..."
+
+With that, Beringham himself
+stepped into the beast combining machine.
+
+## L14
+
+Beringham: "Cu... curse it...
+
+With... this...
+
+I will..."
+
+## L15
+
+"...be the strongest..."
+
+Further inside, Ignis had already been placed
+in the beast combining machine.
+
+Dragging his body along, Beringham went in.
+
+## L16
+
+The beast combining machine spewed fire,
+and in an instant the flames engulfed the entire castle!
+
+## L17
+
+Even as the whole room was swallowed by flames,
+{{PLAYER}} did not run,
+instead choosing to watch Beringham's corpse.
+
+## L18
+
+{{PLAYER}} remembered.
+
+The day Beringham
+had attacked the castle.
+
+## L19
+
+Winslow II:
+"So this is what you were after!"
+
+Winslow II held out the Legendary Beast Tamer's Takt
+to Beringham.
+
+When {{PLAYER}} saw the Takt,
+the soul of Canon
+engulfed {{PLAYER}}'s heart.
+
+## L20
+
+What had Canon, who bore resentment
+against the Legendary Beast Tamer,
+
+done to Winslow II, {{PLAYER}}’s own younger brother...?
+
+## L21
+
+The Beast Tamer's Takt
+fell from {{PLAYER}}'s hand.
+
+## L22
+
+{{PLAYER}}:
+"{{WORD:0}} killed him..."
+
+The flames spread throughout the room,
+
+and {{PLAYER}} was swallowed by the flames as well.
+
+## L23
+
+The entire old castle was shrouded in smoke,
+and its outer walls crumbled.
+
+## L24
+
+Kurimuto: "That's what comes of forcing that old beast combining machine to run!"
+
+Kurimuto:
+"And {{PLAYER}}...?"
+
+## L25
+
+Then the castle, wrapped in flames,
+collapsed.
+
+## L26
+
+Kurimuto searched through the collapsed wreckage
+for {{PLAYER}}.
+
+And there, he found a Takt blackened by fire.
+
+Looking at that Takt,
+Kurimuto knew for certain.
+
+## L27
+
+Kurimuto: "I see... so it was a decision made with full knowledge of everything..."
+
+Kurimuto: "{{PLAYER}} has to be alive
+somewhere out there!"
+
+## L28
+
+As if to convince himself,
+
+he kept gazing at the blackened Takt.
+
+## L29
+
+~Credits~
+
+*The End*
+
+## L30
+
+{{PLAYER}} stopped and thought.
+
+Old Kurimuto had spoken of the legendary beast. Could {{PLAYER}} fight without it?
+
+With that in mind, {{PLAYER}} left the place.
+
+## L31
+
+{{PLAYER}} stopped and thought.
+
+Beringham and his lot were waiting up ahead.
+
+Could {{PLAYER}} really win without completing the legendary beast?
+
+{{PLAYER}} left the place to complete the beast.
+
+## L32
+
+{{PLAYER}} stopped and thought.
+
+Beringham and his lot were waiting up ahead.
+
+Could {{PLAYER}} really win without completing the legendary beast?
+
+{{PLAYER}} left the place to complete the beast.
+
+# Dynamic inserts
+
+The game fills these in at runtime. Values are the English strings
+(male player / female player), taken from shared_terms.md.
+
+BEAST:n
+   0  GolmLite / GobFly
+   1  WhiteDrg / BlackDrg
+   2  LilGau / ChinVury
+   3  LilGau / ChinVury
+   4  Imp / HighElf
+   5  MainGau / LinVury
+   6  MainGau / LinVury
+   7  Lv15+ MinoDrag / Lv15+ DragGrif
+   8  HeavyGau / MainVury
+
+WORD:n
+   0  I / I
+   1  son / daughter
+   2  Legendary Beast Tamer
+   3  He / She   (only used at the start of a sentence in this translation)

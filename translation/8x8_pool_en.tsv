@@ -194,7 +194,7 @@ addr	n_jp	jp	en
 0x0BE73C	21	しゅぎょうちゅうのため⏎ソウビできません。	Can't equip items⏎during training.
 0x0BE766	20	タマゴにはソウビすること⏎はできません。	You can't equip items⏎to an egg.
 0x0BE78E	20	アイテムをはずします、⏎よろしいですか？	Remove the item.⏎Is that OK?
-0x0BE7B6	21	アイテムをそうびします、⏎よろしいですか？	Equip the item.⏎Is that OK?
+0x0BE7B6	21	アイテムをそうびします、⏎よろしいですか？	Equip the item?
 0x0BE7E0	14	ほかのモンスターにソウビする	Equip on another monster
 0x0BE7FC	8	アイテムをはずす	Remove item
 0x0BE80C	31	げんざいのアイテムをはず⏎してソウビします、よろし⏎いですか？	Remove the current item⏎and equip this one.⏎Is that OK?
@@ -223,7 +223,7 @@ addr	n_jp	jp	en
 0x0BEA3A	17	このそうさはできません、ごめんね。	Sorry, no can do.
 0x0BEA5C	17	モンスターリストはじゅんびちゅう。	List coming soon.
 0x0BEA7E	17	セーブデータをすべてクリアしました	All save data was erased.
-0x0BEAA0	36	カセットにほぞんしているモバイルアダプタGBのパスワードをさくじょします	This deletes the Mobile⏎Adapter GB password saved⏎on the cartridge.
+0x0BEAA0	36	カセットにほぞんしているモバイルアダプタGBのパスワードをさくじょします	This deletes the Mobile⏎Adapter GB password.
 0x0BEAE8	14	パスワードをさくじょしました	Password deleted.
 0x0BEB04	28	いまあるデータにうわがきセーブします。⏎よろしいですか？	Save over the current data.⏎Is that OK?
 0x0BEB3C	19	データはせいじょうにセーブできました。	Data was saved safely.
@@ -266,6 +266,6 @@ addr	n_jp	jp	en
 0x0BECF6	14	ロードしますよろしいですか？	Load the game.⏎Is that OK?
 0x0BED12	20	セーブデータが無いため⏎ロードできません	There is no save data,⏎so you can't load.
 0x0BED3A	27	ロードにしっぱいしました⏎データはしょうきょされます。	Load failed.⏎The data will be erased.
-0x0BED70	24	ロードにせいこうしました⏎ゲームをかいしします。	Load succeeded.⏎The game will start.
+0x0BED70	24	ロードにせいこうしました⏎ゲームをかいしします。	Load succeeded.
 0x0BEDA0	6	いやだ・・・	No...
 0x0BEDAC	11	たすけ・・・て・・・！	Help... me...!
