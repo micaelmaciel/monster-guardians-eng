@@ -9,9 +9,10 @@ milestone.
 - ROM supplied by user at `rom/monster-guardians.gba` (gitignored; never
   commit, never modify in place).
 - **Phase: release candidate (2026-10-21).** 8×8, story, msgfont, status
-  labels and battle command/target label graphics are inserted; final
-  patch at `dist/monster-guardians-en.bps` (2,564 patches, 157,619 B,
-  round-trip OK) after the Yes/No draw-count fix. Non-blocking gaps:
+  labels and battle command/target label graphics are inserted; the
+  user-authored constrained story script is inserted; final patch at
+  `dist/monster-guardians-en.bps` (2,567 patches, 160,679 B, round-trip
+  OK). Non-blocking gaps:
   chapter-title card, 64 blocked 8×8 rows, and the cosmetic combine-card
   species names. *Three*
   text subsystems are now structurally understood and **all three are
@@ -86,7 +87,9 @@ milestone.
   `tools/check_insert_rows.py` replays both banks with the real names
   (story max line 30 / late 29, no screen overflow). msg 9 pronouns and
   msg 46 insert spacing fixed.
-- **Story insertion DONE (2026-10-19, `--stage story`).** All 96 story
+- **Story insertion DONE (2026-10-19, `--stage story`; numbers below are
+  the original build, superseded by the 2026-10-21 constrained insertion).**
+  All 96 story
   messages are encoded and relocated (`tools/insert_story.py`), every
   message pointer retargeted (95 pointers; msg 92 is chained), the 8×8
   font store moved to `0x767660`, streams at `0x76B968` (25,310 B), the
@@ -98,6 +101,22 @@ milestone.
   on demand.
   Verified in mGBA: msgs 8, 13, 14 (59 glyphs/page), 21 (insert + full
   21-char line), 31/32 (styled 753E name), 50, 66.
+- **Constrained story text inserted (2026-10-21).** The user-authored,
+  constraint-fitted script `translation/story_en_constrained.txt` is now
+  the authoritative insertion source; `translation/story_en.txt` is left
+  untouched. The text is compiled into tracked control streams
+  `translation/story_en_items.json` / `late_story_en_items.json` and
+  1:1 EN runs. `tools/story_insert_rebuild.py` regenerates both from the
+  pre-constrained control templates. Current story block:
+  96 messages, **14,138 words / 28,276 bytes**, streams at `0x76B968`
+  (28,276 B), 95 pointers patched. Full build: **2,567 patches, BPS
+  160,679 B, round-trip OK**. New 753F slot 2 is
+  **`Legendary Beast Tamer`** (no article; prose supplies `the`).
+  Verified in mGBA (early bank: msgs 37–39, including extra `7540`
+  player-name inserts and the red `Zargo` span; late bank: L03
+  `{{WORD:2}}` no-article insert and L05 `{{PLAYER}}` inserts via a
+  QA-only message-pointer repoint). See "Constrained story text
+  insertion — implementation" below.
 - **Msgfont insertion DONE (2026-10-19, mGBA-verified).**
   The 9×9 field-message font is relocated/extended and all 169 strings
   are encoded. Store `0x77EC08` (317 JP + 67 ASCII glyphs = 384 × 18 B,
@@ -793,6 +812,94 @@ frames cited):
   information-dense narration legitimately takes one page more than JP
   (msgs 25 s1/s2, 31 s3). More than 3 pages is still flagged for
   restructuring.
+
+### Constrained story text insertion — implementation (2026-10-21)
+
+**Source files.** `translation/story_en_constrained.txt` is the approved,
+constraint-fitted script and the authoritative insertion source.
+`translation/story_en.txt` is the user's original translation and is not
+modified. The compiled insertion artifacts are tracked:
+
+| file | role |
+|------|------|
+| `translation/story_en_items.json` | early-bank control stream, 63 messages |
+| `translation/late_story_en_items.json` | late-bank control stream, 33 messages |
+| `translation/story_en_runs.json` | one EN string per early-bank text item |
+| `translation/late_story_en_runs.json` | one EN string per late-bank text item |
+| `translation/story_en_runs_preconstrained.json` | control-span template (legacy runs), early |
+| `translation/late_story_en_runs_preconstrained.json` | control-span template (legacy runs), late |
+| `tools/story_insert_rebuild.py` | regenerates items + runs from the above |
+
+**Generation rules.** Text tokens in the item JSON are placeholders `0`;
+all layout is explicit in the control stream. Every line break is a
+`7530` control in the items, and the EN runs contain no `\n`. The
+original screen separators (`7531`/`7532`/`7533`) and all non-insert
+visible controls (`7534`, `7537`, `7538`, `7539`) are kept and mapped by
+token alignment. `7540` (`{{PLAYER}}`), `753E` (`{{BEAST:n}}`) and `753F`
+(`{{WORD:n}}`) are regenerated from the candidate text; extra `7540`
+controls were added wherever the new text uses the player name more often
+than the JP source. The original JP raw files are still used only by
+`message_starts()`; insertion uses the item streams, so the original
+pointer table addresses remain valid for computing starts.
+
+**Style/control spans.** `753B`/`753C` colour spans and `7535`/`7536`
+pause spans are matched by their old visible text inside the corresponding
+new screen; the original open/close parameter bytes are preserved. Spans
+that have no equivalent in the new text are dropped rather than placed at
+an arbitrary position. Manual span remaps:
+`Canon of the Heavens → Canon of the Sky`,
+`sorcerer → Beast Tamer`,
+`The Legendary Beast Tamer, → the Legendary Beast Tamer`,
+the old msg 19 "Then, from the next room..." line → the new equivalent,
+`yesterday's incident → the incident`,
+`Legendary Beasts → legendary beast`,
+`a violent power → a savage power`,
+`Not good! This won't do!! → No, at this rate--!!`, and
+`What's happening! → How is this possible!`.
+
+**Layout changes accepted from the constrained text.** Screen repartitions
+and line merges were applied where the old four-line JP screen did not
+fit the EN wording; these are structural only (no wording changes):
+splits at msgs 05, 07, 27, 39, L00, L01, L05, L19; merge at L28;
+repartition of msg 25. Line reflows keep names/possessives together:
+L05 s4 is now `Winslow I, a nobleman / of Barroa.` and L20 s2 is now
+`done to Winslow II, / {{PLAYER}}'s own younger / brother...?`.
+A typographic apostrophe in L20 was normalized to ASCII `'` for the
+font encoder.
+
+**753F table.** Slot 2 is now `Legendary Beast Tamer` (21 columns, no
+leading article) in both `tools/build_patch.py` and the QA checker; prose
+supplies `the` where needed.
+
+**QA results (2026-10-21).**
+
+- `tools/story_en_export.py --bank story|late`: both banks export with
+  `problems=0`; composed item+runs text is byte-identical to the candidate
+  for all 96 messages.
+- `tools/check_insert_rows.py`: story max line 30 / late 29; max screen
+  6 / 5 lines; no insert-spacing problems.
+- `tools/insert_story.py --check`: 96 messages, **14,138 words /
+  28,276 bytes**, no unencodable characters; only message 92 is chained.
+- `tools/build_patch.py --stage all`: 2,567 patches; BPS 160,679 B;
+  round-trip OK.
+- mGBA early bank: loaded `patched.ss4` (msg 36), advanced to msgs 37–39;
+  player-name `7540` inserts render as `Leo`; msg 39 page 1 renders the
+  red `Zargo` span and page 2 continues correctly. No crash.
+- mGBA late bank: QA-only ROMs patched the scene-table pointer for msg 49
+  (`0xC9D5C`) to the L03 / L05 stream, then loaded `patched.ss5` (msg 48)
+  and advanced. Verified L03 `The {{WORD:2}} appeared.` renders
+  `The Legendary Beast Tamer appeared.` (no duplicated article), and L05
+  renders `Winslow II, whom Leo / thought was their father...` and
+  `Leo could barely hold / back the surge of emotions...`. The game then
+  enters the next battle normally; no crash. The QA ROM/pointer edit is
+  **not** part of the shipped patch.
+
+**Known cosmetic gap.** A few old colour spans with no equivalent new
+wording are dropped (msg 12 `revenge`; msg 55 `Canon of the Heavens` /
+`the Legendary Beast Tamer`; L05 `you`). Text/layout are unaffected.
+A full start-to-finish playthrough remains a non-blocking QA gap; the
+representative early- and late-bank checks above cover the new control
+streams, inserts, colour spans and page flow.
 
 ### EN renderer patch — final (2026-10-19, verified in mGBA)
 
@@ -1552,6 +1659,12 @@ needed beyond pointer retargeting.
   R1 support strings and the status word list (see Findings). 649/685
   glyphs mapped. Next: English glyph strategy (new
   glyphs; store relocation to free space + pointer rewrite at `0xD6C2C`).
+- [x] **Constrained story text insertion (2026-10-21)**: the approved
+  `translation/story_en_constrained.txt` is compiled into tracked
+  `*_en_items.json` streams + 1:1 runs, 96 messages / 28,276 bytes,
+  753F slot 2 = `Legendary Beast Tamer`; exporter, insert-row checker,
+  `--check`, full build and representative early/late mGBA checks pass.
+  See "Constrained story text insertion — implementation".
 - [x] Text-box line width: **17 glyphs/line, 2 lines/box**, then the box
   **pages** (clears and continues) if more lines arrive; `7533` caption
   clears the box (frame-verified 2026-10-18; auto-wrap mid-word; box
@@ -1785,9 +1898,15 @@ msg 60 width-foldings) — see
   `build/glyph_names_1A0_1BF.png` — contact sheets for the unresolved
   glyphs `0x1A0–0x1BF`.
 - `tools/story_en_export.py` — builds/QA-checks `translation/story_en.json`
-  from `translation/story_en_runs.json`: run parity, control-code diff,
-  char-exact wrap simulation, width/CJK checks, and a per-screen page
-  budget (≤6 rows = 3 pages; more = restructure flag).
+  from `translation/story_en_items.json` + `translation/story_en_runs.json`:
+  run parity, control-code diff, char-exact wrap simulation, width/CJK
+  checks, and a per-screen page budget (≤6 rows = 3 pages; more =
+  restructure flag). Same for the late bank.
+- `tools/story_insert_rebuild.py` — regenerates
+  `translation/*_en_items.json` and `*_en_runs.json` from
+  `translation/story_en_constrained.txt` plus the pre-constrained control
+  templates; preserves/matches colour and pause spans, inserts and line
+  breaks. `tools/check_insert_rows.py` replays the real insert widths.
 - `tools/story_render.py` (ASCII-art message render), `tools/small_art.py`
   (ASCII-art 8×8 glyph), `tools/dump_bigfont_used.py`,
   `tools/bigfont_groups.py`, `tools/bigfont_match.py`,

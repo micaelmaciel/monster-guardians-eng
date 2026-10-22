@@ -7,18 +7,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "In a world without gods,"
+     "en": "A world without gods"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "there is no prosperity."
+     "run": 1,
+     "en": "can never prosper"
     },
     {
      "type": "ctl",
@@ -26,6 +25,11 @@
      "params": [
       "0x3c"
      ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "."
     },
     {
      "type": "ctl",
@@ -34,8 +38,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "That is why I was sent."
+     "run": 3,
+     "en": "That is why I was sent"
     },
     {
      "type": "ctl",
@@ -43,6 +47,11 @@
      "params": [
       "0x3c"
      ]
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "."
     }
    ]
   },
@@ -52,7 +61,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The Age of Darkness"
+     "en": "The Age of "
     },
     {
      "type": "ctl",
@@ -62,14 +71,19 @@
      ]
     },
     {
+     "type": "text",
+     "run": 1,
+     "en": "Darkness"
+    },
+    {
      "type": "ctl",
      "code": "0x7531",
      "params": []
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "The continent of Grandate"
+     "run": 2,
+     "en": "The continent"
     },
     {
      "type": "ctl",
@@ -78,25 +92,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "always knew mankind's crises."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7534",
-     "params": [
-      "0xa"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
      "run": 3,
-     "en": "Said to have eternal life,"
+     "en": "of Grandate had always"
     },
     {
      "type": "ctl",
@@ -106,7 +103,17 @@
     {
      "type": "text",
      "run": 4,
-     "en": "the two giant hydra dragons"
+     "en": "existed alongside"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "threats to humankind"
     },
     {
      "type": "ctl",
@@ -116,25 +123,61 @@
      ]
     },
     {
+     "type": "text",
+     "run": 6,
+     "en": "."
+    },
+    {
      "type": "ctl",
      "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "held dominion"
+     "run": 7,
+     "en": "Two colossal High Dragons,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "over the continent."
+     "run": 8,
+     "en": "said to possess eternal life"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0xa"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "held the continent's"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "power in their grip"
     },
     {
      "type": "ctl",
@@ -142,6 +185,11 @@
      "params": [
       "0x14"
      ]
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "."
     }
    ]
   },
@@ -151,13 +199,12 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The one who ruled the sky,"
+     "en": "Ruling the skies:"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "ctl",
@@ -170,12 +217,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Canon of the Heavens"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7536",
-     "params": []
+     "en": "Canon of "
     },
     {
      "type": "ctl",
@@ -183,6 +225,16 @@
      "params": [
       "0x32"
      ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "the Sky"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
     }
    ]
   },
@@ -192,13 +244,12 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The one who ruled the land,"
+     "en": "Ruling the land:"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "ctl",
@@ -211,12 +262,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Ignis of the Earth"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7536",
-     "params": []
+     "en": "Ignis of the "
     },
     {
      "type": "ctl",
@@ -224,6 +270,16 @@
      "params": [
       "0x32"
      ]
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Earth"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
     }
    ]
   },
@@ -233,13 +289,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The two faced each other."
+     "en": "The two faced one another,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "each seeking to "
     },
     {
      "type": "ctl",
@@ -250,13 +310,28 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "To conquer the continent,"
+     "run": 2,
+     "en": "conquer"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "the continent,"
     },
     {
      "type": "ctl",
      "code": "0x7532",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "and "
     },
     {
      "type": "ctl",
@@ -267,8 +342,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "they waged a blood-soaked war."
+     "run": 5,
+     "en": "waged a blood-soaked war"
     },
     {
      "type": "ctl",
@@ -276,6 +351,11 @@
      "params": [
       "0x14"
      ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "."
     }
    ]
   },
@@ -285,7 +365,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "At the end of a long war,"
+     "en": "After a long war,"
     },
     {
      "type": "ctl",
@@ -295,7 +375,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "when all life and prosperity"
+     "en": "just as all life"
     },
     {
      "type": "ctl",
@@ -305,18 +385,27 @@
     {
      "type": "text",
      "run": 2,
-     "en": "of this continent was about"
+     "en": "and prosperity"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "to vanish"
+     "run": 3,
+     "en": "on the continent"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "were about to vanish"
     },
     {
      "type": "ctl",
@@ -328,7 +417,7 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 5,
      "en": "..."
     },
     {
@@ -343,17 +432,7 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "leading two unseen beasts,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 5,
+     "run": 6,
      "en": "a lone "
     },
     {
@@ -365,8 +444,8 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "sorcerer"
+     "run": 7,
+     "en": "Beast Tamer"
     },
     {
      "type": "ctl",
@@ -375,8 +454,28 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": " appeared, and"
+     "run": 8,
+     "en": " appeared,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "leading two beasts of a kind"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "no one had ever seen"
     },
     {
      "type": "ctl",
@@ -386,14 +485,29 @@
      ]
     },
     {
+     "type": "text",
+     "run": 11,
+     "en": ","
+    },
+    {
      "type": "ctl",
      "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
-     "run": 8,
-     "en": "challenged the two to battle!"
+     "run": 12,
+     "en": "and challenged the two"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": "dragons to battle"
     },
     {
      "type": "ctl",
@@ -401,6 +515,11 @@
      "params": [
       "0x1e"
      ]
+    },
+    {
+     "type": "text",
+     "run": 14,
+     "en": "!"
     }
    ]
   },
@@ -410,7 +529,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The fierce battle raged on"
+     "en": "A long and harrowing"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "battle raged on"
     },
     {
      "type": "ctl",
@@ -422,13 +551,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "..."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7536",
-     "params": []
+     "run": 2,
+     "en": ".."
     },
     {
      "type": "ctl",
@@ -436,6 +560,16 @@
      "params": [
       "0x1e"
      ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
     }
    ]
   },
@@ -445,7 +579,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Canon of the Heavens fell,"
+     "en": "Canon of the Sky was defeated,"
     },
     {
      "type": "ctl",
@@ -455,7 +589,17 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Ignis of the Earth, wounded,"
+     "en": "and Ignis of the Earth,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "wounded"
     },
     {
      "type": "ctl",
@@ -465,14 +609,19 @@
      ]
     },
     {
+     "type": "text",
+     "run": 3,
+     "en": ","
+    },
+    {
      "type": "ctl",
      "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "deep beneath Mount Famfantar,"
+     "run": 4,
+     "en": "hid itself deep beneath"
     },
     {
      "type": "ctl",
@@ -481,8 +630,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "went into hiding."
+     "run": 5,
+     "en": "Mount Famfantar"
     },
     {
      "type": "ctl",
@@ -490,6 +639,11 @@
      "params": [
       "0x14"
      ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "."
     },
     {
      "type": "ctl",
@@ -504,7 +658,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "That victory was bought"
+     "en": "That victory was won"
     },
     {
      "type": "ctl",
@@ -514,24 +668,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "with the two beasts' lives."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7534",
-     "params": [
-      "0x14"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "And the Beast Tamer himself"
+     "en": "at the cost of"
     },
     {
      "type": "ctl",
@@ -540,8 +677,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "was on the verge of collapse."
+     "run": 2,
+     "en": "the lives of the two beasts"
     },
     {
      "type": "ctl",
@@ -549,6 +686,11 @@
      "params": [
       "0x14"
      ]
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "."
     },
     {
      "type": "ctl",
@@ -558,13 +700,39 @@
     {
      "type": "text",
      "run": 4,
-     "en": "At that moment, other than"
+     "en": "And the Beast Tamer, too,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "was on the verge of collapse"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x14"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "At that ti"
     },
     {
      "type": "ctl",
@@ -575,7 +743,7 @@
     },
     {
      "type": "text",
-     "run": 5,
+     "run": 8,
      "en": "me"
     },
     {
@@ -585,8 +753,28 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": ","
+     "run": 9,
+     "en": ", there was"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "no one in this world"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "but "
     },
     {
      "type": "ctl",
@@ -596,20 +784,14 @@
      ]
     },
     {
+     "type": "text",
+     "run": 12,
+     "en": "me"
+    },
+    {
      "type": "ctl",
      "code": "0x7532",
      "params": []
-    },
-    {
-     "type": "text",
-     "run": 7,
-     "en": "there was no one in this world"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
     },
     {
      "type": "ctl",
@@ -620,8 +802,18 @@
     },
     {
      "type": "text",
-     "run": 8,
-     "en": "who could save him."
+     "run": 13,
+     "en": "who had the skill"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 14,
+     "en": "to save the Beast Tamer"
     },
     {
      "type": "ctl",
@@ -629,6 +821,11 @@
      "params": [
       "0x1e"
      ]
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": "."
     }
    ]
   },
@@ -643,17 +840,26 @@
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
+     "run": 1,
      "en": "the two beasts became legend."
     },
     {
      "type": "ctl",
      "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "People came to call them"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
      "params": []
     },
     {
@@ -665,18 +871,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "The Legendary Beast Tamer,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
+     "run": 3,
+     "en": "the Legendary Beast "
     },
     {
      "type": "ctl",
@@ -687,8 +883,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "people took to calling them."
+     "run": 4,
+     "en": "Tamer"
     },
     {
      "type": "ctl",
@@ -699,12 +895,22 @@
     },
     {
      "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "."
+    },
+    {
+     "type": "ctl",
      "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 6,
      "en": "And the continent of Grandate"
     },
     {
@@ -714,8 +920,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "came under mankind's rule."
+     "run": 7,
+     "en": "came to be ruled by humankind"
     },
     {
      "type": "ctl",
@@ -723,6 +929,11 @@
      "params": [
       "0x1e"
      ]
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "."
     }
    ]
   },
@@ -742,7 +953,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "That "
+     "en": "The "
     },
     {
      "type": "ctl",
@@ -791,13 +1002,22 @@
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "which still belched smoke."
+     "run": 6,
+     "en": "which still belched"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "smoke in great plumes."
     }
    ]
   },
@@ -807,18 +1027,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "At the crater, ruins that"
+     "en": "Ruins that looked to have once"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "enshrine "
+     "run": 1,
+     "en": "been a shrine to "
     },
     {
      "type": "ctl",
@@ -829,7 +1048,7 @@
     },
     {
      "type": "text",
-     "run": 1,
+     "run": 2,
      "en": "Ignis"
     },
     {
@@ -838,9 +1057,14 @@
      "params": []
     },
     {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
      "type": "text",
-     "run": 2,
-     "en": " still remain."
+     "run": 3,
+     "en": "remained in place."
     },
     {
      "type": "ctl",
@@ -849,19 +1073,18 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Man: \"What's wrong,"
+     "run": 4,
+     "en": "Man: \"What's the matter,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Ignis of the Earth!\""
+     "run": 5,
+     "en": "Ignis of the Earth?!\""
     }
    ]
   },
@@ -871,7 +1094,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Man: \"Remember this Takt?\""
+     "en": "Man: \"Does the sight of this"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Takt not bring it all back?\""
     },
     {
      "type": "ctl",
@@ -880,13 +1113,18 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "Man: \"It's the Takt of the"
+     "run": 2,
+     "en": "Man: \"It is the Takt"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "of the "
     },
     {
      "type": "ctl",
@@ -897,7 +1135,7 @@
     },
     {
      "type": "text",
-     "run": 2,
+     "run": 4,
      "en": "Legendary Beast Tamer"
     },
     {
@@ -908,23 +1146,12 @@
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "who cast you from the world!\""
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "Man: \"Rise again now and take"
+     "run": 5,
+     "en": "who drove"
     },
     {
      "type": "ctl",
@@ -933,8 +1160,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "on him... no, on this world."
+     "run": 6,
+     "en": "you from this world!\""
     },
     {
      "type": "ctl",
@@ -943,30 +1170,38 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "Together, let's take "
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "text",
      "run": 7,
-     "en": "revenge"
+     "en": "Man: \"Rise again now, and let"
     },
     {
      "type": "ctl",
-     "code": "0x753C",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 8,
-     "en": "!!"
+     "en": "us take revenge together,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "on that wretch..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "no, on this entire world!!\""
     }
    ]
   },
@@ -1016,14 +1251,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Man: \"Is that all you've got!\""
-    },
-    {
-     "type": "ctl",
-     "code": "0x7534",
-     "params": [
-      "0x8"
-     ]
+     "en": "Man: \"Is this alone"
     },
     {
      "type": "ctl",
@@ -1033,7 +1261,39 @@
     {
      "type": "text",
      "run": 4,
-     "en": "As I thought, it's him"
+     "en": "still not enough?!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "I suppose I'll need"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "that wretch after "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7534",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "all"
     },
     {
      "type": "ctl",
@@ -1045,7 +1305,7 @@
     },
     {
      "type": "text",
-     "run": 5,
+     "run": 8,
      "en": "..."
     },
     {
@@ -1055,7 +1315,7 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 9,
      "en": "\""
     },
     {
@@ -1065,19 +1325,38 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "Just then, the man sensed"
+     "run": 10,
+     "en": "Just then, the man"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "something moving deep below."
+     "run": 11,
+     "en": "felt something"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "stirring deep in the earth"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": "beneath his feet."
     }
    ]
   },
@@ -1087,7 +1366,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "~Ruins~"
+     "en": "~The Ruins~"
     },
     {
      "type": "ctl",
@@ -1097,7 +1376,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Through morning mist, from the"
+     "en": "In the morning mist,"
     },
     {
      "type": "ctl",
@@ -1107,17 +1386,27 @@
     {
      "type": "text",
      "run": 2,
-     "en": "remote ruins, shouts rang out!"
+     "en": "men's voices"
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 3,
-     "en": "Pursuer 1: \"We'll find you!\""
+     "en": "could be heard from a ruin"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "far from any village!"
     },
     {
      "type": "ctl",
@@ -1126,8 +1415,38 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "Pursuer 2: \"Don't lose him!!\""
+     "run": 5,
+     "en": "Pursuer 1: \"We'll"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "hunt them down!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "Pursuer 2: \"Don't"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "let them get away!!\""
     }
    ]
   },
@@ -1137,7 +1456,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "They were royal guards of the"
+     "en": "They were guards"
     },
     {
      "type": "ctl",
@@ -1147,7 +1466,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Kingdom of Barroa."
+     "en": "in the service"
     },
     {
      "type": "ctl",
@@ -1157,17 +1476,17 @@
     {
      "type": "text",
      "run": 2,
-     "en": "Pursuer 3: \"No more escapes!\""
+     "en": "of the Kingdom of Barroa."
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 3,
-     "en": "Pursuer 2"
+     "en": "Pursuer 3: \"You won't"
     },
     {
      "type": "ctl",
@@ -1177,7 +1496,27 @@
     {
      "type": "text",
      "run": 4,
-     "en": "\"Uh"
+     "en": "get away this time!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Pursuer 2:"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "\"Um"
     },
     {
      "type": "ctl",
@@ -1189,13 +1528,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "..."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7536",
-     "params": []
+     "run": 7,
+     "en": ".."
     },
     {
      "type": "ctl",
@@ -1206,8 +1540,28 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": " what was the name?\""
+     "run": 8,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": " what's"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "this one's name?\""
     }
    ]
   },
@@ -1217,7 +1571,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Pursuer 3: \"Oh, that's right!\""
+     "en": "Pursuer 3: \"Oh, right!\""
     },
     {
      "type": "ctl",
@@ -1227,7 +1581,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Pursuer 1"
+     "en": "Pursuer 1:"
     },
     {
      "type": "ctl",
@@ -1237,7 +1591,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "\"It was "
+     "en": "\"It's "
     },
     {
      "type": "ctl",
@@ -1269,7 +1623,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "Pursuer 2: \"Prepare yourself!"
+     "en": "Pursuer 2: \"Prepare yourself,"
     },
     {
      "type": "ctl",
@@ -1294,7 +1648,17 @@
     {
      "type": "text",
      "run": 6,
-     "en": "Catch you for "
+     "en": "If we catch you and hand"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "you over to "
     },
     {
      "type": "ctl",
@@ -1305,7 +1669,7 @@
     },
     {
      "type": "text",
-     "run": 7,
+     "run": 8,
      "en": "Lord Beringham"
     },
     {
@@ -1315,7 +1679,7 @@
     },
     {
      "type": "text",
-     "run": 8,
+     "run": 9,
      "en": ","
     },
     {
@@ -1325,8 +1689,8 @@
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "and get a fat reward"
+     "run": 10,
+     "en": "we'll be set for life"
     },
     {
      "type": "ctl",
@@ -1338,7 +1702,7 @@
     },
     {
      "type": "text",
-     "run": 10,
+     "run": 11,
      "en": "..."
     },
     {
@@ -1348,7 +1712,7 @@
     },
     {
      "type": "text",
-     "run": 11,
+     "run": 12,
      "en": "\""
     },
     {
@@ -1358,19 +1722,28 @@
     },
     {
      "type": "text",
-     "run": 12,
-     "en": "With that the pursuers moved"
+     "run": 13,
+     "en": "Just as the pursuers"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 12,
-     "en": "to grab "
+     "run": 14,
+     "en": "were about to lay"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": "hands on "
     },
     {
      "type": "ctl",
@@ -1379,8 +1752,8 @@
     },
     {
      "type": "text",
-     "run": 13,
-     "en": "... just then!"
+     "run": 16,
+     "en": "--!"
     }
    ]
   },
@@ -1390,7 +1763,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "From behind, the beasts"
+     "en": "From behind, beasts suddenly"
     },
     {
      "type": "ctl",
@@ -1400,7 +1773,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "suddenly attacked the guards!"
+     "en": "leapt upon the pursuers!"
     }
    ]
   },
@@ -1410,7 +1783,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Pursuers: \"Uwaaah!!\""
+     "en": "Pursuers: \"Waaah!!\""
     },
     {
      "type": "ctl",
@@ -1425,7 +1798,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": " stood there, in shock,"
+     "en": " watched"
     },
     {
      "type": "ctl",
@@ -1435,7 +1808,17 @@
     {
      "type": "text",
      "run": 2,
-     "en": "watching how it all unfolded."
+     "en": "in stunned silence"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "as it happened."
     }
    ]
   },
@@ -1445,7 +1828,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The pursuers fell in no time!"
+     "en": "The pursuers were beaten"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "in the blink of an eye."
     },
     {
      "type": "ctl",
@@ -1462,8 +1855,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "Then, from the next room,"
+     "run": 2,
+     "en": "Then an old man came out"
     },
     {
      "type": "ctl",
@@ -1472,13 +1865,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "an old man appeared."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
+     "run": 3,
+     "en": "of the next room."
     },
     {
      "type": "ctl",
@@ -1500,7 +1888,12 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Old man: \"Noisy!\""
+     "en": "Old Man: \"What a racket!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
     },
     {
      "type": "ctl",
@@ -1512,7 +1905,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": " I'm in a"
+     "en": "I'm foul-tempered"
     },
     {
      "type": "ctl",
@@ -1522,7 +1915,17 @@
     {
      "type": "text",
      "run": 2,
-     "en": "bad mood when I wake up!\""
+     "en": "when I wake up,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "I'll have you know!\""
     }
    ]
   },
@@ -1532,7 +1935,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The old man said his name:"
+     "en": "The old man gave"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "his name as Kurimuto."
     },
     {
      "type": "ctl",
@@ -1541,19 +1954,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "Kurimuto: \"No. I heard the"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "name Beringham. I stepped in."
+     "run": 2,
+     "en": "Kurimuto: \"Now, I didn't help"
     },
     {
      "type": "ctl",
@@ -1562,8 +1964,38 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "That one and I have a past"
+     "run": 3,
+     "en": "you out of kindness. I only"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "stepped in because I heard"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "the name Beringham. That one"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "and I have some history"
     },
     {
      "type": "ctl",
@@ -1575,7 +2007,7 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 7,
      "en": "..."
     },
     {
@@ -1590,8 +2022,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "Hmm. I peg you for"
+     "run": 8,
+     "en": "Hmm, I take it you're"
     },
     {
      "type": "ctl",
@@ -1600,8 +2032,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "the "
+     "run": 9,
+     "en": "Winslow's "
     },
     {
      "type": "ctl",
@@ -1612,19 +2044,18 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": " of Winslow of"
+     "run": 10,
+     "en": ","
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "Vandam Castle..."
+     "run": 11,
+     "en": "from Vandam Castle..."
     },
     {
      "type": "ctl",
@@ -1633,19 +2064,29 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "What happened at the castle?"
+     "run": 12,
+     "en": "Did something happen"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": "at the castle?\""
     }
    ]
   },
   {
    "message": 22,
    "items": [
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
     {
      "type": "ctl",
      "code": "0x7538",
@@ -1655,19 +2096,19 @@
      ]
     },
     {
-     "type": "ctl",
-     "code": "0x7540",
-     "params": []
-    },
-    {
      "type": "text",
      "run": 0,
-     "en": " began telling him of"
+     "en": " began to tell Kurimuto"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "about "
     },
     {
      "type": "ctl",
@@ -1678,8 +2119,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "yesterday's incident"
+     "run": 2,
+     "en": "the incident"
     },
     {
      "type": "ctl",
@@ -1688,8 +2129,18 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "."
+     "run": 3,
+     "en": " that had"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "happened the day before."
     }
    ]
   },
@@ -1699,7 +2150,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "~Barroa's Vandam Castle~"
+     "en": "~Kingdom of Barroa,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "Vandam Castle~"
     },
     {
      "type": "ctl",
@@ -1721,7 +2182,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The lord: noble Winslow II."
+     "en": "The lord of the castle"
     },
     {
      "type": "ctl",
@@ -1731,18 +2192,27 @@
     {
      "type": "text",
      "run": 1,
-     "en": "The incident struck one"
+     "en": "was Winslow II, a nobleman."
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "drizzly morning."
+     "run": 2,
+     "en": "The incident struck suddenly,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "on a drizzly morning."
     }
    ]
   },
@@ -1752,7 +2222,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The Pope's "
+     "en": "The "
     },
     {
      "type": "ctl",
@@ -1772,15 +2242,9 @@
      "params": []
     },
     {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
      "type": "text",
      "run": 2,
-     "en": "stormed the castle! It fell."
+     "en": ", under"
     },
     {
      "type": "ctl",
@@ -1790,7 +2254,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "The mastermind: the Pope's"
+     "en": "the Pope's direct command,"
     },
     {
      "type": "ctl",
@@ -1800,13 +2264,34 @@
     {
      "type": "text",
      "run": 4,
-     "en": "military advisor,"
+     "en": "burst into the castle"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "and seized it!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "The mastermind was "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
     },
     {
      "type": "ctl",
@@ -1816,54 +2301,19 @@
      ]
     },
     {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "text",
-     "run": 5,
-     "en": "Duke Beringham Roe"
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 6,
-     "en": "."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
      "type": "text",
      "run": 7,
-     "en": "He is also the"
+     "en": "Duke"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
+     "params": []
     },
     {
      "type": "text",
      "run": 8,
-     "en": "Beast Knight Order"
+     "en": "Beringham Roe"
     },
     {
      "type": "ctl",
@@ -1873,49 +2323,7 @@
     {
      "type": "text",
      "run": 9,
-     "en": "'s"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 10,
-     "en": "supreme commander."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 11,
-     "en": "He gave his reason for the"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 11,
-     "en": "seizure: aiding a faction"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 11,
-     "en": "hostile to the kingdom!"
+     "en": ","
     },
     {
      "type": "ctl",
@@ -1924,19 +2332,130 @@
     },
     {
      "type": "text",
-     "run": 12,
-     "en": "That was his claim, but it"
+     "run": 10,
+     "en": "who had long served as"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "the Pope's military advisor."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
     },
     {
      "type": "text",
      "run": 12,
-     "en": "was a complete frame-up."
+     "en": "He was also the supreme"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": "commander of the "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 14,
+     "en": "Beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": "Knight Order"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 16,
+     "en": ". He declared"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 17,
+     "en": "that he had seized the castle"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 18,
+     "en": "on suspicion of treasonous"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 19,
+     "en": "dealings with enemies of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 20,
+     "en": "the Kingdom!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 21,
+     "en": "But it was a complete"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 22,
+     "en": "frame-up."
     }
    ]
   },
@@ -1946,38 +2465,27 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Those who hindered the search"
+     "en": "Anyone who got"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "were captured without mercy."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
      "run": 1,
-     "en": "Amid the chaos, "
+     "en": "in the way of the search"
     },
     {
      "type": "ctl",
-     "code": "0x7540",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 2,
-     "en": " saw:"
+     "en": "was seized without mercy."
     },
     {
      "type": "ctl",
@@ -1987,7 +2495,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "their father Winslow, already"
+     "en": "In the midst of that chaos,"
     },
     {
      "type": "ctl",
@@ -1997,7 +2505,67 @@
     {
      "type": "text",
      "run": 4,
-     "en": "dead before their own eyes."
+     "en": "what "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": " saw"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "was "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "'s father, Winslow,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "already lifeless right"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "before "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "'s eyes."
     }
    ]
   },
@@ -2007,18 +2575,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "There he was, an unfamiliar"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "Beast Tamer's Takt in hand."
+     "en": "And there stood Beringham,"
     },
     {
      "type": "ctl",
@@ -2028,7 +2585,32 @@
     {
      "type": "text",
      "run": 1,
-     "en": "It was Beringham."
+     "en": "holding the Beast Tamer's"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Takt, which "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "didn't recognize."
     }
    ]
   },
@@ -2079,18 +2661,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Kurimuto: \"So your aim is the"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "Legendary Beast Tamer's Takt?"
+     "en": "Kurimuto: \"So the"
     },
     {
      "type": "ctl",
@@ -2100,17 +2671,17 @@
     {
      "type": "text",
      "run": 4,
-     "en": "No... never mind."
+     "en": "Legendary Beast Tamer's Takt"
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 5,
-     "en": "More to the point, will you"
+     "en": "was what he was after?"
     },
     {
      "type": "ctl",
@@ -2120,7 +2691,7 @@
     {
      "type": "text",
      "run": 6,
-     "en": "avenge your father and kin?"
+     "en": "No... never mind."
     },
     {
      "type": "ctl",
@@ -2130,7 +2701,7 @@
     {
      "type": "text",
      "run": 7,
-     "en": "You needn't say a word."
+     "en": "More to the point... do you"
     },
     {
      "type": "ctl",
@@ -2140,7 +2711,47 @@
     {
      "type": "text",
      "run": 8,
-     "en": "Those eyes say it all!\""
+     "en": "mean to avenge"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "your father and family?"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "You needn't say a word."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "Those eyes of yours"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "say it all!\""
     }
    ]
   },
@@ -2150,18 +2761,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "So saying, Kurimuto held"
+     "en": "With that, Kurimuto handed"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "out his own Takt to "
+     "run": 1,
+     "en": "his own Takt to "
     },
     {
      "type": "ctl",
@@ -2170,7 +2780,7 @@
     },
     {
      "type": "text",
-     "run": 1,
+     "run": 2,
      "en": "."
     }
    ]
@@ -2181,18 +2791,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"I leave my beasts"
+     "en": "Kurimuto: \"I'll entrust"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "in your care."
+     "run": 1,
+     "en": "my beasts to you."
     },
     {
      "type": "ctl",
@@ -2201,8 +2810,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "Roost in these ruins a while,"
+     "run": 2,
+     "en": "Make these ruins"
     },
     {
      "type": "ctl",
@@ -2211,8 +2820,18 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "and train all you like!\""
+     "run": 3,
+     "en": "your den for a while"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "and train hard!\""
     }
    ]
   },
@@ -2222,28 +2841,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"Listen: to fight"
+     "en": "Kurimuto: \"Listen well. To"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "Beringham and his men,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
      "params": []
     },
     {
      "type": "text",
      "run": 1,
-     "en": "these beasts are too weak!"
+     "en": "fight Beringham and his lot,"
     },
     {
      "type": "ctl",
@@ -2253,13 +2861,37 @@
     {
      "type": "text",
      "run": 2,
-     "en": "So, you'll make the"
+     "en": "these beasts aren't"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "strong enough!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "So you must create"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "the "
     },
     {
      "type": "ctl",
@@ -2270,7 +2902,44 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 6,
+     "en": "legendary beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "that once fought alongside"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "the "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "text",
+     "run": 9,
      "en": "Legendary Beast Tamer"
     },
     {
@@ -2280,31 +2949,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "'s"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "text",
-     "run": 5,
-     "en": "Legendary Beasts"
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
+     "run": 10,
+     "en": ","
     },
     {
      "type": "ctl",
@@ -2332,7 +2978,7 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 11,
      "en": "!\""
     }
    ]
@@ -2343,17 +2989,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"I've studied that."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "But only part of it, you"
+     "en": "Kurimuto: \"I've been"
     },
     {
      "type": "ctl",
@@ -2362,8 +2998,28 @@
     },
     {
      "type": "text",
+     "run": 1,
+     "en": "doing some research."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
      "run": 2,
-     "en": "see...\""
+     "en": "I've only worked out a part"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "of it so far, you see...\""
     },
     {
      "type": "ctl",
@@ -2388,13 +3044,28 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Kurimuto: \"First, combining"
+     "run": 4,
+     "en": "Kurimuto: \"By my findings,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "first of all,"
     },
     {
      "type": "ctl",
      "code": "0x7532",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "you combine "
     },
     {
      "type": "ctl",
@@ -2417,8 +3088,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": " and"
+     "run": 7,
+     "en": " with"
     },
     {
      "type": "ctl",
@@ -2446,13 +3117,62 @@
     },
     {
      "type": "text",
-     "run": 5,
+     "run": 8,
      "en": ","
     },
     {
      "type": "ctl",
      "code": "0x7532",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "and that should"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "produce "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "the young form of "
     },
     {
      "type": "ctl",
@@ -2475,38 +3195,8 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "'s young form,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x753E",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 7,
-     "en": ", should be created!\""
+     "run": 13,
+     "en": "!\""
     }
    ]
   },
@@ -2516,18 +3206,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"I'll research how"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "the next beasts are made!\""
+     "en": "Kurimuto: \"I'll go back"
     },
     {
      "type": "ctl",
@@ -2537,23 +3216,37 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Kurimuto: \"I leave the rest"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "to you!\""
+     "en": "to research and work out"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "how to make the next forms!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Kurimuto: \"I leave"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "the rest to you!\""
     }
    ]
   },
@@ -2563,7 +3256,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "And with that, Kurimuto"
+     "en": "With those parting"
     },
     {
      "type": "ctl",
@@ -2573,6 +3266,16 @@
     {
      "type": "text",
      "run": 1,
+     "en": "words, Kurimuto"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
      "en": "set off for parts unknown."
     },
     {
@@ -2582,19 +3285,18 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "Watching him walk away,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "run": 3,
+     "en": "Watching that retreating"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "figure, "
     },
     {
      "type": "ctl",
@@ -2603,8 +3305,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": " thought."
+     "run": 5,
+     "en": " thought:"
     },
     {
      "type": "ctl",
@@ -2627,48 +3329,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Perhaps old Kurimuto had"
+     "en": "Perhaps old Kurimuto"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "known this would happen..."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    }
-   ]
-  },
-  {
-   "message": 36,
-   "items": [
-    {
-     "type": "text",
-     "run": 0,
-     "en": "RUMBLE! RUMBLE! RUMBLE!"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "ctl",
-     "code": "0x7540",
      "params": []
     },
     {
      "type": "text",
      "run": 1,
-     "en": " entered the altar room"
+     "en": "had known all along"
     },
     {
      "type": "ctl",
@@ -2678,7 +3349,67 @@
     {
      "type": "text",
      "run": 2,
-     "en": "the castle began to shake."
+     "en": "that this would happen..."
+    }
+   ]
+  },
+  {
+   "message": 36,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "RUMBLE!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "As "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": " entered"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "the room with the altar,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "the castle began"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "to shake violently."
     },
     {
      "type": "ctl",
@@ -2692,7 +3423,7 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 6,
      "en": ": \"An earthquake?\""
     }
    ]
@@ -2703,18 +3434,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Distracted by the"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "quake, "
+     "en": "While "
     },
     {
      "type": "ctl",
@@ -2724,28 +3444,17 @@
     {
      "type": "text",
      "run": 1,
-     "en": " looked up:"
+     "en": " was distracted"
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 2,
-     "en": "A giant of a man unlike any"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "ever seen stood there."
+     "en": "by the quake,"
     },
     {
      "type": "ctl",
@@ -2755,13 +3464,27 @@
     {
      "type": "text",
      "run": 3,
-     "en": "He glared at"
+     "en": "a huge man,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "a complete stranger,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "stood before "
     },
     {
      "type": "ctl",
@@ -2770,8 +3493,38 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": " and drew closer."
+     "run": 6,
+     "en": "."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "He approached,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "glaring at "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "."
     }
    ]
   },
@@ -2781,7 +3534,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Beringham: \"Ignis senses "
+     "en": "Beringham: \"Can "
     },
     {
      "type": "ctl",
@@ -2803,7 +3556,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": ","
+     "en": " feel it?!"
     },
     {
      "type": "ctl",
@@ -2813,17 +3566,17 @@
     {
      "type": "text",
      "run": 3,
-     "en": "and he's raging underground!\""
+     "en": "This earthquake is Ignis,"
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 4,
-     "en": "Where the voice came from,"
+     "en": "who has begun to sense you,"
     },
     {
      "type": "ctl",
@@ -2833,7 +3586,27 @@
     {
      "type": "text",
      "run": 5,
-     "en": "there stood Beringham."
+     "en": "raging beneath the earth!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Beringham loomed"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "in the direction of the voice."
     }
    ]
   },
@@ -2846,11 +3619,6 @@
      "params": []
     },
     {
-     "type": "text",
-     "run": 0,
-     "en": " faced "
-    },
-    {
      "type": "ctl",
      "code": "0x7537",
      "params": [
@@ -2859,8 +3627,18 @@
     },
     {
      "type": "text",
+     "run": 0,
+     "en": " was about"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
      "run": 1,
-     "en": "Beringham, and"
+     "en": "to raise the Takt"
     },
     {
      "type": "ctl",
@@ -2870,7 +3648,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "just as the Takt swung up,"
+     "en": "against Beringham, when"
     },
     {
      "type": "ctl",
@@ -2880,13 +3658,17 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Kurimuto: \"Look out! A beast"
+     "en": "Kurimuto: \"Careful!"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "The beast he made, "
     },
     {
      "type": "ctl",
@@ -2897,7 +3679,7 @@
     },
     {
      "type": "text",
-     "run": 4,
+     "run": 5,
      "en": "Zargo"
     },
     {
@@ -2907,8 +3689,18 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": " built is after you!\""
+     "run": 6,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 7,
+     "en": "is coming after you!\""
     },
     {
      "type": "ctl",
@@ -2924,8 +3716,18 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "Before they knew it,"
+     "run": 8,
+     "en": "Before "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": " knew it,"
     },
     {
      "type": "ctl",
@@ -2934,8 +3736,28 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "Kurimuto stood at their back."
+     "run": 10,
+     "en": "Kurimuto was standing"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "behind "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
+     "en": "."
     },
     {
      "type": "ctl",
@@ -2944,7 +3766,7 @@
     },
     {
      "type": "text",
-     "run": 8,
+     "run": 13,
      "en": "Kurimuto:"
     },
     {
@@ -2954,8 +3776,18 @@
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "\"You made it this far, hm?\""
+     "run": 14,
+     "en": "\"You did well"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": "to make it this far.\""
     }
    ]
   },
@@ -2982,19 +3814,18 @@
     },
     {
      "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "code": "0x7536",
+     "params": []
     },
     {
      "type": "ctl",
-     "code": "0x7536",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 2,
-     "en": "As expected, "
+     "en": "So "
     },
     {
      "type": "ctl",
@@ -3006,18 +3837,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Kurimuto has"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "sided with you!"
+     "en": "Kurimuto was behind"
     },
     {
      "type": "ctl",
@@ -3027,6 +3847,16 @@
     {
      "type": "text",
      "run": 4,
+     "en": "this after all!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
      "en": "But it's already too late!\""
     },
     {
@@ -3036,8 +3866,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "Just then, the ground again"
+     "run": 6,
+     "en": "Just then, the ground began"
     },
     {
      "type": "ctl",
@@ -3046,8 +3876,8 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "began to shake violently!"
+     "run": 7,
+     "en": "to shake violently once more!"
     }
    ]
   },
@@ -3057,7 +3887,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Beringham: \""
+     "en": "Beringham: \"Ignis, upon"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "noticing "
     },
     {
      "type": "ctl",
@@ -3066,29 +3906,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": ", Ignis has"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "sensed your presence."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
      "run": 2,
-     "en": "He's trying to revive again!"
+     "en": "'s presence,"
     },
     {
      "type": "ctl",
@@ -3098,7 +3917,17 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Zargo! "
+     "en": "is about to rise again!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "Zargo"
     },
     {
      "type": "ctl",
@@ -3109,19 +3938,18 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "I'll leave the rest"
+     "run": 5,
+     "en": "! I leave"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "to you!"
+     "run": 6,
+     "en": "the rest to you!"
     },
     {
      "type": "ctl",
@@ -3130,13 +3958,18 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "I'm off to Mount Famfantar."
+     "run": 7,
+     "en": "I'm going to Mount Famfantar"
     },
     {
      "type": "ctl",
      "code": "0x7532",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "to pay "
     },
     {
      "type": "ctl",
@@ -3157,19 +3990,18 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": ", I'll meet an old"
+     "run": 9,
+     "en": "'s old"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "friend of yours there.\""
+     "run": 10,
+     "en": "friend a visit.\""
     },
     {
      "type": "ctl",
@@ -3178,18 +4010,17 @@
     },
     {
      "type": "text",
-     "run": 8,
+     "run": 11,
      "en": "With those words,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 8,
+     "run": 12,
      "en": "Beringham left the room."
     },
     {
@@ -3199,19 +4030,18 @@
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "And then, Zargo slowly drew"
+     "run": 13,
+     "en": "And Zargo slowly"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "closer to "
+     "run": 14,
+     "en": "approached "
     },
     {
      "type": "ctl",
@@ -3228,7 +4058,7 @@
     },
     {
      "type": "text",
-     "run": 11,
+     "run": 15,
      "en": "..."
     },
     {
@@ -3244,7 +4074,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Zargo: \"Guuuuuh!\""
+     "en": "Zargo: \"Guuuuh!\""
     },
     {
      "type": "ctl",
@@ -3254,7 +4084,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Zargo let out a growl and"
+     "en": "Zargo let out a groan"
     },
     {
      "type": "ctl",
@@ -3264,7 +4094,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "crumpled to its knees!"
+     "en": "and collapsed to his knees!"
     }
    ]
   },
@@ -3274,18 +4104,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Just then, from the sky came"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "his other beast: "
+     "en": "Then "
     },
     {
      "type": "ctl",
@@ -3307,7 +4126,27 @@
     {
      "type": "text",
      "run": 2,
-     "en": "!"
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "Beringham's other beast,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "appeared from above!"
     }
    ]
   },
@@ -3317,12 +4156,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Ramires stood before Zargo,"
+     "en": "Ramires stood before Zargo"
     },
     {
      "type": "ctl",
      "code": "0x7530",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "and spoke to "
     },
     {
      "type": "ctl",
@@ -3331,8 +4175,8 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": " was told:"
+     "run": 2,
+     "en": "!"
     },
     {
      "type": "ctl",
@@ -3348,19 +4192,28 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "Ramires: \"You wish... to know"
+     "run": 3,
+     "en": "Ramires: \"You... want"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "of yourself...?\""
+     "run": 4,
+     "en": "to know..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "about yourself...?"
     },
     {
      "type": "ctl",
@@ -3377,19 +4230,18 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Then... go to"
+     "run": 6,
+     "en": "Then... go"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Mount Famfantar...!\""
+     "run": 7,
+     "en": "to Mount Famfantar...\""
     },
     {
      "type": "ctl",
@@ -3398,8 +4250,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "With that, it wrapped its arms"
+     "run": 8,
+     "en": "With those words,"
     },
     {
      "type": "ctl",
@@ -3408,8 +4260,18 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "around Zargo and flew away."
+     "run": 9,
+     "en": "Ramires gathered Zargo up"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "and took off into the sky."
     }
    ]
   },
@@ -3419,7 +4281,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"Fate again, hm...\""
+     "en": "Kurimuto: \"Perhaps"
     },
     {
      "type": "ctl",
@@ -3429,7 +4291,27 @@
     {
      "type": "text",
      "run": 1,
-     "en": "we've no choice but to go."
+     "en": "this too is fate..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "Well, there's nothing"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "for it but to go."
     },
     {
      "type": "ctl",
@@ -3438,7 +4320,7 @@
     },
     {
      "type": "text",
-     "run": 2,
+     "run": 4,
      "en": "To Mount Famfantar...!"
     },
     {
@@ -3448,19 +4330,18 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "There, you'll learn everything"
+     "run": 5,
+     "en": "You'll learn everything"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "about yourself!\""
+     "run": 6,
+     "en": "about yourself there!\""
     },
     {
      "type": "ctl",
@@ -3491,7 +4372,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"Listen: by then,"
+     "en": "Kurimuto: \"Listen"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "well. Before then,"
     },
     {
      "type": "ctl",
@@ -3500,14 +4391,33 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "the Legendary Beast"
+     "run": 2,
+     "en": "you must complete"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "the mid-sized form"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "of the legendary beast"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
     },
     {
      "type": "ctl",
@@ -3530,18 +4440,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "'s medium form,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "you must complete it!"
+     "run": 5,
+     "en": "!"
     },
     {
      "type": "ctl",
@@ -3550,7 +4450,7 @@
     },
     {
      "type": "text",
-     "run": 4,
+     "run": 6,
      "en": "Next, combine "
     },
     {
@@ -3574,8 +4474,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": " and"
+     "run": 7,
+     "en": " with"
     },
     {
      "type": "ctl",
@@ -3603,7 +4503,7 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 8,
      "en": "."
     },
     {
@@ -3613,42 +4513,8 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "Then, "
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x753E",
-     "params": [
-      "0x8"
-     ]
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 8,
-     "en": "'s"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
      "run": 9,
-     "en": "medium form "
+     "en": "Do that, and "
     },
     {
      "type": "ctl",
@@ -3672,7 +4538,17 @@
     {
      "type": "text",
      "run": 10,
-     "en": " should be"
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "the mid-sized"
     },
     {
      "type": "ctl",
@@ -3681,8 +4557,42 @@
     },
     {
      "type": "text",
-     "run": 11,
-     "en": "complete!\""
+     "run": 12,
+     "en": "form of "
+    },
+    {
+     "type": "ctl",
+     "code": "0x753B",
+     "params": [
+      "0x2"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753E",
+     "params": [
+      "0x8"
+     ]
+    },
+    {
+     "type": "ctl",
+     "code": "0x753C",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 13,
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 14,
+     "en": "should be complete!\""
     }
    ]
   },
@@ -3692,18 +4602,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"I set off again to"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "study the Legendary Beasts.\""
+     "en": "Kurimuto: \"I'm off on another"
     },
     {
      "type": "ctl",
@@ -3713,7 +4612,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": "the road to the volcano"
+     "en": "journey to research"
     },
     {
      "type": "ctl",
@@ -3723,17 +4622,17 @@
     {
      "type": "text",
      "run": 2,
-     "en": "will be the hardest yet!!\""
+     "en": "the legendary beast."
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 3,
-     "en": "With those words,"
+     "en": "The road to the volcano"
     },
     {
      "type": "ctl",
@@ -3743,33 +4642,7 @@
     {
      "type": "text",
      "run": 4,
-     "en": "Kurimuto departed."
-    }
-   ]
-  },
-  {
-   "message": 48,
-   "items": [
-    {
-     "type": "ctl",
-     "code": "0x7540",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": " began the climb up"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "Mount Famfantar,"
+     "en": "will be brutally hard!!\""
     },
     {
      "type": "ctl",
@@ -3778,18 +4651,67 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "since then, countless quakes"
+     "run": 5,
+     "en": "With that,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Kurimuto departed."
+    }
+   ]
+  },
+  {
+   "message": 48,
+   "items": [
+    {
+     "type": "text",
+     "run": 0,
+     "en": "Ever since "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
     },
     {
      "type": "text",
      "run": 1,
+     "en": " began"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "climbing Mount Famfantar,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "countless earthquakes"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
      "en": "had struck."
     },
     {
@@ -3804,8 +4726,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": " felt it."
+     "run": 5,
+     "en": " could feel it:"
     },
     {
      "type": "ctl",
@@ -3814,8 +4736,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "This quake is "
+     "run": 6,
+     "en": "these tremors were "
     },
     {
      "type": "ctl",
@@ -3826,7 +4748,7 @@
     },
     {
      "type": "text",
-     "run": 4,
+     "run": 7,
      "en": "Ignis"
     },
     {
@@ -3835,9 +4757,14 @@
      "params": []
     },
     {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
      "type": "text",
-     "run": 5,
-     "en": ","
+     "run": 8,
+     "en": "raging in the depths"
     },
     {
      "type": "ctl",
@@ -3846,8 +4773,8 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "raging underground."
+     "run": 9,
+     "en": "of the earth."
     }
    ]
   },
@@ -3882,6 +4809,11 @@
      "params": []
     },
     {
+     "type": "text",
+     "run": 2,
+     "en": " "
+    },
+    {
      "type": "ctl",
      "code": "0x7537",
      "params": [
@@ -3890,8 +4822,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": " and "
+     "run": 3,
+     "en": "and "
     },
     {
      "type": "ctl",
@@ -3902,13 +4834,18 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 4,
      "en": "Ramires"
     },
     {
      "type": "ctl",
      "code": "0x753C",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": " "
     },
     {
      "type": "ctl",
@@ -3919,8 +4856,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": " appeared!"
+     "run": 6,
+     "en": "appeared."
     },
     {
      "type": "ctl",
@@ -3929,7 +4866,7 @@
     },
     {
      "type": "text",
-     "run": 5,
+     "run": 7,
      "en": "Zargo: \"Fight... more!\""
     },
     {
@@ -3939,8 +4876,8 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "Ramires: \"Fight... a lot,"
+     "run": 8,
+     "en": "Ramires: \"If you fight..."
     },
     {
      "type": "ctl",
@@ -3949,8 +4886,8 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "and Ignis... gets angry!\""
+     "run": 9,
+     "en": "a lot, Ignis... gets angry!\""
     },
     {
      "type": "ctl",
@@ -3964,14 +4901,8 @@
     },
     {
      "type": "text",
-     "run": 8,
-     "en": " felt, from deep within,"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
+     "run": 10,
+     "en": " felt "
     },
     {
      "type": "ctl",
@@ -3982,8 +4913,8 @@
     },
     {
      "type": "text",
-     "run": 9,
-     "en": " a violent power"
+     "run": 11,
+     "en": "a savage power"
     },
     {
      "type": "ctl",
@@ -3991,9 +4922,14 @@
      "params": []
     },
     {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
      "type": "text",
-     "run": 10,
-     "en": " surging up"
+     "run": 12,
+     "en": "surging up from within"
     },
     {
      "type": "ctl",
@@ -4005,7 +4941,7 @@
     },
     {
      "type": "text",
-     "run": 11,
+     "run": 13,
      "en": "..."
     },
     {
@@ -4021,7 +4957,17 @@
     {
      "type": "text",
      "run": 0,
-     "en": "At Mount Famfantar's crater,"
+     "en": "Upon reaching the crater"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 1,
+     "en": "of Mount Famfantar,"
     },
     {
      "type": "ctl",
@@ -4029,9 +4975,24 @@
      "params": []
     },
     {
+     "type": "ctl",
+     "code": "0x7540",
+     "params": []
+    },
+    {
      "type": "text",
-     "run": 1,
-     "en": "there stood a crumbling temple"
+     "run": 2,
+     "en": " found the ruins"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "of a decayed temple."
     },
     {
      "type": "ctl",
@@ -4047,39 +5008,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "Beringham: \"This altar"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "enshrines Ignis of the Earth.\""
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "I've been waiting."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
-    },
-    {
-     "type": "text",
      "run": 4,
-     "en": "Though Ignis must have awaited"
+     "en": "Beringham: \"This is the altar"
     },
     {
      "type": "ctl",
@@ -4089,7 +5019,17 @@
     {
      "type": "text",
      "run": 5,
-     "en": "you even more than I..."
+     "en": "where Ignis of the Earth"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "was worshipped."
     },
     {
      "type": "ctl",
@@ -4098,7 +5038,57 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 7,
+     "en": "I've been waiting for you."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "Though I suspect"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "Ignis has been waiting"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "for you even more"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 11,
+     "en": "than I have..."
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 12,
      "en": "Now! "
     },
     {
@@ -4110,8 +5100,8 @@
     },
     {
      "type": "text",
-     "run": 7,
-     "en": "Let us celebrate the"
+     "run": 13,
+     "en": "Let us"
     },
     {
      "type": "ctl",
@@ -4120,8 +5110,18 @@
     },
     {
      "type": "text",
-     "run": 8,
-     "en": "revival in grand style!!\""
+     "run": 14,
+     "en": "celebrate the revival"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 15,
+     "en": "in grand style!!\""
     },
     {
      "type": "ctl",
@@ -4130,19 +5130,18 @@
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "Then, from behind Beringham,"
+     "run": 16,
+     "en": "Then beasts appeared"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 9,
-     "en": "the beasts appeared."
+     "run": 17,
+     "en": "from behind Beringham."
     },
     {
      "type": "ctl",
@@ -4158,8 +5157,8 @@
     },
     {
      "type": "text",
-     "run": 10,
-     "en": "Kurimuto: \"Mmph! Too late, hm."
+     "run": 18,
+     "en": "Kurimuto: \"Hm! I'm too late!"
     },
     {
      "type": "ctl",
@@ -4168,8 +5167,8 @@
     },
     {
      "type": "text",
-     "run": 11,
-     "en": "This is no place to fight!\""
+     "run": 19,
+     "en": "No, we mustn't fight here!\""
     },
     {
      "type": "ctl",
@@ -4178,19 +5177,18 @@
     },
     {
      "type": "text",
-     "run": 12,
-     "en": "But Kurimuto's voice, arriving"
+     "run": 20,
+     "en": "But Kurimuto's voice,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 12,
-     "en": "too late, did not reach..."
+     "run": 21,
+     "en": "arriving late, went unheard..."
     }
    ]
   },
@@ -4200,22 +5198,41 @@
     {
      "type": "text",
      "run": 0,
-     "en": "When Beringham's beasts fell,"
+     "en": "The moment Beringham's"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "the ground shook violently"
+     "run": 1,
+     "en": "beasts fell, the ground"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "shook violently,"
     },
     {
      "type": "ctl",
      "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "and the earth beneath"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
      "params": []
     },
     {
@@ -4225,18 +5242,17 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": " and the others' footing"
+     "run": 4,
+     "en": " and the others"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 1,
+     "run": 5,
      "en": "began to crumble."
     }
    ]
@@ -4247,7 +5263,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "And from deep underground,"
+     "en": "Then, from deep"
     },
     {
      "type": "ctl",
@@ -4257,7 +5273,17 @@
     {
      "type": "text",
      "run": 1,
-     "en": "a giant dragon appeared."
+     "en": "within the earth,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "a gigantic dragon appeared."
     }
    ]
   },
@@ -4267,18 +5293,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "The dragon's body was red as"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 0,
-     "en": "magma, and from its giant"
+     "en": "The dragon's body"
     },
     {
      "type": "ctl",
@@ -4288,7 +5303,37 @@
     {
      "type": "text",
      "run": 1,
-     "en": "maw came breath like a storm."
+     "en": "was red as magma,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "and from its enormous maw"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "came a breathing"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 4,
+     "en": "like a raging storm."
     }
    ]
   },
@@ -4298,7 +5343,12 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Beringham: \"Hahah!!"
+     "en": "Beringham: \"Hah hah!!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
     },
     {
      "type": "ctl",
@@ -4308,19 +5358,29 @@
      ]
     },
     {
+     "type": "text",
+     "run": 1,
+     "en": "I've waited for this moment!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "The full revival"
+    },
+    {
      "type": "ctl",
      "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "I've waited for this moment."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
-     "params": []
+     "run": 3,
+     "en": "of "
     },
     {
      "type": "ctl",
@@ -4331,14 +5391,8 @@
     },
     {
      "type": "text",
-     "run": 2,
+     "run": 4,
      "en": "Ignis of the Earth"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
     },
     {
      "type": "ctl",
@@ -4347,8 +5401,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "has fully revived!\""
+     "run": 5,
+     "en": "!\""
     }
    ]
   },
@@ -4366,28 +5420,36 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Beringham: \"You lot, prepare"
+     "en": "Beringham: \"You lot,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
+     "run": 1,
+     "en": "go and prepare"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
      "en": "the beast combining machine"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
+     "run": 3,
      "en": "at the old castle ruins!"
     },
     {
@@ -4397,95 +5459,73 @@
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "I'll leave once I've seen the"
+     "run": 4,
+     "en": "I'll follow once I've seen"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 1,
-     "en": "two of them reunited."
-    },
-    {
-     "type": "ctl",
-     "code": "0x7532",
      "params": []
-    },
-    {
-     "type": "text",
-     "run": 2,
-     "en": "Ignis, "
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "Canon of the Heavens"
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 4,
-     "en": ","
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 4,
-     "en": "and "
-    },
-    {
-     "type": "ctl",
-     "code": "0x753B",
-     "params": [
-      "0x2"
-     ]
     },
     {
      "type": "text",
      "run": 5,
-     "en": "the Legendary Beast Tamer"
-    },
-    {
-     "type": "ctl",
-     "code": "0x753C",
-     "params": []
+     "en": "the two of them reunite."
     },
     {
      "type": "ctl",
      "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 6,
+     "en": "Ignis, and "
+    },
+    {
+     "type": "ctl",
+     "code": "0x7540",
      "params": []
     },
     {
      "type": "text",
      "run": 7,
-     "en": "combined to create"
+     "en": ","
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "who was made by combining"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "Canon of the Sky and the"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 10,
+     "en": "Legendary Beast Tamer...\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
     },
     {
      "type": "ctl",
@@ -4506,23 +5546,8 @@
     },
     {
      "type": "text",
-     "run": 8,
-     "en": ". You and I, well...\""
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
-     "type": "ctl",
-     "code": "0x7540",
-     "params": []
-    },
-    {
-     "type": "text",
-     "run": 9,
-     "en": " held their breath."
+     "run": 11,
+     "en": " gasped."
     }
    ]
   },
@@ -4532,7 +5557,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"We cannot beat"
+     "en": "Kurimuto: \"With our strength"
     },
     {
      "type": "ctl",
@@ -4542,17 +5567,27 @@
     {
      "type": "text",
      "run": 1,
-     "en": "Ignis as we are now!\""
+     "en": "as it is now,"
     },
     {
      "type": "ctl",
-     "code": "0x7532",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 2,
-     "en": "For now, we must flee!!\""
+     "en": "there's no way"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "to defeat Ignis!"
     },
     {
      "type": "ctl",
@@ -4561,7 +5596,17 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 4,
+     "en": "So for now, we run!!\""
+    },
+    {
+     "type": "ctl",
+     "code": "0x7532",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
      "en": "But just then,"
     },
     {
@@ -4576,8 +5621,8 @@
     },
     {
      "type": "text",
-     "run": 4,
-     "en": ", deep inside,"
+     "run": 6,
+     "en": " felt something"
     },
     {
      "type": "ctl",
@@ -4586,8 +5631,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "something was awakening"
+     "run": 7,
+     "en": "deep inside"
     },
     {
      "type": "ctl",
@@ -4599,7 +5644,7 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 8,
      "en": "..."
     },
     {
@@ -4615,7 +5660,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Kurimuto: \"What's wrong!?\""
+     "en": "Kurimuto: \"What is it?!\""
     },
     {
      "type": "ctl",
@@ -4630,7 +5675,7 @@
     {
      "type": "text",
      "run": 1,
-     "en": ": \"Heh heh!\""
+     "en": ": \"Heh heh heh!\""
     },
     {
      "type": "ctl",
@@ -4643,14 +5688,19 @@
      "params": []
     },
     {
+     "type": "text",
+     "run": 2,
+     "en": ":"
+    },
+    {
      "type": "ctl",
      "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "\"It's been a while"
+     "run": 3,
+     "en": "\"It's been a long time"
     },
     {
      "type": "ctl",
@@ -4662,7 +5712,7 @@
     },
     {
      "type": "text",
-     "run": 3,
+     "run": 4,
      "en": "..."
     },
     {
@@ -4672,7 +5722,7 @@
     },
     {
      "type": "text",
-     "run": 4,
+     "run": 5,
      "en": "\""
     },
     {
@@ -4687,7 +5737,7 @@
     },
     {
      "type": "text",
-     "run": 5,
+     "run": 6,
      "en": "'s expression"
     },
     {
@@ -4697,19 +5747,28 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "had clearly transformed into"
+     "run": 7,
+     "en": "had completely changed,"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "a different personality."
+     "run": 8,
+     "en": "as though a different"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "person had taken over."
     }
    ]
   },
@@ -4722,14 +5781,9 @@
      "params": []
     },
     {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
-    },
-    {
      "type": "text",
      "run": 0,
-     "en": "\"I'll settle this battle of"
+     "en": ":"
     },
     {
      "type": "ctl",
@@ -4739,7 +5793,27 @@
     {
      "type": "text",
      "run": 1,
-     "en": "centuries, here and now!\""
+     "en": "\"I'll settle this battle,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "centuries in the making,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 3,
+     "en": "here and now!\""
     },
     {
      "type": "ctl",
@@ -4748,8 +5822,18 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "Behind "
+     "run": 4,
+     "en": "Kurimuto saw the figure of"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "Canon looming behind "
     },
     {
      "type": "ctl",
@@ -4758,19 +5842,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": ", Kurimuto saw"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": [],
-     "added": true
-    },
-    {
-     "type": "text",
-     "run": 3,
-     "en": "the reflected figure of Canon."
+     "run": 6,
+     "en": "."
     }
    ]
   },
@@ -4780,7 +5853,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Ignis of the Earth let out"
+     "en": "Ignis of the Earth"
     },
     {
      "type": "ctl",
@@ -4790,18 +5863,17 @@
     {
      "type": "text",
      "run": 1,
-     "en": "a roar, and laid its body"
+     "en": "let out a roar"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 1,
-     "en": "on the ground."
+     "run": 2,
+     "en": "and lay down upon the ground."
     },
     {
      "type": "ctl",
@@ -4810,8 +5882,8 @@
     },
     {
      "type": "text",
-     "run": 2,
-     "en": "Beringham: \"What on earth!"
+     "run": 3,
+     "en": "Beringham: \"What is this?!"
     },
     {
      "type": "ctl",
@@ -4820,8 +5892,8 @@
     },
     {
      "type": "text",
-     "run": 3,
-     "en": "Ignis is being defeated!!\""
+     "run": 4,
+     "en": "Ignis, defeated?!\""
     }
    ]
   },
@@ -4831,7 +5903,7 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Beringham"
+     "en": "Beringham:"
     },
     {
      "type": "ctl",
@@ -4854,7 +5926,7 @@
     {
      "type": "text",
      "run": 2,
-     "en": "Not good! This won't do!!"
+     "en": "No, at this rate--!!"
     },
     {
      "type": "ctl",
@@ -4874,18 +5946,17 @@
     {
      "type": "text",
      "run": 4,
-     "en": "A mysterious band of light"
+     "en": "A band of strange light"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 4,
-     "en": "from Beringham's hand,"
+     "run": 5,
+     "en": "shot from Beringham's hand"
     },
     {
      "type": "ctl",
@@ -4894,8 +5965,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "wrapped around Ignis's body,"
+     "run": 6,
+     "en": "and wrapped around"
     },
     {
      "type": "ctl",
@@ -4904,8 +5975,28 @@
     },
     {
      "type": "text",
-     "run": 6,
-     "en": "its giant body floated up."
+     "run": 7,
+     "en": "Ignis's body,"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "lifting that huge"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 9,
+     "en": "frame into the air."
     }
    ]
   },
@@ -4915,18 +6006,27 @@
     {
      "type": "text",
      "run": 0,
-     "en": "Wrapped in light, Ignis and"
+     "en": "Wrapped in light, Ignis"
     },
     {
      "type": "ctl",
      "code": "0x7530",
-     "params": [],
-     "added": true
+     "params": []
     },
     {
      "type": "text",
-     "run": 0,
-     "en": "Beringham flew beyond the sky."
+     "run": 1,
+     "en": "and Beringham flew off"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 2,
+     "en": "into the distant sky."
     }
    ]
   },
@@ -4956,17 +6056,22 @@
     {
      "type": "text",
      "run": 1,
-     "en": "What's happening!"
+     "en": "How"
     },
     {
      "type": "ctl",
-     "code": "0x7536",
+     "code": "0x7530",
      "params": []
     },
     {
      "type": "text",
      "run": 2,
-     "en": "\""
+     "en": "is this possible!"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7536",
+     "params": []
     },
     {
      "type": "ctl",
@@ -4976,12 +6081,7 @@
     {
      "type": "text",
      "run": 3,
-     "en": "Canon and the Beast Tamer"
-    },
-    {
-     "type": "ctl",
-     "code": "0x7530",
-     "params": []
+     "en": "Even if "
     },
     {
      "type": "ctl",
@@ -4989,9 +6089,24 @@
      "params": []
     },
     {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
      "type": "text",
      "run": 4,
-     "en": ", made by combining,"
+     "en": "is the combination"
+    },
+    {
+     "type": "ctl",
+     "code": "0x7530",
+     "params": []
+    },
+    {
+     "type": "text",
+     "run": 5,
+     "en": "of Canon and the Beast Tamer,"
     },
     {
      "type": "ctl",
@@ -5000,8 +6115,8 @@
     },
     {
      "type": "text",
-     "run": 5,
-     "en": "had such strength"
+     "run": 6,
+     "en": "where does such strength"
     },
     {
      "type": "ctl",
@@ -5013,13 +6128,18 @@
     },
     {
      "type": "text",
-     "run": 6,
+     "run": 7,
      "en": "..."
     },
     {
      "type": "ctl",
      "code": "0x7536",
      "params": []
+    },
+    {
+     "type": "text",
+     "run": 8,
+     "en": "\""
     }
    ]
   }

@@ -59,7 +59,7 @@ INSERT_753F_TABLE = 0xC73F0       # 4 slots x 2 variants
 INSERT_753F_WORDS = [
     ("I", "I"),
     ("son", "daughter"),
-    ("the Legendary Beast Tamer", "the Legendary Beast Tamer"),
+    ("Legendary Beast Tamer", "Legendary Beast Tamer"),
     ("he", "she"),
 ]
 INSERT_NAMES_JSON = ROOT / "translation" / "story_insert_names.json"

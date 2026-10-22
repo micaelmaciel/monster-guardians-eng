@@ -7,7 +7,7 @@ the 7540 player name (6). This tool substitutes the actual EN strings and
 replays the same screen simulation for both player-gender variants:
 
   * 753E: `translation/story_insert_names.json` (9 slots x 2 variants)
-  * 753F: I / son|daughter / the Legendary Beast Tamer / he|she
+  * 753F: I / son|daughter / Legendary Beast Tamer / he|she
   * 7540: 6-char player name (unchanged reserve)
 
 Reports, per bank:
@@ -32,13 +32,14 @@ NAME_W = 6
 WORD_EN = [
     ["I"],
     ["son", "daughter"],
-    ["the Legendary Beast Tamer"],
+    ["Legendary Beast Tamer"],
     ["he", "she"],
 ]
 
 BANKS = [
-    ("build/story_messages_raw.json", "translation/story_en_runs.json", "story"),
-    ("build/late_story_raw.json", "translation/late_story_en_runs.json", "late"),
+    ("translation/story_en_items.json", "translation/story_en_runs.json", "story"),
+    ("translation/late_story_en_items.json",
+     "translation/late_story_en_runs.json", "late"),
 ]
 
 spec = importlib.util.spec_from_file_location(
@@ -113,7 +114,7 @@ def check_bank(raw_path, runs_path, bank, names, problems):
                 problems.append((bank, mi, "space-before", mm.group(1),
                                  repr(s[max(0, a - 14):b + 14])))
             if nxt not in (None, " ", "\n", "\x01", "'", ",", ".", "!", "?",
-                           ":", '"', ")", ";"):
+                           ":", '"', ")", ";", "-"):
                 problems.append((bank, mi, "space-after", mm.group(1),
                                  repr(s[max(0, a - 14):min(len(s), b + 14)])))
         # 2) real-width screen simulation, both gender variants

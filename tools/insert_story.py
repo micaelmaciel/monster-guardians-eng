@@ -17,6 +17,10 @@ Encoding rules
   * relocated messages are written to free space in index order, so
     L28/L29 (message 91/92) stay physically adjacent: message 92 is the
     staff-roll card that the engine chains into (it has no pointer).
+  * item streams come from translation/*_en_items.json (generated from
+    the constrained EN text).  The original JP raw files are used only by
+    message_starts(), because the original pointers still address the JP
+    streams.
 """
 import json
 import struct
@@ -37,6 +41,8 @@ REUSE_CODES = {"❋": 670, "～": 109}        # JP glyphs reused in EN
 
 EARLY_RAW = ROOT / "build" / "story_messages_raw.json"
 LATE_RAW = ROOT / "build" / "late_story_raw.json"
+EARLY_ITEMS = ROOT / "translation" / "story_en_items.json"
+LATE_ITEMS = ROOT / "translation" / "late_story_en_items.json"
 EARLY_EN = ROOT / "translation" / "story_en_runs.json"
 LATE_EN = ROOT / "translation" / "late_story_en_runs.json"
 GLYPHS_JSON = ROOT / "data" / "en_glyphs_8x8.json"
@@ -90,8 +96,8 @@ def load_messages():
         "story_en_export", ROOT / "tools" / "story_en_export.py")
     sx = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(sx)
-    early = json.loads(EARLY_RAW.read_text())["messages"]
-    late = json.loads(LATE_RAW.read_text())["messages"]
+    early = json.loads(EARLY_ITEMS.read_text())["messages"]
+    late = json.loads(LATE_ITEMS.read_text())["messages"]
     early_en = json.loads(EARLY_EN.read_text())
     late_en = json.loads(LATE_EN.read_text())
     en = [early_en[str(i)] for i in range(len(early))]

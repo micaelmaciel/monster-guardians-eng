@@ -4,7 +4,11 @@
 Banks: story (translation/story_en_runs.json -> story_en.json) and late
 (translation/late_story_en_runs.json -> late_story_en.json).
 
-Walks each source message`s token stream, splits it into text runs and
+The insertion item streams are translation/story_en_items.json and
+translation/late_story_en_items.json; the original JP raw files are kept
+only for the original message-start offsets used by tools/insert_story.py.
+
+Walks each insertion message`s token stream, splits it into text runs and
 control items (params included), and attaches the English run texts 1:1.
 Run count mismatch = hard error. Then runs QA:
 
@@ -24,12 +28,12 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
-# bank -> (raw json in build/, runs json in translation/,
-#          output json in translation/, message tag)
+# bank -> (insertion items json, runs json, output json, message tag);
+# all four live in translation/.
 BANKS = {
-    "story": ("story_messages_raw.json",
+    "story": ("story_en_items.json",
               "story_en_runs.json", "story_en.json", "msg"),
-    "late": ("late_story_raw.json",
+    "late": ("late_story_en_items.json",
              "late_story_en_runs.json", "late_story_en.json", "L"),
 }
 
@@ -43,7 +47,7 @@ MAX_SCREEN = 58      # working limit per screen
 # Simulated EN display width (chars) of dynamic inserts, so QA accounts
 # for them: 753F word table (I / son/daughter / Tamer / he/she), 753E
 # beast names (EN TBD, reserved), 7540 player name (6).
-WORD_W = [1, 8, 24, 3]
+WORD_W = [1, 8, 21, 3]
 BEAST_W = 12
 # NOTE: the reserves above are pre-translation placeholders. The final EN
 # insert widths live in `translation/story_insert_names.json`;
@@ -140,12 +144,12 @@ def main():
     if args and args[0] == "--bank":
         bank = args[1]
         args = args[2:]
-    raw_name, runs_name, out_name, tag = BANKS[bank]
-    raw_path = os.path.join(ROOT, "build", raw_name)
+    items_name, runs_name, out_name, tag = BANKS[bank]
+    items_path = os.path.join(ROOT, "translation", items_name)
     runs_path = os.path.join(ROOT, "translation", runs_name)
     out_path = os.path.join(ROOT, "translation", out_name)
 
-    msgs = json.load(open(raw_path))["messages"]
+    msgs = json.load(open(items_path))["messages"]
     runs = {int(k): v for k, v in json.load(open(runs_path)).items()
             if not k.startswith("_")}
     todo = [int(a) for a in args] or sorted(runs)
