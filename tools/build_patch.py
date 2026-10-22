@@ -339,8 +339,18 @@ def stage_8x8_fixes(p):
     # menu id and must stay 4.
     p.poke(0x58C48, b"\x04\x22", "setup next menu id = 4 (decouple Element count)")
     # The default male name "Leo" is 3 glyphs; the copy length was the JP
-    # 2-glyph length.
+    # 2-glyph length.  The rename/default path at 0x57E18 uses movs r2,#6
+    # (shifted to 3 halfwords); the two party-initialization paths use
+    # 0x80000002 directly.
     p.poke(0x57E1A, b"\x06\x22", "default male name copy 3 glyphs")
+    p.poke(0x55120, struct.pack("<I", 0x80000003),
+           "party-init male name copy 3 glyphs")
+    p.poke(0x5539C, struct.pack("<I", 0x80000003),
+           "party-init alternate male name copy 3 glyphs")
+    # Hero-select name sprites use their own glyph count: Leo's object had
+    # the JP count 2 at struct+0x1C (Tina's is 4 at +0x48).  The pointer
+    # itself was already relocated to the 3-glyph English "Leo".
+    p.poke(0x57734, b"\x03\x20", "hero-select male name count 3")
 
     # Status screen: one r4 count is shared by the "Assign"/"Order" labels
     # and two 4-digit number fields.  English needs 6 and 5 glyphs; keep

@@ -229,16 +229,16 @@ addr	n_jp	jp	en
 0x0BEB3C	19	データはせいじょうにセーブできました。	Data was saved safely.
 0x0BEB62	17	データのセーブにシッパイしました。	Failed to save the data.
 0x0BEB84	5	プロローグ	Prologue
-0x0BEB8E	11	オープニング ぜんはん	Opening, Part 1
-0x0BEBA4	11	オープニング こうはん	Opening, Part 2
+0x0BEB8E	11	オープニング ぜんはん	Opening 1
+0x0BEBA4	11	オープニング こうはん	Opening 2
 0x0BEBBA	3	テスト	Test
 0x0BEBC0	7	ザーゴあらわる	Zargo Appears
-0x0BEBCE	11	カコとゲンザイと・・・	Past and Present...
-0x0BEBE4	12	ファムファンタルかざんへ	To Mount Famfantar
-0x0BEBFC	10	ベリンガムのインボウ	Beringham's Plot
+0x0BEBCE	11	カコとゲンザイと・・・	Past/Present
+0x0BEBE4	12	ファムファンタルかざんへ	Mt. Famfantar
+0x0BEBFC	10	ベリンガムのインボウ	Beringham Plot
 0x0BEC10	8	イグニスのめざめ	Ignis Awakens
 0x0BEC20	8	イグニスやぶれる	Ignis Falls
-0x0BEC30	8	ザーゴとラミレス	Zargo and Ramires
+0x0BEC30	8	ザーゴとラミレス	Zargo/Ramires
 0x0BEC40	7	ゴウセイジュウ	The Combined Beast
 0x0BEC4E	8	ベリンガムのカケ	Beringham's Bet
 0x0BEC5E	8	さいごのたたかい	The Final Battle

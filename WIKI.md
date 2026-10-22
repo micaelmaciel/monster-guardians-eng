@@ -11,7 +11,7 @@ milestone.
 - **Phase: release candidate (2026-10-21).** 8×8, story, msgfont, status
   labels and battle command/target label graphics are inserted; the
   user-authored constrained story script is inserted; final patch at
-  `dist/monster-guardians-en.bps` (2,567 patches, 160,679 B, round-trip
+  `dist/monster-guardians-en.bps` (2,565 patches, 160,467 B, round-trip
   OK). Non-blocking gaps:
   chapter-title card, 64 blocked 8×8 rows, and the cosmetic combine-card
   species names. *Three*
@@ -109,14 +109,37 @@ milestone.
   1:1 EN runs. `tools/story_insert_rebuild.py` regenerates both from the
   pre-constrained control templates. Current story block:
   96 messages, **14,138 words / 28,276 bytes**, streams at `0x76B968`
-  (28,276 B), 95 pointers patched. Full build: **2,567 patches, BPS
-  160,679 B, round-trip OK**. New 753F slot 2 is
+  (28,276 B), 95 pointers patched. Full build at that milestone:
+  **2,567 patches, BPS 160,679 B, round-trip OK** (superseded by the
+  final QA build; see Current state). New 753F slot 2 is
   **`Legendary Beast Tamer`** (no article; prose supplies `the`).
   Verified in mGBA (early bank: msgs 37–39, including extra `7540`
   player-name inserts and the red `Zargo` span; late bank: L03
   `{{WORD:2}}` no-article insert and L05 `{{PLAYER}}` inserts via a
   QA-only message-pointer repoint). See "Constrained story text
   insertion — implementation" below.
+- **Final QA text fixes (2026-10-21).** Three release-check bugs were
+  fixed/verified:
+  1. **Hero-select `Le`** — the hero-select name sprite had the JP
+     two-glyph count at `0x57734` (`movs r0,#2` → `#3`). The rename
+     path at `0x57E1A` and the two party-init DMA controls at
+     `0x55120`/`0x5539C` are also three glyphs. The relocated string
+     itself was already `Leo`. User-verified after a fresh redraw; an
+     older savestate keeps the cached `Le` because the initializer does
+     not re-run on load.
+  2. **World-map boxes** — no code change was required. The `ss8`
+     savestate was captured from an older build and its VRAM still held
+     the clipped text; after redraw with the current build, the full
+     location and mission strings render correctly (user-verified).
+  3. **Event-replay overflow** — fixed by shortening six event titles
+     (see "Event replay list" below); the worst-case row is now 19
+     glyphs and fits the x=48–204 text area. Verified in mGBA by
+     scrolling the list from `patched.ss9` with the current ROM.
+  `patched.ss7`/`.ss8`/`.ss9` are **mGBA savestates in PNG containers**
+  (state data is the custom `gbAs` chunk), not plain screenshots. State
+  loads restore old VRAM/RAM; force a redraw before judging text, and
+  expect `Savestate is for a different version of the game` when the
+  state predates a rebuild.
 - **Msgfont insertion DONE (2026-10-19, mGBA-verified).**
   The 9×9 field-message font is relocated/extended and all 169 strings
   are encoded. Store `0x77EC08` (317 JP + 67 ASCII glyphs = 384 × 18 B,
@@ -229,8 +252,9 @@ milestone.
   needs no count patch: it is referenced only from fixed choice-list
   tables (`0xC4F74`, `0xC5058`, `0xC50C4`) that store packed coordinates
   and string pointers, with no length field, so the renderer draws the
-  null-terminated EN string in full. Current build:
-  **2,567 patches, BPS 157,632 B, round-trip OK**.
+  null-terminated EN string in full. Build at that point:
+  **2,567 patches, BPS 157,632 B, round-trip OK** (superseded by the
+  final QA build; see Current state).
 - **Count overrides moved to data + size audit sheet (2026-10-21).**
   Manual count sites now live in
   `translation/8x8_count_overrides.tsv`
@@ -890,8 +914,8 @@ supplies `the` where needed.
   6 / 5 lines; no insert-spacing problems.
 - `tools/insert_story.py --check`: 96 messages, **14,138 words /
   28,276 bytes**, no unencodable characters; only message 92 is chained.
-- `tools/build_patch.py --stage all`: 2,567 patches; BPS 160,679 B;
-  round-trip OK.
+- `tools/build_patch.py --stage all`: 2,565 patches; BPS 160,467 B;
+  round-trip OK (final QA build, 2026-10-21).
 - mGBA early bank: loaded `patched.ss4` (msg 36), advanced to msgs 37–39;
   player-name `7540` inserts render as `Leo`; msg 39 page 1 renders the
   red `Zargo` span and page 2 continues correctly. No crash.
@@ -1352,6 +1376,58 @@ screen shows them.
 kept as one slice (split `[8,12]` vs `[12,8]` undecidable); `0x0BECE6`
 `？？AB` rejected (two `？` + index letters, not text); `みへんせい` =
 未編成; a few mdb2 stray suffixes (`リン` etc.) are kept as fragments.
+
+### Event replay list (2026-10-21) — FIXED
+
+The event-replay menu uses the 25-record table at `0x0BCA74`
+(`{u32 title_ptr, u16 len, u16 flags}`, 8 B each; 20 real entries plus
+five `?` placeholders). The table is referenced once, at `0x49268`. The
+row label is built at `0x49218`:
+
+1. copy `len` glyphs from the title (`0x80365DC`);
+2. append one space;
+3. append the static player name — `0x0877C72A` for Leo (3 glyphs) or
+   `0x080BD5AA` for Tina (4 glyphs) — when the entry's case calls for it;
+4. for a subset, append one more space and a one-glyph status (`A`/`B`)
+   from `0x0BECEA`/`0x0BECEC`.
+
+The per-index jump table at `0x49270` (indices 2–18) selects: no suffix
+for 0,1,3,11–13,19; name+status for 2,5,9,18; name only for
+4,6,7,8,10,14–17. The draw area is x=48–204 (156 px, 19.5 glyphs), so a
+Tina save has a worst-case suffix of 7 glyphs (space + 4-glyph name +
+space + status). Keep the complete label at **≤19 glyphs** to leave a
+margin inside the box.
+
+Titles shortened in `translation/8x8_pool_en.tsv` (the matching `len`
+fields are patched at `0x0BCA78` onward):
+
+- `0x0BEB8E` `Opening, Part 1` → `Opening 1`
+- `0x0BEBA4` `Opening, Part 2` → `Opening 2`
+- `0x0BEBCE` `Past and Present...` → `Past/Present`
+- `0x0BEBE4` `To Mount Famfantar` → `Mt. Famfantar`
+- `0x0BEBFC` `Beringham's Plot` → `Beringham Plot`
+- `0x0BEC30` `Zargo and Ramires` → `Zargo/Ramires`
+
+Worst-case totals (Tina, with status where applicable) are 9, 16, 19,
+18, 19 and 18 glyphs respectively; `Opening 1` takes no suffix. All
+other event labels are already ≤19. Verified in mGBA by scrolling the
+list from `patched.ss9` with the current build; the new titles stay
+inside the row border.
+
+The hint box “Choose an event to see.” overlaps the row below the
+cursor. The original Japanese hint does exactly the same, so this is
+base-game layout, not a translation regression; do not move it unless
+the user asks.
+
+**Savestate trap.** `build/patch/patched.ss7`/`.ss8`/`.ss9` are mGBA
+savestates inside PNG containers: the PNG image is the screenshot and
+the state is the custom `gbAs` chunk. `file` reports them as PNG and PIL
+can read the screenshot, but `MGBA_STATE_IN` loads them correctly.
+Loading an older state on a newer ROM prints `Savestate is for a
+different version of the game`; VRAM/RAM still hold the old text, so
+force a redraw (scroll the list, re-enter the menu) before judging a
+text fix. This is what made the fixed Leo and world-map text look stale
+at first.
 
 ### Field message box — third text system ("message font") — SOLVED & EXTRACTED (2026-10-19)
 
@@ -1864,12 +1940,12 @@ msg 60 width-foldings) — see
   (user decision 2026-10-20); investigate only on request.
 - Combine-shop out-of-gold and deploy-error messages: translated but
   not separately re-verified in mGBA.
-- Leo name-copy paths unresolved: `0x5508E`/`0x55202`/`0x57E18` DMA
-  only 2 glyphs into the `0x030028A0` party struct (control
-  `0x80000002`; `0x57E1A` uses `movs r2,#4; lsrs #1`), and `0x57738`
-  stores the Leo pointer at struct+0x14 (field +0x12=5 is not a count).
-  Renderer unknown; the hero-select visible-name path
-  (`0x492C4`/`0x49314`, already patched 2→3) is fine.
+- Leo name-copy paths **resolved (2026-10-21)**: the party-init DMA
+  controls at `0x55120`/`0x5539C` are now `0x80000003`; the rename path
+  at `0x57E1A` copies 3 glyphs (`movs r2,#6; lsrs #1`); the hero-select
+  sprite count at `0x57734` is `movs r0,#3`; and the event-label copies
+  at `0x492C4`/`0x49314` are three glyphs. Custom-name paths should be
+  rechecked only if a new truncation appears.
 
 ## Tool list (with versions)
 
