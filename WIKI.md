@@ -829,6 +829,14 @@ modified. The compiled insertion artifacts are tracked:
 | `translation/story_en_runs_preconstrained.json` | control-span template (legacy runs), early |
 | `translation/late_story_en_runs_preconstrained.json` | control-span template (legacy runs), late |
 | `tools/story_insert_rebuild.py` | regenerates items + runs from the above |
+| `tools/rebuild_story.sh` | one-command rebuild: regenerate, QA, full patch |
+
+After editing the constrained script, run one command:
+
+```bash
+tools/rebuild_story.sh            # regenerate + QA + full patch build
+tools/rebuild_story.sh --no-build # regenerate + QA only
+```
 
 **Generation rules.** Text tokens in the item JSON are placeholders `0`;
 all layout is explicit in the control stream. Every line break is a
@@ -1909,6 +1917,10 @@ msg 60 width-foldings) — see
   `translation/story_en_constrained.txt` plus the pre-constrained control
   templates; preserves/matches colour and pause spans, inserts and line
   breaks. `tools/check_insert_rows.py` replays the real insert widths.
+- `tools/rebuild_story.sh` — wrapper for the common story-edit workflow:
+  rebuild items/runs, export/QA both banks, check insert widths and
+  encoded streams, then run the full patch build. `--no-build` stops
+  after the checks.
 - `tools/story_render.py` (ASCII-art message render), `tools/small_art.py`
   (ASCII-art 8×8 glyph), `tools/dump_bigfont_used.py`,
   `tools/bigfont_groups.py`, `tools/bigfont_match.py`,
