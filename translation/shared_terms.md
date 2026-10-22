@@ -16,13 +16,13 @@ Known divergences are called out at the end.
 
 | JP in story | English kept | Also used in | Notes |
 |---|---|---|---|
-| ベリンガム | **Beringham** | 8×8 battle mission (`Defeat Beringham!`), message-box clear condition (`Goal: Defeat Beringham!`), pool event titles (`Beringham's Plot`, `Beringham's Bet`) | Story also has `Lord Beringham` and `Duke Beringham Roe`; keep the element **Beringham**. |
+| ベリンガム | **Beringham** | 8×8 battle mission (`Defeat Beringham!`), message-box clear condition (`Goal: Defeat Beringham!`), pool event titles (`Beringham Plot`, `Beringham's Bet`) | Story also has `Lord Beringham` and `Duke Beringham Roe`; keep the element **Beringham**. `Beringham Plot` is shortened for the 19-glyph event-replay row. |
 | イグニス | **Ignis** | battle mission (`Beat revived Ignis!`), clear condition (`Goal: Defeat Ignis!`), pool event titles (`Ignis Awakens`, `Ignis Falls`), monster DB | |
 | 大地のイグニス | **Ignis of the Earth** | pool legendary-monster setup | The monster DB shortens this to `Ignis` because of its 8-glyph name slot; see exceptions. |
 | カノン | **Canon** | pool default-name table (`Leo`, `Tina`, `Canon`, `Beffle`, `Farbus`) | The table entry is a default name, not necessarily the sky dragon itself. |
 | ザーゴ | **Zargo** | battle missions, message-box clear conditions, pool event titles, pool monster list, monster DB | Some clear-condition JP rows spell it サーゴ; the English is normalized to **Zargo**. |
-| ラミレス | **Ramires** | battle missions, message-box clear conditions, pool event title (`Zargo and Ramires`), pool monster list, monster DB | |
-| ファムファンタル火山 | **Mount Famfantar** | pool event title (`To Mount Famfantar`) | |
+| ラミレス | **Ramires** | battle missions, message-box clear conditions, pool event title (`Zargo/Ramires`), pool monster list, monster DB | The event-replay row shortens `Zargo and Ramires` to `Zargo/Ramires`. |
+| ファムファンタル火山 | **Mount Famfantar** | pool event title (`Mt. Famfantar`) | The event-replay row shortens `To Mount Famfantar` to `Mt. Famfantar`. |
 | 伝説の魔獣 | **Legendary Beast** | pool prompt (`Pick a legendary beast.`), pool category label `Legend` | Lowercase in the prompt, title case in story. |
 
 ## 2. Story terminology reused in UI
