@@ -1,5 +1,7 @@
 This is a machine English translation of an obscure Japanese-only Konami game for the GBA, namely Monster Guardians.
 
+It came to my knowledge someone else did a MTL of this game a day prior to my release, but with Claude Code. It appears a bit more polished than mine, so do look into it if you're interested: https://github.com/minhnhattonthat/monster-guardians-en/releases/tag/v1.0
+
 ---
 
 # The patch
